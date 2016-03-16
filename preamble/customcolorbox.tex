@@ -21,7 +21,7 @@
 %}
 \usepackage[many]{tcolorbox}
 
-\newcommand{\custombox}[2]{
+\newcommand{\customcoloredbox}[2]{
 	\begin{tcolorbox}%
 	[%
 		box align=center,
@@ -34,24 +34,26 @@
 	\end{tcolorbox}%
 }
 
-\newcommand{\important}[1]{\custombox{red}{#1}}
+\newcommand{\important}[1]{\customcoloredbox{red}{#1}}
 
-\newcommand{\useful}[1]{\custombox{blue}{#1}}
+\newcommand{\useful}[1]{\customcoloredbox{blue}{#1}}
 
-\newcommand{\remark}[1]{\custombox{gray}{#1}}
+\newcommand{\remark}[1]{\customcoloredbox{gray}{#1}}
 
-\newcommand{\note}[1]{%
+\newcommand{\customnotebox}[2]{%
 	\begin{tcolorbox}%
 	[%
 		box align=center,
-		colback=gray!5!white,%
-		colframe=gray!75!black,%
+		colback=#1!5!white,%
+		colframe=#1!75!black,%
 		fonttitle=\bfseries,%
-		colbacktitle=gray!85!black,%
+		colbacktitle=#1!85!black,%
 		enhanced,%
 		attach boxed title to top center={yshift=-2mm},%
 		title=Note%
 	]%
-	#1%
+	#2%
 	\end{tcolorbox}%
 }
+
+\newcommand{\note}[1]{\customnotebox{blue}{#1}}
