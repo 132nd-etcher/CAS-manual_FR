@@ -53,26 +53,46 @@
 \section{Check-in}
 
 \e
+	\begin{minipage}{\linewidth}
     \item
     Le check-in est la première phase du \acrshort{cas} en tant que tel. C’est l’appel effectué de l’appareil en \acrshort{cas} vers le \acrshort{jtac}/\acrshort{faca} pour lui signifier qu’il est prêt à remplir sa mission de \acrshort{cas}.
     \item Comme le check-in peut prendre un certain temps, un appel préliminaire devrait être effectué. Par exemple:
-\ed
-
-\begin{lstlisting}[caption=Appel préliminaire, label=preliminary_call]
+	\begin{lstlisting}[caption=Appel préliminaire, label=preliminary_call]
     PIRATE, ici REDWOLF, pour check-in, quand dispo.
-\end{lstlisting}
+	\end{lstlisting}
+	\end{minipage}
 
-\re
+	\begin{minipage}{\linewidth}
     \item Format du check-in:
     \begin{figure}[H]
         \includegraphics[width=\textwidth]{checkin.png}
         \caption{Format check-in.}
         \label{fig:checkin}
-    \end{figure}
-    \item S'il le souhaite, le \acrshort{jtac}/\acrshort{faca} peut demander un check-in abrégé:
+    \end{figure}    
+    \end{minipage}
+    
+    \begin{minipage}{\linewidth}
+    \item S'il le souhaite, le \gls{jtac}/\gls{faca} peut demander un check-in abrégé:
     \begin{figure}[H]
         \includegraphics[width=\textwidth]{abbregcheckin.png}
         \caption{Format check-in abrégé.}
         \label{fig:abbregcheckin}
     \end{figure}
+    \end{minipage}
+    
+    \item Le code d’annulation (ligne 7) est un code alphabétique servant à authentifier la directive “Abort” du J-TAC/FAC(A).
+    
+    \begin{minipage}{\linewidth}
+    \item Exemple de check-in:
+    \begin{lstlisting}[caption=Check-in, label=checkin]
+	PIRATE ici REDWOLF
+    	Mission 1234
+	    2 Kamov
+	    20km au sud de Poti, 500m MSL
+    	24 Vikhrs, 80 roquettes, full guns
+	    Playtime 30 minutes
+    	Senseurs: Shkval
+	    Abort code: X-RAY TANGO ZULU
+	\end{lstlisting}
+    \end{minipage}
 \ed
