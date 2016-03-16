@@ -1,0 +1,27 @@
+% Define default styles ------------------------------------------------------------
+\newcommand{\deflhead}{\minipage[b]{.7\linewidth}\leftmark\endminipage}
+\newcommand{\defrhead}{\includegraphics[width=1cm]{images/319th.png}}
+\newcommand{\deflfoot}{\footnotesize \footer}
+\newcommand{\defrfoot}{\thepage}
+% -----------------------------------------------------------------------------------
+\fancypagestyle{default}{%
+  \fancyhf{}% Clear header and footer
+  \fancyhead[L]{\deflhead{}}
+  \fancyhead[R]{\defrhead{}}
+  \fancyfoot[L]{\deflfoot{}}% Custom footer
+  \fancyfoot[R]{\defrfoot{}}% Custom footer
+  \renewcommand{\headrulewidth}{0.4pt}% Line at the header visible
+  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+  \fancyhf{}% Clear header and footer
+  \fancyhead[L]{\deflhead{}}
+  \fancyhead[R]{\defrhead{}}
+  \fancyfoot[L]{\deflfoot{}}% Custom footer
+  \fancyfoot[R]{\defrfoot{}}% Custom footer
+  \renewcommand{\headrulewidth}{0.4pt}% Line at the header visible
+  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+\pagestyle{default}

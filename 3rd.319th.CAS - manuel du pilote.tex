@@ -1,0 +1,238 @@
+\documentclass[
+12pt,
+a4paper,
+final,
+titlepage,
+oneside,
+]{report}
+
+\usepackage[
+    colorlinks=true,
+    urlcolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    bookmarks=true
+]{hyperref}
+\usepackage[frenchb]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{courier}
+\usepackage[titles]{tocloft}
+\usepackage{enumitem}
+\usepackage{datetime}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{nameref}
+\usepackage{setspace}
+\usepackage[pagestyles]{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage[
+    titletoc,
+    header,
+    title
+]{appendix}
+\usepackage[
+    font=footnotesize,
+    labelfont=
+    {
+        sf,
+        bf
+    },
+    margin=1cm
+]{caption}
+\usepackage{listings}
+\usepackage{bold-extra}
+\usepackage[
+    top=3cm,
+    bottom=3cm,
+    left=2cm,
+    right=2cm,
+    headheight=2cm,
+    headsep=1cm,
+    footskip=2cm
+]{geometry}
+\usepackage[
+    activate={true,nocompatibility},
+    final,
+    tracking=true,
+    kerning=true,
+    spacing=true,
+    factor=1100,
+    stretch=10,
+    shrink=10
+]{microtype}
+\microtypecontext{spacing=nonfrench}
+\usepackage{cleveref}
+%\usepackage{url}
+%\usepackage{glossaries}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% Nagger ------------------------------------------------------------------------------------
+\RequirePackage[l2tabu, orthodox]{nag}
+% Sets doc-wide fonts -----------------------------------------------------------------------
+\renewcommand*\familydefault{\ttdefault}
+% Setup caption for listings ----------------------------------------------------------------
+\captionsetup[lstlisting]{font={small,tt}}
+% Fuzz --------------------------------------------------------------------
+\hfuzz20pt % Don't bother to report over-full boxes if over-edge is < 2pt
+% includes ----------------------------------------------------------------------------------
+\include{preamble/notebox}
+\include{preamble/customcolorbox}
+\include{preamble/format}
+\include{preamble/constants}
+\include{preamble/enum}
+\include{preamble/pagestyle}
+\include{preamble/customcolors}
+\include{preamble/listingformat}
+
+\usepackage[acronym, toc]{glossaries}
+\makeglossaries
+
+\newglossaryentry{bdag}{name={BDA}, description={Évaluation des dégâts causés à la cible suite à un engagement}}
+\newglossaryentry{bda}{type=\acronymtype, name={BDA}, description={Battle Damage Assessment}, first={Battle Damage Assessment (BDA)\glsadd{bdag}}, see=[Glossary:]{bdag}}
+
+%\newacronym{bda}{BDA}{Battle Damage Assessment}
+\newacronym{misrep}{MISREP}{Mission Report}
+\newacronym{cc}{C2}{Command and Control}
+\newacronym{cas}{CAS}{Close Air Support}
+\newacronym{jtac}{J-TAC}{Joint Terminal Attack Controller}
+\newacronym{faca}{FAC(A)}{Forward Airborne Controller (Airborne)}
+\newacronym{awacs}{AWACS}{Airborne Warning And Control System}
+\newacronym{rw}{RW}{Rotary-Wing}
+\newacronym{fw}{FW}{Fixed-Wing}
+\newacronym{farp}{FARP}{Forward Arming and Refueling Point}
+\newacronym{sa}{SA}{Situationnal Awareness}
+\newacronym{tot}{TOT}{Time On Target}
+\newacronym{ttt}{TTT}{Time To Target}
+\newacronym{bp}{BP}{Battle Position}
+\newacronym{ha}{HA}{Holding Area}
+\newacronym{fp}{FP}{Firing Point}
+\newacronym{tacon}{TACON}{TActical CONtrol}
+\newacronym{noe}{NOE}{Nap Of the Earth}
+\newacronym{rpg}{RPG}{Rocket Propelled Grenade}
+
+
+\newcommand{\titlepar}[2]{#1\vskip2mm#2}
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} % One single link
+
+% Start of document ----------------------------------------------------------------
+\begin{document}
+
+\hbadness=10000
+\hfuzz20pt
+
+
+\renewcommand\appendixpagename{Annexes}
+\renewcommand\appendixtocname{Annexes}
+\renewcommand\lstlistingname{Exemple}
+\renewcommand\lstlistlistingname{Liste des exemples}
+\renewcommand\listfigurename{Liste des images}
+\renewcommand\listtablename{Liste des tableaux}
+\renewcommand\contentsname{Table des matières}
+\renewcommand\figurename{Img.}
+\renewcommand\appendixname{Annexe}
+
+\newcommand*{\Appendixautorefname}{Annexe}
+
+\addto\captionsfrenchb{%
+  \renewcommand\listfigurename{Liste des images}}
+
+%bdabda\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
+
+\sloppy
+
+\thispagestyle{empty}
+
+\begin{center}
+    \null
+    \vfill
+    \includegraphics[width=0.5\textwidth]{Logo3rd.png}\\[4ex]
+    \includegraphics[width=0.1\textwidth]{319th.png}\\[1ex]
+    {\Large \rgt{}}\\[1ex]
+    {\Large \inmem{}}\\[2ex]
+    {\Large - }\\[2ex]
+    {\Huge \textbf{\textsc{Close Air Support}}}\\[2ex]
+    {\Large - }\\[2ex]
+    {\Large \textsc{Manuel du pilote}}\\[2ex]
+    \vskip2cm %{\Large - }\\[2ex]
+    {\large \version }\\[2ex]
+    \vskip5mm %{\Large - }\\[2ex]
+    {\large Publié le \today}\\[2ex]
+    \vfill
+\end{center}
+
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
+
+\include{intro/disclaimer}
+
+\include{intro/preface}
+
+\include{intro/pub_letter}
+
+\include{intro/changelog}
+
+\include{intro/conventions}
+
+\newpage
+
+\renewcommand{\cftdot}{.}
+
+\tableofcontents
+
+\newpage
+
+\pagestyle{default}
+
+\include{chapters/introduction}
+
+\include{chapters/casflow}
+
+\include{chapters/controltypes}
+
+\include{chapters/comms}
+
+\include{chapters/rwtactics}
+
+\include{chapters/planning}
+
+\include{chapters/execution}
+
+\newpage
+
+\phantomsection
+%\addcontentsline{toc}{chapter}{\listfigurename}
+\addtocontents{lof}{\protect\addcontentsline{toc}{chapter}{Liste des images}}
+\listoffigures
+
+\newpage
+
+\phantomsection
+%\addcontentsline{toc}{chapter}{\listtablename}
+\addtocontents{lot}{\protect\addcontentsline{toc}{chapter}{Liste des tables}}
+\listoftables
+
+\newpage
+
+\phantomsection
+%\addcontentsline{toc}{chapter}{\lstlistlistingname}
+\addtocontents{lol}{\protect\addcontentsline{toc}{chapter}{Liste des exemples}}
+\lstlistoflistings{}
+
+\newpage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Glossaire}
+%\addtocontents{gls}{\protect\addcontentsline{toc}{chapter}{Glossaire}}
+\printglossary[title=Glossaire, toctitle=Glossaire, type=main]
+
+\newpage
+\printglossary[title=Acronymes, toctitle=Acronymes, type=\acronymtype]
+
+\begin{appendices}
+
+    \include{annexes/annexA}
+
+\end{appendices}
+
+
+\end{document} 

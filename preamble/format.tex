@@ -1,0 +1,55 @@
+% Chapter title formatting ----------------------------------------------
+\titleformat
+{\chapter} % command
+[block] % shape
+{\bfseries\Huge} % format
+{\thechapter.} % label
+{1em} % sep
+{
+%    \rule{\textwidth}{1pt}
+    \vspace{1ex}
+%    \centering
+} % before-code
+[
+\vspace{-0.5ex}%
+%\rule{\textwidth}{0.3pt}
+] % after-code
+
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+% Section title formatting ----------------------------------------------
+\titleformat{\section}[block]
+{\Large\bfseries}
+{\thesection.}{0.5em}{}
+
+% Subsection title formatting -------------------------------------------
+\titleformat{\subsection}[block]
+{\large\bfseries}
+{\thesubsection.}{0.5em}{}
+
+% Subsection title formatting -------------------------------------------
+\titleformat{\subsubsection}[block]
+{\large\bfseries}
+{\thesubsubsection.}{0.5em}{}
+
+% Define dots in TOC ----------------------------------------------------------
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+
+% Set space between paragraphs -----------------------------------------------------
+\setlength{\parskip}{1em}
+
+% Depth of section numbering ----------------------
+\setcounter{secnumdepth}{4}
+
+% Format of tables -----------------------------------------------------------------
+\setlength\cftbeforechapskip{20pt}
+\renewcommand\cftfigafterpnum{\vskip5pt\par}
+\renewcommand\cfttabafterpnum{\vskip5pt\par}
+\setlength{\cftfignumwidth}{4em}  % Modify number width in LoF
+\setlength{\cfttabnumwidth}{4em}
+\setlength{\cftchapnumwidth}{2em}
+\setlength{\cftsecnumwidth}{3em}
+\setlength{\cftsubsecnumwidth}{4em}
