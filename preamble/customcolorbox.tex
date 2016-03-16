@@ -1,39 +1,57 @@
-% tikz --------------------------------------------------------------------------
-\usepackage{tikz}
-\usepackage{varwidth}
-\usetikzlibrary{calc}
-\newcommand{\customcolorbox}[4][\textwidth-\pgfkeysvalueof{/pgf/inner xsep}-2mm]{%
-\begin{figure}[!h]
-    \centering
-    \begin{tikzpicture}
-        \node[line width=.5mm, rounded corners, draw=#2, inner ysep=10pt, text width=#1, outer sep=0] (one) {\vspace*{15pt}\\\begin{varwidth}{\textwidth}#4\end{varwidth}};
-        \node[text=white,anchor=north east,align=center, minimum height=20pt] (two) at (one.north east) {\textbf{#3} \hspace*{0.5mm}};
-        \path[fill=#2]
-            (one.north west|-two.west) --
-            ($(two.west)+(-1.5cm,0)$)
-            to[out=0,in=180] (two.south west) --
-            (two.south east) [rounded corners] --
-            (one.north east) --
-            (one.north west) [sharp corners] -- cycle;
-        \node[text=white,anchor=north east,align=center, minimum height=20pt, text height=2ex] (three) at (one.north east) {\textbf{#3} \hspace*{.5mm}};
-    \end{tikzpicture}
-\end{figure}
+%% tikz --------------------------------------------------------------------------
+%\usepackage{tikz}
+%\usepackage{varwidth}
+%\usetikzlibrary{calc}
+%\newcommand{\customcolorbox}[4][\textwidth-\pgfkeysvalueof{/pgf/inner xsep}-2mm]{%
+%\begin{figure}[!h]
+%    \centering
+%    \begin{tikzpicture}
+%        \node[line width=.5mm, rounded corners, draw=#2, inner ysep=10pt, text width=#1, outer sep=0] (one) {\vspace*{15pt}\\\begin{varwidth}{\textwidth}#4\end{varwidth}};
+%        \node[text=white,anchor=north east,align=center, minimum height=20pt] (two) at (one.north east) {\textbf{#3} \hspace*{0.5mm}};
+%        \path[fill=#2]
+%            (one.north west|-two.west) --
+%            ($(two.west)+(-1.5cm,0)$)
+%            to[out=0,in=180] (two.south west) --
+%            (two.south east) [rounded corners] --
+%            (one.north east) --
+%            (one.north west) [sharp corners] -- cycle;
+%        \node[text=white,anchor=north east,align=center, minimum height=20pt, text height=2ex] (three) at (one.north east) {\textbf{#3} \hspace*{.5mm}};
+%    \end{tikzpicture}
+%\end{figure}
+%}
+\usepackage[many]{tcolorbox}
+
+\newcommand{\custombox}[2]{
+	\begin{tcolorbox}%
+	[%
+		box align=center,
+		colframe=gray!10!#1,%
+		boxrule=1pt,%
+		leftrule=3mm,%
+		colback=#1!20!white%
+	]%
+	#2%
+	\end{tcolorbox}%
 }
 
-\newcommand{\important}[1]{%
-\begin{tcolorbox}[box align=center, colframe=gray!10!red, boxrule=0pt, leftrule=3mm, colback=red!20!white]%
-#1%
-\end{tcolorbox}%
-}
+\newcommand{\important}[1]{\custombox{red}{#1}}
 
-\newcommand{\useful}[1]{%
-\begin{tcolorbox}[box align=center, colframe=gray!10!blue, boxrule=0pt, leftrule=3mm, colback=blue!20!white]%
-#1%
-\end{tcolorbox}%
-}
+\newcommand{\useful}[1]{\custombox{blue}{#1}}
 
-\newcommand{\remark}[1]{%
-\begin{tcolorbox}[box align=center, colframe=gray!10!gray, boxrule=0pt, leftrule=3mm, colback=gray!20!white]%
-#1%
-\end{tcolorbox}%
+\newcommand{\remark}[1]{\custombox{gray}{#1}}
+
+\newcommand{\note}[1]{%
+	\begin{tcolorbox}%
+	[%
+		box align=center,
+		colback=gray!5!white,%
+		colframe=gray!75!black,%
+		fonttitle=\bfseries,%
+		colbacktitle=gray!85!black,%
+		enhanced,%
+		attach boxed title to top center={yshift=-2mm},%
+		title=Note%
+	]%
+	#1%
+	\end{tcolorbox}%
 }

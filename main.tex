@@ -63,8 +63,6 @@ oneside,
 ]{microtype}
 \microtypecontext{spacing=nonfrench}
 \usepackage{cleveref}
-%\usepackage{url}
-%\usepackage{glossaries}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
@@ -73,11 +71,12 @@ oneside,
 % Sets doc-wide fonts -----------------------------------------------------------------------
 \renewcommand*\familydefault{\ttdefault}
 % Setup caption for listings ----------------------------------------------------------------
-\captionsetup[lstlisting]{font={small,tt}}
+%\captionsetup[lstlisting]{font={small,tt}}
+\captionsetup{font={scriptsize, tt}, labelfont={sc, it},textfont={it, sc}}
 % Fuzz --------------------------------------------------------------------
 \hfuzz20pt % Don't bother to report over-full boxes if over-edge is < 2pt
 % includes ----------------------------------------------------------------------------------
-\include{preamble/notebox}
+%\include{preamble/notebox}
 \include{preamble/customcolorbox}
 \include{preamble/format}
 \include{preamble/constants}
@@ -86,11 +85,11 @@ oneside,
 \include{preamble/customcolors}
 \include{preamble/listingformat}
 
-\usepackage[acronym, toc]{glossaries}
+\usepackage[acronym,toc]{glossaries}
 \makeglossaries
 
 \newglossaryentry{bdag}{name={BDA}, description={Évaluation des dégâts causés à la cible suite à un engagement}}
-\newglossaryentry{bda}{type=\acronymtype, name={BDA}, description={Battle Damage Assessment}, first={Battle Damage Assessment (BDA)\glsadd{bdag}}, see=[Glossary:]{bdag}}
+\newglossaryentry{bda}{type=\acronymtype, name={BDA}, description={Battle Damage Assessment}, first={Battle Damage Assessment (BDA)\glsadd{bdag}}, see=[Glossaire:]{bdag}}
 
 %\newacronym{bda}{BDA}{Battle Damage Assessment}
 \newacronym{misrep}{MISREP}{Mission Report}
@@ -112,9 +111,15 @@ oneside,
 \newacronym{noe}{NOE}{Nap Of the Earth}
 \newacronym{rpg}{RPG}{Rocket Propelled Grenade}
 
-
 \newcommand{\titlepar}[2]{#1\vskip2mm#2}
-\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} % One single link
+
+\crefname{annex}{Annexe}{Annexes}
+%\crefalias{annex}{Annexe}{Annexes}
+
+\newcommand{\fullref}[1]{%
+\cref{#1}: %
+\nameref{#1}%
+}
 
 % Start of document ----------------------------------------------------------------
 \begin{document}
@@ -133,14 +138,13 @@ oneside,
 \renewcommand\figurename{Img.}
 \renewcommand\appendixname{Annexe}
 
-\newcommand*{\Appendixautorefname}{Annexe}
-
 \addto\captionsfrenchb{%
   \renewcommand\listfigurename{Liste des images}}
 
 %bdabda\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
 
 \sloppy
+
 
 \thispagestyle{empty}
 
@@ -229,7 +233,7 @@ oneside,
 \printglossary[title=Acronymes, toctitle=Acronymes, type=\acronymtype]
 
 \begin{appendices}
-
+	
     \include{annexes/annexA}
 
 \end{appendices}
