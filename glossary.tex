@@ -1,43 +1,91 @@
-\newglossaryentry{bdag}{%
-	name={BDA},%
-	description={%
-		Évaluation des dégâts causés à la cible suite à un engagement%
+\newcommand{\newgls}[4]{% 1: abbrev 2: full name 3: ref 4: desc
+	\newglossaryentry{#3g}{%
+		name={#1},%
+		description={#4}%
 	}%
-}
-\newglossaryentry{bda}{%
-	type=\acronymtype,%
-	name={BDA},%
-	description={Battle Damage Assessment},%
-	first={Battle Damage Assessment (BDA)\glsadd{bdag}},%
-	see=[Glossaire:]{bdag}%
+	\newglossaryentry{#3}{%
+		type=\acronymtype,%
+		name={#1},%
+		description={#2},%
+		first={#2 (#1)\glsadd{#3g}},%
+		see=[Explication:]{#3g}%
+	}%
 }
 
-\newglossaryentry{facag}{%
-	name={FAC(A)},%
-	description={%
-		Un pilote spécialement qualifié qui contrôle, depuis les airs, d'autres appareils engagés en opération de CAS%
-	}%
-}
-\newglossaryentry{faca}{%
-	type=\acronymtype,%
-	name={FAC(A)},%
-	description={Forward Air Controller (Airborne)},%
-	first={Forward Air Controller (Airborne) (FAC(A))\glsadd{facag}},%
-	see=[Glossaire:]{facag}%
+\newgls{AOD}{Air Operation Directive}{aod}{%
+Directive émise par le JFACC concernant la conduite des opération aériennes%
 }
 
-\newglossaryentry{jtacg}{%
-	name={J-TAC},%
-	description={%
-		Un membre du personnel qualifié qui contrôle, depuis une position au sol avancée, les appareils engagés en opération de CAS ou d'autres types d'opération offensive.%
-	}%
+\newgls{AI}{Air Interdiction}{ai}{%
+Aussi appelé DAS, pour ``Deep Air Support''. L'interdiction aérienne consiste à frapper des cibles au sol ennemies qui ne sont pas à proximité de troupes alliées. L'AI diffère du bombardement de par son but, qui reste le soutien des troupes au sol alliées%
 }
-\newglossaryentry{jtac}{%
-	type=\acronymtype,%
-	name={J-TAC},%
-	description={Joint Terminal Attack Controller},%
-	first={Forward Air Controller (Airborne) (FAC(A))\glsadd{jtacg}},%
-	see=[Glossaire:]{jtacg}%
+
+\newgls{ROE}{Rule of Engagement}{roe}{%
+Décrit les circonstances, les conditions, la manière et la proportion dans lesquelles l'usage de la force est autorisé%
+}
+
+\newgls{TGO}{Terminal Guidance Operation}{tgo}{%
+Action de fournir aux appareils ou aux armes des informations supplémentaires relatives à la cible par la voix, l'électronique, les communications visuelles ou des moyens mécaniques%
+}
+
+\newgls{TAC}{Terminal Attack Control}{tac}{%
+Autorité qui contrôle la manœuvre %
+}
+
+\newgls{BDA}{Battle Damage Assessment}{bda}{%
+Évaluation des dégâts infligés à la cible, ou aux cibles, suite à un engagement%
+}
+
+\newgls{FAC(A)}{Forward Air Controller}{faca}{%
+Un pilote spécialement qualifié qui contrôle, depuis les airs, d'autres appareils engagés en opération de CAS%
+}
+
+\newgls{J-TAC}{Joint Terminal Attack Controller}{jtac}{%
+Un membre du personnel qualifié qui contrôle, depuis une position au sol avancée, les appareils engagés en opération de CAS ou d'autres types d'opération offensive%
+}
+
+\newgls{GCAS}{Ground alert Close Air Support}{gcas}%
+{CAS à la demande, avec les appareils en attente sur le parking}%
+
+\newgls{XCAS}{Air alert Close Air Support}{xcas}%
+{CAS à la demande, avec les appareils en attente en vol}
+
+\newgls{GC}{Ground Commander}{gc}{Commandant des troupes au sol}%
+
+\newgls{JFC}{Joint Force Commander}{jfc}{Commandant de la coalition alliée}%
+
+\newgls{JFACC}{Joint Force Air Component Commander}{jfacc}{Commandant de la composante aérienne de la coalition alliée}%
+
+\newgls{AOB}{Air Order of battle}{aob}{%
+Escadrons, types d'appareils et base d'attache des appareils de la coalition alliée%
+}
+
+\newgls{ATO}{Air Tasking Order}{ato}{%
+Document reprenant toutes les sorties aériennes prévues dans les 24 prochaines heures%
+}
+
+\newgls{ACO}{Airspace Control Order}{aco}{%
+Document reprenant toutes les mesures de contrôle et de coordination de l'espace aérien en vigueur%
+}
+
+\newgls{SPINS}{Special Instructions}{spins}{%
+Document reprenant toutes les procédures spécifiques à une opération, un escadron, une sortie, etc%
+}
+
+\newgls{OPORD}{Operations Order}{opord}{%
+Plan visant à assister les unités subordonnées lors de l'exécution de leur tâche. Ce plan contient la situation à laquelle les unités doivent faire face, la mission de l'unité, ainsi que ce que l'on attend de l'unité. Cfr \url{https://en.wikipedia.org/wiki/Operations_order} pour un exemple d'OPORD%
+}
+
+\newgls{SOP}{Standard Operating Procedure}{sop}{%
+Ensemble d'instructions visant à uniformiser les procédures en vigueur%
+}
+
+\newgls{CONOPS}{Concept of Operation}{conops}{%
+Document qui décrit de manière claire et concise les objectifs du JFC et ses intentions quant à la façon de les accomplir%
+}
+
+\newgls{COMPLAN}{Communications Plan}{complan}{%
+Plan de communications (réseaux, canaux, fréquence, procédures)%
 }
 
 \newacronym{misrep}{MISREP}{Mission Report}
@@ -56,3 +104,4 @@
 \newacronym{tacon}{TACON}{TActical CONtrol}
 \newacronym{noe}{NOE}{Nap Of the Earth}
 \newacronym{rpg}{RPG}{Rocket Propelled Grenade}
+\newacronym{ttp}{TTP}{Tactics, Techniques, and Procedures}
