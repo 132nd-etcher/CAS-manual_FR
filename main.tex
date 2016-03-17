@@ -91,6 +91,7 @@ oneside,
 \input{preamble/listingformat}
 
 \usepackage[acronym,toc]{glossaries}
+% command: makeglossaries %
 \makeglossaries
 
 \input{glossary}
@@ -148,6 +149,8 @@ oneside,
 \renewcommand{\cftdot}{.}
 
 \tableofcontents
+
+\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
 
 \newpage
 
