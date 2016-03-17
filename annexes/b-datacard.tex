@@ -1,31 +1,61 @@
 \chapter{Carte de mission}\label[annex]{ann2}
 
-\renewcommand{\arraystretch}{5}
 
-\begin{table}[]
-\centering
-\caption{Carte de mission}
-\label{mission-datacard}
-%\begin{tabular}{|l|l|l|l{0.4\linewidth}|}
-%\begin{tabular}{|b|b|b|b|}
+%\renewcommand{\arraystretch}{6}
+%\begin{table}[!htb]%
+%\centering%\tiny%
+%\begin{tabular}{ | p {0.2\textwidth} | p {0.2\textwidth} | p {0.2\textwidth} | p {0.2\textwidth} | }%
+%\hline%
+%\multicolumn{2}{ | p {0.4\textwidth} | }{\textbf{Mission}} & \multicolumn{2}{ p {0.4\textwidth} | }{\textbf{Date}} \\ \hline
+%Call-sign  & T/O time & Freq pri. & Freq sec. \\ \hline
+%                  &                  &                  &                  \\
+%                  &                  &                  &                  \\
+%                  &                  &                  &                  \\
+%                  &                  &                  &                  \\
+%                  &                  &                  &                  \\
+%                  &                  &                  &                  \\
+%                  &                  &                  &                  \\
+%                  &                  &                  &                  \\
+%                  &                  &                  &                  \\
+%                  &                  &                  &                  \\ \hline
+%\end{tabular}%
 
-\being{minipage}{\linewidth}
-\begin{tabular}{%
-    |>{\arraybackslash}m{0.4\textwidth}%
-    |>{\arraybackslash}m{0.4\textwidth}%
-    |>{\arraybackslash}m{0.4\textwidth}%
-    |>{\arraybackslash}m{0.4\textwidth}%
-|}
-\hline
-\multicolumn{2}{|l}}{{\Large \textbf{Mission}}} & \multicolumn{2}{|l|}{\Large Date} \\ \hline
-Callsign & T/O Time & Freq. pri. & Freq. sec. \\ \hline
-\multicolumn{4}{|l|}{ATIS/Météo} \\ \hline
-         &          &            &            \\ \hline
-         &          &            &            \\ \hline
-         &          &            &            \\ \hline
-         &          &            &            \\ \hline
-\end{tabular}
+
+%\noindent
+%\begin{tabularx}{\textwidth}{ | X | c | }
+%  \hline
+%  text & top\\
+%  \hline
+%  \noindent\parbox[c]{\hsize}{text} & center\\
+%  \hline
+%  \noindent\parbox[b]{\hsize}{text} & bottom\\
+%  \hline
+%\end{tabularx}
+
+\noindent
+    \begin{tabularx}{\textwidth}{lX}
+        \toprule
+        Mittel    & technische Details\\
+        \midrule
+        %first row of tabularx
+        Laptop      &
+            \begin{tabular}[t]{ll}
+            MacBook Pro & \\
+            Baujahr 2010 & \\ 
+            Prozessor & 2.4 GHz Intel Core 2 Duo \\
+            Speicher & 4 GB 1067 MHz DDR3 \\
+            Software & Mac OS X Lion 10.7.5 (11G63)
+            \end{tabular}\\[3em]
+        %second row of tabularx
+        Programmierumgebung          &
+            \begin{tabular}[t]{ll}
+            Version & 8.0.4.0 \\
+            Plattform & Mac OS x86 (32-bit, 64-bit Kernel)
+            \end{tabular}\\
+        \bottomrule
+    \end{tabularx}
+
+\caption{My caption}
+\label{my-label}
 \end{table}
-\end{minipage}
-
 \renewcommand{\arraystretch}{1}
