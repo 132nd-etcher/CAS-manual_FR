@@ -1,25 +1,36 @@
 \chapter{Carte de mission}\label[annex]{ann2}
 
 
-%\renewcommand{\arraystretch}{6}
+\renewcommand{\arraystretch}{5}
+\setlength{\extrarowheight}{-20pt}%
+%\makeatletter
+%\newcommand\cellwidth{\TX@col@width}
+%\makeatother
 %\begin{table}[!htb]%
-%\centering%\tiny%
-%\begin{tabular}{ | p {0.2\textwidth} | p {0.2\textwidth} | p {0.2\textwidth} | p {0.2\textwidth} | }%
-%\hline%
-%\multicolumn{2}{ | p {0.4\textwidth} | }{\textbf{Mission}} & \multicolumn{2}{ p {0.4\textwidth} | }{\textbf{Date}} \\ \hline
-%Call-sign  & T/O time & Freq pri. & Freq sec. \\ \hline
-%                  &                  &                  &                  \\
-%                  &                  &                  &                  \\
-%                  &                  &                  &                  \\
-%                  &                  &                  &                  \\
-%                  &                  &                  &                  \\
-%                  &                  &                  &                  \\
-%                  &                  &                  &                  \\
-%                  &                  &                  &                  \\
-%                  &                  &                  &                  \\
-%                  &                  &                  &                  \\ \hline
-%\end{tabular}%
-
+{\footnotesize
+\begin{tabularx}{\linewidth}{@{} *{8}X @{}}
+\multicolumn{4}{l}{Mission}                                                                                & \multicolumn{4}{l}{Date}                                                                                   \\ \midrule
+\multicolumn{8}{c}{Météo}                                                                                                                                                                                               \\ \midrule
+Vis                      & Plafond                   & Couverture               & Vent                     & QNH                      & Temp                     & Info                      &                          \\ \midrule
+\multicolumn{4}{c|}{COMMS}                                                                                 & \multicolumn{4}{c}{AIRBASE}                                                                                \\ \midrule
+\multicolumn{2}{l}{Pri}                              & \multicolumn{2}{l|}{Sec}                            & \multicolumn{2}{l}{Dep}                             & \multicolumn{2}{l}{Rec}                              \\ \midrule
+\multicolumn{1}{c|}{Nom} & \multicolumn{1}{c|}{Role} & \multicolumn{1}{c|}{Pri} & \multicolumn{1}{c|}{Sec} & \multicolumn{1}{c|}{Nom} & \multicolumn{1}{c|}{Sol} & \multicolumn{1}{c|}{Tour} & \multicolumn{1}{c|}{App} \\ \midrule
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     &                          \\ \midrule
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     &                          \\ \midrule
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     &                          \\ \midrule
+\multicolumn{2}{c|}{Timing}                          & \multicolumn{2}{c|}{Armement}                       & \multicolumn{2}{c|}{Fuel}                           &                           &                          \\ \cmidrule(r){1-6}
+Startup                  & \multicolumn{1}{l|}{}     & \multicolumn{2}{l|}{Ext}                            & \multicolumn{2}{l|}{Start}                          &                           &                          \\
+Takeoff                  & \multicolumn{1}{l|}{}     & \multicolumn{2}{l|}{Int}                            & \multicolumn{2}{l|}{Joker}                          &                           &                          \\ \cmidrule(r){1-4}
+                         & \multicolumn{1}{l|}{}     &                          & \multicolumn{1}{l|}{}    & \multicolumn{2}{l|}{Bingo}                          &                           &                          \\ \cmidrule(r){1-2} \cmidrule(lr){5-6}
+                         & \multicolumn{1}{l|}{}     &                          &                          &                          &                          &                           &                          \\ \cmidrule(r){1-2}
+                         & \multicolumn{1}{l|}{}     &                          &                          &                          &                          &                           &                          \\ \cmidrule(r){1-2}
+                         &                           &                          &                          &                          &                          &                           &                         
+\end{tabularx}
+}
+%\caption{My caption}
+%\label{my-label}
+%\end{table}
+%\renewcommand{\arraystretch}{1}
 
 %\noindent
 %\begin{tabularx}{\textwidth}{ | X | c | }
@@ -32,30 +43,169 @@
 %  \hline
 %\end{tabularx}
 
-\noindent
-    \begin{tabularx}{\textwidth}{lX}
-        \toprule
-        Mittel    & technische Details\\
-        \midrule
-        %first row of tabularx
-        Laptop      &
-            \begin{tabular}[t]{ll}
-            MacBook Pro & \\
-            Baujahr 2010 & \\ 
-            Prozessor & 2.4 GHz Intel Core 2 Duo \\
-            Speicher & 4 GB 1067 MHz DDR3 \\
-            Software & Mac OS X Lion 10.7.5 (11G63)
-            \end{tabular}\\[3em]
-        %second row of tabularx
-        Programmierumgebung          &
-            \begin{tabular}[t]{ll}
-            Version & 8.0.4.0 \\
-            Plattform & Mac OS x86 (32-bit, 64-bit Kernel)
-            \end{tabular}\\
-        \bottomrule
-    \end{tabularx}
+%\noindent
+%    \begin{tabularx}{\textwidth}{  l  }
+%    	\begin{tabular}{  b{0.5\linewidth}  b{0.5\linewidth}  }
+%        	\textbf{Mission} & Date\\    	
+%    	\end{tabular}\\
+%    	\midrule
+%    	ATIS/Météo\\
+%        \midrule
+%        \begin{tabular}{b{0.01\linewidth} b{0.99\linewidth}}
+%        	\rotatebox[origin=c]{90}{COMMS} &
+%        	{\begin{tabularx}{\linewidth}{ X }
+%	        	{\begin{tabularx}{\linewidth}{ *{2}{|X} }
+%	        		Freq. pri. & Freq. sec. \\
+%	        	\end{tabularx}}\\
+%	        	\midrule       	
+%	        	{\begin{tabularx}{\linewidth}{ *{4}{|X} }
+%	        		Callsign & Role & Freq pri & Freq sec\\[-4ex] \midrule
+%	        		\hfill & \hfill & \hfill & \hfill \\ \midrule
+%	        		\hfill & \hfill & \hfill & \hfill \\ \midrule
+%	        		\hfill & \hfill & \hfill & \hfill \\
+%	        	\end{tabularx}}\\
+%	        \end{tabularx}}\\
+%        \end{tabular}
+%        	\rotatebox[origin=c]{90}{COMMS} &
+%        	{\begin{tabularx}{0.4\linewidth}{ *{4}{|X} }
+%        		\hfill & Freq & Lat & Long\\ \midrule
+%        		\hfill & Freq & Lat & Long\\ \midrule
+%        		\hfill & Freq & Lat & Long\\
+%        	\end{tabularx}} &
+%	        \rotatebox[origin=c]{90}{AIRBASE} &
+%        	{\begin{tabularx}{0.4\linewidth}{ *{4}{|X} }
+%        		ICAO & Sol & Tour & App\\[-4ex] \midrule
+%        		\hfill & \hfill & \hfill & \hfill \\ \midrule
+%        		\hfill & \hfill & \hfill & \hfill \\ \midrule
+%        		\hfill & \hfill & \hfill & \hfill \\
+%        	\end{tabularx}}
+%        \end{tabular}\\
+%        \begin{tabular}{ ll }
+%        	\rotatebox[origin=c]{90}{COMMS} &
+%        	{\begin{tabularx}{0.95\linewidth}{ *{4}{|X} }
+%        		\hfill & Freq & Lat & Long\\ \midrule
+%        		\hfill & Freq & Lat & Long\\ \midrule
+%        		\hfill & Freq & Lat & Long\\
+%        	\end{tabularx}}
+%        \end{tabular}\\
+%        \midrule
+%        \begin{tabular}{ b{0.5\linewidth} b{0.5\linewidth} }
+%	        \begin{tabular}{ ll }
+%	        	\rotatebox[origin=c]{90}{AIRBASE} &
+%	        	{\begin{tabularx}{0.45\linewidth}{ *{4}{|X} }
+%	        		ICAO & Sol & Tour & App\\[-4ex] \midrule
+%	        		\hfill & \hfill & \hfill & \hfill \\ \midrule
+%	        		\hfill & \hfill & \hfill & \hfill \\ \midrule
+%	        		\hfill & \hfill & \hfill & \hfill \\
+%	        	\end{tabularx}}
+%	        \end{tabular}
+%	        &
+%	        \begin{tabular}{ | ll }
+%	        	\rotatebox[origin=c]{90}{FARP} &
+%	        	{\begin{tabularx}{0.45\linewidth}{ *{4}{|X} }
+%	        		Nom & Freq & Lat & Long\\[-4ex] \midrule
+%	        		\hfill & \hfill & \hfill & \hfill \\ \midrule
+%	        		\hfill & \hfill & \hfill & \hfill \\ \midrule
+%	        		\hfill & \hfill & \hfill & \hfill \\
+%	        	\end{tabularx}}
+%	        \end{tabular}\\
+%	    \end{tabular}\\
+%        \midrule
+%        Mittel    & technische Details\\
+%        \midrule
+%        %first row of tabularx
+%        Laptop      &
+%            \begin{tabular}[t]{ll}
+%            MacBook Pro & \\
+%            Baujahr 2010 & \\ 
+%            Prozessor & 2.4 GHz Intel Core 2 Duo \\
+%            Speicher & 4 GB 1067 MHz DDR3 \\
+%            Software & Mac OS X Lion 10.7.5 (11G63)
+%            \end{tabular}\\[3em]
+%        %second row of tabularx
+%        Programmierumgebung          &
+%            \begin{tabular}[b]{ll}
+%            Version & 8.0.4.0 \\
+%            Plattform & Mac OS x86 (32-bit, 64-bit Kernel)
+%            \end{tabular}\\
+%        \bottomrule
+%    \end{tabularx}
 
-\caption{My caption}
-\label{my-label}
-\end{table}
-\renewcommand{\arraystretch}{1}
+\newpage
+
+\begin{tabular}{@{}llllllll@{}}
+\multicolumn{4}{l}{Mission}                                                                                & \multicolumn{4}{l}{Date}                                                                                   \\ \midrule
+\multicolumn{8}{c}{Météo}                                                                                                                                                                                               \\ \midrule
+Vis                      & Plafond                   & Couverture               & Vent                     & QNH                      & Temp                     & Info                      &                          \\ \midrule
+\multicolumn{4}{c|}{COMMS}                                                                                 & \multicolumn{4}{c}{AIRBASE}                                                                                \\ \midrule
+\multicolumn{2}{l}{Pri}                              & \multicolumn{2}{l|}{Sec}                            & \multicolumn{2}{l}{Dep}                             & \multicolumn{2}{l}{Rec}                              \\ \midrule
+\multicolumn{1}{c|}{Nom} & \multicolumn{1}{c|}{Role} & \multicolumn{1}{c|}{Pri} & \multicolumn{1}{c|}{Sec} & \multicolumn{1}{c|}{Nom} & \multicolumn{1}{c|}{Sol} & \multicolumn{1}{c|}{Tour} & \multicolumn{1}{c|}{App} \\ \midrule
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     &                          \\ \midrule
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     &                          \\ \midrule
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     &                          \\ \midrule
+\multicolumn{1}{c|}{}    & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{2}{c|}{Fuel}                           & \multicolumn{2}{c}{Armement}                         \\ \midrule
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{2}{l|}{Joker}                          & \multicolumn{2}{l}{Ext}                              \\ \cmidrule(r){1-4}
+\multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}    & \multicolumn{1}{l|}{}    & \multicolumn{2}{l|}{Bingo}                          & \multicolumn{2}{l}{Int}                              \\ \midrule
+                         &                           &                          & \multicolumn{1}{l|}{}    & \multicolumn{4}{c|}{Timing}                                                                                \\ \cmidrule(l){5-8} 
+                         &                           &                          & \multicolumn{1}{l|}{}    & Startup                  &                          &                           &                          \\
+                         &                           &                          & \multicolumn{1}{l|}{}    & Takeoff                  &                          &                           &                          \\
+                         &                           &                          & \multicolumn{1}{l|}{}    &                          &                          &                           &                          \\
+                         &                           &                          & \multicolumn{1}{l|}{}    &                          &                          &                           &                          \\
+                         &                           &                          & \multicolumn{1}{l|}{}    &                          &                          &                           &                          \\
+                         &                           &                          & \multicolumn{1}{l|}{}    &                          &                          &                           &                          \\
+                         &                           &                          & \multicolumn{1}{l|}{}    &                          &                          &                           &                          \\
+                         &                           &                          & \multicolumn{1}{l|}{}    &                          &                          &                           &                          \\ \cmidrule(l){5-8} 
+\end{tabular}
+
+\newpage
+{\footnotesize
+\begin{tabularx}{\linewidth}{ @{} X @{} }
+
+	{\begin{tabularx}{\linewidth}{@{} X X @{}}
+		\textbf{Mission} & Date
+	\end{tabularx}}\\ \midrule
+	
+	\multicolumn{1}{c}{\textbf{Météo}}\\[-4ex] \midrule
+	{\begin{tabularx}{\linewidth}{@{} *{7}X @{}}
+		Visi & Plafond & Couv & Vent & QNH & Temp & ATIS
+	\end{tabularx}}\\ \midrule
+	
+	{\begin{tabularx}{\linewidth}{@{} X | X @{}}
+		{\begin{tabularx}{\linewidth}{@{} X X @{}}
+			\multicolumn{2}{c}{Fuel}\\[-4ex] \midrule
+			Joker & Bingo\\
+		\end{tabularx}} &
+		{\begin{tabularx}{\linewidth}{@{} X X @{}}
+			\multicolumn{2}{c}{Armement}\\[-4ex] \midrule
+			Interne & Externe\\
+		\end{tabularx}}
+	\end{tabularx}}\\ \midrule
+	\multicolumn{1}{c}{\textbf{Dep/Rec}}\\[-4ex] \midrule
+	{\begin{tabularx}{\linewidth}{@{} *{7}X @{}}
+		Airbase & Sol & Tour & App & Lat & Long & Remarque\\[-4ex] \midrule
+		\hfill & \hfill & \hfill & \hfill & \hfill & \hfill & \hfill\\ \midrule
+		\hfill & \hfill & \hfill & \hfill & \hfill & \hfill & \hfill\\ \midrule
+		\hfill & \hfill & \hfill & \hfill & \hfill & \hfill & \hfill\\ \midrule
+		\hfill & \hfill & \hfill & \hfill & \hfill & \hfill & \hfill\\
+	\end{tabularx}}\\ \midrule
+	\multicolumn{1}{c}{\textbf{Comms}}\\[-4ex] \midrule
+	{\begin{tabularx}{\linewidth}{@{} X | X @{}}
+		{\begin{tabularx}{\linewidth}{@{} *{3}X @{}}
+			Callsign & Role & Freq\\[-4ex] \midrule
+			\hfill & \hfill & \hfill\\ \midrule
+			\hfill & \hfill & \hfill\\ \midrule
+			\hfill & \hfill & \hfill\\ \midrule
+			\hfill & \hfill & \hfill\\
+		\end{tabularx}} &
+		{\begin{tabularx}{\linewidth}{@{} *{3}X @{}}
+			Callsign & Role & Freq\\[-4ex] \midrule	
+			\hfill & \hfill & \hfill\\ \midrule
+			\hfill & \hfill & \hfill\\ \midrule
+			\hfill & \hfill & \hfill\\ \midrule
+			\hfill & \hfill & \hfill\\	
+		\end{tabularx}}\\
+	\end{tabularx}}\\ \midrule
+	\multicolumn{1}{c}{\textbf{Points}}\\[-4ex] \midrule
+
+\end{tabularx}
+}
