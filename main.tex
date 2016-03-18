@@ -17,9 +17,24 @@ oneside,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage{tocbibind}
 
-\usepackage{natbib}
-\bibliographystyle{plainnat}
-\setcitestyle{super,open={(},close={)}}%
+%\usepackage{natbib}
+%\bibliographystyle{plainnat}
+%\setcitestyle{super,open={(},close={)}}%
+
+\usepackage[hyperref=true, backend=biber]{biblatex}
+%\bibliography{<database>}
+%\bibliography{main}
+\addbibresource{main.bib}
+\DeclareCiteCommand{\citetitle}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexfield{indextitle}}
+     {}%
+   \printtext[bibhyperref]{\printfield[citetitle]{labeltitle}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[frenchb]{babel}
@@ -235,7 +250,7 @@ oneside,
 \newpage
 \printglossary[title=Acronymes, toctitle=Acronymes, type=\acronymtype]
 
-\bibliography{main}
+\printbibliography
 
 \begin{appendices}
 	
