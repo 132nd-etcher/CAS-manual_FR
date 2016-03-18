@@ -13,6 +13,15 @@ oneside,
     linkcolor=red,
     bookmarks=true
 ]{hyperref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{tocbibind}
+
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\setcitestyle{super,open={(},close={)}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage[frenchb]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{courier}
@@ -23,6 +32,7 @@ oneside,
 \usepackage{pdfpages}
 \usepackage{nameref}
 \usepackage{setspace}
+\usepackage{import}
 \usepackage[pagestyles]{titlesec}
 \usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
@@ -65,6 +75,7 @@ oneside,
 \usepackage{cleveref}
 \usepackage{booktabs}
 \usepackage{tabularx}
+
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X|}
 %
 \usepackage{array} 
@@ -130,21 +141,31 @@ oneside,
 
 \sloppy
 
-\input{titlepage}
+%\input{titlepage}
+\import{./}{titlepage.tex}
 
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
 
-\include{intro/disclaimer}
+\pagenumbering{Roman}
 
-\include{intro/preface}
+%\include{intro/disclaimer}
+\import{./intro/}{disclaimer.tex}
 
-\include{intro/pub_letter}
+%\include{intro/preface}
+\import{./intro/}{preface.tex}
 
-\include{intro/changelog}
+%\include{intro/pub_letter}
+\import{./intro/}{pub_letter.tex}
 
-\include{intro/conventions}
+%\include{intro/changelog}
+\import{./intro/}{changelog.tex}
+
+%\include{intro/conventions}
+\import{./intro/}{conventions.tex}
 
 \newpage
+
+\pagenumbering{arabic}
 
 \renewcommand{\cftdot}{.}
 
@@ -156,23 +177,33 @@ oneside,
 
 \pagestyle{default}
 
-\include{chapters/1-introduction}
+%\include{chapters/1-introduction}
+\import{./chapters/}{1-introduction.tex}
 
-\include{chapters/2-commandandcontrol}
+%\include{chapters/2-commandandcontrol}
+\import{./chapters/}{2-commandandcontrol.tex}
 
-\include{chapters/3-planning}
+%\include{chapters/3-planning}
+\import{./chapters/}{3-planning.tex}
 
-\include{chapters/4-preparation}
+%\include{chapters/4-preparation}
+\import{./chapters/}{4-preparation.tex}
 
-\include{chapters/5-execution}
+%\include{chapters/5-execution}
+\import{./chapters/}{5-execution.tex}
 
-\include{chapters/controltypes}
+%\include{chapters/controltypes}
+\import{./chapters/}{controltypes.tex}
 
-\include{chapters/comms}
+%\include{chapters/comms}
+\import{./chapters/}{comms.tex}
 
-\include{chapters/rwtactics}
+%\include{chapters/rwtactics}
+\import{./chapters/}{rwtactics.tex}
 
 \newpage
+
+\pagenumbering{Roman}
 
 \phantomsection
 %\addcontentsline{toc}{chapter}{\listfigurename}
@@ -203,6 +234,8 @@ oneside,
 
 \newpage
 \printglossary[title=Acronymes, toctitle=Acronymes, type=\acronymtype]
+
+\bibliography{main}
 
 \begin{appendices}
 	
