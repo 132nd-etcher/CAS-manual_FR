@@ -22,16 +22,18 @@
 \usepackage[many]{tcolorbox}
 
 \newcommand{\customcoloredbox}[2]{
-	\begin{tcolorbox}%
-	[%
-		box align=center,
-		colframe=gray!10!#1,%
-		boxrule=1pt,%
-		leftrule=3mm,%
-		colback=#1!20!white%
-	]%
-	#2%
-	\end{tcolorbox}%
+	%\parbox[c]{\linewidth}{
+		\begin{tcolorbox}%
+		[%
+			box align=center,
+			colframe=gray!10!#1,%
+			boxrule=1pt,%
+			leftrule=3mm,%
+			colback=#1!20!white%
+		]%
+		#2%
+		\end{tcolorbox}%
+	%}
 }
 
 \newcommand{\important}[1]{\customcoloredbox{red}{#1}}

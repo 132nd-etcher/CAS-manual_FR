@@ -1,10 +1,43 @@
-% Define commands for enumeration ----- ----------------------------------------
-\newcommand{\e}{\begin{enumerate}[label*={\alph*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
-\newcommand{\ee}{\begin{enumerate}[label*={\arabic*}, topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=4em]}
-\newcommand{\eee}{\begin{enumerate}[label*=({\alph*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=5em]}
-\newcommand{\eeee}{\begin{enumerate}[label*=({\arabic*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=6em]}
-\newcommand{\re}{\begin{enumerate}[resume, label*={\alph*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
-\newcommand{\ree}{\begin{enumerate}[resume, label*={\arabic*}, topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=4em]}
-\newcommand{\reee}{\begin{enumerate}[resume, label*=({\alph*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=5em]}
-\newcommand{\reeee}{\begin{enumerate}[resume, label*=({\arabic*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=6em]}
-\newcommand{\ed}{\end{enumerate}}
+% Long enum
+\newlist{longenum}{enumerate}{8}
+\setlistdepth{8}
+\setlist[longenum,1]{label=\roman*)}
+\setlist[longenum,2]{label=\alph*)}
+\setlist[longenum,3]{label=\arabic*)}
+\setlist[longenum,4]{label=(\roman*)}
+\setlist[longenum,5]{label=(\alph*)}
+\setlist[longenum,6]{label=(\alph*)}
+\setlist[longenum,7]{label=(\alph*)}
+\setlist[longenum,8]{label=(\alph*)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define commands for enumeration
+\newcommand{\e}{\begin{longenum}[label*={\alph*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
+
+\newcommand{\ee}{\begin{longenum}[label*={\arabic*}, topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
+
+\newcommand{\eee}{\begin{longenum}[label*=({\alph*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
+
+\newcommand{\eeee}{\begin{longenum}[label=({\arabic*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
+
+\newcommand{\eeeee}{\begin{longenum}[label={\Roman*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em, before*=\small, font=\small]}
+
+\newcommand{\eeeeee}{\begin{longenum}[label*=({\roman*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em, before*=\small, font=\small]}
+
+\newcommand{\eeeeeee}{\begin{longenum}[label*=({\arabic*}), topsep=0em,itemsep=1em,partopsep=0em,parsep=0em, labelsep=1em, leftmargin=2em, before*=\footnotesize, font=\footnotesize]}
+
+
+% resume
+\newcommand{\re}{\begin{longenum}[resume, label*={\alph*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
+\newcommand{\ree}{\begin{longenum}[resume, label*={\arabic*}, topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=4em]}
+\newcommand{\reee}{\begin{longenum}[resume, label*=({\alph*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=5em]}
+\newcommand{\reeee}{\begin{longenum}[resume, label*=({\arabic*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=6em]}
+\newcommand{\reeeee}{\begin{longenum}[resume, label*={\Roman*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
+\newcommand{\reeeeee}{\begin{longenum}[resume, label*=({\roman*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
+
+% terminate
+\newcommand{\ed}{\end{longenum}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title item
+\newcommand{\itemt}[2]{\item #1\\[2ex]#2}

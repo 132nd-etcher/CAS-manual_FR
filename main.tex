@@ -11,7 +11,8 @@ oneside,
     urlcolor=blue,
     filecolor=blue,
     linkcolor=red,
-    bookmarks=true
+    bookmarks=true,
+    citecolor=red,
 ]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -21,7 +22,7 @@ oneside,
 %\bibliographystyle{plainnat}
 %\setcitestyle{super,open={(},close={)}}%
 
-\usepackage[hyperref=true, backend=biber]{biblatex}
+\usepackage[hyperref=true, backend=bibtex, style=numeric, sorting=ynt]{biblatex}
 %\bibliography{<database>}
 %\bibliography{main}
 \addbibresource{main.bib}
@@ -40,6 +41,7 @@ oneside,
 \usepackage[frenchb]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{courier}
+\usepackage{csquotes}
 \usepackage[titles]{tocloft}
 \usepackage{enumitem}
 \usepackage{datetime}
@@ -47,7 +49,7 @@ oneside,
 \usepackage{pdfpages}
 \usepackage{nameref}
 \usepackage{setspace}
-\usepackage{import}
+%\usepackage{import}
 \usepackage[pagestyles]{titlesec}
 \usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
@@ -156,27 +158,27 @@ oneside,
 
 \sloppy
 
-%\input{titlepage}
-\import{./}{titlepage.tex}
+\input{titlepage}
+%\import{./}{titlepage.tex}
 
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
 
 \pagenumbering{Roman}
 
-%\include{intro/disclaimer}
-\import{./intro/}{disclaimer.tex}
+\include{intro/1-disclaimer}
+%\import{./intro/}{disclaimer.tex}
 
-%\include{intro/preface}
-\import{./intro/}{preface.tex}
+\include{intro/2-preface}
+%\import{./intro/}{preface.tex}
 
-%\include{intro/pub_letter}
-\import{./intro/}{pub_letter.tex}
+\include{intro/3-pub_letter}
+%\import{./intro/}{pub_letter.tex}
 
-%\include{intro/changelog}
-\import{./intro/}{changelog.tex}
+\include{intro/4-changelog}
+%\import{./intro/}{changelog.tex}
 
-%\include{intro/conventions}
-\import{./intro/}{conventions.tex}
+\include{intro/5-conventions}
+%\import{./intro/}{conventions.tex}
 
 \newpage
 
@@ -192,29 +194,29 @@ oneside,
 
 \pagestyle{default}
 
-%\include{chapters/1-introduction}
-\import{./chapters/}{1-introduction.tex}
+\include{chapters/1-introduction}
+%\import{./chapters/}{1-introduction.tex}
 
-%\include{chapters/2-commandandcontrol}
-\import{./chapters/}{2-commandandcontrol.tex}
+\include{chapters/2-commandandcontrol}
+%\import{./chapters/}{2-commandandcontrol.tex}
 
-%\include{chapters/3-planning}
-\import{./chapters/}{3-planning.tex}
+\include{chapters/3-planning}
+%\import{./chapters/}{3-planning.tex}
 
-%\include{chapters/4-preparation}
-\import{./chapters/}{4-preparation.tex}
+\include{chapters/4-preparation}
+%\import{./chapters/}{4-preparation.tex}
 
-%\include{chapters/5-execution}
-\import{./chapters/}{5-execution.tex}
+\include{chapters/5-execution}
+%\import{./chapters/}{5-execution.tex}
 
-%\include{chapters/controltypes}
-\import{./chapters/}{controltypes.tex}
+\include{chapters/controltypes}
+%\import{./chapters/}{controltypes.tex}
 
-%\include{chapters/comms}
-\import{./chapters/}{comms.tex}
+\include{chapters/comms}
+%\import{./chapters/}{comms.tex}
 
-%\include{chapters/rwtactics}
-\import{./chapters/}{rwtactics.tex}
+\include{chapters/rwtactics}
+%\import{./chapters/}{rwtactics.tex}
 
 \newpage
 
@@ -240,9 +242,6 @@ oneside,
 \lstlistoflistings{}
 
 \newpage
-%\phantomsection
-%\addcontentsline{toc}{chapter}{Glossaire}
-%\addtocontents{gls}{\protect\addcontentsline{toc}{chapter}{Glossaire}}
 
 \glossarystyle{altlist}
 \printglossary[title=Glossaire, toctitle=Glossaire, type=main]
@@ -250,7 +249,11 @@ oneside,
 \newpage
 \printglossary[title=Acronymes, toctitle=Acronymes, type=\acronymtype]
 
-\printbibliography
+%\clearpage
+%\phantomsection
+%\addcontentsline{toc}{section}{Bibliographie}
+\nocite{*}
+\printbibliography[heading=bibintoc, title=Bibliographie]
 
 \begin{appendices}
 	
