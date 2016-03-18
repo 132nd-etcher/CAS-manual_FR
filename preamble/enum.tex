@@ -12,19 +12,70 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Define commands for enumeration
-\newcommand{\e}{\begin{longenum}[label*={\alph*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
+% Generic enum
+%\newcommand{\gene}[2]{
+%	\begin{longenum}[%
+%		label*=#1,%
+%		topsep=1em,%
+%		itemsep=1em,%
+%		partopsep=1em,%
+%		parsep=1em,%
+%		labelsep=1em,%
+%		leftmargin=#2
+%	]
+%}
+\newcommand{\gene}[2]{
+	\begin{longenum}[%
+		labelindent=0pt,%
+		label*=#1,%
+		itemindent=0em,%
+%		leftmargin=!,%
+		topsep=1em,%
+		itemsep=1em,%
+		partopsep=1em,%
+		parsep=1em,%
+		labelsep=1em,%
+		leftmargin=2em,
+	]
+}
 
-\newcommand{\ee}{\begin{longenum}[label*={\arabic*}, topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
+\newcommand{\genee}[2]{
+	\begin{longenum}[%
+		labelindent=0pt,%
+		label=#1,%
+		itemindent=0em,%
+%		leftmargin=!,%
+		topsep=1em,%
+		itemsep=1em,%
+		partopsep=1em,%
+		parsep=1em,%
+		labelsep=1em,%
+		leftmargin=2em,
+	]
+}
 
-\newcommand{\eee}{\begin{longenum}[label*=({\alph*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
+% Leveled enums
+\newcommand{\e}{\gene{{\alph*}.}{2em}}
+\newcommand{\ee}{\gene{{\arabic*}}{2em}}
+\newcommand{\eee}{\gene{({\alph*})}{2em}}
+\newcommand{\eeee}{\genee{({\arabic*})}{2em}}
+\newcommand{\eeeee}{\genee{{\Roman*}}{1em}}
+\newcommand{\eeeeee}{\genee{({\roman*})}{1em}}
+\newcommand{\eeeeeee}{\genee{({\arabic*})}{1em}}
 
-\newcommand{\eeee}{\begin{longenum}[label=({\arabic*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
+%\newcommand{\e}{\begin{longenum}[label*={\alph*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
 
-\newcommand{\eeeee}{\begin{longenum}[label={\Roman*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em, before*=\small, font=\small]}
-
-\newcommand{\eeeeee}{\begin{longenum}[label*=({\roman*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em, before*=\small, font=\small]}
-
-\newcommand{\eeeeeee}{\begin{longenum}[label*=({\arabic*}), topsep=0em,itemsep=1em,partopsep=0em,parsep=0em, labelsep=1em, leftmargin=2em, before*=\footnotesize, font=\footnotesize]}
+%\newcommand{\ee}{\begin{longenum}[label*={\arabic*}, topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=0em]}
+%
+%\newcommand{\eee}{\begin{longenum}[label*=({\alph*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=0em]}
+%
+%\newcommand{\eeee}{\begin{longenum}[label=({\arabic*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
+%
+%\newcommand{\eeeee}{\begin{longenum}[label={\Roman*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=0em, before*=\small, font=\small]}
+%
+%\newcommand{\eeeeee}{\begin{longenum}[label*=({\roman*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=0em, before*=\small, font=\small]}
+%
+%\newcommand{\eeeeeee}{\begin{longenum}[label*=({\arabic*}), topsep=0em,itemsep=1em,partopsep=0em,parsep=0em, labelsep=1em, leftmargin=0em, before*=\footnotesize, font=\footnotesize]}
 
 
 % resume
@@ -40,4 +91,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Title item
-\newcommand{\itemt}[2]{\item #1\\[2ex]#2}
+\newcommand{\itemt}[2]{
+%\parbox{\linewidth}{
+%\begin{minipage}{\linewidth}
+%\item #1\\[2ex]#2
+%\end{minipage}
+%}
+\parbox{\linewidth}{\item #1\\[1em]#2}
+}
