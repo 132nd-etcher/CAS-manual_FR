@@ -30,9 +30,9 @@
 		label*=#1,%
 		itemindent=0em,%
 %		leftmargin=!,%
-		topsep=1em,%
+		topsep=0em,%
 		itemsep=1em,%
-		partopsep=1em,%
+		partopsep=0em,%
 		parsep=1em,%
 		labelsep=1em,%
 		leftmargin=2em,
@@ -45,9 +45,40 @@
 		label=#1,%
 		itemindent=0em,%
 %		leftmargin=!,%
-		topsep=1em,%
+		topsep=0em,%
 		itemsep=1em,%
-		partopsep=1em,%
+		partopsep=0em,%
+		parsep=1em,%
+		labelsep=1em,%
+		leftmargin=2em,
+	]
+}
+\newcommand{\gener}[2]{
+	\begin{longenum}[%
+		resume,
+		labelindent=0pt,%
+		label*=#1,%
+		itemindent=0em,%
+%		leftmargin=!,%
+		topsep=0em,%
+		itemsep=1em,%
+		partopsep=0em,%
+		parsep=1em,%
+		labelsep=1em,%
+		leftmargin=2em,
+	]
+}
+
+\newcommand{\geneer}[2]{
+	\begin{longenum}[%
+		resume,
+		labelindent=0pt,%
+		label=#1,%
+		itemindent=0em,%
+%		leftmargin=!,%
+		topsep=0em,%
+		itemsep=1em,%
+		partopsep=0em,%
 		parsep=1em,%
 		labelsep=1em,%
 		leftmargin=2em,
@@ -79,12 +110,20 @@
 
 
 % resume
-\newcommand{\re}{\begin{longenum}[resume, label*={\alph*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
-\newcommand{\ree}{\begin{longenum}[resume, label*={\arabic*}, topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=4em]}
-\newcommand{\reee}{\begin{longenum}[resume, label*=({\alph*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=5em]}
-\newcommand{\reeee}{\begin{longenum}[resume, label*=({\arabic*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=6em]}
-\newcommand{\reeeee}{\begin{longenum}[resume, label*={\Roman*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
-\newcommand{\reeeeee}{\begin{longenum}[resume, label*=({\roman*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
+\newcommand{\re}{\gener{{\alph*}.}{2em}}
+\newcommand{\ree}{\gener{{\arabic*}}{2em}}
+\newcommand{\reee}{\gener{({\alph*})}{2em}}
+\newcommand{\reeee}{\geneer{({\arabic*})}{2em}}
+\newcommand{\reeeee}{\geneer{{\Roman*}}{1em}}
+\newcommand{\reeeeee}{\geneer{({\roman*})}{1em}}
+\newcommand{\reeeeeee}{\geneer{({\arabic*})}{1em}}
+
+%\newcommand{\re}{\begin{longenum}[resume, label*={\alph*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
+%\newcommand{\ree}{\begin{longenum}[resume, label*={\arabic*}, topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=4em]}
+%\newcommand{\reee}{\begin{longenum}[resume, label*=({\alph*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=5em]}
+%\newcommand{\reeee}{\begin{longenum}[resume, label*=({\arabic*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=6em]}
+%\newcommand{\reeeee}{\begin{longenum}[resume, label*={\Roman*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
+%\newcommand{\reeeeee}{\begin{longenum}[resume, label*=({\roman*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
 
 % terminate
 \newcommand{\ed}{\end{longenum}}

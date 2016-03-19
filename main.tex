@@ -117,6 +117,7 @@ oneside,
 \input{preamble/pagestyle}
 \input{preamble/customcolors}
 \input{preamble/listingformat}
+\input{preamble/figures}
 
 \usepackage[acronym,toc]{glossaries}
 % command: makeglossaries %
@@ -182,6 +183,9 @@ oneside,
 
 \include{intro/5-conventions}
 %\import{./intro/}{conventions.tex}
+
+\nocite{*}
+\printbibliography[heading=bibintoc, title=Bibliographie]
 
 \newpage
 
@@ -255,8 +259,6 @@ oneside,
 %\clearpage
 %\phantomsection
 %\addcontentsline{toc}{section}{Bibliographie}
-\nocite{*}
-\printbibliography[heading=bibintoc, title=Bibliographie]
 
 \begin{appendices}
 	
