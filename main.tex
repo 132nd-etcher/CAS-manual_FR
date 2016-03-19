@@ -138,6 +138,12 @@ oneside,
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
+\makeatletter
+%\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
+%\renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.6em}}
+\renewcommand{\l@subsubsection}{\@dottedtocline{3}{7em}{5em}}
+\makeatother
+
 % Start of document ----------------------------------------------------------------
 \begin{document}
 
@@ -224,6 +230,8 @@ oneside,
 
 \include{chapters/rwtactics}
 %\import{./chapters/}{rwtactics.tex}
+
+\include{chapters/f-remerciements}
 
 \newpage
 
