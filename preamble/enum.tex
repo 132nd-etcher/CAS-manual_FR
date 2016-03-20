@@ -94,20 +94,6 @@
 \newcommand{\eeeeee}{\genee{({\roman*})}{1em}}
 \newcommand{\eeeeeee}{\genee{({\arabic*})}{1em}}
 
-%\newcommand{\e}{\begin{longenum}[label*={\alph*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
-
-%\newcommand{\ee}{\begin{longenum}[label*={\arabic*}, topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=0em]}
-%
-%\newcommand{\eee}{\begin{longenum}[label*=({\alph*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=0em]}
-%
-%\newcommand{\eeee}{\begin{longenum}[label=({\arabic*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=2em]}
-%
-%\newcommand{\eeeee}{\begin{longenum}[label={\Roman*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=0em, before*=\small, font=\small]}
-%
-%\newcommand{\eeeeee}{\begin{longenum}[label*=({\roman*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=0em, before*=\small, font=\small]}
-%
-%\newcommand{\eeeeeee}{\begin{longenum}[label*=({\arabic*}), topsep=0em,itemsep=1em,partopsep=0em,parsep=0em, labelsep=1em, leftmargin=0em, before*=\footnotesize, font=\footnotesize]}
-
 
 % resume
 \newcommand{\re}{\gener{{\alph*}.}{2em}}
@@ -118,23 +104,53 @@
 \newcommand{\reeeeee}{\geneer{({\roman*})}{1em}}
 \newcommand{\reeeeeee}{\geneer{({\arabic*})}{1em}}
 
-%\newcommand{\re}{\begin{longenum}[resume, label*={\alph*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
-%\newcommand{\ree}{\begin{longenum}[resume, label*={\arabic*}, topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=4em]}
-%\newcommand{\reee}{\begin{longenum}[resume, label*=({\alph*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=5em]}
-%\newcommand{\reeee}{\begin{longenum}[resume, label*=({\arabic*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=6em]}
-%\newcommand{\reeeee}{\begin{longenum}[resume, label*={\Roman*}., topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
-%\newcommand{\reeeeee}{\begin{longenum}[resume, label*=({\roman*}), topsep=1em,itemsep=1em,partopsep=1em,parsep=1em, labelsep=1em, leftmargin=3em]}
-
 % terminate
 \newcommand{\ed}{\end{longenum}}
+
+% Environment
+\newenvironment{e1}{\gene  { {\alph*}.    } {2em} } {\end{longenum}}
+\newenvironment{e2}{\gene  { {\arabic*}   } {2em} } {\end{longenum}}
+\newenvironment{e3}{\gene  { ({\alph*})   } {2em} } {\end{longenum}}
+\newenvironment{e4}{\genee { ({\arabic*}) } {2em} } {\end{longenum}}
+\newenvironment{e5}{\genee { {\Roman*}    } {1em} } {\end{longenum}}
+\newenvironment{e6}{\genee { ({\roman*})  } {1em} } {\end{longenum}}
+\newenvironment{e7}{\genee { ({\arabic*}) } {1em} } {\end{longenum}}
+%\newenvironment{e8}{\eeeeeeee}{\ed}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Title item
 \newcommand{\itemt}[2]{
-%\parbox{\linewidth}{
-%\begin{minipage}{\linewidth}
-%\item #1\\[2ex]#2
-%\end{minipage}
-%}
 \parbox{\linewidth}{\item #1\\[1em]#2}
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Glossary enum
+\newlist{glossaryenum}{enumerate}{8}
+\setlistdepth{8}
+\setlist[glossaryenum,1]{label=\roman*)}
+\setlist[glossaryenum,2]{label=\alph*)}
+\setlist[glossaryenum,3]{label=\arabic*)}
+\setlist[glossaryenum,4]{label=(\roman*)}
+\setlist[glossaryenum,5]{label=(\alph*)}
+\setlist[glossaryenum,6]{label=(\alph*)}
+\setlist[glossaryenum,7]{label=(\alph*)}
+\setlist[glossaryenum,8]{label=(\alph*)}
+
+\newcommand{\glene}[2]{
+	\begin{glossaryenum}[%
+		labelindent=0pt,%
+		label*=#1,%
+		itemindent=0em,%
+%		leftmargin=!,%
+		topsep=0em,%
+		itemsep=0em,%
+		partopsep=0em,%
+		parsep=0em,%
+		labelsep=1em,%
+		leftmargin=2.2em,
+	]
+}
+
+\newcommand{\gle}{\glene{{\alph*}.}{2em}}
+
+\newcommand{\gled}{\end{glossaryenum}}
