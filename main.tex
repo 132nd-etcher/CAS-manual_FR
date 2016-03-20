@@ -14,17 +14,11 @@ oneside,
     bookmarks=true,
     citecolor=red,
 ]{hyperref}
+\usepackage[T1]{fontenc}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\usepackage{tocbibind}
-
-%\usepackage{natbib}
-%\bibliographystyle{plainnat}
-%\setcitestyle{super,open={(},close={)}}%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
 \usepackage[hyperref=true, backend=bibtex, style=numeric, sorting=ynt]{biblatex}
-%\bibliography{<database>}
-%\bibliography{main}
 \addbibresource{main.bib}
 \DeclareCiteCommand{\citetitle}
   {\boolfalse{citetracker}%
@@ -36,7 +30,7 @@ oneside,
    \printtext[bibhyperref]{\printfield[citetitle]{labeltitle}}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[frenchb]{babel}
 \usepackage[utf8]{inputenc}
@@ -51,7 +45,6 @@ oneside,
 \usepackage{setspace}
 \usepackage{import}
 \usepackage[pagestyles]{titlesec}
-\usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
 \usepackage[
     titletoc,
@@ -60,11 +53,7 @@ oneside,
 ]{appendix}
 \usepackage[
     font=footnotesize,
-    labelfont=
-    {
-        sf,
-        bf
-    },
+    labelfont={sf, bf},
     margin=1cm
 ]{caption}
 \usepackage{listings}
