@@ -24,104 +24,132 @@
 %		leftmargin=#2
 %	]
 %}
-\newcommand{\gene}[2]{
+
+\newcommand{\elabelindent}{0pt}
+\newcommand{\eitemindent}{0em}
+\newcommand{\etopsep}{0.5em}
+\newcommand{\epartopsep}{0.5em}
+\newcommand{\eparsep}{0.5em}
+\newcommand{\elabelsep}{1em}
+
+
+\newcommand{\gene}[3]{
 	\begin{longenum}[%
-		labelindent=0pt,%
+		labelindent=\elabelindent,%
 		label*=#1,%
-		itemindent=0em,%
+		itemindent=\eitemindent,%
 %		leftmargin=!,%
-		topsep=0em,%
+		topsep=\etopsep,%
 		itemsep=#2,%
-		partopsep=0em,%
-		parsep=1em,%
-		labelsep=1em,%
-		leftmargin=2em,
+		partopsep=\epartopsep,%
+		parsep=\eparsep,%
+		labelsep=\elabelsep,%
+		leftmargin=#3,
 	]
 }
 
-\newcommand{\genee}[2]{
+\newcommand{\genee}[3]{
 	\begin{longenum}[%
-		labelindent=0pt,%
+		labelindent=\elabelindent,%
 		label=#1,%
-		itemindent=0em,%
+		itemindent=\eitemindent,%
 %		leftmargin=!,%
-		topsep=0em,%
+		topsep=\etopsep,%
 		itemsep=#2,%
-		partopsep=0em,%
-		parsep=1em,%
-		labelsep=1em,%
-		leftmargin=2em,
+		partopsep=\epartopsep,%
+		parsep=\eparsep,%
+		labelsep=\elabelsep,%
+		leftmargin=#3,
 	]
 }
-\newcommand{\gener}[2]{
+\newcommand{\gener}[3]{
 	\begin{longenum}[%
 		resume,
-		labelindent=0pt,%
+		labelindent=\elabelindent,%
 		label*=#1,%
-		itemindent=0em,%
+		itemindent=\eitemindent,%
 %		leftmargin=!,%
-		topsep=0em,%
+		topsep=\etopsep,%
 		itemsep=#2,%
-		partopsep=0em,%
-		parsep=1em,%
-		labelsep=1em,%
-		leftmargin=2em,
+		partopsep=\epartopsep,%
+		parsep=\eparsep,%
+		labelsep=\elabelsep,%
+		leftmargin=#3,
 	]
 }
 
-\newcommand{\geneer}[2]{
+\newcommand{\geneer}[3]{
 	\begin{longenum}[%
 		resume,
-		labelindent=0pt,%
+		labelindent=\elabelindent,%
 		label=#1,%
-		itemindent=0em,%
+		itemindent=\eitemindent,%
 %		leftmargin=!,%
-		topsep=0em,%
+		topsep=\etopsep,%
 		itemsep=#2,%
-		partopsep=0em,%
-		parsep=1em,%
-		labelsep=1em,%
-		leftmargin=2em,
+		partopsep=\epartopsep,%
+		parsep=\eparsep,%
+		labelsep=\elabelsep,%
+		leftmargin=#3,
 	]
 }
+
+% left margin
+\newcommand{\llm}       {2em}
+\newcommand{\lllm}      {3em}
+\newcommand{\llllm}     {4.6em} %4.6
+\newcommand{\lllllm}    {2em}
+\newcommand{\llllllm}   {2em}
+\newcommand{\lllllllm}  {2em}
+\newcommand{\llllllllm} {2em}
+
+% itemsep
+\newcommand{\ilm}       {1em}
+\newcommand{\illm}      {1em}
+\newcommand{\illlm}     {1em}
+\newcommand{\illllm}    {1em}
+\newcommand{\illlllm}   {1em}
+\newcommand{\illllllm}  {1em}
+\newcommand{\illlllllm} {1em}
 
 % Leveled enums
-\newcommand{\e}{\gene{{\alph*}.}{1em}}
-\newcommand{\ee}{\gene{{\arabic*}}{1em}}
-\newcommand{\eee}{\gene{({\alph*})}{1em}}
-\newcommand{\eeee}{\genee{({\arabic*})}{1em}}
-\newcommand{\eeeee}{\genee{{\Roman*}}{1em}}
-\newcommand{\eeeeee}{\genee{({\roman*})}{1em}}
-\newcommand{\eeeeeee}{\genee{({\arabic*})}{1em}}
+\newcommand{\e}       { \gene  { {\alph*}.    } {\ilm}       {\llm}       }
+\newcommand{\ee}      { \gene  { {\arabic*}   } {\illm}      {\lllm}      }
+\newcommand{\eee}     { \gene  { ({\alph*})   } {\illlm}     {\llllm}     }
+\newcommand{\eeee}    { \genee { ({\arabic*}) } {\illllm}    {\lllllm}    }
+\newcommand{\eeeee}   { \genee { {\Roman*}    } {\illlllm}   {\llllllm}   }
+\newcommand{\eeeeee}  { \genee { ({\roman*})  } {\illllllm}  {\lllllllm}  }
+\newcommand{\eeeeeee} { \genee { ({\arabic*}) } {\illlllllm} {\llllllllm} }
 
 
 % resume
-\newcommand{\re}{\gener{{\alph*}.}{1em}}
-\newcommand{\ree}{\gener{{\arabic*}}{1em}}
-\newcommand{\reee}{\gener{({\alph*})}{1em}}
-\newcommand{\reeee}{\geneer{({\arabic*})}{1em}}
-\newcommand{\reeeee}{\geneer{{\Roman*}}{1em}}
-\newcommand{\reeeeee}{\geneer{({\roman*})}{1em}}
-\newcommand{\reeeeeee}{\geneer{({\arabic*})}{1em}}
+\newcommand{\re}       {\gener  { {\alph*}.    } {\ilm}       {\llm}       }
+\newcommand{\ree}      {\gener  { {\arabic*}   } {\illm}      {\lllm}      }
+\newcommand{\reee}     {\gener  { ({\alph*})   } {\illlm}     {\llllm}     }
+\newcommand{\reeee}    {\geneer { ({\arabic*}) } {\illllm}    {\lllllm}    }
+\newcommand{\reeeee}   {\geneer { {\Roman*}    } {\illlllm}   {\llllllm}   }
+\newcommand{\reeeeee}  {\geneer { ({\roman*})  } {\illllllm}  {\lllllllm}  }
+\newcommand{\reeeeeee} {\geneer { ({\arabic*}) } {\illlllllm} {\llllllllm} }
 
 % terminate
 \newcommand{\ed}{\end{longenum}}
 
 % Environment
-\newenvironment{e1}[1][2em]{\gene  { {\alph*}.    } {#1} } {\end{longenum}}
-\newenvironment{e2}[1][2em]{\gene  { {\arabic*}   } {#1} } {\end{longenum}}
-\newenvironment{e3}[1][2em]{\gene  { ({\alph*})   } {#1} } {\end{longenum}}
-\newenvironment{e4}[1][2em]{\genee { ({\arabic*}) } {#1} } {\end{longenum}}
-\newenvironment{e5}[1][1em]{\genee { {\Roman*}    } {#1} } {\end{longenum}}
-\newenvironment{e6}[1][1em]{\genee { ({\roman*})  } {#1} } {\end{longenum}}
-\newenvironment{e7}[1][1em]{\genee { ({\arabic*}) } {#1} } {\end{longenum}}
+\newenvironment{e1}[1][\ilm]       {\gene  { {\alph*}.    } {#1} {\llm}       } {\end{longenum}}
+\newenvironment{e2}[1][\illm]      {\gene  { {\arabic*}   } {#1} {\lllm}      } {\end{longenum}}
+\newenvironment{e3}[1][\illlm]     {\gene  { ({\alph*})   } {#1} {\llllm}     } {\end{longenum}}
+\newenvironment{e4}[1][\illllm]    {\genee { ({\arabic*}) } {#1} {\lllllm}    } {\end{longenum}}
+\newenvironment{e5}[1][\illlllm]   {\genee { {\Roman*}    } {#1} {\llllllm}   } {\end{longenum}}
+\newenvironment{e6}[1][\illllllm]  {\genee { ({\roman*})  } {#1} {\lllllllm}  } {\end{longenum}}
+\newenvironment{e7}[1][\illlllllm] {\genee { ({\arabic*}) } {#1} {\llllllllm} } {\end{longenum}}
 %\newenvironment{e8}{\eeeeeeee}{\ed}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Title item
 \newcommand{\itemt}[2]{
-\parbox{\linewidth}{\item #1\\[1em]#2}
+%\parbox{\linewidth}{\item #1\\[\eparsep]#2\vskip4mm}
+\item #1 - #2
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Glossary enum

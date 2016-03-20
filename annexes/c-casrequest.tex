@@ -1,0 +1,109 @@
+\chapter{Requêtes CAS Joint}\label[annex]{annc}
+
+\note{Le format a été adapté pour mieux convenir à l'utilisation qu'on en ferait dans DCS.}
+
+\efig{casrequest}{Requête CAS}
+
+\section{Requête de mission}
+
+\begin{e2}[0em]
+	\item Ligne 1 - Heading
+	\begin{e3}[0em]
+		\item Unité appelée - Destinataire de la requête
+		\item Unité appelante - Source de la requête
+		\item Numéro de la requête
+		\begin{e4}[0em]
+			\item CAS planifié - Numérotation séquentielle par l'unité appelante
+			\item CAS immédiat - Numérotation séquentielle par le centre ops
+		\end{e4}
+		\item Envoyé - Date et heure de l'envoi, personne qui a envoyé la requête
+	\end{e3}
+	\item Ligne 2 - Priorité
+	\begin{e3}[0em]
+		\item Priorité
+		\begin{e4}[0em]
+			\item \#1 - Urgente
+			\item \#2 - Priorité
+			\item \#3 - Routine
+		\end{e4}
+	\end{e3}
+	\itemt{Ligne 3 - Cible}{
+	Décrit la composition, la force approximative et les capacités de mouvement de la cible. Il est obligatoire de spécifier, même s'il s'agit d'une grossière estimation, la force de l'ennemi (par ex.: 10 chars) ou la taille de la zone cible (par ex: personnel sur le une ligne de 500 mètres).}
+	\item Ligne 4 - Position de la cible
+	\begin{e3}[0em]
+		\item Bloc A - Position de la cible ou point de départ
+		\item Bloc B - Quand indiqué, renseigne une ligne de A vers B
+		\item Bloc C - Quand indiqué, renseigne une route qui part de A et qui va vers C en passant par B
+		\item Bloc D - Renseigne une route A-B-C-D ou indique une zone dont les coins sont A, B, C et D
+		\item Bloc E - Élévation de la cible en \gls{ft} \gls{msl}
+	\end{e3}
+	\itemt{Ligne 5 - Heure / date}{Indique l'heure et la date auxquelles le \gls{cas} est requis}
+	\begin{e3}[0em]
+		\item Bloc A - \acrshort{asap}: le plus vite possible
+		\item Bloc B - \acrshort{nlt}: pas plus tard que ...
+		\item Bloc C - A: A ...
+		\item Bloc D - To: Jusque...
+	\end{e3}
+	\itemt{Ligne 6 - Armement/Effet désiré}{Indique l'effet souhaité par le demandeur. Cette information est essentielle pour le planificateur.}
+	\begin{e3}[0em]
+		\item Armement - type d'armement à employer
+		\item Détruire
+		\item Neutraliser
+		\item Harceler/Interdire
+	\end{e3}
+	\itemt{Ligne 7 - Contrôle final}{Identité du \gls{tac} (ex: \gls{jtac}, \gls{faca}) qui effectuera le briefing et contrôlera le tir}
+	\begin{e3}[0em]
+		\item JTAC - Type de contrôle terminal
+		\item Call-sign
+		\item Fréquence tu contrôleur
+		\item Point de contrôle - Point auquel le pilote doit contacter le contrôleur
+	\end{e3}
+	\itemt{Ligne 8 - Remarques}{Permet d'ajouter des informations qui ne sont reprises dans les points ci-dessus dans une ``Situation Update''.}
+	\begin{e3}[0em]
+		\item Numéro de l'update
+		\item Situation de la cible et de l'ennemi
+		\item Activités des menaces
+		\item Situation alliée
+		\item Positions des alliés
+		\item Activité de l'artillerie
+		\item Autorité pour le \gls{tac}
+		\item Armement souhaité
+		\item Restrictions / remarques
+		\item Effort \gls{sead} localisé
+		\item Dangers (météo, terrain)
+	\end{e3}
+\end{e2}
+
+\section{Coordination}
+
+\ree
+	\item Ligne 9 - \gls{nsfs} - Coordination avec les unités navales
+	\item Ligne 10 - Artillerie - Coordination avec l'artillerie
+	\item Ligne 11 - Espionnage - Coordination avec les unités de renseignement
+	\item Ligne 12 - Requête -  indique si la requête est approuvée
+	\item Ligne 13 - Par - indique l'autorité qui a approuvé ou désapprouvé la requête
+	\item Ligne 14 - Raison pour la désapprobation
+	\item Ligne 15 - Plan de restriction du feu ou de la navigation - Implémente une \gls{aca}
+	\item Ligne 16 - Effectif - Établit la période pendant laquelle l'\gls{aca} est d'application
+	\item Ligne 17 - Position - Position de l'\gls{aca}
+	\item Ligne 18 - Largeur - Largeur de l'\gls{aca}
+	\item Ligne 19 - Altitude - Altitude de l'\gls{aca} en \gls{ft} \gls{msl}
+\ed
+	
+\section{Données de la mission}	
+	
+\ree
+	\item Ligne 20 - Numéro de la mission
+	\item Ligne 21 - Call-sign
+	\item Ligne 22 - Nombre et type d'appareils
+	\item Ligne 23 - Armement embarqué
+	\item Ligne 24 - Heure estimée ou réelle de décollage
+	\item Ligne 25 - \gls{tot} estimé
+	\item Ligne 26 - Points de contrôle - point auquel le pilot devra contacter le \ja{}
+	\item Ligne 27 - Contact initial - renseigne l'unité à contacter au point de contrôle
+	\item Ligne 28 - Fréquence et call-sign du \ja{}
+	\item ligne 29 - \gls{aca} - voir lignes 15 à 19 ci-dessus
+	\item Ligne 30 - Description de la cible
+	\item Ligne 31 - Coordonnées et élévation de la cible
+	\item Ligne 32 - \gls{bda} et \gls{misrep}
+\ed
