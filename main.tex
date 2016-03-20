@@ -120,7 +120,7 @@ oneside,
 %\crefalias{annex}{Annexe}{Annexes}
 
 \newcommand{\fullref}[1]{%
-\cref{#1}: %
+Cfr. \cref{#1}: %
 \nameref{#1}%
 }
 
@@ -132,6 +132,14 @@ oneside,
 %\renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.6em}}
 \renewcommand{\l@subsubsection}{\@dottedtocline{3}{7em}{5em}}
 \makeatother
+
+\DeclareFieldFormat{url}{\newline\mkbibacro{URL}\addcolon\space\url{#1}}
+\renewbibmacro*{url+urldate}{%
+ \printfield[url]{url}%   
+ \iffieldundef{urlyear}     
+ {}     
+ {\setunit*{\addspace}%      
+ \printtext[urldate]{\printurldate}}}
 
 % Start of document ----------------------------------------------------------------
 \begin{document}
@@ -237,6 +245,7 @@ oneside,
 
 \newpage
 
+\glsaddall
 \glossarystyle{altlist}
 \printglossary[title=Glossaire, toctitle=Glossaire, type=main]
 
