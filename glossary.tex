@@ -12,6 +12,21 @@
 	}%
 }
 
+\newcommand{\glvs}{\vskip4mm} % vskip for glossary
+\newcommand{\glb}[1]{
+\begin{minipage}{\linewidth}
+#1
+\end{minipage}
+\glvs
+}\newcommand{\glbe}[1]{
+\begin{minipage}{\linewidth}
+\gle
+#1
+\gled
+\end{minipage}
+\glvs
+}
+
 \newgls{NFA}{Test}{nfa}{%
 Test
 }
@@ -33,6 +48,7 @@ Test
 }
 
 \newgls{KB}{Killbox}{kb}{%
+\glb{Une Killbox est une zone tridimensionnelle utilisée pour faciliter l'intégration de l'appui-feu dans l'espace aérien. Une Killbox est une \gls{fscm} associée à une \gls{acm}. Il s'agit d'une \gls{fscm} permissive, créée par le \gls{gc} approprié, qui peut éventuellement contenir d'autres mesures de contrôle restrictives (\gls{acm} ou \gls{fscm}) dans la zone couverte. Pour les procédures Killbox, voyez les \glspl{sop} de l'opération.}
 \parbox{\linewidth}{Une Killbox est une zone tridimensionnelle utilisée pour faciliter l'intégration de l'appui-feu dans l'espace aérien. Une Killbox est une \gls{fscm} associée à une \gls{acm}. Il s'agit d'une \gls{fscm} permissive, créée par le \gls{gc} approprié, qui peut éventuellement contenir d'autres mesures de contrôle restrictives (\gls{acm} ou \gls{fscm}) dans la zone couverte. Pour les procédures Killbox, voyez les \glspl{sop} de l'opération.}\glvs{}
 \parbox{\linewidth}{Lorsqu'elle est créée, la Killbox a pour objectif premier de permettre l'emploi d'armement létal contre des cibles au sol sans devoir passer par le \gls{gc} local et sans \gls{tac}.}\glvs{}
 \parbox{\linewidth}{L'établissement d'une Killbox n'implique pas automatiquement l'autorisation de tir. Tous les appareils qui effectuent une mission \gls{ai} dans une Killbox le feront selon les règles établies pour la \gls{pid} et les \glspl{cde} et en accord avec les \glspl{roe} d'application ainsi que les \gls{spins}}
@@ -112,29 +128,33 @@ Un bloc tridimensionnel d'espace aérien se trouvant dans une zone cible, défin
 }
 
 
+\newgls{AI}{Air Interdiction}{ai}{%
+	\glb{L'interdiction aérienne consiste à utiliser une unité aérienne pour attaquer des cibles ennemies tactiques au sol qui ne trouvent pas à proximité de forces au sol alliées.
+	}\glb{L'interdiction diffère du \gls{cas} en cela qu'elle ne soutient pas directement les opérations des forces au sol, et qu'elle n'est pas coordonnée aussi étroitement avec ces dernières.%
+	}\glb{A la différence du bombardement stratégique, l'interdiction n'est pas une campagne aérienne à part entière, de par son objectif ultime qui reste le soutien des forces au sol alliées, là où le bombardement stratégique vise à défaire l'ennemi par la puissance aérienne uniquement.%
+	}\glb{L'objectif de l'interdiction est de retarder, perturber ou détruire les forces ennemies ou la logistique en route vers la zone de combat avant qu'elles en deviennent un facteur pour les forces alliées. Même à ce degré, une distinction est faite entre l'interdiction stratégique et l'interdiction tactique; l'interdiction stratégique est prévue à grande échelle et sur le long terme, là où l'interdiction tactique agit de manière rapide et localisée.%
+	}
+}
+
+
 \newgls{DAS}{Deep Air Support}{das}{%
 Le DAS englobe le \gls{ai}, le \gls{ar} et le \gls{scar}, trois types de missions qui, à l'inverse du \gls{cas}, sont dirigées contre les unités ennemies au sol qui ne trouvent pas à proximité des forces au sol alliées
 }
 
-\newgls{AI}{Air Interdiction}{ai}{%
-\parbox{\linewidth}{L'interdiction aérienne consiste à utiliser une unité aérienne pour attaquer des cibles ennemies tactiques au sol qui ne trouvent pas à proximité de forces au sol alliées}\glvs{}
-\parbox{\linewidth}{L'interdiction diffère du \gls{cas} en cela qu'elle ne soutient pas directement les opérations des forces au sol, et qu'elle n'est pas coordonnée aussi étroitement avec ces dernières}\glvs{}
-\parbox{\linewidth}{A la différence du bombardement stratégique, l'interdiction n'est pas une campagne aérienne à part entière, de par son objectif ultime qui reste le soutien des forces au sol alliées, là où le bombardement stratégique vise à défaire l'ennemi par la puissance aérienne uniquement}\glvs{}
-\parbox{\linewidth}{L'objectif de l'interdiction est de retarder, perturber ou détruire les forces ennemies ou la logistique en route vers la zone de combat avant qu'elles en deviennent un facteur pour les forces alliées. Même à ce degré, une distinction est faite entre l'interdiction stratégique et l'interdiction tactique; l'interdiction stratégique est prévue à grande échelle et sur le long terme, là où l'interdiction tactique agit de manière rapide et localisée}\glvs{}
-}
-
 \newgls{SCAR}{Air Interdiction}{scar}{%
-\glvs{}
-\parbox{\linewidth}{Le SCAR est une mission dont l'objectif est l'acquisition et le rapportage de cible pour le \gls{das}. Les missions SCAR coordonnent et peuvent marquer les cibles pour les missions \gls{ai}, ou repérer précisément les cibles pour les missions \gls{ar}. Le SCAR ne doit pas être confondu avec le \gls{faca}}\glvs{}
-\parbox{\linewidth}{\gle
+\glb{
+Le SCAR est une mission dont l'objectif est l'acquisition et le rapportage de cible pour le \gls{das}. Les missions SCAR coordonnent et peuvent marquer les cibles pour les missions \gls{ai}, ou repérer précisément les cibles pour les missions \gls{ar}. Le SCAR ne doit pas être confondu avec le \gls{faca}.
+}
+%\parbox{\linewidth}{\gle
+\glbe{
 	\item Le SCAR ne nécessite pas une qualification \gls{faca} pour le \gls{tac} des missions \gls{das}
 	\item Le SCAR fournit des cibles, des positions, des descriptions, des informations quant à la météo ou la menace
 	\item Le SCAR peut fournir la marque mais pas l'autorisation de tir
 	\item Le SCAR confirme ou découvre des menaces air-sol
 	\item Le SCAR assiste à l'établissement de la \gls{bda}
 	\item Le SCAR diffère d'une mission de reconnaissance de par le fait qu'il découvre les cibles et coordonne leurs destruction, et qu'il sera typiquement armé et équipé de manière à améliorer la désignation des cibles
-\gled}\glvs{}
-\parbox{\linewidth}{Le SCAR est particulièrement utile dans un environnement riche en cibles. Un appareil en mission SCAR qui se trouve à court de munitions peut continuer sa mission}\glvs{}
+}%
+\glb{Le SCAR est particulièrement utile dans un environnement riche en cibles. Un appareil en mission SCAR qui se trouve à court de munitions peut continuer sa mission}
 }
 
 \newgls{AR}{Armed Reconnaissance}{ar}{%

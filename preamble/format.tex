@@ -72,7 +72,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Glossary
-\newcommand{\glvs}{\vskip4mm} % vskip for glossary
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % One page
 \newcommand{\addstretch}[1]{\addtolength{#1}{\fill}}
@@ -134,7 +134,7 @@
     \phantomsection%
     \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
     \sectionmark{#1}%
-    \markboth{\textsc{{\Huge #1}}}{}
+    \markboth{\textsc{{\Large #1}}}{}
 }
 
 % Invisible unnumbered section
@@ -143,14 +143,14 @@
     \phantomsection%
     \addcontentsline{toc}{section}{\protect\numberline{}#1}
     \sectionmark{#1}%
-    \markboth{\textsc{{\Huge #1}}}{}
+    \markboth{\textsc{{\Large #1}}}{}
 }
 \newcommand\invisiblechapter[1]{%
     \refstepcounter{chapter}%
     \phantomsection%
     \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}%
     \chaptermark{#1}%
-    \markboth{\textsc{{\Huge #1}}}{}
+    \markboth{\textsc{{\Large #1}}}{}
 }
 
 % Invisible unnumbered chapter
@@ -159,6 +159,6 @@
     \phantomsection%
     \addcontentsline{toc}{chapter}{\protect\numberline{}#1}
     \chaptermark{#1}%
-    \markboth{\textsc{{\Huge #1}}}{}
+    \markboth{\textsc{{\Large #1}}}{}
 }
 
