@@ -1,3 +1,17 @@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set space between paragraphs -----------------------------------------------------
+\newlength{\defaultparskip}% Save parskip
+\newlength{\defaultparindent}% Save parindent
+\setlength{\defaultparskip}{\parskip}% save the value
+\setlength{\defaultparindent}{\parindent}% save the value
+
+%\newcommand{\defaultparskip}{1em}
+%\newcommand{\defaultparindent}{3em}
+%\setlength{\parskip}{\defaultparskip}
+%\setlength{\parindent}{\defaultparindent}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapter title formatting ----------------------------------------------
 \titleformat
@@ -39,9 +53,7 @@
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Set space between paragraphs -----------------------------------------------------
-\setlength{\parskip}{1em}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Depth of section numbering ----------------------
@@ -73,7 +85,48 @@
    \addstretch{\belowdisplayshortskip}
    \setlength{\parskip}{0pt}}
   {\newpage}
-  
+
+
+
+\newlength{\currentparskip}% Save parskip
+\newlength{\currentparindent}% Save parindent
+\newenvironment{smini}%
+{%
+\setlength{\currentparskip}{\parskip}% save the value
+\setlength{\currentparindent}{\parindent}% save the value
+\noindent\begin{minipage}[c][\textheight][s]{\linewidth}%
+\baselineskip=1\baselineskip plus 1fill% stretch as much as needed
+\lineskip=0pt plus 1fill% just for safety
+\setlength{\parskip}{\currentparskip}%
+%\setlength{\parindent}{\currentparindent}%
+}% restore the value
+{\end{minipage}}%
+
+\newenvironment{mini}%
+{%
+\setlength{\currentparskip}{\parskip}% save the value
+\setlength{\currentparindent}{\parindent}% save the value
+\begin{minipage}[s][\textheight]{\linewidth}%
+\baselineskip=1\baselineskip plus 1fill% stretch as much as needed
+\lineskip=0pt plus 1fill% just for safety
+\setlength{\parskip}{\currentparskip}%
+%\setlength{\parindent}{\currentparindent}%
+}% restore the value
+{\end{minipage}}%
+
+\newenvironment{imini}%
+{%
+\setlength{\currentparskip}{\parskip}% save the value
+\setlength{\currentparindent}{\parindent}% save the value
+\noindent%
+\begin{minipage}[s][\textheight]{\linewidth}%
+\baselineskip=1\baselineskip plus 1fill% stretch as much as needed
+\lineskip=0pt plus 1fill% just for safety
+\setlength{\parskip}{\currentparskip}%
+\setlength{\parindent}{\currentparindent}%
+}% restore the value
+{\end{minipage}}%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Invisible section
 \newcommand\invisiblesection[1]{%
@@ -81,7 +134,7 @@
     \phantomsection%
     \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
     \sectionmark{#1}%
-    \markboth{\MakeUppercase{#1}}{}%
+    \markboth{\textsc{{\Huge #1}}}{}
 }
 
 % Invisible unnumbered section
@@ -90,6 +143,22 @@
     \phantomsection%
     \addcontentsline{toc}{section}{\protect\numberline{}#1}
     \sectionmark{#1}%
-    \markboth{\textsc{{\LARGE #1}}}{}
+    \markboth{\textsc{{\Huge #1}}}{}
+}
+\newcommand\invisiblechapter[1]{%
+    \refstepcounter{chapter}%
+    \phantomsection%
+    \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}%
+    \chaptermark{#1}%
+    \markboth{\textsc{{\Huge #1}}}{}
+}
+
+% Invisible unnumbered chapter
+\newcommand\invisibleunnumberedchapter[1]{%
+    %\addcontentsline{toc}{section}{\protect{\thesection}#1}%
+    \phantomsection%
+    \addcontentsline{toc}{chapter}{\protect\numberline{}#1}
+    \chaptermark{#1}%
+    \markboth{\textsc{{\Huge #1}}}{}
 }
 

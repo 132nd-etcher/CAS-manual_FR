@@ -1,5 +1,5 @@
 % Define default styles ------------------------------------------------------------
-\newcommand{\deflhead}{\minipage[b]{.7\linewidth}\leftmark\endminipage}
+\newcommand{\deflhead}{\minipage[b]{.9\linewidth}\small\leftmark{} \\ \rightmark{}\endminipage}
 \newcommand{\defrhead}{\includegraphics[width=1cm]{images/319th.png}}
 \newcommand{\deflfoot}{\footnotesize \footer}
 \newcommand{\defrfoot}{\thepage}
@@ -27,7 +27,18 @@
 
 \fancypagestyle{intro}{%
   \fancyhf{}% Clear header and footer
-  \fancyhead[L]{\minipage[b]{.7\linewidth}\leftmark \endminipage}
+  \fancyhead[L]{\minipage[b]{.9\linewidth}\Large\leftmark \endminipage}
+  %\fancyhead[L]{\rightmark{}}
+  \fancyhead[R]{\defrhead{}}
+  \fancyfoot[L]{\deflfoot{}}% Custom footer
+  \fancyfoot[R]{\defrfoot{}}% Custom footer
+  \renewcommand{\headrulewidth}{0.4pt}% Line at the header visible
+  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+
+\fancypagestyle{annexes}{%
+  \fancyhf{}% Clear header and footer
+  \fancyhead[L]{\minipage[b]{.9\linewidth}\large Annexe \thechapter{}. \leftmark \endminipage}
   %\fancyhead[L]{\rightmark{}}
   \fancyhead[R]{\defrhead{}}
   \fancyfoot[L]{\deflfoot{}}% Custom footer

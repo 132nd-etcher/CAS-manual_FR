@@ -1,0 +1,15 @@
+\renewcommand{\cftdot}{.}
+
+\microtypesetup{protrusion=false}
+
+\makeatletter
+\renewcommand\tableofcontents{%
+    \@starttoc{toc}%
+}
+\makeatother
+
+\invisibleunnumberedchapter{Table des matières}%
+
+\tableofcontents
+
+\microtypesetup{protrusion=true}

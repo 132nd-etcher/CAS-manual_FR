@@ -1,7 +1,7 @@
 \documentclass[
 12pt,
 a4paper,
-draft,
+final,
 titlepage,
 oneside,
 ]{report}
@@ -74,6 +74,7 @@ oneside,
 \usepackage{cleveref}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{pdfpages}
 
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X|}
 %
@@ -101,12 +102,23 @@ oneside,
 \input{preamble/listingformat}
 \input{preamble/figures}
 
+
+\usepackage[
+    colorlinks=true,
+    urlcolor=blue,
+    filecolor=blue,
+    linkcolor=red,
+    bookmarks=true,
+    citecolor=red,
+]{hyperref}
+\usepackage{bookmark}
 \usepackage[acronym,toc]{glossaries}
 % command: makeglossaries %
+%\renewcommand\glossarytitle{}
 \makeglossaries
 
 \input{glossary}
-
+\renewcommand{\glossarysection}[2][]{}
 \makeglossaries
 
 \newcommand{\titlepar}[2]{#1\vskip2mm#2}
@@ -142,22 +154,12 @@ Cfr. \cref{#1}: %
  \printtext[urldate]{\printurldate}}}
 
 
-\usepackage[
-    colorlinks=true,
-    urlcolor=blue,
-    filecolor=blue,
-    linkcolor=red,
-    bookmarks=true,
-    citecolor=red,
-]{hyperref}
-
-
 
 % Start of document ----------------------------------------------------------------
 \begin{document}
 
 \hbadness=10000
-\hfuzz20pt
+\hfuzz200pt
 
 
 \renewcommand\appendixpagename{Annexes}
@@ -180,111 +182,127 @@ Cfr. \cref{#1}: %
 \input{titlepage}
 %\import{./}{titlepage.tex}
 
-\addtocontents{toc}{~\hfill\textbf{Page}\par}
-
-\pagenumbering{Roman}
-
-\include{intro/1-disclaimer}
+\addtocontents{toc}{~\hfill\textbf{Page}\par}%
+%
+\pagenumbering{Roman}%
+%
+\fancyhf{}
+%\fancyfoot[L]{\deflfoot{}}% Custom footer
+%\fancyfoot[R]{\defrfoot{}}% Custom footer
+\renewcommand{\headrulewidth}{0pt}% Line at the header visible
+\renewcommand{\footrulewidth}{0pt}% Line at the header visible
+%
+\include{chapters/001disclaimer}%
 %\import{./intro/}{disclaimer.tex}
-
-\include{intro/2-preface}
-%\import{./intro/}{preface.tex}
-
-\include{intro/3-pub_letter}
+%
+\include{chapters/000publetter}%
 %\import{./intro/}{pub_letter.tex}
-
-\include{intro/4-changelog}
+%
+\pagestyle{intro}%
+%
+\include{chapters/f-remerciements}%
+%
+\include{chapters/002preface}%
+%\import{./intro/}{preface.tex}
+%
+\include{chapters/003changelog}%
 %\import{./intro/}{changelog.tex}
-
-\include{intro/5-conventions}
+%
+\include{chapters/004conventions}%
 %\import{./intro/}{conventions.tex}
-
-\nocite{*}
-\printbibliography[heading=bibintoc, title=Bibliographie]
-
-\newpage
-
-\pagenumbering{arabic}
-
-\renewcommand{\cftdot}{.}
-
-\microtypesetup{protrusion=false}
-
-\tableofcontents
-
-\microtypesetup{protrusion=true}
-
-\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
-
-\newpage
-
-\pagestyle{default}
-
-\include{chapters/100-introduction}
-
-\include{chapters/200-commandandcontrol}
-
-\include{chapters/300-planning}
-
-\include{chapters/400-preparation}
-
-\include{chapters/500-execution}
-
-%\include{chapters/comms}
-
-%\include{chapters/rwtactics}
-
-\include{chapters/f-remerciements}
-
-\newpage
-
-\pagenumbering{Roman}
-
-\microtypesetup{protrusion=false}
-
-\phantomsection
-%\addcontentsline{toc}{chapter}{\listfigurename}
-\addtocontents{lof}{\protect\addcontentsline{toc}{chapter}{Liste des images}}
-\listoffigures
-
-\newpage
-
-\phantomsection
-%\addcontentsline{toc}{chapter}{\listtablename}
-\addtocontents{lot}{\protect\addcontentsline{toc}{chapter}{Liste des tables}}
-\listoftables
-
-\newpage
-
-\phantomsection
-%\addcontentsline{toc}{chapter}{\lstlistlistingname}
-\addtocontents{lol}{\protect\addcontentsline{toc}{chapter}{Liste des exemples}}
-\lstlistoflistings{}
-
-\microtypesetup{protrusion=true}
-
-\newpage
-
-\glsaddall
-\glossarystyle{altlist}
-\printglossary[title=Glossaire, toctitle=Glossaire, type=main]
-
-\newpage
-\printglossary[title=Acronymes, toctitle=Acronymes, type=\acronymtype]
-
-%\clearpage
+%
+\include{chapters/005biblio}%
+%
+\pagenumbering{arabic}%
+%
+\include{chapters/006toc}%
+%
+\pagestyle{default}%
+%
+\include{chapters/100-introduction}%
+%
+\include{chapters/200-commandandcontrol}%
+%
+\include{chapters/300-planning}%
+%
+\include{chapters/400-preparation}%
+%
+\include{chapters/500-execution}%
+%
+\newpage%
+%
+\pagestyle{intro}%
+%
+%\pagenumbering{Roman}%
+%
+\microtypesetup{protrusion=false}%
+%
+\invisibleunnumberedchapter{Listes}%
+%
+\invisibleunnumberedsection{Liste des images}%
+\makeatletter%
+\@starttoc{lof}% Print List of Figures
+\makeatother%
+%
+\newpage%
+%
+\invisibleunnumberedsection{Liste des tableaux}%
+\makeatletter%
+\@starttoc{lot}% Print List of Figures
+\makeatother%
+%
 %\phantomsection
-%\addcontentsline{toc}{section}{Bibliographie}
-
-\begin{appendices}
-	
-    \include{annexes/a-planning}
-    
-    \include{annexes/b-datacard}
-    
-    \include{annexes/c-casrequest}
-
-\end{appendices}
-
-
-\end{document} 
+%%\addcontentsline{toc}{chapter}{\listtablename}
+%\addtocontents{lot}{\protect\addcontentsline{toc}{chapter}{Liste des tables}}
+%\listoftables
+%
+\newpage%
+%
+\invisibleunnumberedsection{Liste des exemples}%
+\makeatletter%
+\@starttoc{lol}% Print List of Figures
+\makeatother%
+%
+%
+%\phantomsection
+%%\addcontentsline{toc}{chapter}{\lstlistlistingname}
+%\addtocontents{lol}{\protect\addcontentsline{toc}{chapter}{Liste des exemples}}
+%\lstlistoflistings{}
+%
+\microtypesetup{protrusion=true}%
+%
+\newpage%
+%
+\invisibleunnumberedchapter{Glossaire}%
+%
+\glsaddall%
+\glossarystyle{altlist}%
+\invisibleunnumberedsection{Acronymes}%
+%\printglossary[title=Acronymes, toctitle=Acronymes, type=\acronymtype]
+\printglossary[type=\acronymtype]
+%\printnoidxglossary[type=\acronymtype]%
+%
+\newpage%
+%
+\invisibleunnumberedsection{Explication}%
+%\printnoidxglossary[type=main]%
+\printglossary[type=main]
+%\printglossary[title=Glossaire, toctitle=Glossaire, type=main]
+%
+\clearpage%
+%
+\pagestyle{annexes}%
+%
+\begin{appendices}%
+%	
+\include{annexes/a-planning}%
+%
+\include{annexes/b-datacard}%
+%
+\include{annexes/c-casrequest}%
+%
+\end{appendices}%
+%
+\pagestyle{empty}%
+%
+\end{document}%

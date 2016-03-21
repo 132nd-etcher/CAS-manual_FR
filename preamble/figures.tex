@@ -6,4 +6,11 @@
 	\end{figure}
 }
 
+\newcommand{\epdf}[3]{
+	\begin{figure}
+		\centering 
+		\includepdf[addtolist={1, figure , #2 , #1 }, pages=#3]{./images/#1.pdf}
+	\end{figure}
+}
+
 	

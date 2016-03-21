@@ -1,0 +1,19 @@
+\pagenumbering{arabic}
+
+\renewcommand{\cftdot}{.}
+
+\microtypesetup{protrusion=false}
+
+\makeatletter
+\renewcommand\tableofcontents{%
+    \@starttoc{toc}%
+}
+\makeatother
+
+\invisibleunnumberedsection{Table des matières}%
+
+\tableofcontents
+
+\microtypesetup{protrusion=true}
+
+\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
