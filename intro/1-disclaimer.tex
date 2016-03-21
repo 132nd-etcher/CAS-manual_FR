@@ -1,27 +1,45 @@
-\thispagestyle{default}
+\thispagestyle{intro}%
+%
+\tolerance100000%
+%
+\invisibleunnumberedsection{Disclaimer}%
 
-\tolerance100000
+% \null%
+% \vfill%
 
-\section*{Disclaimer}
-\phantomsection
-\addcontentsline{toc}{section}{\protect\numberline{}Disclaimer}
+% {\Huge%
 
-\vfill
+%     \begin{doublespacing}%
+%         \textsc{(FR) Ce document est uniquement destiné à des fins de simulation, et ne peut en aucun cas être utilisé pour un vol réel.}%
+%     \end{doublespacing}
+   
+% \vspace{4cm}
 
-{\Huge%
+%     \begin{doublespacing}% 
+%         \textsc{(EN) This document is intended for simulation purpose and may not, under any circumstance, be used for a real flight.}%
+%     \end{doublespacing}
 
-    \begin{doublespacing}%
-        \textsc{(FR) Ce document est uniquement destiné au simulateur de vol DCS et ne peut en aucun cas être utilisé pour un vol réel.}%
-    \end{doublespacing}%
-    
-\vspace{4cm}
+% }%
 
-    \begin{doublespacing}%
-        \textsc{(EN) This document is intended for flight simulation purpose and may not, under any circumstance, be used for a real flight.}%
-    \end{doublespacing}%
+\begin{minipage}[c][\textheight][s]{\linewidth}
+\baselineskip=1\baselineskip plus 1fill % stretch as much as needed
+\lineskip=0pt plus 1fill % just for safety
 
-}
 
-\vfill
+\textsc{{\Huge (FR) Ce document est uniquement destiné à des fins de simulation, et ne peut en aucun cas être utilisé pour un vol réel.}}
 
-\tolerance1000 
+\vskip2cm
+
+\textsc{{\Huge (EN) This document is intended for simulation purpose and may not, under any circumstance, be used for a real flight.}}
+
+\end{minipage}
+
+
+% \begin{onepage}%
+% \textsc{(FR) Ce document est uniquement destiné à des fins de simulation, et ne peut en aucun cas être utilisé pour un vol réel.}
+
+
+% \textsc{(EN) This document is intended for simulation purpose and may not, under any circumstance, be used for a real flight.}%
+% \end{onepage}
+
+\tolerance1000%

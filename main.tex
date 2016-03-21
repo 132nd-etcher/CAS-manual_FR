@@ -1,19 +1,12 @@
 \documentclass[
 12pt,
 a4paper,
-final,
+draft,
 titlepage,
 oneside,
 ]{report}
 
-\usepackage[
-    colorlinks=true,
-    urlcolor=blue,
-    filecolor=blue,
-    linkcolor=red,
-    bookmarks=true,
-    citecolor=red,
-]{hyperref}
+
 \usepackage[T1]{fontenc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -114,6 +107,8 @@ oneside,
 
 \input{glossary}
 
+\makeglossaries
+
 \newcommand{\titlepar}[2]{#1\vskip2mm#2}
 
 \crefname{annex}{Annexe}{Annexes}
@@ -145,6 +140,18 @@ Cfr. \cref{#1}: %
  {}     
  {\setunit*{\addspace}%      
  \printtext[urldate]{\printurldate}}}
+
+
+\usepackage[
+    colorlinks=true,
+    urlcolor=blue,
+    filecolor=blue,
+    linkcolor=red,
+    bookmarks=true,
+    citecolor=red,
+]{hyperref}
+
+
 
 % Start of document ----------------------------------------------------------------
 \begin{document}
@@ -201,7 +208,11 @@ Cfr. \cref{#1}: %
 
 \renewcommand{\cftdot}{.}
 
+\microtypesetup{protrusion=false}
+
 \tableofcontents
+
+\microtypesetup{protrusion=true}
 
 \addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
 
@@ -229,6 +240,8 @@ Cfr. \cref{#1}: %
 
 \pagenumbering{Roman}
 
+\microtypesetup{protrusion=false}
+
 \phantomsection
 %\addcontentsline{toc}{chapter}{\listfigurename}
 \addtocontents{lof}{\protect\addcontentsline{toc}{chapter}{Liste des images}}
@@ -247,6 +260,8 @@ Cfr. \cref{#1}: %
 %\addcontentsline{toc}{chapter}{\lstlistlistingname}
 \addtocontents{lol}{\protect\addcontentsline{toc}{chapter}{Liste des exemples}}
 \lstlistoflistings{}
+
+\microtypesetup{protrusion=true}
 
 \newpage
 

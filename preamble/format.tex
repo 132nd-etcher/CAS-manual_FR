@@ -61,4 +61,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Glossary
 \newcommand{\glvs}{\vskip4mm} % vskip for glossary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% One page
+\newcommand{\addstretch}[1]{\addtolength{#1}{\fill}}
+\newenvironment{onepage}
+  {\newpage\flushbottom
+   \addstretch{\baselineskip}
+   \addstretch{\abovedisplayskip}
+   \addstretch{\abovedisplayshortskip}
+   \addstretch{\belowdisplayskip}
+   \addstretch{\belowdisplayshortskip}
+   \setlength{\parskip}{0pt}}
+  {\newpage}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Invisible section
+\newcommand\invisiblesection[1]{%
+    \refstepcounter{section}%
+    \phantomsection%
+    \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+    \sectionmark{#1}%
+    \markboth{\MakeUppercase{#1}}{}%
+}
+
+% Invisible unnumbered section
+\newcommand\invisibleunnumberedsection[1]{%
+    %\addcontentsline{toc}{section}{\protect{\thesection}#1}%
+    \phantomsection%
+    \addcontentsline{toc}{section}{\protect\numberline{}#1}
+    \sectionmark{#1}%
+    \markboth{\textsc{{\LARGE #1}}}{}
+}
 
