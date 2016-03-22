@@ -14,7 +14,8 @@
 \renewcommand{\headrulewidth}{0pt}% Line at the header visible
 \renewcommand{\footrulewidth}{0pt}% Line at the header visible
 
-\begin{smini}
+%\begin{smini}
+\begin{adjustbox}{width={\textwidth},totalheight={\textheight},keepaspectratio}%
 \renewcommand{\arraystretch}{4.5}
 \setlength{\extrarowheight}{-25pt}
 {\footnotesize
@@ -114,4 +115,5 @@
 \end{tabularx}
 }
 %}
-\end{smini}
+%\end{smini}
+\end{adjustbox}%

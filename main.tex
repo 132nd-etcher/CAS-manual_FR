@@ -6,7 +6,6 @@ titlepage,
 oneside,
 ]{report}
 
-
 \usepackage[T1]{fontenc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,9 +70,10 @@ oneside,
     shrink=10
 ]{microtype}
 \microtypecontext{spacing=nonfrench}
-\usepackage{cleveref}
+
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{adjustbox}
 %\usepackage{pdfpages}
 
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X|}
@@ -90,7 +90,7 @@ oneside,
 %\captionsetup[lstlisting]{font={small,tt}}
 \captionsetup{font={scriptsize, tt}, labelfont={sc, it},textfont={it, sc}}
 % Fuzz --------------------------------------------------------------------
-\hfuzz2000pt % Don't bother to report over-full boxes if over-edge is < 2pt
+\hfuzz=200pt % Don't bother to report over-full boxes if over-edge is < 2pt
 % includes ----------------------------------------------------------------------------------
 %\include{preamble/notebox}
 \input{preamble/customcolorbox}
@@ -103,6 +103,14 @@ oneside,
 \input{preamble/figures}
 
 
+\usepackage{minitoc}
+\setcounter{minitocdepth}{2}%default 
+\setcounter{minitocdepth}{6}
+\setlength{\mtcindent}{24pt}%default
+\setlength{\mtcindent}{12pt}%default
+\renewcommand{\mtcfont}{\small\rm}%default
+\renewcommand{\mtcSfont}{\small\bf}%default
+
 \usepackage[
     colorlinks=true,
     urlcolor=blue,
@@ -111,6 +119,7 @@ oneside,
     bookmarks=true,
     citecolor=red,
 ]{hyperref}
+\usepackage{cleveref}
 \usepackage{bookmark}
 \usepackage[acronym,toc,nopostdot]{glossaries}
 % command: makeglossaries %
@@ -160,7 +169,7 @@ Cfr. \cref{#1}: %
 \begin{document}
 
 \hbadness=10000
-\hfuzz200pt
+\hfuzz=200pt
 
 
 \renewcommand\appendixpagename{Annexes}
@@ -172,6 +181,7 @@ Cfr. \cref{#1}: %
 \renewcommand\contentsname{Table des matières}
 \renewcommand\figurename{Img.}
 \renewcommand\appendixname{Annexe}
+\makeatletter\@openrightfalse\makeatother
 
 \addto\captionsfrenchb{%
   \renewcommand\listfigurename{Liste des images}}
@@ -179,6 +189,10 @@ Cfr. \cref{#1}: %
 %bdabda\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
 
 \sloppy
+
+\dominitoc
+\dominilof
+\dominilot
 
 \input{titlepage}
 %\import{./}{titlepage.tex}
