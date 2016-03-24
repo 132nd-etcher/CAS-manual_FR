@@ -1,0 +1,13 @@
+\newcommand{\emptypage}{
+\null  % Empty line
+\nointerlineskip  % No skip for prev line
+\vfill
+\let\snewpage \newpage
+\let\newpage \relax
+\begin{center}
+Page intentionnellement vide
+\end{center}
+\let \newpage \snewpage
+\vfill 
+\break % page break
+}

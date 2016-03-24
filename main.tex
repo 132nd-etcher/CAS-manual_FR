@@ -102,6 +102,7 @@ oneside,
 \input{preamble/customcolors}
 \input{preamble/listingformat}
 \input{preamble/figures}
+\input{preamble/emptypage}
 
 
 \usepackage{minitoc}
@@ -112,13 +113,16 @@ oneside,
 \renewcommand{\mtcfont}{\small\rm}%default
 \renewcommand{\mtcSfont}{\small\bf}%default
 
+\newcommand{\intlink}{red!80}
+\newcommand{\extlink}{blue!80}
+
 \usepackage[
     colorlinks=true,
-    urlcolor=blue!60,
-    filecolor=blue!60,
-    linkcolor=black!60,
+    urlcolor=\extlink,
+    filecolor=\extlink,
+    linkcolor=\intlink,
+    citecolor=\intlink,
     bookmarks=true,
-    citecolor=black!60,
 ]{hyperref}
 \usepackage{cleveref}
 \usepackage{bookmark}
@@ -237,15 +241,35 @@ Cfr. \cref{#1}: %
 %
 \pagestyle{default}%
 %
-\include{chapters/100-introduction}%
+\include{chapters/100introduction}%
+\include{chapters/101fundamentals}%
 %
-\include{chapters/200-commandandcontrol}%
+\include{chapters/200commandandcontrol}%
 %
-\include{chapters/300-planning}%
+\include{chapters/300planning}%
+\include{chapters/301intro}
+\include{chapters/304decision}
+\include{chapters/306mission}
+\include{chapters/307ennemy}
+\include{chapters/308allies}
+\include{chapters/309terrain}
+\include{chapters/310timing}
+\include{chapters/311concepts}
+\include{chapters/312control}
+\include{chapters/314integrating}
+\include{chapters/315rw}
+\include{chapters/3165line}
+\include{chapters/320showofforce}
+\include{chapters/323facaplanning}
+\include{chapters/327casrequest}
 %
-\include{chapters/400-preparation}%
+\include{chapters/400preparation}%
+\include{chapters/401intro}
+\include{chapters/402repetition}
+\include{chapters/403precombat}
+\include{chapters/404comms}
 %
-\include{chapters/500-execution}%
+\include{chapters/500execution}%
 %
 \newpage%
 %
@@ -298,29 +322,26 @@ Cfr. \cref{#1}: %
 \invisibleunnumberedsection{Acronymes}%
 %\printglossary[title=Acronymes, toctitle=Acronymes, type=\acronymtype]
 \printglossary[type=\acronymtype]
-%\printnoidxglossary[type=\acronymtype]%
 %
 \newpage%
 %
 \invisibleunnumberedsection{Explications des termes}%
-%\printnoidxglossary[type=main]%
 \printglossary[type=main]
-%\printglossary[title=Glossaire, toctitle=Glossaire, type=main]
 %
 \clearpage%
 %
 \pagestyle{annexes}%
-%
+
 \begin{appendices}%
 %	
-\include{annexes/a-planning}%
+\include{annexes/aplanning}%
 %
-\include{annexes/b-datacard}%
+\include{annexes/bdatacard}%
 %
-\include{annexes/c-casrequest}%
+\include{annexes/ccasrequest}%
 %
 \end{appendices}%
-%
+
 \pagestyle{empty}%
 %
 \end{document}%

@@ -13,18 +13,36 @@
 }
 
 \newcommand{\glvs}{\vskip4mm} % vskip for glossary
+
 \newcommand{\glb}[1]{
-\begin{minipage}{\linewidth}
-#1
-\end{minipage}
-\glvs
-}\newcommand{\glbe}[1]{
-\begin{minipage}{\linewidth}
-\gle
-#1
-\gled
-\end{minipage}
-\glvs
+	\begin{minipage}{\linewidth}
+		#1
+	\end{minipage}
+	\glvs
+	}
+\newcommand{\glbe}[1]{
+	\begin{minipage}{\linewidth}
+		\gle
+		#1
+	\gled
+	\end{minipage}
+	\glvs
+}
+\newcommand{\glsfull}[1]{
+	\glsreset{#1}%
+	\gls{#1}%
+}
+\newcommand{\glsfullpl}[1]{
+	\glsreset{#1}%
+	\glspl{#1}%
+}
+
+\newgls{TAC(A)}{Tactical Air Coordinator}{taca}{%
+Un officier qui coordonne, depuis un appareil en vol, les actions d'un autre appareil engagés dans le support de forces alliées au sol ou navales
+}
+
+\newgls{TACP}{Tactical Air Control Party}{tacp}{%
+Un composant opérationnel subordonné de contrôle aérien, qui sert de liaison avec les forces et sol, et qui sert à contrôler des unités aériennes
 }
 
 \newgls{NFA}{Test}{nfa}{%
