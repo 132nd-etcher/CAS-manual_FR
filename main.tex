@@ -115,9 +115,9 @@ oneside,
     colorlinks=true,
     urlcolor=blue,
     filecolor=blue,
-    linkcolor=red,
+    linkcolor=black!70,
     bookmarks=true,
-    citecolor=red,
+    citecolor=black!50,
 ]{hyperref}
 \usepackage{cleveref}
 \usepackage{bookmark}
@@ -145,6 +145,8 @@ Cfr. \cref{#1}: %
 \cref{#1}: %
 \nameref{#1}%
 }
+
+\renewcommand{\ref}{\fullref}
 
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}

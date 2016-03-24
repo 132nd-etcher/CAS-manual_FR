@@ -13,34 +13,44 @@
 %\setlength{\parindent}{\defaultparindent}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Chapter title formatting ----------------------------------------------
-\titleformat
-{\chapter} % command
-[block] % shape
-{\bfseries\Huge} % format
-{\thechapter.} % label
-{1em} % sep
-{
-%    \rule{\textwidth}{1pt}
-    \vspace{1ex}
-%    \centering
-} % before-code
-[
-\vspace{-0.5ex}%
-%\rule{\textwidth}{0.3pt}
-] % after-code
+%% Chapter title formatting ----------------------------------------------
+%\titleformat
+%{\chapter} % command
+%[block] % shape
+%%{\huge\bfseries} % format
+%{\huge\ttseries\filcenter\textsc}%format
+%{\thechapter.} % label
+%{1ex} % sep
+%{
+%%    \rule{\textwidth}{1pt}
+%%	\null
+%%    \vspace{1em}
+%    \textsc
+%%    \centering
+%} % before-code
+%[
+%%\vspace{-0.5ex}%
+%%\rule{\textwidth}{0.3pt}
+%] % after-code
+\titleformat{\chapter}[display]
+{\bfseries\Large}
+{ %\Huge\textsc{\chaptertitlename}
+\hfill\fontsize{120}{70}\selectfont\color{lightgray}\textbf{\thechapter}}
+{-2ex}
+{\filleft\fontsize{50}{70}\selectfont\scshape}
+[\vspace{0ex}]
 
-\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
 
 % Section title formatting ----------------------------------------------
 \titleformat{\section}[block]
 {\Large\bfseries}
-{\thesection.}{0.5em}{}
+{\thesection.}{0.5em}{\textsc}
 
 % Subsection title formatting -------------------------------------------
 \titleformat{\subsection}[block]
 {\large\bfseries}
-{\thesubsection.}{0.5em}{}
+{\thesubsection.}{0.5em}{\textsc}
 
 % Subsection title formatting -------------------------------------------
 \titleformat{\subsubsection}[block]
