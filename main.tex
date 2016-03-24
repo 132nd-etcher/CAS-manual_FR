@@ -6,6 +6,7 @@ titlepage,
 oneside,
 ]{report}
 
+
 \usepackage[T1]{fontenc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,13 +112,16 @@ oneside,
 \renewcommand{\mtcfont}{\small\rm}%default
 \renewcommand{\mtcSfont}{\small\bf}%default
 
+\definecolor{intlink}{black}{0.6}
+\definecolor{extlink}{blue}{0.6}
+
 \usepackage[
     colorlinks=true,
-    urlcolor=blue,
-    filecolor=blue,
-    linkcolor=black!70,
+    urlcolor=extlink,
+    filecolor=extlink,
+    linkcolor=intlink,
     bookmarks=true,
-    citecolor=black!50,
+    citecolor=intlink,
 ]{hyperref}
 \usepackage{cleveref}
 \usepackage{bookmark}
