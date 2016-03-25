@@ -1,0 +1,21 @@
+\usepackage[titles]{tocloft} % Toc, lol, lof, ... styles. http://ctan.cs.uu.nl/macros/latex/contrib/tocloft/tocloft.pdf
+\renewcommand{\cftdot}{.}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\setlength\cftbeforechapskip{20pt}
+\renewcommand\cftfigafterpnum{\vskip5pt\par}
+\renewcommand\cfttabafterpnum{\vskip5pt\par}
+\setlength{\cftfignumwidth}{4em}  % Modify number width in LoF
+\setlength{\cfttabnumwidth}{4em}
+\setlength{\cftchapnumwidth}{2em}
+\setlength{\cftsecnumwidth}{3em}
+\setlength{\cftsubsecnumwidth}{4em}
+
+
+% https://tex.stackexchange.com/questions/33841/how-to-modify-the-space-between-the-numbers-and-text-of-sectioning-titles-in-the
+\makeatletter
+%\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
+%\renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.6em}}
+\renewcommand{\l@subsubsection}{\@dottedtocline{3}{7em}{5em}}
+\makeatother

@@ -1,4 +1,4 @@
-\let\labelitemi\labelitemii
+\usepackage{enumitem}
 
 % Long enum
 \newlist{longenum}{enumerate}{8}
@@ -11,21 +11,6 @@
 \setlist[longenum,6]{label=(\alph*)}
 \setlist[longenum,7]{label=(\alph*)}
 \setlist[longenum,8]{label=(\alph*)}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Define commands for enumeration
-% Generic enum
-%\newcommand{\gene}[2]{
-%	\begin{longenum}[%
-%		label*=#1,%
-%		topsep=1em,%
-%		itemsep=1em,%
-%		partopsep=1em,%
-%		parsep=1em,%
-%		labelsep=1em,%
-%		leftmargin=#2
-%	]
-%}
 
 \newcommand{\elabelindent}{0pt}
 \newcommand{\eitemindent}{0em}
@@ -146,13 +131,7 @@
 \newenvironment{e7}[1][\illlllllm] {\genee { ({\arabic*}) } {#1} {\llllllllm} } {\end{longenum}}
 %\newenvironment{e8}{\eeeeeeee}{\ed}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Title item
-\newcommand{\itemt}[2]{
-%\parbox{\linewidth}{\item #1\\[\eparsep]#2\vskip4mm}
-\item \textbf{#1} \par #2
-}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Glossary enum
 \newlist{glossaryenum}{enumerate}{8}
@@ -181,8 +160,18 @@
 	]
 }
 
-\newcommand{\gle}{\glene{{\alph*}.}{2em}}
+\newcommand{\gle}{
+	\glene{{\alph*}.}{2em}
+}
 
-\newcommand{\gled}{\end{glossaryenum}}
+\newcommand{\gled}{
+	\end{glossaryenum}
+}
 
-\newcommand{\eskip}{\\ \vskip0.5em}
+\newcommand{\eskip}{
+	\\ \vskip0.5em
+}
+
+\newcommand{\itemt}[2]{
+	\item \textbf{#1} \par #2
+}

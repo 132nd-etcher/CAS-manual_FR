@@ -1,0 +1,103 @@
+\documentclass{minimal}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{fit}
+\usetikzlibrary{shapes}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix, backgrounds}
+\begin{document}
+
+
+%\begin{tikzpicture}[%font=\ttfamily,
+%  ematrix/.style={matrix of nodes, nodes=process, row sep=1em, column sep=1em},
+%  container/.style={draw=gray, inner sep=1ex},
+%  process/.style={draw=gray, inner sep=1ex, anchor=west},
+%  title/.style={draw=none, color=gray, inner sep=0pt}
+%  ]
+%  \matrix[ematrix] (preflight) {
+%    |[title]|Avant le vol \\
+%    \node (req) [process] {Requete CAS}; & \node (planning) [process] {Planification};\\
+%    
+%  };
+%  \matrix[ematrix, below=of preflight.south west, matrix anchor=north west] (transit) {
+%    |[title]|Transit \\
+%    Atomic \\
+%    Range \\
+%  };
+%  \node[container, fit=(preflight)] {};
+%  \node[container, fit=(transit)] {};
+%  \draw[thick, orange,->](req)--(planning);
+%
+%\end{tikzpicture}
+
+\tikzset{start/.style={
+        draw=blue, 
+        ultra thick, 
+        rectangle, 
+        anchor=west, 
+        xshift=10.0cm},
+        minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30
+}
+\tikzset{my arrow/.style={-latex, thick, orange}}
+
+
+\tikzstyle{process} = [rectangle, minimum width=2cm, minimum height=2cm, text centered, text width=2cm, fill=orange!60]
+
+\begin{tikzpicture}
+  \matrix[column sep=0.5cm, row sep=1.4cm]
+  {
+    \node [process] (req)          {CAS request};&
+    \node [process] (planning)     {Mission planning};\\
+    
+    \node [process] (aoupdate)     {AO Update};\\
+    
+    \node [process] (comms)        {Establish comms with J-TAC/\\FAC(A)}; &%
+    \node [process] (auth)         {Authent-\\ication};&%
+    \node [process] (tfcupd)       {Traffic and airpsace update};\\%
+    
+    \node [process] (ci) {Check-in brief};&
+    \node [process] (aoupd2)       {AO update};&
+    \node [process] (casbrief)     {CAS brief};&
+    \node [process] (talkon)       {Talk-on};&
+    \node [process] (corr)         {Target correlation};\\
+    
+    \node [process] (fai)          {Final attack instructions};&
+    \node [process] (ch)           {Cleared hot};&
+    \node [process] (attack)       {Attack};&
+    \node [process] (bda)          {BDA};&
+    \node [process] (reattack)     {Re-attack};\\
+  };
+  	\begin{pgfonlayer}{background}
+	    \node [fill=orange!30, fit={($(req.west)-(0.2cm,0)$)([yshift=0.6cm]req.north)([yshift=-0.2cm]req.south)([xshift=0.2cm]planning.east)}] (preflightbg) {};
+	    \node [fill=orange!30, fit={($(aoupdate.west)-(0.2cm,0)$)([yshift=0.6cm]aoupdate.north)([yshift=-0.2cm]aoupdate.south)([xshift=0.2cm]aoupdate.east)}] (aoupdatebg) {};
+	    \node [fill=orange!30, fit={($(comms.west)-(0.2cm,0)$)([yshift=0.6cm]comms.north)([yshift=-0.2cm]comms.south)([xshift=0.2cm]tfcupd.east)}] (checkinbg) {};
+	    \node [fill=orange!30, fit={($(ci.west)-(0.2cm,0)$)([yshift=0.6cm]ci.north)([yshift=-0.2cm]ci.south)([xshift=0.2cm]corr.east)}] (casbriefbg) {};
+	    \node [fill=orange!30, fit={($(fai.west)-(0.2cm,0)$)([yshift=0.6cm]fai.north)([yshift=-0.2cm]fai.south)([xshift=0.2cm]reattack.east)}] (attackbg) {};
+	\end{pgfonlayer}
+	
+	\node [text centered, anchor=north west, font=\bfseries, yshift=0.2cm] at (preflightbg.north west) {Avant le vol};
+	\node [text centered, anchor=north west, font=\bfseries, yshift=0.2cm] at (aoupdatebg.north west) {Transit};
+	\node [text centered, anchor=north west, font=\bfseries, yshift=0.2cm] at (checkinbg.north west) {Check-in};
+	\node [text centered, anchor=north west, font=\bfseries, yshift=0.2cm] at (casbriefbg.north west) {CAS brief};
+	\node [text centered, anchor=north west, font=\bfseries, yshift=0.2cm] at (attackbg.north west) {Attaque};
+	
+	\draw [my arrow] (req.east)      -- (planning.west);
+    \draw [my arrow] (comms.east)    -- (auth.west);
+    \draw [my arrow] (ci.east)       -- (aoupd2.west);
+    \draw [my arrow] (aoupd2.east)   -- (casbrief.west);
+    \draw [my arrow] (casbrief.east) -- (talkon.west);
+    \draw [my arrow] (talkon.east)   -- (corr.west);	
+	\draw [my arrow] (auth.east)     -- (tfcupd.west);	
+    \draw [my arrow] (fai.east)      -- (ch.west);
+    \draw [my arrow] (ch.east)       -- (attack.west);
+    \draw [my arrow] (attack.east)   -- (bda.west);
+    \draw [my arrow] (bda.east)      -- (reattack.west);
+    \draw[ultra thick, orange, ->] (planning.east) -- ++ (1cm,0) -- ++ (0,-0.5cm) |- ($(aoupdate.north west)-(1cm,-0.85cm)$) |- (aoupdate.west);
+    \draw[ultra thick, orange, ->] (aoupdate.east) -- ++ (1cm,0) -- ++ (0,-0.5cm) |- ($(comms.north west)-(1cm,-0.85cm)$) |- (comms.west);
+    \draw[ultra thick, orange, ->] (tfcupd.east) -- ++ (1cm,0) -- ++ (0,-0.5cm) |- ($(ci.north west)-(1cm,-0.85cm)$) |- (ci.west);
+    \draw[ultra thick, orange, ->] (corr.east) -- ++ (1cm,0) -- ++ (0,-0.5cm) |- ($(fai.north west)-(1cm,-0.85cm)$) |- (fai.west);
+    \draw[ultra thick, orange, ->] (reattack.south) -- ++ (0,-0.5cm) |- ($(fai.south)-(0,0.5cm)$) -- (fai.south);
+\end{tikzpicture}
+
+
+\end{document}

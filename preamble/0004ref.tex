@@ -1,0 +1,17 @@
+\usepackage{cleveref}
+\usepackage{nameref}
+
+\crefname{annex}{Annexe}{Annexes}
+%\crefalias{annex}{Annexe}{Annexes}
+
+\newcommand{\fullref}[1]{%
+Cfr. \cref{#1}: %
+\nameref{#1}%
+}
+
+\newcommand{\smallref}[1]{%
+\cref{#1}: %
+\nameref{#1}%
+}
+
+\renewcommand{\ref}{\fullref}

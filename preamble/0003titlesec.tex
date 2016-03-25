@@ -1,0 +1,46 @@
+\usepackage[pagestyles]{titlesec}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Chapter title formatting ----------------------------------------------
+%\titleformat
+%{\chapter} % command
+%[block] % shape
+%%{\huge\bfseries} % format
+%{\huge\ttseries\filcenter\textsc}%format
+%{\thechapter.} % label
+%{1ex} % sep
+%{
+%%    \rule{\textwidth}{1pt}
+%%	\null
+%%    \vspace{1em}
+%    \textsc
+%%    \centering
+%} % before-code
+%[
+%%\vspace{-0.5ex}%
+%%\rule{\textwidth}{0.3pt}
+%] % after-code
+\titleformat{\chapter}[display]
+{\scshape\bfseries\Large}
+{ %\Huge\textsc{\chaptertitlename}
+\hfill\fontsize{120}{70}\selectfont\color{lightgray}\textsc{\textbf{\thechapter}}}
+{-2ex}
+{\filleft\fontsize{50}{70}\selectfont\scshape}
+[\vspace{0ex}]
+
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+% Section title formatting ----------------------------------------------
+\titleformat{\section}[block]
+{\Large\bfseries}
+{\thesection.}{0.5em}{\textsc}
+
+% Subsection title formatting -------------------------------------------
+\titleformat{\subsection}[block]
+{\large}%{\large\bfseries}
+{\thesubsection.}{0.5em}{\textsc}
+
+% Subsection title formatting -------------------------------------------
+\titleformat{\subsubsection}[block]
+{\normalsize}%{\normalsize\bfseries}
+{\thesubsubsection.}{0.5em}{\textsc}
