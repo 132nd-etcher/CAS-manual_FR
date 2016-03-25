@@ -6,8 +6,7 @@ titlepage,
 oneside,
 ]{report}
 
-
-\usepackage[T1]{fontenc}
+\input{preamble/fonts}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
@@ -25,10 +24,7 @@ oneside,
   {\usebibmacro{postnote}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[frenchb]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{courier}
-\usepackage{csquotes}
+
 \usepackage[titles]{tocloft}
 \usepackage{enumitem}
 \usepackage{datetime}
@@ -86,7 +82,7 @@ oneside,
 % Nagger ------------------------------------------------------------------------------------
 \RequirePackage[l2tabu, orthodox]{nag}
 % Sets doc-wide fonts -----------------------------------------------------------------------
-\renewcommand*\familydefault{\ttdefault}
+
 % Setup caption for listings ----------------------------------------------------------------
 %\captionsetup[lstlisting]{font={small,tt}}
 \captionsetup{font={scriptsize, tt}, labelfont={sc, it},textfont={it, sc}}
@@ -132,7 +128,7 @@ oneside,
 \makeglossaries
 
 \input{glossary}
-\renewcommand{\glossarysection}[2][]{}
+\renewcommand{\glossarysection}[2][]{} 
 
 \makeglossaries
 
@@ -178,7 +174,6 @@ Cfr. \cref{#1}: %
 \hbadness=10000
 \hfuzz=200pt
 
-
 \renewcommand\appendixpagename{Annexes}
 \renewcommand\appendixtocname{Annexes}
 \renewcommand\lstlistingname{Exemple}
@@ -188,7 +183,7 @@ Cfr. \cref{#1}: %
 \renewcommand\contentsname{Table des matières}
 \renewcommand\figurename{Img.}
 \renewcommand\appendixname{Annexe}
-\makeatletter\@openrightfalse\makeatother
+\makeatletter\@openrightfalse\makeatother% remove empty page after appendix
 
 \addto\captionsfrenchb{%
   \renewcommand\listfigurename{Liste des images}}
