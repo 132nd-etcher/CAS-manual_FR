@@ -1,0 +1,88 @@
+\section{Systèmes de communications}
+
+\begin{e1}
+	\itemt{Contrôle et flexibilité}{
+		Les missions \gls{cas} demandent un contrôle rapproché, rendu possible par des communications efficaces. Les communications doivent être flexibles et rapides pour s'assurer que le lien entre les unités au sol et les appareils qui les soutiennent est maintenu.
+	}
+	
+	\itemt{Sécurisation des communications}{
+		Lorsque c'est possible, les communications seront sécurisées, soit en cryptant les données, soit en utilisant des sauts de fréquence (système HAVEQUICK).
+		
+		Cependant, il ne faut pas laisser la sécurisation des communications entraver l'exécution rapide de la mission de \gls{cas}, tout spécialement dans les situations d'urgence.
+	}
+	
+	\itemt{Contre-mesures}{
+		Le brouillage, la surveillance ou l'usurpation d'identité par l'ennemi sur les réseaux radios alliés peuvent empêcher la bonne réalisation du \gls{cas}.
+		
+		\begin{e2}
+			\itemt{Jamming}{
+				Le jamming consiste à brouiller une fréquence radio pour y dégrader et ainsi empêcher les communications.
+				
+				Pour se prémunir contre le jamming, le \gls{complan} devra prévoir des fréquences de travail alternatives, que les différentes parties auront reçu comme consigne d'utiliser en cas de brouillage.
+			}
+			
+			\itemt{Spoofing}{
+				Le spoofing consiste à usurper l'identité d'une autre station sur le réseau et à se faire passer pour cette station lors des communications.
+				
+				Cela permet notamment de donner des informations ou des ordres aux unités adverses.
+				
+				Pour se prémunir contre le spoofing, on utilisera l'authentification, et la vigilance (procédure \gls{ginger}).
+			}
+			
+			\itemt{Monitoring}{
+				Le monitoring consiste à écouter une fréquence ennemie, et à y collecter des informations quant aux positions, mouvements, intentions, etc. de l'ennemi.
+				
+				Il n'y a aucun moyen de savoir si un ennemi écoute la fréquence de travail, c'est pourquoi existent les procédures \gls{comsec}.
+				
+				Dans le cas ou une station sur un réseau diffuse en clair des informations importantes, on utilisera la procédure \gls{bead}.
+			}
+			
+		\end{e2}
+		
+		Il n'existe aucune technique permettent de se protéger contre toutes les formes d'attaque sur un réseau radio, et l'environnement tactique, les moyens disponibles et la mission elle-même détermineront les méthodes \gls{comsec} à employer.
+		
+		\todo[inline]{ajouter un lien vers la procédure AET100}
+		
+		\note{Dans DCS, nous avons à notre disposition deux méthodes principales pour protéger les communications: \glsfull{ur} et l'authentification. \\
+
+			\gls{ur} permet de crypter les communications (A-10C seulement).\\
+			
+			L'authentification permet, lors de l'établissement des communications entre deux parties, de s'assurer que l'unité contactée est bien un allié.}
+
+	}
+	
+	\itemt{Nécessités pour les communications Joint}{}
+	
+	\begin{e2}
+		
+		\item Les participants au \gls{cas} utiliseront le réseau de l'unité demandeuse
+		
+		\item Tous les participants au \gls{cas} doivent connaître les signaux et codes appropriés, et avoir toutes les données nécessaires.
+		
+		Le \gls{jfacc} (ou le \gls{jfc} si le \gls{jfacc} n'est pas implémenté) est responsable de la diffusion de ces informations dans les \gls{spins} ou dans l'\gls{ato}.
+		
+		\item Plus spécifiquement, les appareils \gls{cas} et leurs pilotes auront besoin des call-signs et fréquences de travail des différentes agences de contrôle de l'espace aérien, des forces au sol et du \gls{jtac} avec lesquels ils devront travailler.
+	\end{e2}
+	
+	\itemt{Réseaux radios}{
+		Un certain nombre de réseaux radios sont systématiquement utilisés pour le \gls{cas}, parmi lesquels (liste simplifiée pour DCS):
+	}
+	
+	\begin{e2}
+		\itemt{Réseau \gls{cc}}{Interface entre les unités \gls{tacs}}
+		\itemt{Réseau \gls{tad}}{
+			Ce réseau est utilisé par tous les participants au \gls{cas}, \glspl{tacp}/\glspl{jtac} et appareils de \gls{cas}, et doit être réservé au \gls{tac}. Le \gls{asoc} est autorisé à y faire intrusion pour le passage d'information d'extrême urgence.
+		}
+		\itemt{Réseau \gls{infltrep}}{
+			Ce réseau est utilisé pour la transmission est \glspl{infltrep} aux éléments de \gls{tacs}. Ces rapports sont normalement envoyés à l'\gls{awacs}. Lorsque c'est possible, ce réseau est écouté par l'\gls{asoc} et l'\gls{aoc}.
+		}
+		\itemt{Réseau de garde}{
+			Ce réseau est un réseau d'urgence pour les appareils en détresse. Il sert également aux agences de contrôle pour la transmission pour avertir les appareils en vol d'une situation dangereuse ou de dangers pour le vol. Si possible, tous les appareils doivent continuellement ce réseau.
+		}
+		\itemt{Réseau de l'escadron}{Chaque escadron dispose de son réseau propre.}
+		\itemt{Réseau \gls{tacp} administratif}{Réseau utilisé pour la transmission d'informations entre l'\gls{asoc} et les \glspl{tacp}}.
+		\itemt{\glsfull{irc}}{Réseau sécurisé permettant l'échange d'informations entre les services de renseignement, les appareils équipés, l'\gls{asoc}, et les \glspl{tacp} et \glspl{jtac} équipés.
+			\note{Le réseau \gls{irc} peut effectivement être simulé dans DCS par le chat TeamSpeak textuel.}
+			}
+	\end{e2}
+\end{e1}

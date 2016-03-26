@@ -18,13 +18,32 @@ openany,
 \input{preamble/0003biblio}
 \input{preamble/0003tocloft}
 \input{preamble/0003enum}
+\newenvironment{e1} [1][\ilm]       {\gene   { {\alph*}.    } {#1} {\llm}       } {\end{longenum}}
+\newenvironment{e2} [1][\illm]      {\gene   { {\arabic*}   } {#1} {\lllm}      } {\end{longenum}}
+\newenvironment{e3} [1][\illlm]     {\gene   { ({\alph*})   } {#1} {\llllm}     } {\end{longenum}}
+\newenvironment{e4} [1][\illllm]    {\genee  { ({\arabic*}) } {#1} {\lllllm}    } {\end{longenum}}
+\newenvironment{e5} [1][\illlllm]   {\genee  { {\Roman*}    } {#1} {\llllllm}   } {\end{longenum}}
+\newenvironment{e6} [1][\illllllm]  {\genee  { ({\roman*})  } {#1} {\lllllllm}  } {\end{longenum}}
+\newenvironment{e7} [1][\illlllllm] {\genee  { ({\arabic*}) } {#1} {\llllllllm} } {\end{longenum}}
+\newenvironment{re1}[1][\ilm]       {\gener  { {\alph*}.    } {#1} {\llm}       } {\end{longenum}}
+\newenvironment{re2}[1][\illm]      {\gener  { {\arabic*}   } {#1} {\lllm}      } {\end{longenum}}
+\newenvironment{re3}[1][\illlm]     {\gener  { ({\alph*})   } {#1} {\llllm}     } {\end{longenum}}
+\newenvironment{re4}[1][\illllm]    {\geneer { ({\arabic*}) } {#1} {\lllllm}    } {\end{longenum}}
+\newenvironment{re5}[1][\illlllm]   {\geneer { {\Roman*}    } {#1} {\llllllm}   } {\end{longenum}}
+\newenvironment{re6}[1][\illllllm]  {\geneer { ({\roman*})  } {#1} {\lllllllm}  } {\end{longenum}}
+\newenvironment{re7}[1][\illlllllm] {\geneer { ({\arabic*}) } {#1} {\llllllllm} } {\end{longenum}}
 \input{preamble/0003figures}
+\newcommand{\efig}[2]{ \begin{figure}[H] \includegraphics[width=\textwidth]{#1.png} \caption{#2} \label{#1} \end{figure} }
 \input{preamble/0003titlesec}
 \input{preamble/0003fancyhdr}
 \input{preamble/0003caption}
 \input{preamble/0003listing}
 \input{preamble/0003table}
 \input{preamble/0003colorbox}
+\newcommand{\note}[1]{\customnotebox{blue}{#1}}
+\newcommand{\important}[1]{\customcoloredbox{red}{#1}}
+\newcommand{\useful}[1]{\customcoloredbox{blue}{#1}}
+\newcommand{\remark}[1]{\customcoloredbox{gray}{#1}}
 \input{preamble/0003emptypage}
 \input{preamble/0003invisible}
 \input{preamble/0003stretchers}
@@ -42,7 +61,12 @@ openany,
 ]{hyperref}
 
 \input{preamble/0004ref}
+\newcommand{\smallref}[1]{\cref{#1}: \nameref{#1}}
+\newcommand{\fullref}[1]{Cfr. \smallref{#1}}
+\renewcommand{\ref}{\fullref}
 \input{preamble/0004glossary}
+\newcommand{\glsfull}[1]{\glsreset{#1} \gls{#1}}
+\newcommand{\glsfullpl}[1]{\glsreset{#1} \glspl{#1}}
 
 %\usepackage{pdfpages}
 %\usepackage{setspace}
@@ -71,6 +95,29 @@ openany,
 \setcounter{tocdepth}{4}
 
 \frenchspacing % https://en.wikibooks.org/wiki/LaTeX/Text_Formatting
+
+\newcommand{\newchapter}[3]{
+	%\newpage
+	\fancyhead[L]{}
+	\renewcommand{\headrulewidth}{0pt}% Line at the header visible
+	\chapter{#1}
+	\label{chap\thechapter}
+	%{\noindent \centering \includegraphics[width=\paperwidth]{#2}}
+	\begin{center}
+		\makebox[\textwidth]{\includegraphics[width=\paperwidth]{#2}}
+	\end{center}
+	\vfill
+	\newpage
+	\null
+	\vfill
+	%{\noindent \centering \includegraphics[width=\paperwidth]{niceties/#3}}
+	\begin{center}
+		\makebox[\textwidth]{\includegraphics[width=0.9\paperwidth]{niceties/#3}}
+	\end{center}
+	\vfill
+	\newpage
+	\pagestyle{default}
+}
 
 % Start of document ----------------------------------------------------------------
 \begin{document}
@@ -131,8 +178,28 @@ openany,
 %
 \include{chapters/100introduction}%
 \include{chapters/101fundamentals}%
+\include{chapters/102overview}%
+\include{chapters/103use}%
+\include{chapters/104integration}%
+\include{chapters/105rw}%
+\include{chapters/106unmanned}%
+\include{chapters/107efficiency}%
+\include{chapters/108duties}%
+\include{chapters/109blueonblue}%
+\include{chapters/110collateral}%
 %
 \include{chapters/200commandandcontrol}%
+\include{chapters/201intro}%
+\include{chapters/202joint}%
+\include{chapters/203af}%
+\include{chapters/204army}%
+\include{chapters/205land}%
+\include{chapters/206naval}%
+\include{chapters/207marines}%
+\include{chapters/208amphi}%
+\include{chapters/209specops}%
+\include{chapters/210comms}%
+\include{chapters/211isr}%
 %
 \include{chapters/300planning}%
 \include{chapters/301intro}

@@ -8,7 +8,7 @@ Le type de contrôle utilisé est dicté par la situation au sol. Un contrôle p
 \remark{Changer le Type de contrôle alors que l'attaque est en cours est possible, mais uniquement avant l'appel \acrshort{in} ou \acrshort{commencing}. Si un changement de type de contrôle est nécessaire après ces appels, la passe sera annulée.}
 
 \subsection{Type 1}\label[subsection]{typeone}
-\e
+\begin{e1}
 	\item \textbf{Lors d'un contrôle de type 1, chaque attaque doit être autorisée par le \ja{}.}
 	\item Le contrôle de type 1 implique que le \ja{} aie le contact visuel sur la cible, ainsi que le contact visuel sur l'appareil au moment de l'attaque.
 	\item Ce type de contrôle est utilisé lorsque le risque de tir ami est considéré élevé.
@@ -16,7 +16,7 @@ Le type de contrôle utilisé est dicté par la situation au sol. Un contrôle p
 	\item Le contrôle de \gls{typeone} sera utilisé si le \ja{} parlent une langue différente, si le \ja{} n'a pas entière confiance dans la corrélation ou dans les capacités du pilote, de l'appareil, ou si la météo est mauvaise.\vskip5mm
 	\important{Le contrôle de \gls{typeone} \textbf{ne peut pas} être utilisé avec des armes à guidage inertiel, de par l'impossibilité de prévoir la trajectoire de l'arme à partir de celle de l'avion.}
 	\item Un contrôle de type 1 se déroule comme suit:
-	\ee
+	\begin{e2}
 		\item Acquisition visuelle de la cible par le \ja{}
 		\item Gameplan/CAS brief
 		\item Readback lignes 4, 6 et 8
@@ -24,16 +24,16 @@ Le type de contrôle utilisé est dicté par la situation au sol. Un contrôle p
 		\item Annonce \acrshort{in}
 		\item Le \ja{} acquiert visuellement l'appareil qui attaque
 		\item Le \ja{} annonce \acrshort{clearedhot}, \acrshort{continuedry} ou \acrshort{abort}
-	\ed
-\ed
+	\end{e2}
+\end{e1}
 
 \subsection{Type 2}\label[subsection]{typetwo}
 \efig{type2}{Contrôle de Type 2}
-\e
+\begin{e1}
 	\item \textbf{Lors d'un contrôle de \gls{typetwo}, chaque attaque doit être autorisée par le \ja{}.}
 	\item Le contrôle de \gls{typetwo} est utilisé lorsque le \ja{} lorsque le \ja{} ne peut pas obtenir le visuel, soit sur la cible, soit sur l'appareil au moment du largage de la munition.
 	\item Un contrôle de \gls{typetwo} se déroule comme suit:
-	\ee
+	\begin{e2}
 		\item Acquisition de la cible par le \ja{}, visuellement ou par d'autres moyens
 		\item Gameplan/CAS brief
 		\item Readback lignes 4, 6 et 8
@@ -41,16 +41,16 @@ Le type de contrôle utilisé est dicté par la situation au sol. Un contrôle p
 		\item Annonce \acrshort{in} + cap d'attaque ou cap depuis la cible (ex: ``\acrshort{in} 340'', ou ``\acrshort{in} depuis le sud'')
 		\item Le \ja{} acquiert visuellement l'appareil qui attaque
 		\item Le \ja{} annonce \acrshort{clearedhot}, \acrshort{continuedry} ou \acrshort{abort}
-	\ed
-\ed
+	\end{e2}
+\end{e1}
 
 \subsection{Type 3}\label[subsection]{typethree}
-\e
+\begin{e1}
 	\item Le contrôle de \gls{typethree} est utilisé lorsque le \ja{} requiert \textbf{plusieurs attaques} en \textbf{un seul engagement}.\vskip5mm
 	\important{Lors d'un contrôle de \gls{typethree}, le \ja{} \textbf{doit} acquérir visuellement la cible.}
 	\item Bien que ce ne soit pas obligatoire, le \ja{} doit également tout mettre en oeuvre pour acquérir visuellement l'appareil qui attaque
 	\item Un contrôle de \gls{typethree} se déroule comme suit:
-	\ee
+	\begin{e2}
 		\item Acquisition de la cible par le \ja{}, visuellement ou par d'autres moyens
 		\item Gameplan/CAS brief
 		\item Readback lignes 4, 6 et 8
@@ -60,43 +60,43 @@ Le type de contrôle utilisé est dicté par la situation au sol. Un contrôle p
 		\item Le \ja{} annonce \acrshort{clearedeng} ou \acrshort{continuedry}
 		\item Avant le tir de la première munition, l'appareil qui attaque annonce \acrshort{commencing}
 		\item Une fois l'engagement terminé, l'appareil annonce \acrshort{complete}
-	\ed
-\ed
+	\end{e2}
+\end{e1}
 
 \subsection{Méthodes d'attaque}
 %\begin{minipage}{\linewidth}
-\e
+\begin{e1}
 	\item
 	Il existe deux méthodes d'attaque:
 	%\remark{%
-	\ee
+	\begin{e2}
 		\glsreset{bot}
 		\itemt{\gls{bot}}{Implique l'acquisition de la cible par l'appareil en attaque, et le largage de munition sur cette dernière}\vskip5mm
 		\important{La méthode \gls{bot} implique que le \ja{} reçoive de l'appareil qui attaque un appel \acrshort{tally}, \acrshort{contact} ou \acrshort{captured}}
 		\efig{bot}{Exemples de ``Bomb on Target''}
 		\itemt{\gls{boc}}{Implique le largage de munitions intelligentes sur des coordonnées, sans pour autant devoir ``voir'' la cible}
 		\efig{boc}{Exemples de ``Bomb on Coordinates''}
-	\ed
+	\end{e2}
 	%}
-\ed
+\end{e1}
 %\end{minipage}
 
 \subsection{Résumé des types de contrôle et des méthodes d'attaque}
-\e
+\begin{e1}
 	\item
 	Extrait du \jp: \\
 	\vskip2mm
 	\efig{controltypes}{Types de contrôle}
-\ed
-% TODO missing figure ref
+\end{e1}
+\todo{missing figure ref}
 
 \subsection{Introduction à la 9-Line}
 
 Le \ja{} utilisera un briefing standardisé pour transmettre rapidement les informations. Ce standard comporte 9 lignes et est appelé la \gls{9l}. La \gls{9l} est utilisé par les \glspl{fw} et les \glspl{rw}, et aide les pilotes à déterminer s'ils ont toutes les informations nécessaires à l'exécution de leur mission.
 
-%TODO link to chapter 5
+\todo{link to chapter 5}
 
-\e
+\begin{e1}
 	\itemt{Ligne 1 - \gls{ip} ou \gls{bp}}{
 	L'\gls{ip} est le point de départ de l'attaque. Pour les \glspl{rw}, la \gls{bp} est la zone où les attaques sur la cible commencent}
 	\itemt{Ligne 2 - Heading (cap) et Offset (décalage)}{
@@ -117,11 +117,11 @@ Le \ja{} utilisera un briefing standardisé pour transmettre rapidement les info
 	Instructions pour quitter la zone après l'attaque}
 	\itemt{Ligne 10 - Remarques et restrictions}{
 	Informations importantes supplémentaires pour l'attaque}
-\ed
+\end{e1}
 
 \subsection{Considérations supplémentaires pour tous les types de contrôle}
 
-\e
+\begin{e1}
 	\item Puisque le \ja{} n'est pas obligé de voir la cible en contrôles de \gls{typetwo} et \gls{typethree}, le \ja{} peut devoir faire se coordonner les pilotes et un observateur tiers. Le \ja{} maintient l'autorité d'autoriser le tir ou d'annuler la passe.
 	\item Le \ja{} indique le type de contrôle lors du game-plan. Il n'est pas inhabituel d'avoir plusieurs types de contrôles effectifs en même temps. Par exemple, le \ja{} peut avoir un vol \gls{rw} opérant en \gls{typetwo} depuis une \gls{bp} hors du \gls{fov} du \ja{}, en contrôlant simultanément un vol de \gls{fw} opérant à haute ou moyenne altitude.
 	\item Le temps de vol des munitions doit être pris en compte selon le mouvement des troupes amies et ennemies.
@@ -129,7 +129,7 @@ Le \ja{} utilisera un briefing standardisé pour transmettre rapidement les info
 	\item Bien que les récentes avancées technologiques en termes d'armement et de DataLink permettent des attaques très précises, il est essentiel que le \ja{} un dialogue avec le pilote pour confirmer la corrélation de la cible. La procédure et le brevity correspondant doivent absolument être respectés.
 	\important{Le \ja{} maintient en tout temps l'autorité pour annuler une attaque}
 	\item Lorsqu'un appareil est pris pour cible par un système \gls{sam} ou \gls{aaa}, le pilote exécutera les manoeuvres défensives nécessaires à la survie de l'appareil le temps de sortir de l'enveloppe de la menace. Le type de manoeuvre dépendra de la menace.
-	\ee
+	\begin{e2}
 		\itemt{\gls{sam}}{
 		Le pilote effectuera un virage au break, et larguera des chaffs/flares}
 		\itemt{\gls{aaa}}{
@@ -138,8 +138,8 @@ Le \ja{} utilisera un briefing standardisé pour transmettre rapidement les info
 		En temps de guerre, si un appareil se fait abattre, c'est généralement par une menace dont il n'avais pas conscience. Le \gls{jtac} peut grandement contribuer au succès de la mission en neutralisant les menaces, en briefant les appareils sur la menace, et en surveillant les menaces durant l'attaque. Lors de l'exécution d'une mission \gls{cas}, le \ja{} doit essayer de surveiller l'appareil qui attaque et la zone cible le plus possible. En fonction du niveau de menace, il se peut que les appareils doivent dépenser des munitions sur les \glspl{sam} ou \glspl{aaa} avant de pouvoir engager les cibles prévues dans la \gls{req}. En général, les appareils essayeront d'abord d'éviter les menaces connues, puis de neutraliser pendant l'attaque \gls{cas}, et, finalement, si nécessaire, détruire la menace. Le \ja{} fournit un support en communiquant les tirs des menaces aux appareils qui attaquent.}
 		\remark{Pendant la nuit, les tirs \gls{sam} ou \gls{aaa} sont plus faciles à repérer, ce qui peut potentiellement créer une situation ou des appels sont lancés pour des menaces qui tirent sur d'autres appareils}
 		\efig{threatcall}{Appel J-TAC/FAC(A) en cas de tir sol-air}
-	\ed
-\ed
+	\end{e2}
+\end{e1}
 
-%TODO p119 13. Considerations for Planning with Laser Guided and Inertial Aided Munitions
+\todo{p119 13. Considerations for Planning with Laser Guided and Inertial Aided Munitions}
 

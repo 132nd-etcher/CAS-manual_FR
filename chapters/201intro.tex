@@ -1,0 +1,21 @@
+\section{Introduction}
+
+\begin{e1}
+	\item Le \gls{cas} requiert une structure \gls{cc} intégrée, flexible, et qui réagit rapidement.
+	
+	\item Le \gls{jfc} exerce son \gls{opcon} via les commandants des différentes composantes, le \gls{jfacc} pour le \gls{cas} (généralement).
+	
+	Pour ce faire, uns structure de communication fiable et sécurisée est nécessaire.
+	
+	La \smallref{jfcopcon} illustre, à titre d'exemple, l'implémentation complète de la structure \gls{opcon} du \gls{jfc}.
+	
+	\note{
+		Implémentation DCS: \\
+		\begin{e2}
+			\item Les parties représentées se limiteront généralement au \gls{jfc}, \gls{jfacc}, et \glspl{gc} (équivalents au ``CP'' sur l'image).
+			\item Ces nombreux rôles seront généralement soit totalement ignorés, soit remplis par la même personne. Dans la plupart des cas, le créateur de mission fera office de \gls{jfc}, \gls{jfacc} et \gls{gc}.
+		\end{e2}
+	}
+\end{e1}
+
+\efig{jfcopcon}{Structure OPCON du JFC.}
