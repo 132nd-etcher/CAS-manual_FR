@@ -213,7 +213,7 @@ openany,
 \include{chapters/312control}
 \include{chapters/314integrating}
 \include{chapters/315rw}
-\include{chapters/3165line}
+\include{chapters/316fiveline}
 \include{chapters/320showofforce}
 \include{chapters/323facaplanning}
 \include{chapters/327casrequest}
@@ -225,6 +225,12 @@ openany,
 \include{chapters/404comms}
 %
 \include{chapters/500execution}%
+\include{chapters/501intro}
+\include{chapters/502engage}
+\include{chapters/503isr}
+\include{chapters/504nonjoint}
+\include{chapters/505faca}
+\include{chapters/506jfo}
 %
 \newpage%
 %
@@ -261,8 +267,13 @@ openany,
 \makeatother%
 %
 \newpage%
+%\fancyhf{}
+%\fancyhead[L]{\minipage[b]{.9\linewidth} Points à traiter \endminipage}
 \invisibleunnumberedsection{Points à traiter}%
-\listoftodos
+\makeatletter
+\@starttoc{tdo}
+\makeatother
+%\fancyhead[L]{\minipage[b]{.9\linewidth} Points à traiter \endminipage}
 %
 %\phantomsection
 %%\addcontentsline{toc}{chapter}{\lstlistlistingname}
@@ -272,6 +283,7 @@ openany,
 \microtypesetup{protrusion=true}%
 %
 \newpage%
+\pagestyle{intro}%
 %
 \invisibleunnumberedchapter{Glossaire}%
 %

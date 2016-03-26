@@ -1,0 +1,89 @@
+
+\begin{tikzpicture}
+
+\node [agency] (jfc) {JFC};
+
+\node [document, left of=jfc, yshift=-1cm, xshift=-3cm] (conops) {CONOPS};
+\draw [produces] ($(conops.east)+(0.5cm,0)$) -- (conops.east);
+
+\node [document, below of=conops, yshift=-0.2cm] (acms) {ACMs};
+\draw [produces] ($(acms.east)+(0.5cm,0)$) -- (acms.east);
+
+\draw [produces, -] (jfc.west) -| node[anchor=south] {{\'E}met} ($(acms.east)+(0.5cm,0)$);
+
+\node [agency, below of=jfc, yshift=-5cm] (jfacc) {JFACC};
+
+\node [document, left of=jfacc, yshift=-1cm, xshift=-3cm] (ato) {ATO};
+\draw [produces] ($(ato.east)+(0.5cm,0)$) -- (ato.east);
+
+\node [document, below of=ato, yshift=-0.2cm] (spins) {SPINS};
+\draw [produces] ($(spins.east)+(0.5cm,0)$) -- (spins.east);
+
+\node [document, below of=spins, yshift=-0.2cm] (opord) {OPORD};
+\draw [produces] ($(opord.east)+(0.5cm,0)$) -- (opord.east);
+
+\draw [produces, -] (jfacc.west) -| node[anchor=south] {{\'E}met} ($(opord.east)+(0.5cm,0)$);
+
+\draw [subor] (jfc) -- (jfacc);
+
+\node [agency, right of=jfacc, xshift=3cm] (gc) {Ground Commander};
+
+\node [document, right of=gc, yshift=-1cm, xshift=3cm] (fscm) {FSCM};
+\draw [produces, -] (gc.east) -|  node[anchor=south west, near start] {{\'E}met} ($(fscm.west)-(0.5cm,0)$);
+\draw [produces] ($(fscm.west)-(0.5cm,0)$) --  (fscm.west);
+
+\node [document, below of=fscm, yshift=-0.2cm] (intent) {Intentions};
+\draw [produces, -] ($(fscm.west)-(0.5cm,0)$) --  ($(intent.west)-(0.5cm,0)$);
+\draw [produces] ($(intent.west)-(0.5cm,0)$) --  (intent.west);
+
+\draw [subor] ($(jfc.south)-(0cm,0.5cm)$) -| node[anchor=south west, at start, yshift=-0.6cm] {Contr{\^o}le} (gc);
+
+\node [air, below of=opord, yshift=-2.5cm] (awacs) {AWACS};
+
+\draw [subor] (jfacc.south) |- node[anchor=north west, at start, yshift=-0.5cm] {Contr{\^o}le} ($(awacs.north)+(0cm,1cm)$) -- (awacs.north);
+
+\node [ground] (ground1)  at (gc|-awacs) {Unit{\'e} au sol};
+
+\draw [subor] (gc) -- node[anchor=west, at start, yshift=-0.6cm] {Contr{\^o}le} (ground1);
+
+\node [ground] at (ground1-|intent) (jtac)  {J-TAC};
+
+\draw [subor] ($(ground1.north)+(0,1cm)$) -| (jtac.north) ;
+
+\node [air, yshift=-4cm] (cas) at ($(awacs)!0.5!(jtac)$) {Appareil de CAS};
+
+%\draw [subor, -] (jtac.south) |- node[anchor=north west, at start, yshift=-0.2cm] {Contr{\^o}le} ($(cas.north)+(0cm,1cm)$|-$(cas.east)+(1cm,cm)$);
+\draw [subor] (awacs.south) |- node[anchor=north west, at start, yshift=-0.2cm] {Contr{\^o}le} ($(cas.north)+(-2cm,1cm)$) -| ($(cas.north)-(0.5cm,0cm)$);
+\draw [subor] ($(jtac.south)-(0.2cm,0cm)$) |- node[anchor=north east, at start, yshift=-0.2cm] {Contr{\^o}le} ($(cas.north)+(2cm,1cm)$) -| ($(cas.north)+(0.5cm,0cm)$);
+%\draw [subor, -] ($(cas.north)+(-0.2cm,1cm)$) -- ($(cas.north)+(0,0.5cm)$);
+%\draw [subor, -] ($(cas.north)+(0.2cm,1cm)$) -- ($(cas.north)+(0,0.5cm)$);
+%\draw [subor] ($(cas.north)+(0,0.5cm)$) -- (cas.north);
+
+\node [document] at (jtac|-cas) (req) {Requ{\^e}te CAS};
+\draw [produces] ($(jtac.south)+(0.2cm,0cm)$) -- node[anchor=north west, at start, yshift=-0.2cm] {{\'E}met} ($(req.north)+(0.2cm,0cm)$);
+
+\node [air] (air) at (awacs|-cas) {Autres appareils};
+
+\draw [subor] ($(air.north)+(0,1cm)$) -- (air.north);
+
+\node [agency, below of=air, yshift=-2.5cm] (ex1) {Agence};
+\node [document, right of=ex1, xshift=3cm] (ex2) {Document};
+\node [air, right of=ex2, xshift=3cm] (ex3) {Unit{\'e} a{\'e}ri{\`e}nne};
+\node [ground, right of=ex3, xshift=3cm] (ex4) {Unit{\'e} terrestre};
+
+\begin{pgfonlayer}{background}
+\node [draw=gray!80, fit={($(jfc.west)-(0.2cm,0)$)([yshift=0.5cm]jfc.north)([yshift=-0.2cm]jfc.south)([xshift=0.2cm]jfc.east)}] (joc) {};
+\node [draw=gray!80, fit={($(jfacc.west)-(0.2cm,0)$)([yshift=0.5cm]jfacc.north)([yshift=-0.2cm]jfacc.south)([xshift=0.2cm]jfacc.east)}] (jaoc) {};
+\node [fill=gray!30, fit={([xshift=-0.2cm]ex1.west)([yshift=0.5cm]ex1.north)([yshift=-0.2cm]ex1.south)([xshift=0.4cm]ex4.east)}] (exs) {};
+\node [draw=black, fit={([xshift=-0.2cm]conops.west)([yshift=1cm]joc.north)([yshift=-0.2cm]opord.south)([xshift=0.4cm]intent.east)}] (creator) {};
+\node [draw=black, fit={([yshift=-0.2cm, xshift=0cm]creator.south west)([yshift=-1cm]creator.south)([yshift=-0.2cm]cas.south)([yshift=-0.2cm]creator.south east)}] (pilots) {};
+\end{pgfonlayer}
+
+\node [text centered, anchor=north west, font=\bfseries, yshift=-0.1cm] at (joc.north west) {JOC};
+\node [text centered, anchor=north west, font=\bfseries, yshift=-0.1cm] at (jaoc.north west) {JAOC};
+\node [text centered, anchor=north, font=\bfseries, yshift=-0.1cm] at (pilots.north) {Pilotes};
+\node [text centered, anchor=north, font=\bfseries, yshift=-0.1cm] at (creator.north) {Cr{\'e}ateur de mission (g{\'e}n{\'e}ralement)};
+\node [text centered, anchor=north, font=\bfseries, yshift=-0.1cm] at (exs.north) {L{\'e}gende};
+
+
+\end{tikzpicture}
