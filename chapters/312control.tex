@@ -88,58 +88,99 @@ Le type de contrôle utilisé est dicté par la situation au sol. Un contrôle p
 	\vskip2mm
 	\efig{controltypes}{Types de contrôle}
 \end{e1}
-\todo{missing figure ref}
 
 \subsection{Introduction à la 9-Line}
 
 Le \ja{} utilisera un briefing standardisé pour transmettre rapidement les informations. Ce standard comporte 9 lignes et est appelé la \gls{9l}. La \gls{9l} est utilisé par les \glspl{fw} et les \glspl{rw}, et aide les pilotes à déterminer s'ils ont toutes les informations nécessaires à l'exécution de leur mission.
 
-\todo{link to chapter 5}
+\todo[inline]{link to chapter 5}
 
 \begin{e1}
-	\itemt{Ligne 1 - \gls{ip} ou \gls{bp}}{
-	L'\gls{ip} est le point de départ de l'attaque. Pour les \glspl{rw}, la \gls{bp} est la zone où les attaques sur la cible commencent}
-	\itemt{Ligne 2 - Heading (cap) et Offset (décalage)}{
-	Le cap est donné en degrés magnétiques à partir de l'\gls{ip} vers la cible, ou depuis le centre de la \gls{bp} vers la cible. L'offset est le côté de ligne imaginaire entre l'\gls{ip} et la cible vers lequel le pilote peut manoeuvrer}
-	\itemt{Ligne 3 - Distance}{
-	La distance entre l'\gls{ip} ou la \gls{bp} et la cible}
-	\itemt{Ligne 4 - Élévation}{
-	L'élévation de la cible donnée en \gls{ft} \gls{msl}, sauf si autrement indiqué}
-	\itemt{Ligne 5 - Description de la cible}{
-	La description doit être suffisamment spécifique que pour permettre au pilote d'identifier la cible avec certitude}
-	\itemt{Ligne 6 - Position de la cible}{
-	Le \ja{} fournit la position de la cible}
-	\itemt{Type de Mark/Guidage terminal}{
-	Le type de marque utilisé (\gls{ir}, fumigène, laser, etc.}. Dans le cas du laser, \ja{} passera également le call-sign de l'unité qui fournit le guidage terminal
-	\itemt{Ligne 8 - Alliés}{
-	Direction cardinale ou sous-cardinale (N, NE, E, SE, S, SW, W, NW} et distance en mètres à partir de la cible vers l'unité alliée la plus proche (exemple: "Sud, 300")
-	\itemt{Ligne 9 - Egress}{
-	Instructions pour quitter la zone après l'attaque}
-	\itemt{Ligne 10 - Remarques et restrictions}{
-	Informations importantes supplémentaires pour l'attaque}
+	\itemt{Ligne 1 - \gls{ip} ou \gls{bp}.}{
+		L'\gls{ip} est le point de départ de l'attaque. Pour les \glspl{rw}, la \gls{bp} est la zone où les attaques sur la cible commencent.
+	}
+	
+	\itemt{Ligne 2 - Heading (cap) et Offset (décalage).}{
+		Le cap est donné en degrés magnétiques à partir de l'\gls{ip} vers la cible, ou depuis le centre de la \gls{bp} vers la cible. L'offset est le côté de ligne imaginaire entre l'\gls{ip} et la cible vers lequel le pilote peut manoeuvrer.
+	}
+	\itemt{Ligne 3 - Distance.}{
+		La distance entre l'\gls{ip} ou la \gls{bp} et la cible.
+	}
+	
+	\itemt{Ligne 4 - Élévation.}{
+		L'élévation de la cible donnée en \gls{ft} \gls{msl}, sauf si autrement indiqué.
+	}
+	
+	\itemt{Ligne 5 - Description de la cible.}{
+		La description doit être suffisamment spécifique que pour permettre au pilote d'identifier la cible avec certitude.
+	}
+	
+	\itemt{Ligne 6 - Position de la cible.}{
+		Le \ja{} fournit la position de la cible.
+	}
+	
+	\itemt{Type de Mark/Guidage terminal.}{
+		Le type de marque utilisé (\gls{ir}, fumigène, laser, etc.). Dans le cas du laser, \ja{} passera également le call-sign de l'unité qui fournit le guidage terminal.
+	}
+	
+	\itemt{Ligne 8 - Alliés.}{
+		Direction cardinale ou sous-cardinale (N, NE, E, SE, S, SW, W, NW) et distance en mètres à partir de la cible vers l'unité alliée la plus proche (exemple: "Sud, 300").
+	}
+	
+	\itemt{Ligne 9 - Egress.}{
+		Instructions pour quitter la zone après l'attaque.
+	}
+	
+	\itemt{Ligne 10 - Remarques et restrictions.}{
+		Informations importantes supplémentaires pour l'attaque.
+	}
+	
 \end{e1}
 
 \subsection{Considérations supplémentaires pour tous les types de contrôle}
 
 \begin{e1}
 	\item Puisque le \ja{} n'est pas obligé de voir la cible en contrôles de \gls{typetwo} et \gls{typethree}, le \ja{} peut devoir faire se coordonner les pilotes et un observateur tiers. Le \ja{} maintient l'autorité d'autoriser le tir ou d'annuler la passe.
+	
 	\item Le \ja{} indique le type de contrôle lors du game-plan. Il n'est pas inhabituel d'avoir plusieurs types de contrôles effectifs en même temps. Par exemple, le \ja{} peut avoir un vol \gls{rw} opérant en \gls{typetwo} depuis une \gls{bp} hors du \gls{fov} du \ja{}, en contrôlant simultanément un vol de \gls{fw} opérant à haute ou moyenne altitude.
+	
 	\item Le temps de vol des munitions doit être pris en compte selon le mouvement des troupes amies et ennemies.
+	
 	\item Un système de DataLink peut augmenter la \gls{sa} des pilotes et du \ja{}
+	
 	\item Bien que les récentes avancées technologiques en termes d'armement et de DataLink permettent des attaques très précises, il est essentiel que le \ja{} un dialogue avec le pilote pour confirmer la corrélation de la cible. La procédure et le brevity correspondant doivent absolument être respectés.
+	
 	\important{Le \ja{} maintient en tout temps l'autorité pour annuler une attaque}
-	\item Lorsqu'un appareil est pris pour cible par un système \gls{sam} ou \gls{aaa}, le pilote exécutera les manoeuvres défensives nécessaires à la survie de l'appareil le temps de sortir de l'enveloppe de la menace. Le type de manoeuvre dépendra de la menace.
+	
+	\item Lorsqu'un appareil est pris pour cible par un système \gls{sam} ou \gls{aaa}, le pilote exécutera les manoeuvres défensives nécessaires à la survie de l'appareil le temps de sortir de l'enveloppe de la menace. Le type de manoeuvre dépendra de la menace:
+	
 	\begin{e2}
-		\itemt{\gls{sam}}{
-		Le pilote effectuera un virage au break, et larguera des chaffs/flares}
-		\itemt{\gls{aaa}}{
-		Le pilote manoeuvrera l'appareil de manière à changer rapidement de cap et d'altitude de manière aléatoire et en 3 dimensions en s'éloignant de le menace.}
-		\itemt{Support mutuel \gls{jtac}}{
-		En temps de guerre, si un appareil se fait abattre, c'est généralement par une menace dont il n'avais pas conscience. Le \gls{jtac} peut grandement contribuer au succès de la mission en neutralisant les menaces, en briefant les appareils sur la menace, et en surveillant les menaces durant l'attaque. Lors de l'exécution d'une mission \gls{cas}, le \ja{} doit essayer de surveiller l'appareil qui attaque et la zone cible le plus possible. En fonction du niveau de menace, il se peut que les appareils doivent dépenser des munitions sur les \glspl{sam} ou \glspl{aaa} avant de pouvoir engager les cibles prévues dans la \gls{req}. En général, les appareils essayeront d'abord d'éviter les menaces connues, puis de neutraliser pendant l'attaque \gls{cas}, et, finalement, si nécessaire, détruire la menace. Le \ja{} fournit un support en communiquant les tirs des menaces aux appareils qui attaquent.}
-		\remark{Pendant la nuit, les tirs \gls{sam} ou \gls{aaa} sont plus faciles à repérer, ce qui peut potentiellement créer une situation ou des appels sont lancés pour des menaces qui tirent sur d'autres appareils}
-		\efig{threatcall}{Appel J-TAC/FAC(A) en cas de tir sol-air}
+		
+		\itemt{\gls{sam}.}{
+			Le pilote effectuera un virage au break, et larguera des chaffs/flares
+		}
+		
+		\itemt{\gls{aaa}.}{
+			Le pilote manoeuvrera l'appareil de manière à changer rapidement de cap et d'altitude de manière aléatoire et en 3 dimensions en s'éloignant de le menace.
+		}
+		
+		\itemt{Support mutuel \gls{jtac}.}{
+			En temps de guerre, si un appareil se fait abattre, c'est généralement par une menace dont il n'avais pas conscience.
+			
+			Le \gls{jtac} peut grandement contribuer au succès de la mission en neutralisant les menaces, en briefant les appareils sur la menace, et en surveillant les menaces durant l'attaque.
+			
+			Lors de l'exécution d'une mission \gls{cas}, le \ja{} doit essayer de surveiller l'appareil qui attaque et la zone cible le plus possible.
+			
+			En fonction du niveau de menace, il se peut que les appareils doivent dépenser des munitions sur les \glspl{sam} ou \glspl{aaa} avant de pouvoir engager les cibles prévues dans la \gls{req}.
+			
+			En général, les appareils essayeront d'abord d'éviter les menaces connues, puis de neutraliser pendant l'attaque \gls{cas}, et, finalement, si nécessaire, détruire la menace. Le \ja{} fournit un support en communiquant les tirs des menaces aux appareils qui attaquent.
+		}
+		
+		\remark{Pendant la nuit, les tirs \gls{sam} ou \gls{aaa} sont plus faciles à repérer, ce qui peut potentiellement créer une situation ou des appels sont lancés pour des menaces qui tirent sur d'autres appareils.}
+		
+		\efig{threatcall}{Appel J-TAC/FAC(A) en cas de tir sol-air.}
 	\end{e2}
 \end{e1}
 
-\todo{p119 13. Considerations for Planning with Laser Guided and Inertial Aided Munitions}
+\todo[inline]{p119 13. Considerations for Planning with Laser Guided and Inertial Aided Munitions}
 
