@@ -33,7 +33,7 @@ openany,
 \newenvironment{re6}[1][\illllllm]  {\geneer { ({\roman*})  } {#1} {\lllllllm}  } {\end{longenum}}
 \newenvironment{re7}[1][\illlllllm] {\geneer { ({\arabic*}) } {#1} {\llllllllm} } {\end{longenum}}
 \input{preamble/0003figures}
-\newcommand{\efig}[2]{ \begin{figure}[H] \includegraphics[width=\textwidth]{#1.png} \caption{#2} \label{#1} \end{figure} }
+\newcommand{\efig}[2]{ \begin{figure}[H] \centering \includegraphics[width=\textwidth, max height=\textheight, ,keepaspectratio]{#1.png} \caption{#2} \label{#1} \end{figure} }
 \input{preamble/0003titlesec}
 \input{preamble/0003fancyhdr}
 \input{preamble/0003caption}
@@ -111,6 +111,7 @@ openany,
 	\end{center}
 	\vfill
 	\newpage
+	\thispagestyle{default}
 	\null
 	\vfill
 	%{\noindent \centering \includegraphics[width=\paperwidth]{niceties/#3}}
@@ -139,115 +140,114 @@ openany,
 \makeatletter\@openrightfalse\makeatother% remove empty page after appendix
 
 \addto\captionsfrenchb{%
-  \renewcommand\listfigurename{Liste des images}}
+	\renewcommand\listfigurename{Liste des images}}
 
 %bdabda\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
 
 \sloppy
 
-\input{chapters/0001titlepage}
+\include{chapters/1000titlepage}
 %\import{./}{titlepage.tex}
 
 \addtocontents{toc}{~\hfill\textbf{Page}\par}%
 %
 \pagenumbering{Roman}%
 %
-\include{chapters/001disclaimer}%
+%\include{chapters/1001disclaimer}%
 %\import{./intro/}{disclaimer.tex}
 %
-\include{chapters/000publetter}%
+\include{chapters/1002publetter}%
 %\import{./intro/}{pub_letter.tex}
 %
 \pagestyle{intro}%
+
 %
-\include{chapters/fremerciements}%
-%
-\include{chapters/002preface}%
+\include{chapters/1003summary}%
 %\import{./intro/}{preface.tex}
 %
-\include{chapters/003changelog}%
+\include{chapters/1004changelog}%
 %\import{./intro/}{changelog.tex}
 %
-\include{chapters/004conventions}%
+\include{chapters/1005conventions}%
 %\import{./intro/}{conventions.tex}
 %
-\include{chapters/005biblio}%
+\include{chapters/1006biblio}%
 %
 \pagenumbering{arabic}%
 %
-\include{chapters/006toc}%
+\include{chapters/1007toc}%
 %
 \pagestyle{default}%
 %
-\include{chapters/100introduction}%
-\include{chapters/101fundamentals}%
-\include{chapters/102overview}%
-\include{chapters/103use}%
-\include{chapters/104integration}%
-\include{chapters/105rw}%
-\include{chapters/106unmanned}%
-\include{chapters/107efficiency}%
-\include{chapters/108duties}%
-\include{chapters/109blueonblue}%
-\include{chapters/110collateral}%
+\include{chapters/3100introduction}%
+\include{chapters/3101fundamentals}%
+\include{chapters/3102overview}%
+\include{chapters/3103use}%
+\include{chapters/3104integration}%
+\include{chapters/3105rw}%
+\include{chapters/3106unmanned}%
+\include{chapters/3107efficiency}%
+\include{chapters/3108duties}%
+\include{chapters/3109blueonblue}%
+\include{chapters/3110collateral}%
 %
-\include{chapters/200commandandcontrol}%
-\include{chapters/201intro}%
-\include{chapters/202joint}%
-\include{chapters/203af}%
-\include{chapters/204army}%
-\include{chapters/205land}%
-\include{chapters/206naval}%
-\include{chapters/207marines}%
-\include{chapters/208amphi}%
-\include{chapters/209specops}%
-\include{chapters/210comms}%
-\include{chapters/211isr}%
+\include{chapters/3200commandandcontrol}%
+\include{chapters/3201intro}%
+\include{chapters/3202joint}%
+\include{chapters/3203af}%
+\include{chapters/3204army}%
+\include{chapters/3205land}%
+\include{chapters/3206naval}%
+\include{chapters/3207marines}%
+\include{chapters/3208amphi}%
+\include{chapters/3209specops}%
+\include{chapters/3210comms}%
+\include{chapters/3211isr}%
 %
-\include{chapters/300planning}%
-\include{chapters/301intro}
-\include{chapters/302deliberate}
-\include{chapters/303crisis}
-\include{chapters/304decision}
-\include{chapters/305staff}
-\include{chapters/306mission}
-\include{chapters/307ennemy}
-\include{chapters/308allies}
-\include{chapters/309terrain}
-\include{chapters/310timing}
-\include{chapters/311concepts}
-\include{chapters/312control}
-\include{chapters/313guided}
-\include{chapters/314integrating}
-\include{chapters/315rw}
-\include{chapters/316fiveline}
-\include{chapters/317bomber}
-\include{chapters/318drones}
-\include{chapters/319specops}
-\include{chapters/320showofforce}
-\include{chapters/321digital}
-\include{chapters/322video}
-\include{chapters/323facaplanning}
-\include{chapters/324tac}
-\include{chapters/325jfo}
-\include{chapters/326multinat}
-\include{chapters/327casrequest}
+\include{chapters/3300planning}%
+\include{chapters/3301intro}
+\include{chapters/3302deliberate}
+\include{chapters/3303crisis}
+\include{chapters/3304decision}
+\include{chapters/3305staff}
+\include{chapters/3306mission}
+\include{chapters/3307ennemy}
+\include{chapters/3308allies}
+\include{chapters/3309terrain}
+\include{chapters/3310timing}
+\include{chapters/3311concepts}
+\include{chapters/3312control}
+\include{chapters/3313guided}
+\include{chapters/3314integrating}
+\include{chapters/3315rw}
+\include{chapters/3316fiveline}
+\include{chapters/3317bomber}
+\include{chapters/3318drones}
+\include{chapters/3319specops}
+\include{chapters/3320showofforce}
+\include{chapters/3321digital}
+\include{chapters/3322video}
+\include{chapters/3323facaplanning}
+\include{chapters/3324tac}
+\include{chapters/3325jfo}
+\include{chapters/3326multinat}
+\include{chapters/3327casrequest}
 %
-\include{chapters/400preparation}%
-\include{chapters/401intro}
-\include{chapters/402repetition}
-\include{chapters/403precombat}
-\include{chapters/404comms}
-\include{chapters/405digital}
-\include{chapters/406mov}
+\include{chapters/3400preparation}%
+\include{chapters/3401intro}
+\include{chapters/3402repetition}
+\include{chapters/3403precombat}
+\include{chapters/3404comms}
+\include{chapters/3405digital}
+\include{chapters/3406mov}
 %
-\include{chapters/500execution}%
-\include{chapters/501intro}
-\include{chapters/502engage}
-\include{chapters/503isr}
-\include{chapters/504nonjoint}
-\include{chapters/505faca}
-\include{chapters/506jfo}
+\include{chapters/3500execution}%
+\include{chapters/3501intro}
+\include{chapters/3502engage}
+\include{chapters/3503isr}
+\include{chapters/3504nonjoint}
+\include{chapters/3505faca}
+\include{chapters/3506jfo}
 %
 \newpage%
 %
@@ -271,11 +271,6 @@ openany,
 \@starttoc{lot}% Print List of Figures
 \makeatother%
 %
-%\phantomsection
-%%\addcontentsline{toc}{chapter}{\listtablename}
-%\addtocontents{lot}{\protect\addcontentsline{toc}{chapter}{Liste des tables}}
-%\listoftables
-%
 \newpage%
 %
 \invisibleunnumberedsection{Liste des exemples}%
@@ -284,18 +279,11 @@ openany,
 \makeatother%
 %
 \newpage%
-%\fancyhf{}
-%\fancyhead[L]{\minipage[b]{.9\linewidth} Points à traiter \endminipage}
+%
 \invisibleunnumberedsection{Points à traiter}%
 \makeatletter
 \@starttoc{tdo}
 \makeatother
-%\fancyhead[L]{\minipage[b]{.9\linewidth} Points à traiter \endminipage}
-%
-%\phantomsection
-%%\addcontentsline{toc}{chapter}{\lstlistlistingname}
-%\addtocontents{lol}{\protect\addcontentsline{toc}{chapter}{Liste des exemples}}
-%\lstlistoflistings{}
 %
 \microtypesetup{protrusion=true}%
 %
@@ -307,7 +295,6 @@ openany,
 \glsaddall%
 \glossarystyle{altlist}%
 \invisibleunnumberedsection{Acronymes}%
-%\printglossary[title=Acronymes, toctitle=Acronymes, type=\acronymtype]
 \printglossary[type=\acronymtype]
 %
 \newpage%
@@ -321,13 +308,21 @@ openany,
 
 \begin{appendices}%
 %	
-\include{annexes/aplanning}%
+\include{chapters/9001planning}%
 %
-\include{annexes/bdatacard}%
+\include{chapters/9002datacard}%
 %
-\include{annexes/ccasrequest}%
+\include{chapters/9003casrequest}%
+%
+\include{chapters/9004agops}%
+%
+\include{chapters/9005bdarep}%
 %
 \end{appendices}%
+
+\pagestyle{intro}%
+
+\include{chapters/9101thanks}%
 
 \pagestyle{empty}%
 %
