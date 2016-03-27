@@ -1,5 +1,14 @@
-\documentclass{minimal}
-
+\documentclass[
+11pt,
+a4paper,
+final,
+notitlepage,
+oneside,
+openany,
+]{report}
+\input{preamble/0001fonts}
+\input{preamble/0001geometry}
+\input{preamble/0001constants}
 \input{preamble/0002misc}
 \input{preamble/0003tikz}
 
@@ -8,65 +17,6 @@
 
 \import{./tikz/}{2011simplopcon}
 
-
-
-
-
-\begin{tikzpicture}
-	\matrix[column sep=0.5cm, row sep=1.4cm]
-	{
-	\node [process] (req)          {CAS request};&
-	\node [process] (planning)     {Mission planning};\\
-	
-	\node [process] (aoupdate)     {AO Update};\\
-	
-	\node [process] (comms)        {Establish comms with J-TAC/\\FAC(A)}; &%
-	\node [process] (auth)         {Authent-\\ication};&%
-	\node [process] (tfcupd)       {Traffic and airpsace update};\\%
-	
-	\node [process] (ci) {Check-in brief};&
-	\node [process] (aoupd2)       {AO update};&
-	\node [process] (casbrief)     {CAS brief};&
-	\node [process] (talkon)       {Talk-on};&
-	\node [process] (corr)         {Target correlation};\\
-	
-	\node [process] (fai)          {Final attack instructions};&
-	\node [process] (ch)           {Cleared hot};&
-	\node [process] (attack)       {Attack};&
-	\node [process] (bda)          {BDA};&
-	\node [process] (reattack)     {Re-attack};\\
-	};
-	\begin{pgfonlayer}{background}
-		\node [fill=orange!30, fit={($(req.west)-(0.2cm,0)$)([yshift=0.6cm]req.north)([yshift=-0.2cm]req.south)([xshift=0.2cm]planning.east)}] (preflightbg) {};
-		\node [fill=orange!30, fit={($(aoupdate.west)-(0.2cm,0)$)([yshift=0.6cm]aoupdate.north)([yshift=-0.2cm]aoupdate.south)([xshift=0.2cm]aoupdate.east)}] (aoupdatebg) {};
-		\node [fill=orange!30, fit={($(comms.west)-(0.2cm,0)$)([yshift=0.6cm]comms.north)([yshift=-0.2cm]comms.south)([xshift=0.2cm]tfcupd.east)}] (checkinbg) {};
-		\node [fill=orange!30, fit={($(ci.west)-(0.2cm,0)$)([yshift=0.6cm]ci.north)([yshift=-0.2cm]ci.south)([xshift=0.2cm]corr.east)}] (casbriefbg) {};
-		\node [fill=orange!30, fit={($(fai.west)-(0.2cm,0)$)([yshift=0.6cm]fai.north)([yshift=-0.2cm]fai.south)([xshift=0.2cm]reattack.east)}] (attackbg) {};
-	\end{pgfonlayer}
-	
-	\node [text centered, anchor=north west, font=\bfseries, yshift=0.2cm] at (preflightbg.north west) {Avant le vol};
-	\node [text centered, anchor=north west, font=\bfseries, yshift=0.2cm] at (aoupdatebg.north west) {Transit};
-	\node [text centered, anchor=north west, font=\bfseries, yshift=0.2cm] at (checkinbg.north west) {Check-in};
-	\node [text centered, anchor=north west, font=\bfseries, yshift=0.2cm] at (casbriefbg.north west) {CAS brief};
-	\node [text centered, anchor=north west, font=\bfseries, yshift=0.2cm] at (attackbg.north west) {Attaque};
-	
-	\draw [arrow] (req.east)      -- (planning.west);
-	\draw [arrow] (comms.east)    -- (auth.west);
-	\draw [arrow] (ci.east)       -- (aoupd2.west);
-	\draw [arrow] (aoupd2.east)   -- (casbrief.west);
-	\draw [arrow] (casbrief.east) -- (talkon.west);
-	\draw [arrow] (talkon.east)   -- (corr.west);	
-	\draw [arrow] (auth.east)     -- (tfcupd.west);	
-	\draw [arrow] (fai.east)      -- (ch.west);
-	\draw [arrow] (ch.east)       -- (attack.west);
-	\draw [arrow] (attack.east)   -- (bda.west);
-	\draw [arrow] (bda.east)      -- (reattack.west);
-	\draw[tarrow] (planning.east) -- ++ (1cm,0) -- ++ (0,-0.5cm) |- ($(aoupdate.north west)-(1cm,-0.85cm)$) |- (aoupdate.west);
-	\draw[tarrow] (aoupdate.east) -- ++ (1cm,0) -- ++ (0,-0.5cm) |- ($(comms.north west)-(1cm,-0.85cm)$) |- (comms.west);
-	\draw[tarrow] (tfcupd.east) -- ++ (1cm,0) -- ++ (0,-0.5cm) |- ($(ci.north west)-(1cm,-0.85cm)$) |- (ci.west);
-	\draw[tarrow] (corr.east) -- ++ (1cm,0) -- ++ (0,-0.5cm) |- ($(fai.north west)-(1cm,-0.85cm)$) |- (fai.west);
-	\draw[tarrow] (reattack.south) -- ++ (0,-0.5cm) |- ($(fai.south)-(0,0.5cm)$) -- (fai.south);
-\end{tikzpicture}
-
+\import{./tikz/}{5021simplcasflow}
 
 \end{document}
