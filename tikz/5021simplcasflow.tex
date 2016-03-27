@@ -1,7 +1,7 @@
 \begin{tikzpicture}
-  \tikzstyle{every node}=[font=\footnotesize]
-  \matrix[column sep=0.5cm, row sep=1.4cm]
-  {
+	\tikzstyle{every node}=[font=\footnotesize]
+	\matrix[column sep=0.5cm, row sep=1.4cm]
+	{
 	\node [process] (req)		  {CAS request};&
 	\node [process] (planning)	 {Mission planning};\\
 	
@@ -22,8 +22,8 @@
 	\node [process] (attack)	   {Attack};&
 	\node [process] (bda)		  {BDA};&
 	\node [process] (reattack)	 {Re-attack};\\
-  };
-  	\begin{pgfonlayer}{background}
+	};
+	\begin{pgfonlayer}{background}
 		\node [fill=orange!30, fit={($(req.west)	 -(0.2cm,0)$)([yshift=0.6cm]req.north)([yshift=-0.2cm]req.south)([xshift=0.2cm]planning.east)}] (preflightbg) {};
 		\node [fill=orange!30, fit={($(aoupdate.west)-(0.2cm,0)$)([yshift=0.6cm]aoupdate.north)([yshift=-0.2cm]aoupdate.south)([xshift=0.2cm]aoupdate.east)}] (aoupdatebg) {};
 		\node [fill=orange!30, fit={($(comms.west)   -(0.2cm,0)$)([yshift=0.6cm]comms.north)([yshift=-0.2cm]comms.south)([xshift=0.2cm]tfcupd.east)}] (checkinbg) {};
