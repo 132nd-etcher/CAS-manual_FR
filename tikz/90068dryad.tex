@@ -1,0 +1,25 @@
+\begin{adjustbox}{max width=\textwidth, max height=\textheight, keepaspectratio}
+	
+	\begin{tikzpicture}
+		\tikzstyle{every node}=[font=\footnotesize]
+		\matrix[column sep=2.8mm, row sep=0mm]
+		{		
+		\node{Y};&\node {};&\node {SOKF};&\node {};&\node {CDT};&\node {};&\node {JRX};&\node {};&\node {YU};&\node {};&\node {NA};&\node {};&\node {QGZ};&\node {};&\node {LB};&\node {};&\node {MH};&\node {};&\node (l) {VE};&\node {};&\node {PW};\\
+		
+		\node{Z};&\node {};&\node {LJMQ};&\node {};&\node {ANX};&\node {};&\node {EGW};&\node {};&\node {RS};&\node {};&\node {YU};&\node {};&\node {HCZ};&\node {};&\node {PB};&\node {};&\node {OF};&\node {};&\node (ll) {VT};&\node {};&\node {DK};\\
+	};
+	\begin{pgfonlayer}{background}
+	\node [ultra thick, draw=green!100, fit={($(l.east)-(2.5mm,0)$)($(l.east)-(2.5mm,-1mm)$)($(l.east)-(2.5mm,1mm)$)}] (letter) {};
+	\node [ultra thick, draw=red!100, fit={($(ll.east)-(2.5mm,0)$)($(ll.east)-(2.5mm,-1mm)$)($(ll.east)-(2.5mm,1mm)$)}] (lletter) {};
+	\end{pgfonlayer}
+	
+	\node[green, above of=letter] (lc) {Seconde lettre trouvée dans la première ligne};
+	\draw[->] (lc) -- (letter);
+	
+	\node[red, below of=lletter, anchor=north east] (llc) {Lettre qui se trouve en dessous};
+	\node[red, below of=llc] (lllc) {REPONSE AU CHALLENGE};
+	\draw[->, red, thick] (llc.north east) -- (lletter);
+	
+	\end{tikzpicture}
+
+\end{adjustbox}

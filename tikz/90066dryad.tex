@@ -1,0 +1,21 @@
+\begin{adjustbox}{max width=\textwidth, max height=\textheight, keepaspectratio}
+	
+	\begin{tikzpicture}
+		\tikzstyle{every node}=[font=\footnotesize]
+		\matrix[column sep=2.8mm, row sep=0mm]
+		{		
+		\node (c) {Y};&\node {};&\node (s) {SOKF};&\node {};&\node {CDT};&\node {};&\node {JRX};&\node {};&\node {YU};&\node {};&\node {NA};&\node {};&\node {QGZ};&\node {};&\node {LB};&\node {};&\node {MH};&\node {};&\node {VE};&\node {};&\node (e) {PW};\\
+		};
+		\begin{pgfonlayer}{background}
+			\node [ultra thick, draw=black!100, fit={(c)}] (letter) {};
+			\node [ultra thick, draw=blue!100, fit=(e)(s)] (line) {};
+		\end{pgfonlayer}
+		
+		\node[above of=letter] (lc) {Lettre Yankee};
+		\node[above of=line, blue] (ll) {Ligne Yankee};
+		\draw[->] (lc) -- (letter);
+		\draw[->] (ll) -- (line);
+	
+	\end{tikzpicture}
+
+\end{adjustbox}
