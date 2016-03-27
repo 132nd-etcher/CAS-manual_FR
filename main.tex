@@ -1,5 +1,5 @@
 \documentclass[
-11pt,
+12pt,
 a4paper,
 final,
 notitlepage,
@@ -62,9 +62,11 @@ openany,
 ]{hyperref}
 
 \input{preamble/0004ref}
-\newcommand{\smallref}[1]{\cref{#1}: \nameref{#1}}
+%\newcommand{\smallref}[1]{\cref{#1}: \nameref{#1}}
+\newcommand{\smallref}[1]{\hyperref[{#1}]{\cref*{#1} \nameref*{#1}}}
+\newcommand{\cruderef}[1]{\hyperref[{#1}]{\cref*{#1}}}
 \newcommand{\fullref}[1]{Cfr. \smallref{#1}}
-\renewcommand{\ref}{\fullref}
+%\renewcommand{\ref}{\fullref}
 \input{preamble/0004glossary}
 \newcommand{\glsfull}[1]{\glsreset{#1} \gls{#1}}
 \newcommand{\glsfullpl}[1]{\glsreset{#1} \glspl{#1}}

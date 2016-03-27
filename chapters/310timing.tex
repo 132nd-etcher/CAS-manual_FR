@@ -2,8 +2,54 @@
 
 \begin{e1}
 	\itemt{Temps disponible}{
-	Le temps nécessaire à la planification de la mission doit être estimé de manière réaliste, et ce temps doit être lui-même implémenté dans la planification.}
+		Le temps nécessaire à la planification de la mission doit être estimé de manière réaliste, et ce temps doit être lui-même implémenté dans la planification.}
+	
 	\itemt{Cycle de planification}{
-	Si une opération \gls{cas} prévue n'est pas prête au moment de son exécution prévue, elle sera d'office réassignée comme \gls{req} immédiate.}
-	\itemt{Synchronisation}{Pas d'application dans DCS}
+		Si une opération \gls{cas} prévue n'est pas prête au moment de son exécution prévue, elle sera d'office réassignée comme \gls{req} immédiate.}
+	
+	\itemt{Synchronisation}{
+		Pas d'application dans DCS.
+	}
+	\note{
+		Lors d'opération sous DCS, on distingue trois façon de donner un temps:
+		\begin{e2}
+			\itemt{Heure réelle (temps \gls{irl})}{
+				Il s'agit de l'heure réelle, comme indiquée à nos montres.
+				
+				Cette heure est ajustée à la saison (heure d'été, heure d'hiver) et dépend du fuseau horaire.
+			}
+			
+			\itemt{Heure réelle GMT (temps ``ZULU'', prononcé ``zoulou'')}{
+				L'heure GMT est l'heure réelle, dans le fuseau horaire de Greenwitch.
+				
+				Il s'agit d'une heure de référence pour toute la planète, qui permet de se synchroniser lorsqu'on travaille avec des gens qui se trouvent dans un fuseau horaire différents.
+			}
+			
+			\itemt{Heure dans le jeu (temps \gls{ig})}{
+				L'heure \gls{ig} est l'heure simulée dans DCS, affichée sur l'horloge de bord dans le cockpit, et généralement donnée avant la mission par le créateur de mission.
+				
+				Cette heure détermine les conditions d'illumination (jour/nuit) de l'environnement simulé.
+			}
+			
+			\item Les fuseaux horaires sont indiqués par une lettre de l'alphabet, prononcée comme prescrit dans l'alphabet phonétique:
+			
+			Z: heure GMT.
+			A: heure GMT+1h (heure d'hiver en France).
+			B: heure GMT+2h (heure d'été en France).
+			\ldots{}
+			D: heure GMT+4h (heure d'hiver en Géorgie).
+			\ldots{}
+			
+			\item Les heures pourront être référencées comme suit:
+			
+			\begin{e3}[0em]
+				\itemt{20h IG:}{8 heure du soir en jeu.}
+				\itemt{2000IG:}{8 heure du soir en jeu.}
+				\itemt{2000IRL:}{8 heure du soir dans la réalité.}
+				\itemt{2000A:}{8 heure du soir dans le fuseau horaire GMT+1.}
+				\itemt{2000Z:}{8 heure du soir GMT.}
+			\end{e3}
+			
+		\end{e2}
+	}
 \end{e1}
