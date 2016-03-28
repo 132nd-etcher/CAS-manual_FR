@@ -18,20 +18,20 @@ openany,
 \input{preamble/0003biblio}
 \input{preamble/0003tocloft}
 \input{preamble/0003enum}
-\newenvironment{e1} [1][\ilm]       {\gene   { {\alph*}.    } {#1} {\llm}       } {\end{longenum}}
-\newenvironment{e2} [1][\illm]      {\gene   { {\arabic*}   } {#1} {\lllm}      } {\end{longenum}}
-\newenvironment{e3} [1][\illlm]     {\gene   { ({\alph*})   } {#1} {\llllm}     } {\end{longenum}}
-\newenvironment{e4} [1][\illllm]    {\genee  { ({\arabic*}) } {#1} {\lllllm}    } {\end{longenum}}
-\newenvironment{e5} [1][\illlllm]   {\genee  { {\Roman*}    } {#1} {\llllllm}   } {\end{longenum}}
-\newenvironment{e6} [1][\illllllm]  {\genee  { ({\roman*})  } {#1} {\lllllllm}  } {\end{longenum}}
-\newenvironment{e7} [1][\illlllllm] {\genee  { ({\arabic*}) } {#1} {\llllllllm} } {\end{longenum}}
-\newenvironment{re1}[1][\ilm]       {\gener  { {\alph*}.    } {#1} {\llm}       } {\end{longenum}}
-\newenvironment{re2}[1][\illm]      {\gener  { {\arabic*}   } {#1} {\lllm}      } {\end{longenum}}
-\newenvironment{re3}[1][\illlm]     {\gener  { ({\alph*})   } {#1} {\llllm}     } {\end{longenum}}
-\newenvironment{re4}[1][\illllm]    {\geneer { ({\arabic*}) } {#1} {\lllllm}    } {\end{longenum}}
-\newenvironment{re5}[1][\illlllm]   {\geneer { {\Roman*}    } {#1} {\llllllm}   } {\end{longenum}}
-\newenvironment{re6}[1][\illllllm]  {\geneer { ({\roman*})  } {#1} {\lllllllm}  } {\end{longenum}}
-\newenvironment{re7}[1][\illlllllm] {\geneer { ({\arabic*}) } {#1} {\llllllllm} } {\end{longenum}}
+\newenvironment{e1} [1][\llm]       {\gene   { {\alph*}.    } {\ilm} {#1}       } {\end{longenum}}
+\newenvironment{e2} [1][\lllm]      {\gene   { {\arabic*}   } {\illm} {#1}      } {\end{longenum}}
+\newenvironment{e3} [1][\llllm]     {\gene   { ({\alph*})   } {\illlm} {#1}     } {\end{longenum}}
+\newenvironment{e4} [1][\lllllm]    {\genee  { ({\arabic*}) } {\illllm} {#1}    } {\end{longenum}}
+\newenvironment{e5} [1][\llllllm]   {\genee  { {\Roman*}    } {\illlllm} {#1}   } {\end{longenum}}
+\newenvironment{e6} [1][\lllllllm]  {\gene   { ({\roman*})  } {\illllllm} {#1}  } {\end{longenum}}
+\newenvironment{e7} [1][\llllllllm] {\gene   { ({\arabic*}) } {\illlllllm} {#1} } {\end{longenum}}
+\newenvironment{re1}[1][\llm]       {\gener  { {\alph*}.    } {\ilm} {#1}       } {\end{longenum}}
+\newenvironment{re2}[1][\lllm]      {\gener  { {\arabic*}   } {\illm} {#1}      } {\end{longenum}}
+\newenvironment{re3}[1][\llllm]     {\gener  { ({\alph*})   } {\illlm} {#1}     } {\end{longenum}}
+\newenvironment{re4}[1][\lllllm]    {\geneer { ({\arabic*}) } {\illllm} {#1}    } {\end{longenum}}
+\newenvironment{re5}[1][\llllllm]   {\geneer { {\Roman*}    } {\illlllm} {#1}   } {\end{longenum}}
+\newenvironment{re6}[1][\lllllllm]  {\gener  { ({\roman*})  } {\illllllm} {#1}  } {\end{longenum}}
+\newenvironment{re7}[1][\llllllllm] {\gener  { ({\arabic*}) } {\illlllllm} {#1} } {\end{longenum}}
 \input{preamble/0003figures}
 %\newcommand{\efig}[2]{ \begin{figure}[H] \centering \includegraphics[width=\textwidth, max height=0.9\textheight, keepaspectratio]{#1.png} \caption{#2} \label{#1} \end{figure} }
 
