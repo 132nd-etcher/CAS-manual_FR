@@ -144,7 +144,7 @@ Des techniques de séparation sont utilisées à cette fin.
 				\itemt{\glsfull{ttt}}{
 					Le \gls{ttt} donne un temps en minutes et en secondes entre un moment T (appelé ``HACK'') et le moment où les munitions impactent la cible.
 					
-					C'est une méthode précise, mais peu souvent utilisée.
+					C'est une méthode précise, mais rarement utilisée.
 					
 					C'est le \ja{} qui donne le HACK, et les pilotes doivent en accuser réception.
 				}
@@ -158,37 +158,135 @@ Des techniques de séparation sont utilisées à cette fin.
 			\end{e4}
 			
 		\end{e3}
+		
+		\efig{fscm}{Illustration des différentes FSCMs.}
+		
 	\end{e2}
 	\begin{minipage}{\linewidth}
 	\itemt{\glsfull{acm}:} {\glsd{acm}}
 	
-	\efig{acm}{ACM Joint.}	
+	\begin{e3}
+		\itemt{\glsfull{ca}:} {\glsd{ca}}
+		\itemt{\glsfull{hidacz}:} {\glsd{hidacz}}
+		\itemt{\glsfull{roz}:} {\glsd{roz}}
+		\itemt{\glsfull{roa}:} {\glsd{roa}}
+		\itemt{\glsfull{mrr}:} {\glsd{mrr}}
+		\itemt{\glsfull{saafr}:} {\glsd{saafr}}
+	\end{e3}
 	\end{minipage}
 	
-	\efig{fscm}{Illustration des différentes FSCMs.}
+	\efig{acm}{ACM Joint.}
+	
+	Cfr. \citetitle{jp352} pour plus d'informations à propos des \glspl{acm}.
 	
 \end{e1}
 
 
-%\subsection{Coordination}
-%	\begin{e1}
-%		\item Sélection CP/IP/BP
-%		\itemt{\glsfull{kh}:} {\glsd{kh}}
-%		\itemt{\glsfull{of}:} {\glsd{of}}
-%		\itemt{\glsfull{of}:} {\glsd{of}}
-%	\end{e1}
-%	\item Synchronisation
-%	\begin{e2}
-%		\item Emploi simultané
-%		\item Appui-feu
-%		\begin{e3}
-%			\item Marque
-%			\begin{e4}
-%				\itemt{\glsfull{idf}:} {\glsd{idf}}
-%				\item Feu direct
-%			\end{e4}
-%			\item \gls{aca} informelle
-%		\end{e3}
-%	\end{e2}
-%\end{e1}
+\subsection{Coordination}
+
+Une fois que la cible est désignée et approuvée, le \ja{} coordonne les points suivants \gls{cas} avec les forces au sol:
+
+\begin{e1}
+	
+	\itemt{Limites de la zone de tir:}{
+		Les limites de zone de tir sont les mesures de bases pour la coordination du feu.
+		
+		Elles sont restrictives de par le fait qu'aucun tir n'est autorisé au delà des limites.
+	}
+	
+	\itemt{\gls{ada} alliée:}{
+		Pour éviter le tir fratricide, le \ja{} annonce ``Appareil allié sur zone''.
+		
+		Le \ja{} coordonne avec l'\gls{ada} les \gls{cp}, \gls{ip}, la position de la cible, le nombre et le types d'appareils alliés présents, leur altitude, et leur \gls{tos}.
+		
+		Les \gls{spins} et l'\gls{ato} devraient inclure des \glspl{mrr} ou des corridors de retour sécurisés, ainsi les procédures associées, pour les appareils qui reviennent d'une zone de \gls{cas}.
+	}
+	
+	\itemt{Mesures de contrôle procédural:}{
+		Le contrôle procédural fournit aux pilote la direction de la cible, aligne l'appareil pour l'attaque finale ou l'egress, et fournit les séparation avec les autres tirs en cours et les menaces anti-aériennes ennemies.
+		
+		Le contrôle procédural inclut:
+	}
+	
+	\begin{e2}
+		
+		\item{Sélection \gls{cp}/\gls{ip}\gls{bp}:}{
+			Le \ja{} sélectionne les \glspl{cp}/\glspl{ip}\glspl{bp} en se basant sur les capacités de l'ennemi, l'orientation de la cible, la positions des alliés, la météo, les capacités de l'appareil \gls{cas}, et les \glspl{fscm}.
+			
+			Lorsque c'est possible, les \glspl{cp} et \glspl{ip} devraient être des points remarquables du terrain.
+			
+			L'\gls{ip} est normalement placé entre 5 et 15 miles nautiques de la cible pour les \glspl{fw}, et les \glspl{bp} entre 1 et 5 km pour les \glspl{rw}.
+			
+			Les appareils évoluant à plus haute altitude peuvent nécessiter un \gls{ip} plus éloigné, à 20 miles nautiques de la cible.
+		}
+		
+		\itemt{\glsfull{kh}:} {\glsd{kh}}
+		
+		\begin{e3}
+			\item Le Keyhole est un moyen efficace pour établir un \gls{ip} en l'absence de points de contrôle pré-définis, ou lorsque les points de contrôles déjà établis ne sont plus adaptés à la situation.
+			
+			Lorsqu'un appareil \gls{cas} se rapporte au \ja{} sur le \gls{cp} (=check-in), le \ja{} définit un point ``Echo''.
+			
+			Ce point Echo se trouve généralement sur la cible (ligne 6 de la \gls{9l}).
+			
+			Le \ja{} utilise ensuite ce point Echo pour définir des positions d'attente en donnant une direction et une distance à partir du point Echo.
+			
+			Cette distance est à considérer comme une distance \textbf{minimale} à partir du point Echo.
+			
+			La méthode Keyhole standard consiste à attribuer une lettre à chaque direction cardinale:
+			\begin{e4}
+				\item A: nord.
+				\item B: est.
+				\item C: sud.
+				\item D: ouest.
+				\item E: centre (point Echo).
+			\end{e4}
+			
+			Le \ja{} peut également donner une radiale à partir du point Echo si les directions cardinales ne suffisent pas.
+			
+			\efig{khex1}{Keyhole: exemple de communication.}
+			
+			\begin{e4}
+				\item Si la situations tactique nécessite qu'un \gls{ip} soit établie au nord de la cible, les instructions du \ja{} pourraient ressembler à:
+				
+				\begin{lstlisting}[caption=Keyhole: directions cardinale, label=keyholecard]
+				REDWOLF ici PIRATE, pr"é"venez quand pr"ê"t "à" copier point Echo.
+				PIRATE ici REDWOLF, pr"ê"t "à" copier.
+				REDWOLF, coordonn"é"es point Echo suivent, 42 34.5N 043 51.2E.
+				PIRATE, REDWOLF, je copie 42 34.5N 043 51.2E.
+				REDWOLF, allez Alpha 8km, 200m, rappelez "é"tabli.
+				...
+				PIRATE, ici REDWOLF, "é"tabli Alpha 8km, 200m.
+				\end{lstlisting}
+				
+				\item Lorsqe les directions cardinales ne suffisent pas, le \ja{} peut utiliser une radiale à partir du point Echo. Par exemple:
+				
+				\begin{lstlisting}[caption=Keyhole: radiale, label=keyholerad]
+				REDWOLF, allez au 240 "à" 8km, 200m, rappelez "é"tabli.
+				...
+				PIRATE, ici REDWOLF, "é"tabli 240 "à" 8km, 200m.
+				\end{lstlisting}
+				
+			\end{e4}
+		\end{e3}
+		
+		
+		
+		\itemt{\glsfull{of}:} {\glsd{of}}
+		\itemt{\glsfull{of}:} {\glsd{of}}
+	\end{e2}
+	\item Synchronisation
+	\begin{e2}
+		\item Emploi simultané
+		\item Appui-feu
+		\begin{e3}
+			\item Marque
+			\begin{e4}
+				\itemt{\glsfull{idf}:} {\glsd{idf}}
+				\item Feu direct
+			\end{e4}
+			\item \gls{aca} informelle
+		\end{e3}
+	\end{e2}
+\end{e1}
 
