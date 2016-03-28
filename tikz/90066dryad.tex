@@ -1,4 +1,5 @@
-\begin{adjustbox}{max width=\textwidth, max height=\textheight, keepaspectratio}
+\begin{center}
+	\begin{adjustbox}{max width=\textwidth, max height=\textheight, keepaspectratio}
 	
 	\begin{tikzpicture}
 		\tikzstyle{every node}=[font=\footnotesize]
@@ -11,11 +12,12 @@
 			\node [ultra thick, draw=blue!100, fit=(e)(s)] (line) {};
 		\end{pgfonlayer}
 		
-		\node[above of=letter] (lc) {Lettre Yankee};
-		\node[above of=line, blue] (ll) {Ligne Yankee};
-		\draw[->] (lc) -- (letter);
+		\node[above of=letter, anchor=south west] (lc) {Lettre Yankee};
+		\node[above of=line, blue, anchor=south] (ll) {Ligne Yankee};
+		\draw[->] (lc.south west) -- (letter.north);
 		\draw[->] (ll) -- (line);
 	
 	\end{tikzpicture}
 
 \end{adjustbox}
+\end{center}

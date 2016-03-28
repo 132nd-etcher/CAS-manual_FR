@@ -1,4 +1,6 @@
-\begin{tikzpicture}
+\begin{center}
+	\begin{adjustbox}{max width=\textwidth, max height=0.9\textheight, keepaspectratio}
+		\begin{tikzpicture}
 	\tikzstyle{every node}=[font=\footnotesize]
 	\matrix[column sep=0.5cm, row sep=1.4cm]
 	{
@@ -54,3 +56,5 @@
 	\draw[ultra thick, orange, ->] (corr.east)	 -- ++ (1cm,0) |- ($(fai.north west)	 -(1cm,-0.9cm)$) |- (fai.west);
 	\draw[ultra thick, orange, ->] (reattack.south) -- ++ (0,-0.5cm) |- ($(fai.south)-(0,0.5cm)$) -- (fai.south);
 \end{tikzpicture}
+\end{adjustbox}
+\end{center}

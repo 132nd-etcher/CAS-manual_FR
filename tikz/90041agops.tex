@@ -35,14 +35,15 @@
 
 
 \def\Grid{
-	\draw[penciline={jag ratio=6},style=help lines] (-2,-2) grid[step=1cm] (4,4);
+	\draw[penciline={jag ratio=6},style=help lines] (0, 0) grid[step=1cm] (15, 15);
 }
-
+\begin{center}
+	\begin{adjustbox}{max width=\textwidth, max height=0.9\textheight, keepaspectratio}
 \begin{tikzpicture}[penciline={jag ratio=5}, cross/.style={path picture={ 
 		\draw[black]
 		(path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
 	}}]
-%\Grid{}
+Grid{}
 \node[black!80, minimum height=3cm, double arrow, draw, align=center, rotate=0, minimum width=2.5em, line width=2pt, anchor=west] (inf1) at (3.5,14) {CAS};
 \node[black!80, minimum height=3cm, single arrow, draw, align=center, rotate=0, minimum width=2.5em, line width=2pt, anchor=east, text width=4cm] (inf1) at (15,8) {AI};
 \node[black!80, minimum height=3cm, double arrow, draw, align=center, rotate=0, minimum width=2.5em, line width=2pt, anchor=east, text width=9cm] (inf1) at (15,11) {BAI};
@@ -82,3 +83,5 @@
 
 
 \end{tikzpicture}
+\end{adjustbox}
+\end{center}

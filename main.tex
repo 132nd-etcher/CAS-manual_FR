@@ -33,7 +33,13 @@ openany,
 \newenvironment{re6}[1][\illllllm]  {\geneer { ({\roman*})  } {#1} {\lllllllm}  } {\end{longenum}}
 \newenvironment{re7}[1][\illlllllm] {\geneer { ({\arabic*}) } {#1} {\llllllllm} } {\end{longenum}}
 \input{preamble/0003figures}
-\newcommand{\efig}[2]{ \begin{figure}[H] \centering \includegraphics[width=\textwidth, max height=\textheight, ,keepaspectratio]{#1.png} \caption{#2} \label{#1} \end{figure} }
+%\newcommand{\efig}[2]{ \begin{figure}[H] \centering \includegraphics[width=\textwidth, max height=0.9\textheight, keepaspectratio]{#1.png} \caption{#2} \label{#1} \end{figure} }
+
+\DeclareDocumentCommand{\efig}%
+{ O{\textwidth} O{0.9\textheight} m m }%
+{%
+\begin{figure}[H] \centering \includegraphics[width=#1, max height=#2, keepaspectratio]{#3.png} \caption{#4} \label{#3} \end{figure}%
+}%
 \input{preamble/0003titlesec}
 \input{preamble/0003fancyhdr}
 \input{preamble/0003caption}
@@ -59,6 +65,7 @@ openany,
 	linkcolor=\intlink,
 	citecolor=\intlink,
 	bookmarks=true,
+	breaklinks,
 ]{hyperref}
 
 \input{preamble/0004ref}
@@ -70,6 +77,7 @@ openany,
 \input{preamble/0004glossary}
 \newcommand{\glsfull}[1]{\glsreset{#1} \gls{#1}}
 \newcommand{\glsfullpl}[1]{\glsreset{#1} \glspl{#1}}
+\newcommand{\glsd}[1]{\begin{minipage}{\linewidth} \glsdesc*{#1g} \end{minipage}}
 
 %\usepackage{pdfpages}
 %\usepackage{setspace}
@@ -170,8 +178,6 @@ openany,
 %
 \include{chapters/1005conventions}%
 %\import{./intro/}{conventions.tex}
-%
-\include{chapters/1006biblio}%
 %
 \pagenumbering{arabic}%
 %
@@ -294,6 +300,7 @@ openany,
 %
 \glsaddall%
 \glossarystyle{altlist}%
+%\glossarystyle{mylong}%
 \invisibleunnumberedsection{Acronymes}%
 \printglossary[type=\acronymtype]
 %
@@ -321,11 +328,13 @@ openany,
 \include{chapters/9006dryad}%
 %
 \end{appendices}%
-
+%
 \pagestyle{intro}%
-
-\include{chapters/9101thanks}%
-
+%
+\include{chapters/9101biblio}%
+%
+\include{chapters/9102thanks}%
+%
 \pagestyle{empty}%
 %
 \end{document}%

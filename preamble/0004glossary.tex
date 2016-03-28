@@ -1,9 +1,47 @@
 \usepackage[acronym,toc,nopostdot]{glossaries}
 % command: makeglossaries %
 %\renewcommand\glossarytitle{}
+
+%\setlength{\glsdescwidth}{0.9\linewidth}
+
 \makeglossaries
 
 \input{glossary}
-\renewcommand{\glossarysection}[2][]{} 
+\renewcommand{\glossarysection}[2][]{}
 
-\makeglossaries
+%\makeglossaries
+
+%\newlength{\glstargetwidth}%
+%\newlength{\glshspace}%
+%
+%\newglossarystyle{mylong}{%
+%	% put the glossary in the longtable environment:
+%	\renewenvironment{theglossary}{%
+%		\setlength{\glstargetwidth}{0.29\textwidth}%
+%		\setlength{\glshspace}{0.02\textwidth}%
+%		\setlength{\glsdescwidth}{0.49\textwidth}%
+%		\setlength{\tabcolsep}{0pt}%
+%		\setlength{\extrarowheight}{12pt}%
+%		\begin{longtable}%
+%			{p{\glstargetwidth} @{\hspace{\glshspace}}  p{\glsdescwidth}}}%
+%		{\end{longtable}}%
+%	% have nothing after \begin{theglossary}:
+%	\renewcommand*{\glossaryheader}{}%
+%	% have nothing between glossary groups:
+%	\renewcommand*{\glsgroupheading}[1]{}%
+%	\renewcommand*{\glsgroupskip}{}%
+%	% set how each entry should appear:
+%	\renewcommand*{\glossaryentryfield}[5]{%
+%		\raggedright\strong{\glstarget{##1}{##2}}% the entry name
+%		##4% the symbol 
+%		&##3,% the description
+%		\space ##5% the number list 
+%		\\
+%	}%
+%	% set how sub-entries appear:
+%	\renewcommand*{\glossarysubentryfield}[6]{%
+%		\glossaryentryfield{##2}{##3}{##4}{##5}{##6}}%
+%}
+%\renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}}
+
+%\glossarystyle{mylong}

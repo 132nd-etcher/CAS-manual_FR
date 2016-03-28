@@ -1,8 +1,21 @@
+%\newcommand{\newgls}[4]{% 1: abbrev 2: full name 3: ref 4: desc
+%	\newglossaryentry{#3g}{%
+%		name={#1},%
+%		description={#4}%
+%	}%
+%	\newglossaryentry{#3}{%
+%		type=\acronymtype,%
+%		name={#1},%
+%		description={#4},%
+%		first={#2 (#1)\glsadd{#3g}},%
+%		see=[Explication:]{#3g}%
+%	}%
+%}
+
 \newcommand{\newgls}[4]{% 1: abbrev 2: full name 3: ref 4: desc
-	\newglossaryentry{#3g}{%
-		name={#1},%
-		description={#4}%
-	}%
+	\longnewglossaryentry{#3g}{name={#1}}%
+	{\begin{minipage}{\linewidth} #4 \end{minipage}\vskip1ex}%}%
+	%{#4}%
 	\newglossaryentry{#3}{%
 		type=\acronymtype,%
 		name={#1},%
@@ -12,22 +25,20 @@
 	}%
 }
 
-\newcommand{\glvs}{\vskip4mm} % vskip for glossary
-
-\newcommand{\glb}[1]{
-	\begin{minipage}{\linewidth}
-		#1
-	\end{minipage}
-	\glvs
-	}
-\newcommand{\glbe}[1]{
-	\begin{minipage}{\linewidth}
-		\gle
-		#1
-	\gled
-	\end{minipage}
-	\glvs
-}
+%\newcommand{\glb}[1]{
+%	\begin{minipage}{\linewidth}
+%		#1
+%	\end{minipage}
+%	\glvs
+%	}
+%\newcommand{\glbe}[1]{
+%	\begin{minipage}{\linewidth}
+%		\gle
+%		#1
+%	\gled
+%	\end{minipage}
+%	\glvs
+%}
 
 
 \newgls{TAC(A)}{Tactical Air Coordinator}{taca}{%
@@ -38,16 +49,16 @@ Un officier qui coordonne, depuis un appareil en vol, les actions d'un autre app
 Un composant opérationnel subordonné de contrôle aérien, qui sert de liaison avec les forces et sol, et qui sert à contrôler des unités aériennes.
 }
 
-\newgls{NFA}{Test}{nfa}{%
-Test2
+\newgls{NFA}{No-Fire Area}{nfa}{%
+Une zone dans laquelle le tir est interdit.
 }
 
-\newgls{RFA}{Test}{rfa}{%
-Test
+\newgls{RFA}{Restrictive Fire Area}{rfa}{%
+Une zone dans laquelle certaines restrictions existent quant à l'emploi d'armement.
 }
 
-\newgls{RFL}{RFL}{rfl}{%
-Test
+\newgls{RFL}{Restritive Fire Line}{rfl}{%
+Une ligne établie entre deux formations alliées convergentes le long de laquelle le tir est interdit.
 }
 
 \newgls{keyhole}{Keyhole}{kh}{%
@@ -59,10 +70,10 @@ Test
 }
 
 \newgls{KB}{Killbox}{kb}{%
-\glb{Une Killbox est une zone tridimensionnelle utilisée pour faciliter l'intégration de l'appui-feu dans l'espace aérien. Une Killbox est une \gls{fscm} associée à une \gls{acm}. Il s'agit d'une \gls{fscm} permissive, créée par le \gls{gc} approprié, qui peut éventuellement contenir d'autres mesures de contrôle restrictives (\gls{acm} ou \gls{fscm}) dans la zone couverte. Pour les procédures Killbox, voyez les \glspl{sop} de l'opération.}
-\parbox{\linewidth}{Une Killbox est une zone tridimensionnelle utilisée pour faciliter l'intégration de l'appui-feu dans l'espace aérien. Une Killbox est une \gls{fscm} associée à une \gls{acm}. Il s'agit d'une \gls{fscm} permissive, créée par le \gls{gc} approprié, qui peut éventuellement contenir d'autres mesures de contrôle restrictives (\gls{acm} ou \gls{fscm}) dans la zone couverte. Pour les procédures Killbox, voyez les \glspl{sop} de l'opération.}\glvs{}
-\parbox{\linewidth}{Lorsqu'elle est créée, la Killbox a pour objectif premier de permettre l'emploi d'armement létal contre des cibles au sol sans devoir passer par le \gls{gc} local et sans \gls{tac}.}\glvs{}
-\parbox{\linewidth}{L'établissement d'une Killbox n'implique pas automatiquement l'autorisation de tir. Tous les appareils qui effectuent une mission \gls{ai} dans une Killbox le feront selon les règles établies pour la \gls{pid} et les \glspl{cde} et en accord avec les \glspl{roe} d'application ainsi que les \gls{spins}.}
+Une Killbox est une zone tridimensionnelle utilisée pour faciliter l'intégration de l'appui-feu dans l'espace aérien. Une Killbox est une \gls{fscm} associée à une \gls{acm}. Il s'agit d'une \gls{fscm} permissive, créée par le \gls{gc} approprié, qui peut éventuellement contenir d'autres mesures de contrôle restrictives (\gls{acm} ou \gls{fscm}) dans la zone couverte. Pour les procédures Killbox, voyez les \glspl{sop} de l'opération.\\[1ex]%
+Une Killbox est une zone tridimensionnelle utilisée pour faciliter l'intégration de l'appui-feu dans l'espace aérien. Une Killbox est une \gls{fscm} associée à une \gls{acm}. Il s'agit d'une \gls{fscm} permissive, créée par le \gls{gc} approprié, qui peut éventuellement contenir d'autres mesures de contrôle restrictives (\gls{acm} ou \gls{fscm}) dans la zone couverte. Pour les procédures Killbox, voyez les \glspl{sop} de l'opération.\\[1ex]%
+Lorsqu'elle est créée, la Killbox a pour objectif premier de permettre l'emploi d'armement létal contre des cibles au sol sans devoir passer par le \gls{gc} local et sans \gls{tac}.\\[1ex]%
+L'établissement d'une Killbox n'implique pas automatiquement l'autorisation de tir. Tous les appareils qui effectuent une mission \gls{ai} dans une Killbox le feront selon les règles établies pour la \gls{pid} et les \glspl{cde} et en accord avec les \glspl{roe} d'application ainsi que les \gls{spins}.
 }
 
 \newgls{CDE}{Collateral Damage Estimation}{cde}{%
@@ -74,7 +85,9 @@ Une zone spécifique dans laquelle le tir est autorisé sans coordination préal
 }
 
 \newgls{FSCL}{Fire Support Coordination Line}{fscl}{%
-Mesure de coordination du tir mise en place par le \gls{gc} au sein d'une zone d'opération; tout tir au delà de cette ligne doit être préalablement coordonné avec le \gls{gc} local, et avant laquelle tout tir doit être coordonnée avec le \gls{gc} qui a établi la FSCL.
+Mesure de coordination du tir mise en place par le \gls{gc} au sein d'une zone d'opération.\\[1ex]%
+La FSCL est une ligne se trouvant après la \gls{flot}, qui délimite la zone dans laquelle le \gls{gc} contrôle les tirs.\\[1ex]%
+L'emploi d'armement n'est pas d'office autorisé après une FSCL; c'est seulement que cela ne dépend plus du \gls{gc} qui a établi la FSCL.
 }
 
 \newgls{CFL}{Coordinated Firing Line}{cfl}{%
@@ -122,8 +135,8 @@ Une requête \gls{cas} est une demande de \gls{cas} émise par une unité allié
 }
 
 \newgls{OPLAN}{Operational Plan}{oplan}{%
-\parbox{\linewidth}{1. Tout plan pour la conduite d'une opération militaire préparée en réponse à une situation effective ou prévue.}\glvs{}
-\parbox{\linewidth}{2. Un plan Joint complet et détaillé contenant la description complète du \gls{conops}, toutes les annexes d'application au plan, et une chronologie prévue de l'emploi de la force et du déploiement.}
+1. Tout plan pour la conduite d'une opération militaire préparée en réponse à une situation effective ou prévue.\\[1ex]%
+2. Un plan Joint complet et détaillé contenant la description complète du \gls{conops}, toutes les annexes d'application au plan, et une chronologie prévue de l'emploi de la force et du déploiement.
 }
 
 \newgls{TOS}{Time On Station}{tos}{%
@@ -140,11 +153,11 @@ Un bloc tridimensionnel d'espace aérien se trouvant dans une zone cible, défin
 
 
 \newgls{AI}{Air Interdiction}{ai}{%
-	\glb{L'interdiction aérienne consiste à utiliser une unité aérienne pour attaquer des cibles ennemies tactiques au sol qui ne trouvent pas à proximité de forces au sol alliées.
-	}\glb{L'interdiction diffère du \gls{cas} en cela qu'elle ne soutient pas directement les opérations des forces au sol, et qu'elle n'est pas coordonnée aussi étroitement avec ces dernières.%
-	}\glb{A la différence du bombardement stratégique, l'interdiction n'est pas une campagne aérienne à part entière, de par son objectif ultime qui reste le soutien des forces au sol alliées, là où le bombardement stratégique vise à défaire l'ennemi par la puissance aérienne uniquement.%
-	}\glb{L'objectif de l'interdiction est de retarder, perturber ou détruire les forces ennemies ou la logistique en route vers la zone de combat avant qu'elles en deviennent un facteur pour les forces alliées. Même à ce degré, une distinction est faite entre l'interdiction stratégique et l'interdiction tactique; l'interdiction stratégique est prévue à grande échelle et sur le long terme, là où l'interdiction tactique agit de manière rapide et localisée.%
-	}\glb{Cfr. \cruderef{agops} pour une illustration des différents types d'opérations air-sol.}%
+L'interdiction aérienne consiste à utiliser une unité aérienne pour attaquer des cibles ennemies tactiques au sol qui ne trouvent pas à proximité de forces au sol alliées.\\[1ex]%
+L'interdiction diffère du \gls{cas} en cela qu'elle ne soutient pas directement les opérations des forces au sol, et qu'elle n'est pas coordonnée aussi étroitement avec ces dernières.\\[1ex]%
+A la différence du bombardement stratégique, l'interdiction n'est pas une campagne aérienne à part entière, de par son objectif ultime qui reste le soutien des forces au sol alliées, là où le bombardement stratégique vise à défaire l'ennemi par la puissance aérienne uniquement.\\[1ex]%
+L'objectif de l'interdiction est de retarder, perturber ou détruire les forces ennemies ou la logistique en route vers la zone de combat avant qu'elles en deviennent un facteur pour les forces alliées. Même à ce degré, une distinction est faite entre l'interdiction stratégique et l'interdiction tactique; l'interdiction stratégique est prévue à grande échelle et sur le long terme, là où l'interdiction tactique agit de manière rapide et localisée.\\[1ex]%
+Cfr. \cruderef{agops} pour une illustration des différents types d'opérations air-sol.
 }
 
 \newgls{DAS}{Deep Air Support}{das}{%
@@ -152,25 +165,23 @@ Le DAS englobe le \gls{ai}, le \gls{ar} et le \gls{scar}, trois types de mission
 }
 
 \newgls{SCAR}{Air Interdiction}{scar}{%
-\glb{
-Le SCAR est une mission dont l'objectif est l'acquisition et le rapportage de cible pour le \gls{das}. Les missions SCAR coordonnent et peuvent marquer les cibles pour les missions \gls{ai}, ou repérer précisément les cibles pour les missions \gls{ar}. Le SCAR ne doit pas être confondu avec le \gls{faca}.
-}
-%\parbox{\linewidth}{\gle
-\glbe{
+Le SCAR est une mission dont l'objectif est l'acquisition et le rapportage de cible pour le \gls{das}. Les missions SCAR coordonnent et peuvent marquer les cibles pour les missions \gls{ai}, ou repérer précisément les cibles pour les missions \gls{ar}. Le SCAR ne doit pas être confondu avec le \gls{faca}.\\[1ex]%
+\begin{itemize}
 	\item Le SCAR ne nécessite pas une qualification \gls{faca} pour le \gls{tac} des missions \gls{das}.
 	\item Le SCAR fournit des cibles, des positions, des descriptions, des informations quant à la météo ou la menace.
 	\item Le SCAR peut fournir la marque mais pas l'autorisation de tir.
 	\item Le SCAR confirme ou découvre des menaces air-sol.
 	\item Le SCAR assiste à l'établissement de la \gls{bda}.
-	\item Le SCAR diffère d'une mission de reconnaissance de par le fait qu'il découvre les cibles et coordonne leurs destruction, et qu'il sera typiquement armé et équipé de manière à améliorer la désignation des cibles.
-}%
-\glb{Le SCAR est particulièrement utile dans un environnement riche en cibles. Un appareil en mission SCAR qui se trouve à court de munitions peut continuer sa mission de recherche et de coordination.}
-\glb{Cfr. \cruderef{agops} pour une illustration des différents types d'opérations air-sol.}
+	\item Le SCAR diffère d'une mission de reconnaissance de par le fait qu'il découvre les cibles et coordonne leurs destruction, et qu'il sera typiquement armé et équipé de manière à améliorer la désignation des cibles.\\[1ex]%
+\end{itemize}
+Le SCAR est particulièrement utile dans un environnement riche en cibles. Un appareil en mission SCAR qui se trouve à court de munitions peut continuer sa mission de recherche et de coordination.\\[1ex]%
+Cfr. \cruderef{agops} pour une illustration des différents types d'opérations air-sol.
 }
 
 \newgls{AR}{Armed Reconnaissance}{ar}{%
-\parbox{\linewidth}{La reconnaissance armée est utilisée quand la position exacte de la cible est inconnue, et que le pilote devra localiser et engager les cibles potentielles pour accomplir l'objectif. Ces missions impliquent que l'appareil sera exposé pendant de longues période en territoire ennemi, à la recherche de cibles potentielles.}\glvs{}
-\parbox{\linewidth}{\gle
+La reconnaissance armée est utilisée quand la position exacte de la cible est inconnue, et que le pilote devra localiser et engager les cibles potentielles pour accomplir l'objectif.\\[1ex]%
+Ces missions impliquent que l'appareil sera exposé pendant de longues période en territoire ennemi, à la recherche de cibles potentielles.\\[1ex]%
+\begin{itemize}
 	\item Identifier des cibles dont la position est inconnue et les engager avant qu'elles ne deviennent un facteur.
 	\item Empêcher l'ennemi d'effectuer un mouvement non détecté ou d'accéder à une zone clef.
 	\item Fournir un avertissement précoce quant à la position et aux intentions de l'ennemi.
@@ -178,12 +189,12 @@ Le SCAR est une mission dont l'objectif est l'acquisition et le rapportage de ci
 	\item Reconnaître une grande étendue de terrain qui serait moins facilement explorée par les forces au sol amies.
 	\item Attaquer des cibles dont la destruction doit se faire rapidement (menaces en mouvement vers le front, par exemple).
 	\item Soutien lors des opérations de sécurité, soit comme unité de soutien du support ou comme couverture, garde ou écran principal.
-\gled}\glvs{}
-\glb{Cfr. \cruderef{agops} pour une illustration des différents types d'opérations air-sol.}
+\end{itemize}
+Cfr. \cruderef{agops} pour une illustration des différents types d'opérations air-sol.
 }
 
 \newgls{BAI}{Battlefield Air Interdiction}{bai}{%
-Cfr AI.
+Cfr \gls{ai}
 }
 
 \newgls{COMSEC}{Communications Security}{comsec}{%
@@ -314,11 +325,9 @@ Un pilote spécialement qualifié qui contrôle, depuis les airs, d'autres appar
 Un membre du personnel qualifié qui contrôle, depuis une position au sol avancée, les appareils engagés en opération de CAS ou d'autres types d'opération offensive.%
 }
 
-\newgls{GCAS}{Ground alert Close Air Support}{gcas}%
-{\gls{cas} à la demande, avec les appareils en attente sur le parking.}%
+\newgls{GCAS}{Ground alert Close Air Support}{gcas}{\gls{cas} à la demande, avec les appareils en attente sur le parking.}
 
-\newgls{XCAS}{Air alert Close Air Support}{xcas}%
-{\gls{cas} à la demande, avec les appareils en attente en vol.}
+\newgls{XCAS}{Air alert Close Air Support}{xcas}{\gls{cas} à la demande, avec les appareils en attente en vol.}
 
 \newgls{GC}{Ground Commander}{gc}{Commandant des troupes au sol.}%
 
@@ -485,9 +494,6 @@ Centre de contrôle des opérations aériennes de la coalition, l'échelon de co
 \newacronym{contact}{CONTACT}{Appel émis par le pilote pour signaler qu'il a visuellement identifié un point de référence ou une marque}
 \newacronym{asap}{ASAP}{Le plus vite possible (As Soon As Possible)}
 \newacronym{nlt}{NLT}{Pas plus tard que (Not Later Than)}
-%\newacronym{typeone}{Type 1}{Cfr. \cref{typeone}: \nameref{typeone}}
-%\newacronym{typetwo}{Type 2}{Cfr. \cref{typetwo}: \nameref{typetwo}}
-%\newacronym{typethree}{Type 3}{Cfr. \cref{typethree}: \nameref{typethree}}
 
 
 \newgls{Type 1}{Contrôle de Type 1}{typeone}{%

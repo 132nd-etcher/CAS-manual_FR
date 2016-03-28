@@ -42,17 +42,17 @@
 }% restore the value
 {\end{minipage}}%
 
-\newenvironment{mini}%
-{%
-\setlength{\currentparskip}{\parskip}% save the value
-\setlength{\currentparindent}{\parindent}% save the value
-\begin{minipage}[s][\textheight]{\linewidth}%
-\baselineskip=1\baselineskip plus 1fill% stretch as much as needed
-\lineskip=0pt plus 1fill% just for safety
-\setlength{\parskip}{\currentparskip}%
-%\setlength{\parindent}{\currentparindent}%
-}% restore the value
-{\end{minipage}}%
+%\newenvironment{mini}%
+%{%
+%\setlength{\currentparskip}{\parskip}% save the value
+%\setlength{\currentparindent}{\parindent}% save the value
+%\begin{minipage}[s][\textheight]{\linewidth}%
+%\baselineskip=1\baselineskip plus 1fill% stretch as much as needed
+%\lineskip=0pt plus 1fill% just for safety
+%\setlength{\parskip}{\currentparskip}%
+%%\setlength{\parindent}{\currentparindent}%
+%}% restore the value
+%{\end{minipage}}%
 
 \newenvironment{imini}%
 {%

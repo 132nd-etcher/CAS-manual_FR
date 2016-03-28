@@ -19,33 +19,75 @@ openany,
 \newcommand{\useful}[1]{\customcoloredbox{blue}{#1}}
 \newcommand{\remark}[1]{\customcoloredbox{gray}{#1}}
 
+\usepackage[
+colorlinks=true,
+urlcolor=\extlink,
+filecolor=\extlink,
+linkcolor=\intlink,
+citecolor=\intlink,
+bookmarks=true,
+breaklinks,
+]{hyperref}
+
+\input{preamble/0004ref}
+%\newcommand{\smallref}[1]{\cref{#1}: \nameref{#1}}
+\newcommand{\smallref}[1]{\hyperref[{#1}]{\cref*{#1} \nameref*{#1}}}
+\newcommand{\cruderef}[1]{\hyperref[{#1}]{\cref*{#1}}}
+\newcommand{\fullref}[1]{Cfr. \smallref{#1}}
+
+\input{preamble/0004glossary}
+\newcommand{\glsfull}[1]{\glsreset{#1} \gls{#1}}
+\newcommand{\glsfullpl}[1]{\glsreset{#1} \glspl{#1}}
+\newcommand{\glsd}[1]{\begin{minipage}{0.9\linewidth} \glsdesc{#1g} \end{minipage}}
 
 \begin{document}
+	
+	\import{./tables/}{90051bdarep}
+	
+	\import{./tables/}{90021datacard}
 
-%\import{./tikz/}{32011simplopcon}
-
-%\import{./tikz/}{35011simplcasflow}
-
-%\import{./tikz/}{90041agops}
-
-%\import{./tables/}{90051bdarep}
-
-%\import{./tikz/}{90061dryad}
-
-\import{./tikz/}{90062dryad}
-
-\import{./tikz/}{90063dryad}
-
-\import{./tikz/}{90064dryad}
-
-\import{./tikz/}{90065dryad}
-
-\import{./tikz/}{90066dryad}
-
-\import{./tikz/}{90067dryad}
-
-\import{./tikz/}{90068dryad}
-
-\import{./tikz/}{90069dryad}
+	\import{./tikz/}{32011simplopcon}
+	
+	\import{./tikz/}{35011simplcasflow}
+	
+	\import{./tikz/}{90041agops}
+	
+	\import{./tikz/}{90061dryad}
+	
+	\import{./tikz/}{90062dryad}
+	
+	\import{./tikz/}{90063dryad}
+	
+	\import{./tikz/}{90064dryad}
+	
+	\import{./tikz/}{90065dryad}
+	
+	\import{./tikz/}{90066dryad}
+	
+	\import{./tikz/}{90067dryad}
+	
+	\import{./tikz/}{90068dryad}
+	
+	\import{./tikz/}{90069dryad}
+	%
+	\newpage
+	\glsaddall%
+	\glossarystyle{altlist}%
+	%\glossarystyle{mylong}%
+	\printglossary[type=\acronymtype]
+	%
+	\newpage%
+	%
+	\printglossary[type=main]
+	
+	\newpage
+	
+	\glsfull{taca}
+	
+	\glsd{taca}
+	
+	\glsfull{scar}
+	
+	\glsdesc{scarg}
 
 \end{document}
