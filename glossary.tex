@@ -62,11 +62,17 @@ Une ligne établie entre deux formations alliées convergentes le long de laquel
 }
 
 \newgls{keyhole}{Keyhole}{kh}{%
-Test
+Le Keyhole est un moyen efficace pour établir un \gls{ip} en l'absence de points de contrôle pré-définis, ou lorsque les points de contrôles déjà établis ne sont plus adaptés à la situation.\\[1ex]%
+Lorsqu'un appareil \gls{cas} se rapporte au \ja{} sur le \gls{cp} (=check-in), le \ja{} définit un point ``Echo''.\\[1ex]%
+Ce point Echo se trouve généralement sur la cible (ligne 6 de la \gls{9l}).\\[1ex]%
+Le \ja{} utilise ensuite ce point Echo pour définir des positions d'attente en donnant une direction et une distance à partir du point Echo.\\[1ex]%
+Cette distance est à considérer comme une distance \textbf{minimale} à partir du point Echo.
 }
 
 \newgls{offset}{Décalage}{of}{%
-Test
+L'offset indique au pilote la direction (gauche ou droite) vers laquelle il peut manoeuvrer lors de son attaque (de l'\gls{ip} vers la cible).\\[1ex]%
+Le \ja{} utilise un offset pour faciliter la coordination avec les autres tirs dans la zone, pour aligner l'appareil pour l'attaque ou pour l'egress, ou pour éloigner l'appareil de menaces potentielles.\\[1ex]%
+L'offset permet de réguler l'angle d'attaque sans imposer un \gls{fah}.
 }
 
 \newgls{KB}{Killbox}{kb}{%
@@ -388,7 +394,9 @@ Recherche de point laser.
 }
 
 \newgls{FAH}{Final Attack Heading}{fah}{%
-Cap suivi par l'appareil qui attaque lorsqu'il effectue on attaque. Ce cap est pris au moment du virage \gls{in} et est maintenu jusqu'au largage de la munition.
+Cap que doit suivre l'appareil qui attaque pour se diriger vers la cible et engager.
+Le \ja{} peut imposer une cap d'attaque pour plusieurs raisons: augmenter la sécurité des troupes alliées, permettre au \ja{} de repérer plus facilement l'appareil qui attaque, aider le pilote à repérer la cible, minimiser les dommages collatéraux, fournir un cône de sécurité laser, ou faciliter la coordination avec les autres tirs.\\[1ex]%
+Le cap d'attaque final peut être donnée sous forme de fourchette, pour donner plus de flexibilité au pilote.
 }
 
 \newgls{LST}{Laser Spot Tracker}{lst}{%
@@ -606,4 +614,8 @@ Centre de contrôle des opérations aériennes de la coalition, l'échelon de co
 \newgls{ADA}{Air Defence Artillery}{ada}{%
 	Artillerie de défense anti-aérienne.\\[1ex]%
 	Le terme ``ADA'' fait référence aux AAA alliées.
+}
+
+\newgls{MANPAD}{Man Portable Air Defence System}{manpad}{%
+	Système de défense anti-aérienne portable.
 }

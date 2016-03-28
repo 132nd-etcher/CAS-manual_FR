@@ -220,20 +220,12 @@ Une fois que la cible est désignée et approuvée, le \ja{} coordonne les point
 			Les appareils évoluant à plus haute altitude peuvent nécessiter un \gls{ip} plus éloigné, à 20 miles nautiques de la cible.
 		}
 		
-		\itemt{\glsfull{kh}:} {\glsd{kh}}
+		\begin{minipage}{\linewidth}
+			\itemt{\glsfull{kh}:} {\glsd{kh}}
+		\end{minipage}
 		
 		\begin{e3}
-			\item Le Keyhole est un moyen efficace pour établir un \gls{ip} en l'absence de points de contrôle pré-définis, ou lorsque les points de contrôles déjà établis ne sont plus adaptés à la situation.
-			
-			Lorsqu'un appareil \gls{cas} se rapporte au \ja{} sur le \gls{cp} (=check-in), le \ja{} définit un point ``Echo''.
-			
-			Ce point Echo se trouve généralement sur la cible (ligne 6 de la \gls{9l}).
-			
-			Le \ja{} utilise ensuite ce point Echo pour définir des positions d'attente en donnant une direction et une distance à partir du point Echo.
-			
-			Cette distance est à considérer comme une distance \textbf{minimale} à partir du point Echo.
-			
-			La méthode Keyhole standard consiste à attribuer une lettre à chaque direction cardinale:
+			\item La méthode Keyhole standard consiste à attribuer une lettre à chaque direction cardinale:
 			\begin{e4}
 				\item A: nord.
 				\item B: est.
@@ -247,6 +239,8 @@ Une fois que la cible est désignée et approuvée, le \ja{} coordonne les point
 			\efig{khex1}{Keyhole: exemple de communication.}
 			
 			\begin{e4}
+				
+				\begin{minipage}{\linewidth}
 				\item Si la situations tactique nécessite qu'un \gls{ip} soit établie au nord de la cible, les instructions du \ja{} pourraient ressembler à:
 				
 				\begin{lstlisting}[caption=Keyhole: directions cardinale, label=keyholecard]
@@ -258,7 +252,9 @@ Une fois que la cible est désignée et approuvée, le \ja{} coordonne les point
 				...
 				PIRATE, ici REDWOLF, "é"tabli Alpha 8km, 200m.
 				\end{lstlisting}
+				\end{minipage}
 				
+				\begin{minipage}{\linewidth}
 				\item Lorsqe les directions cardinales ne suffisent pas, le \ja{} peut utiliser une radiale à partir du point Echo. Par exemple:
 				
 				\begin{lstlisting}[caption=Keyhole: radiale, label=keyholerad]
@@ -266,26 +262,181 @@ Une fois que la cible est désignée et approuvée, le \ja{} coordonne les point
 				...
 				PIRATE, ici REDWOLF, "é"tabli 240 "à" 8km, 200m.
 				\end{lstlisting}
+				\end{minipage}
 				
 			\end{e4}
+			
+			\efig{keyhole}{Keyhole: illustration}
+			
+			\item Le Keyhole permet une flexibilité illimitée pour établir des \glspl{ip}, et d'éviter d'avoir à planifier des \glspl{ip} qu'on utilisera probablement jamais partout dans la zone opérationnelle.
+			
+			Cependant, en utilisant le Keyhole, le \ja{} n'aura probablement pas de point de référence visuel ou géographique marquant via lequel orienter les appareils.
+			
+		\end{e3}		
+		
+		\itemt{Overhead:}{L'Overhead est une attaque à partir de la verticale de la zone cible.}
+		\begin{e2}
+			\item Pour les attaques au moyen de \glspl{pgm}, une distance accrue sera nécessaire et devrait être spécifier en ligne 1-3.
+		
+			Les attaques aux \glspl{pgm} ne permettent pas l'Overhead.
+		
+			\item Si l'appareil attaque depuis la verticale, les lignes 1-3 peuvent être ``De la verticale'', ou ``Lignes 1 à 3 pas d'application''.
+		\end{e2}
+		
+		\begin{minipage}{\linewidth}
+			\itemt{\glsfull{of}:} {\glsd{of}}
+		\end{minipage}
+		
+		\efig{offset}{Décalage (offset).}
+		
+		\begin{minipage}{\linewidth}
+			\itemt{\glsfull{fah}:} {\glsd{fah}}
+		\end{minipage}
+		
+		\begin{e3}
+			\item Le \ja{} doit évaluer les avantages d'imposer un \gls{fah} par rapport aux inconvénients et ne l'utiliser que si c'est nécessaire. Un minimum de contraintes doivent être imposées au pilote.
+			
+			\item Toute géométrie d'attaque passée lors du CAS-brief est considérée comme une restriction, et doit être répétée par le pilote lors du read-back.
+			\begin{minipage}{\linewidth}
+			\item Un passage de \gls{fah} peut ressembler à:
+			\begin{lstlisting}[caption=FAH: cap magnétique, label=fah1]
+			Cap d'attaque final 230.
+			\end{lstlisting}
+			\begin{lstlisting}[caption=FAH: cap magnétique avec cône, label=fah2]
+			Cap d'attaque final 240-300.
+			\end{lstlisting}
+			\begin{lstlisting}[caption=FAH: cap magnétique avec une fourchette, label=fah3]
+			Cap d'attaque final 270 plus ou moins 30 degr"é"s.
+			\end{lstlisting}
+			\begin{lstlisting}[caption=FAH: direction cardinale, label=fah4]
+			Cap d'attaque final du nord-est au sud-ouest.
+			\end{lstlisting}
+			\begin{lstlisting}[caption=FAH: référence géographique, label=fah5]
+			Effectuez toutes les attaques parall"è"lement "à" la route.
+			\end{lstlisting}
+			\end{minipage}
 		\end{e3}
 		
-		
-		
-		\itemt{\glsfull{of}:} {\glsd{of}}
-		\itemt{\glsfull{of}:} {\glsd{of}}
 	\end{e2}
-	\item Synchronisation
+	\itemt{Synchronisation}{}
 	\begin{e2}
-		\item Emploi simultané
-		\item Appui-feu
+		\itemt{Emploi simultané}{
+			Le but est de protéger les appareils alliés tout en limitant au maximum le temps pendant lequel les autres armes ne peuvent pas tirer de peur de toucher un appareil en attaque.
+		}
+		\itemt{Temps de référence commun}{
+			Pour permettre la synchronisation de tous les éléments, il est impératif que tous les participants utilisent la même méthode de timing (\gls{tot} ou \gls{ttt}).
+		}
+		
+		\itemt{Appui-feu pour le \gls{cas}:}{
+			Il y a deux formes principales d'appui-feu pour le \gls{cas}: le marquage et le \gls{sead}.
+		}
 		\begin{e3}
-			\item Marque
+			\itemt{Marque}{
+				Une marque devrait être fournie aux appareils \gls{cas} chaque fois que c'est possible.
+				
+				Il faut prévoir le temps nécessaire au pilote pour acquérir la marque.
+				
+				le \ja{} doit prévoir un système de marquage redondant au cas ou la méthode prévue en premier lieu ne fonctionne pas.
+				
+				La marque peut être fournie par \gls{idf} ou par un \gls{faca}.
+				
+				Si l'usage d'une marque visuelle n'est pas possible, on utilisera une marque ``vocale'', qu'on appelle le ``talk-on''. Le \ja{} va simplement diriger l'attention du pilote vers la cible en discutant avec lui. Le \gls{jtac} peut marquer sa propre position pour aider le talk-on (miroir, fumée, \ldots{}), en faisant attention à ne pas révéler les positions alliées à l'ennemi.
+				
+			}
 			\begin{e4}
-				\itemt{\glsfull{idf}:} {\glsd{idf}}
-				\item Feu direct
+				
+				\begin{minipage}{\linewidth}
+					
+				\item Le marquage implique l'emploi d'une brevity particulière:
+				
+				\efig{markbrevity}{Brevity pour la marque.}
+				
+				\end{minipage}
+				
+				\itemt{Marque par \gls{idf}:} {
+					L'artillerie, les mortiers et le tir depuis une unité navale sont des moyens efficaces de marquer la cible.
+					
+					Lorsqu'il y a déjà beaucoup d'activité sur le champ de bataille, il faut faire attention à ce que la marque ne soit pas confondue avec une autre activité au sol.
+					
+					Le timing pour la marque est très important. Le \ja{} doit prendre en compte le temps nécessaire pour que la marque soit effective, et le temps nécessaire au pilote pour commencer à scanner la zone.
+					
+					La marque est la plus efficace lorsqu'elle tombe à moins de 100m de la cible, mais suffit généralement à guider les appareils \gls{cas} jusqu'à 300m de la cible.
+				}
+				\itemt{Marque par feu direct:}{
+					Bien que cette méthode soit plus facile à mettre en place que l'\gls{idf}, les marques par feu direct sont généralement beaucoup moins visibles depuis les airs.
+				}
+				\itemt{Marque par \gls{ltd}}{
+					Pour les appareils équipés d'un \gls{lst}, la marque laser est très efficace.
+					
+					Il faut cependant faire attention à ce que le pilote ne confonde pas la source du pointeur et la zone pointée.
+					
+					Lors de l'emploi d'une marque laser, le call-sign de la station qui effectue le pointage et le code laser utilisé seront donnés.
+					
+					\important{Le \ja{} doit import un \gls{fah} pour s'assurer que l'appareil acquiert la zone pointée et non pas la source du pointage.}
+					
+					Le pilote préviendra 10 secondes avant de demander l'activation du laser.
+					
+					\begin{minipage}{\linewidth}
+						
+						Le marquage laser implique l'emploi d'une brevity particulière:
+						
+						\efig{brevitylaser}{Brevity pour la marque laser.}
+						
+					\end{minipage}
+				}
+				\itemt{Marque par \gls{faca}}{
+					Certains appareils \gls{faca} peuvent marquer la cible au moyen de roquettes au phosphore, \gls{ltd}, pointeurs \gls{ir}, ou munitions traçantes.
+				}
+				\itemt{Marque par pointeur \gls{ir}}{
+					Le \ja{} peut utiliser un pointeur \gls{ir} pour marquer la cible de nuit, à condition que les pilotes soient équipés de \glspl{nvg}.
+					
+					Contrairement au pointeurs lasers, les pointeurs \gls{ir} ne peuvent pas être utilisés pour guider une munition.
+					
+					L'utilisation de pointeurs \gls{ir} doit se faire avec prudence, car ils peuvent révéler la position du \gls{jtac} à l'ennemi.
+					
+					Le pointage \gls{ir} devrait idéalement commencer 20 à 30 secondes avant le \gls{tos}/\gls{ttt}, ou lorsque le pilote le demande.
+					
+					\begin{minipage}{\linewidth}
+						
+						Le marquage \gls{ir} implique l'emploi d'une brevity particulière:
+						
+						\efig{brevityir}{Brevity pour la marque infrarouge.}
+						
+					\end{minipage}
+				}
+				\itemt{Marques combinées}{
+					Le \ja{} peut décider d'employer plusieurs marques de types différents.
+				}
+				\begin{minipage}{\linewidth}
+					
+					\efig{laserwarning}{Avertissement laser et infrarouge.}
+					
+				\end{minipage}
+				\itemt{Marque des alliés}{
+					Le marquage des unités alliées est la pire méthode pour obtenir un TALLY.
+					
+					Cette méthode peut être déroutante et ne doit être utilisée, avec prudence, que si aucune autre méthode n'est possible.
+				}
 			\end{e4}
-			\item \gls{aca} informelle
+			\itemt{\gls{sead}}{}
+			\begin{e4}
+				\itemt{L'objectif principal du \gls{sead} est de permettre aux appareils alliés d'opérer dans un espace aérien défendu par un système anti-aérien ennemi.}{
+					Cela inclut les routes d'ingree/egress.
+					
+					Les missions \gls{sead} ne garantissent pas l'immunité.
+					
+					Le \ja{} doit évaluer les différents profils de missions possibles pour minimiser l'exposition des appareils alliés aux défenses ennemies connues ou potentielles.
+					
+					S'il est impossible d'éviter les défenses ennemies, la vulnérabilité des appareils \gls{cas} doit être mise en balance avec le risque encourus par les appareils \gls{sead} avant de décider si une mission \gls{sead} s'impose.
+				}
+				\itemt{Coordination}{
+					Le \gls{sead} depuis une plateforme aéroportée doit être coordonné et intégré au plan.
+					
+					Avant de demander un \gls{cas} nécessitant du \gls{sead}, il faut chercher à accomplir la neutralisation des défenses anti-aériennes ennemies par d'autres moyens (\gls{idf}).
+					
+					Le \gls{sead} est le plus efficace contre les \glspl{sam} et \gls{aaa}, et le moins efficace contre les \glspl{manpad} ou les défenses très mobiles.
+				}
+			\end{e4}
 		\end{e3}
 	\end{e2}
 \end{e1}
