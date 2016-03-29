@@ -1,5 +1,5 @@
 \begin{center}
-\begin{adjustbox}{max width=\textwidth, max height=0.9\textheight, keepaspectratio}
+\begin{adjustbox}{max width=\textwidth, max height=0.9\textheight}
 	\begin{tikzpicture}
 \tikzstyle{every node}=[font=\footnotesize]
 
@@ -23,7 +23,7 @@
 
 \draw [subor] (jfc) -- (jfacc);
 
-\node [document, below of=ato, yshift=-4.5cm] (fscm) {FSCM};
+\node [document, below of=ato, yshift=-3.5cm] (fscm) {FSCM};
 
 \node [document, below of=fscm, yshift=-0.2cm] (intent) {Intentions};
 
@@ -40,23 +40,26 @@
 
 \draw [subor] (jfacc.south) |- node[anchor=north east, at start, yshift=-0.5cm] (l3) {Contr{\^o}le} ($(awacs.north)+(0cm,1cm)$) -- (awacs.north);
 
-\node [ground, below of=gc, yshift=-2.5cm] at (gc|-awacs) (jtac)  {J-TAC};
+\node [ground, below of=gc, yshift=-2cm] at (gc|-awacs) (jtac)  {J-TAC};
 
 \draw [subor] (gc.south) |-  node[anchor=north east, at start] (l1) {Contr{\^o}le} ($(jtac.north)+(0cm, 0.5cm)$) -- (jtac.north);
 
-\node [air, yshift=-9.4cm] (cas) at ($(awacs)!0.5!(fscm)$) {Appareil de CAS};
+
 
 \node [document] at (jtac-|intent) (req) {Requ{\^e}te CAS};
 \draw [produces] (jtac.east) -- node[anchor=south west, at start] {{\'E}met} (req.west);
 
 \coordinate (ref2) at ($(req)!0.5!(jtac)$);
-\node [air, xshift=3cm]  at ($(cas)!0.5!(jtac)$) (faca) {FAC(A)};
+\node [air, yshift=-4.5cm]  at ($(awacs)!0.5!(jtac)$) (faca) {FAC(A)};
+
+\node [air, below of=faca, yshift=-3cm] (cas) {Appareil de CAS};
 
 \coordinate (j1) at ($(jtac.south)-(0mm,5mm)$);
 \coordinate (f1) at ($(faca.north)+(0mm,5mm)$);
 \coordinate (f2) at (awacs|-f1);
-\coordinate (f3) at ($(faca.north)+(-5mm,-2mm)$);
+\coordinate (f3) at ($(faca.north)+(5mm,-2mm)$);
 \coordinate (f4) at (f2-|jtac);
+\coordinate (f5) at ($(faca.north)+(-5mm,-2mm)$);
 
 \coordinate (c1) at ($(cas.north)+(-5mm,5mm)$);
 \coordinate (c2) at ($(cas.north)+(-5mm,-2mm)$);
@@ -65,47 +68,49 @@
 \coordinate (c5) at ($(cas.north)+(0mm,0mm)$);
 
 \draw [subor] (awacs.south) |- node[label={[label distance=0.5cm,text depth=-1ex,rotate=90]Contrôle (pendant le transit)}, yshift=3.5cm] {} (c1) -- (c2);
-\draw [subor] (faca.south) |- node[anchor=north east, at start, yshift=0cm] {Contr{\^o}le}(c3) -- (c4);
-\draw [subor] (jtac.south) -- node[anchor=north east, at start, yshift=0cm] {Contr{\^o}le}(c5);
-\draw [subor] (j1) -| (faca.north);
-\draw [subor] (f2) -| ([xshift=-2mm]f4) arc (180:0:2mm) -| (f3);
+\draw [subor] (faca.south) -- node[anchor=north east, at start, yshift=0cm] {Contr{\^o}le}(cas.north);
+\draw [subor] (jtac.south) |- node[anchor=north east, at start, yshift=0cm] {Contr{\^o}le}(c3) -- (c4);
+\draw [subor] (j1) -| (f3);
+\draw [subor] (f2) -| (f5);
 
 \begin{pgfonlayer}{background}
 \node [draw=gray!80, fit={($(jfc.west)-(0.2cm,0)$)([yshift=0.5cm]jfc.north)([yshift=-0.2cm]jfc.south)([xshift=0.2cm]jfc.east)}] (joc) {};
 \node [draw=gray!80, fit={($(jfacc.west)-(0.2cm,0)$)([yshift=0.5cm]jfacc.north)([yshift=-0.2cm]jfacc.south)([xshift=0.2cm]jfacc.east)}] (jaoc) {};
-\node [surround, fit={
-	(joc.west)
-	([yshift=1cm]joc.north)
-	(l3.south)
-	(ato.east)
-}] (creator) {};
-
-\node [surround, fit={
-	(jaoc.west|-awacs.west)
-	([yshift=-0.5cm]creator.south)
-	(cas.south)
-	(req.east)
-}] (pilots) {};
+%\node [surround, fit={
+%	(joc.west)
+%	([yshift=3mm]joc.north)
+%	(l3.south)
+%	(ato.east)
+%}] (creator) {};
+%
+%\node [surround, fit={
+%	(jaoc.west|-awacs.west)
+%	([yshift=-0.5cm]creator.south)
+%	(cas.south)
+%	(req.east)
+%}] (pilots) {};
 
 \end{pgfonlayer}
 
 \node [text centered, anchor=north west, font=\bfseries, yshift=-0.1cm] at (joc.north west) {JOC};
 \node [text centered, anchor=north west, font=\bfseries, yshift=-0.1cm] at (jaoc.north west) {JAOC};
-\node [text centered, anchor=north east, font=\bfseries, yshift=-0.1cm, xshift=-1cm] at (pilots.north east) {Joueurs (g{\'e}n{\'e}ralement)};
-\node [text centered, anchor=north east, font=\bfseries, yshift=-0.1cm, xshift=-1cm] at (creator.north east) {Cr{\'e}ateur de mission (g{\'e}n{\'e}ralement)};
+\coordinate (leg1) at (cas-|req);
+%\node [text centered, anchor=north east, font=\bfseries, yshift=-0.1cm, xshift=0cm] at (pilots.north east) {Joueurs (g{\'e}n{\'e}ralement)};
+%\node [text centered, anchor=north east, font=\bfseries, yshift=-0.1cm, xshift=0cm] at (creator.north east) {Cr{\'e}ateur de mission (g{\'e}n{\'e}ralement)};
 
-\node [matrix of nodes, anchor=north west, row sep=0.5cm, xshift=0.5cm] at (creator.north east) {
+\node [matrix of nodes, anchor=south east, row sep=0.5cm, yshift=-5mm, xshift=5mm] at (leg1) {
 	\node [text centered, font=\bfseries] (leg) {L{\'e}gende};\\
-	\node [agency, scale=0.7] (ex1) {Agence};\\
-	\node [document, scale=0.7] (ex2) {Document};\\
-	\node [air, scale=0.7] (ex3) {Unit{\'e} a{\'e}ri{\`e}nne};\\
-	\node [ground, scale=0.7] (ex4) {Unit{\'e} terrestre};\\
+	\node [agency, scale=0.8] (ex1) {Agence};&
+	\node [document, scale=0.8] (ex2) {Document};\\
+	\node [air, scale=0.8] (ex3) {Unit{\'e} a{\'e}ri{\`e}nne};&
+	\node [ground, scale=0.8] (ex4) {Unit{\'e} terrestre};\\
 };
 \begin{pgfonlayer}{background}
 \node [surround, fit={
 	(ex1.west)
-	([yshift=-10pt]creator.north-|ex1.north)
-	(ex4.south)
+	%([yshift=-10pt]creator.north-|ex1.north)
+	(leg.north)
+	(ex3.south)
 	(ex4.east)
 }] (legend) {};
 \node [ultra thick, draw=gray!100, fit={($(jfc.west)-(0.2cm,0)$)([yshift=0.5cm]jfc.north)([yshift=-0.2cm]jfc.south)([xshift=0.2cm]jfc.east)}] (joc) {};

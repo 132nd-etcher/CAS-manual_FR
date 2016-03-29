@@ -1,77 +1,75 @@
-\section{Engagement de la cible lors du CAS}
+\section{Engagement de la cible lors du CAS} % 2. Close Air Support Target Engagement
 
 Cette section décrit les procédures standard lors du \gls{cas}. Bien que certaines opérations nécessitent des procédures spécifiques, le personnel impliqué dans le \gls{cas} doit être familier avec le format standard.
 
-\subsection{Création du briefing par le J-TAC}
+\subsection{Création du briefing par le J-TAC} % a. JTAC Actions for Developing a CAS Brief.
 Une fois la cible désignée par le \gls{gc}, le \gls{jtac} doit effectuer les actions décrites ci-dessous.
 
 Le processus commence à la fin et progresse à reculons, en commençant par la cible, de manière à permettre au \gls{jtac} d'établir un \gls{gp}, un \gls{cb}, ainsi que les remarques/restrictions dans un ordre logique.
 
 Cependant, chaque étape a une influence sur les autres, et il se peut qu'il faille revenir sur un point déjà établi durant le processus. Par exemple, le \gls{sead} peut avoir une influence sur le \gls{gp}.
 
+
+\subsubsection{Rassembler les informations à propos de la cible.}%(1) Develop Targeting Data
+
+Il y a quatre informations dont le \gls{jtac} a absolument besoin pour planifier son attaque: l'élévation de la cible, sa description, sa position, et la position des unités alliées.
+
+
 \begin{e1}
 	
-	\itemt{Rassembler les informations à propos de la cible.}{
-		Il y a quatre informations dont le \gls{jtac} a absolument besoin pour planifier son attaque: l'élévation de la cible, sa description, sa position, et la position des unités alliées.
+	\itemt{Élévation de la cible (ligne 4).}{
+		Par défaut, l'élévation est exprimée en pieds au dessus de la mer (ft \gls{msl}).
+		
+		Si le \gls{jtac} choisit d'utiliser une autre unité de mesure, cela devra être clairement signifié.
+	}
+
+	\itemt{Description de la cible (ligne 5).}{
+		La description de la cible doit être concise et précise (par ex. ``5 chars dans un champ'').
+		
+		Le \gls{jtac}/\gls{faca} doit éviter d'utiliser des descriptions compliquées ou des termes qui risquent de ne pas être compris par les pilotes.
+		
+		Cependant, la description doit rester spécifique. si le \gls{gc} veut attaquer une \gls{hvt} qui se trouve dans un building à deux étages, il devra spécifier "\gls{hvt} dans building à 2 étages", et pas seulement "building à 2 étages".
+	}
+	
+	\itemt{Position de la cible (ligne 6).}{
+		Le \gls{jtac}/\gls{faca} doit évaluer la précision minimale nécessaire pour les coordonnées de la cible pour accomplir les objectifs du \gls{gc}. Il ne faut pas perdre trop de temps à raffiner les coordonnées de la cible et prendre le risque de retarder l'action des appareils de \gls{cas} si l'approximation actuelle de la position suffit à exécuter la mission.
+		
+		Par exemple, un largage de bombe guidée laser depuis un émetteur au sol demandera des coordonnées beaucoup moins précises qu'une largage de \gls{jdam}.
+		
+		Il existe plusieurs méthodes pour déterminer la position de la cible:
 	}
 	
 	\begin{e2}
 		
-		\itemt{Élévation de la cible (ligne 4).}{
-			Par défaut, l'élévation est exprimée en pieds au dessus de la mer (ft \gls{msl}).
-			
-			Si le \gls{jtac} choisit d'utiliser une autre unité de mesure, cela devra être clairement signifié.
-		}
-	
-		\itemt{Description de la cible (ligne 5).}{
-			La description de la cible doit être concise et précise (par ex. ``5 chars dans un champ'').
-			
-			Le \gls{jtac}/\gls{faca} doit éviter d'utiliser des descriptions compliquées ou des termes qui risquent de ne pas être compris par les pilotes.
-			
-			Cependant, la description doit rester spécifique. si le \gls{gc} veut attaquer une \gls{hvt} qui se trouve dans un building à deux étages, il devra spécifier "\gls{hvt} dans building à 2 étages", et pas seulement "building à 2 étages".
+		\itemt{Association du terrain et d'une carte.}{
+			Le moins précis, mais rapide et efficace en fonction de la situation.
 		}
 		
-		\itemt{Position de la cible (ligne 6).}{
-			Le \gls{jtac}/\gls{faca} doit évaluer la précision minimale nécessaire pour les coordonnées de la cible pour accomplir les objectifs du \gls{gc}. Il ne faut pas perdre trop de temps à raffiner les coordonnées de la cible et prendre le risque de retarder l'action des appareils de \gls{cas} si l'approximation actuelle de la position suffit à exécuter la mission.
-			
-			Par exemple, un largage de bombe guidée laser depuis un émetteur au sol demandera des coordonnées beaucoup moins précises qu'une largage de \gls{jdam}.
-			
-			Il existe plusieurs méthodes pour déterminer la position de la cible:
+		\itemt{\gls{lrf} couplé au \gls{gps} et/ou la boussole.}{
+			Sujet à l'imprécision de la boussole, et au brouillage \gls{gps}. Si le brouillage \gls{gps} est possible, une autre méthode devra être utilisée.
 		}
 		
-		\begin{e3}
-			
-			\itemt{Association du terrain et d'une carte.}{
-				Le moins précis, mais rapide et efficace en fonction de la situation.
-			}
-			
-			\itemt{\gls{lrf} couplé au \gls{gps} et/ou la boussole.}{
-				Sujet à l'imprécision de la boussole, et au brouillage \gls{gps}. Si le brouillage \gls{gps} est possible, une autre méthode devra être utilisée.
-			}
-			
-			\itemt{Logiciel de ciblage}{La méthode la plus précise.}
-			
-			\itemt{Coordonnées dérivées des images de reconnaissance.}{}
-			
-		\end{e3}
+		\itemt{Logiciel de ciblage}{La méthode la plus précise.}
 		
-		\itemt{Positions alliées (ligne 8).}{
-			La positions des unités alliées au sol sont données à partir de la position de la cible. La direction est donnée de manière cardinale ou sous-cardinale (N, NE, E, SE, S, SW, W, NW), et la distance est exprimée en mètres.
-			
-			L'observateur ou le \gls{jtac} peuvent ne pas être l'unité alliée la plus proche de la cible.
-		}
-		
-		\itemt{Effet souhaité par le \gls{gc}.}{
-			L'effet souhaité par le \gls{gc} est déterminé en parlant avec lui.
-			
-			Le \gls{jtac} doit offrir au \gls{gc} une estimation réaliste des possibilités en fonction des appareils disponibles, de l'armement embarqué, et de son expertise.
-		}
+		\itemt{Coordonnées dérivées des images de reconnaissance.}{}
 		
 	\end{e2}
 	
+	\itemt{Positions alliées (ligne 8).}{
+		La positions des unités alliées au sol sont données à partir de la position de la cible. La direction est donnée de manière cardinale ou sous-cardinale (N, NE, E, SE, S, SW, W, NW), et la distance est exprimée en mètres.
+		
+		L'observateur ou le \gls{jtac} peuvent ne pas être l'unité alliée la plus proche de la cible.
+	}
+	
+	\itemt{Effet souhaité par le \gls{gc}.}{
+		L'effet souhaité par le \gls{gc} est déterminé en parlant avec lui.
+		
+		Le \gls{jtac} doit offrir au \gls{gc} une estimation réaliste des possibilités en fonction des appareils disponibles, de l'armement embarqué, et de son expertise.
+	}
+	
 \end{e1}
 
-\subsection{Requête de CAS}
+\subsubsection{Requête de CAS} %(2) Request Air Support
 
 \begin{e1}
 	\item Une fois que la position de la cible a été grossièrement estimée, le \gls{jtac} doit envoyer la demande de \gls{cas} le plus vite possible, pour prendre en compte le temps nécessaire avant l'arrivée des appareils. Il ne faut pas retarder l'envoi de la demande pour augmenter la précision des coordonnées de la cible.
@@ -79,7 +77,7 @@ Cependant, chaque étape a une influence sur les autres, et il se peut qu'il fai
 	\important{Il ne faut jamais utiliser les coordonnées des unités alliées comme coordonnées cible dans une demande de \gls{cas}.}
 \end{e1}
 
-\subsection{Création du game plan}
+\subsubsection{Création du game plan} %(3) Develop Game Plan 221
 
 Au minimum, le \gls{gp} contiendra le type de contrôle et la méthode d'attaque.
 
@@ -160,7 +158,7 @@ L'objectif du \gls{jtac} n'est pas de dicter aux appareils de \gls{cas} les tact
 	\end{e2}
 \end{e1}
 
-\subsection{Détermination du type de marque et de l'aide à la corrélation}
+\subsubsection{Détermination du type de marque et de l'aide à la corrélation} %(4) Determine/Coordinate Mark/Aid to Correlation 222
 
 \begin{e1}
 	
@@ -335,7 +333,7 @@ L'objectif du \gls{jtac} n'est pas de dicter aux appareils de \gls{cas} les tact
 	\end{e2}
 \end{e1}
 	
-\subsection{Détermination la géométrie d'attaque}
+\subsubsection{Détermination la géométrie d'attaque} %(5) Develop Attack Geometry 227
 
 Les \glspl{jtac} doivent prendre de nombreux facteurs en compte lors de l'établissement de la géométrie d'attaque:
 
@@ -413,31 +411,31 @@ Les \glspl{jtac} doivent prendre de nombreux facteurs en compte lors de l'établ
 		
 	\end{e2}
 	
-	\itemt{Nécessités \gls{sead}/Plan \gls{sead}}
+\end{e1}
+
+\subsubsection{Plan SEAD}%(6) Determine SEAD Requirements/SEAD Plan 229
+
+\begin{e1}
+	
+	\item S'il n'est pas possible d'éviter la menaces sol-air, un plan \gls{sead} devra être établi.
+	
+	\item Le \gls{sead} et le \gls{cas} peuvent se retrouver à engager le même groupe cible; il faut alors faire attention à ce qu'il ne s'empêche pas l'un l'autre de travailler.
+	
+	\item La menace peut également être réduite au moyen de:
 	
 	\begin{e2}
 		
-		\item S'il n'est pas possible d'éviter la menaces sol-air, un plan \gls{sead} devra être établi.
+		\item Séparation latéral: employer des armes à longue portée.
 		
-		\item Le \gls{sead} et le \gls{cas} peuvent se retrouver à engager le même groupe cible; il faut alors faire attention à ce qu'il ne s'empêche pas l'un l'autre de travailler.
+		\item Séparation verticale: rester au dessus de l'enveloppe de tir de la menace.
 		
-		\item La menace peut également être réduite au moyen de:
+		\item Masquage terrain:
 		
 		\begin{e3}
 			
-			\item Séparation latéral: employer des armes à longue portée.
+			\item Tir pop-up.
 			
-			\item Séparation verticale: rester au dessus de l'enveloppe de tir de la menace.
-			
-			\item Masquage terrain:
-			
-			\begin{e4}
-				
-				\item Tir pop-up.
-				
-				\todo[inline]{For examples of SEAD integration, see Appendix E, “Examples of Close Air Support Missions,” Examples 1 and 7.}
-				
-			\end{e4}
+			\todo[inline]{For examples of SEAD integration, see Appendix E, “Examples of Close Air Support Missions,” Examples 1 and 7.}
 			
 		\end{e3}
 		
@@ -445,7 +443,7 @@ Les \glspl{jtac} doivent prendre de nombreux facteurs en compte lors de l'établ
 	
 \end{e1}
 
-\subsection{Template d'exécution du CAS}
+\subsection{Template d'exécution du CAS}%b. CAS Execution Template. 231
 
 Par sa nature même, l'exécution du \gls{cas} diffère lors de chaque mission.
 
@@ -455,7 +453,7 @@ La template suivante fournit un cadre de travail pour le \ja{} et les pilotes.
 
 \remark{Le déroulement présenté ici commence après le décollage, et se termine lorsque la patrouille de \acrshort{cas} est sur le retour.}
 
-\subsubsection{Routing}
+\subsubsection{Routing}%(1) Routing/Safety of Flight. 231
 
 Directement après le check-in, le \ja{} doit fournir au pilote une liste des autres \glspl{aos}, leur call-sign, l'altitude à laquelle ils opèrent, et leur fréquence de travail, ce dès que possible.
 
@@ -538,7 +536,7 @@ Lors du check-in initial, le \ja{} donnera, dans l'ordre:
 
 \end{e1}
 
-\subsubsection{Check-in}
+\subsubsection{Check-in}%(2) CAS Aircraft Check-In.  232
 
 La procédure de check-in est essentielle pour le passage des informations entre les pilotes et les agences de contrôle.
 
@@ -621,68 +619,69 @@ C'est pourquoi il est important que le\ja{} tiennent les agences de contrôle in
 		\end{e3}
 		\item Si le \ja{} n'est pas familier avec le type d'appareil, il devra maintenant poser les questions en clair de manière à éviter de donner plus tard des instructions impossibles à suivre.
 	\end{e2}
+\end{e1}
 	
-	\itemt{Situation Update}{}
+\subsubsection{Situation Update}%(3) Situation Update 234
+	
+\begin{e1}
+	\item La Situation Update est un outil utilisé pour augmenter la \gls{sa} de tous.
+	
+	La Situation Update peut inclure:
 	
 	\begin{e2}
-		\item La Situation Update est un outil utilisé pour augmenter la \gls{sa} de tous.
 		
-		La Situation Update peut inclure:
+		\item Activités ennemies.
+		\item Activités des menaces.
+		\item Situation alliée.
+		\item Remarques.
+		\item Météo.
+		\item Dangers.
 		
-		\begin{e3}
-			
-			\item Activités ennemies.
-			\item Activités des menaces.
-			\item Situation alliée.
-			\item Remarques.
-			\item Météo.
-			\item Dangers.
-			
-		\end{e3}
+	\end{e2}
+	
+	\item Exemples d'AO Update:
+	
+	\efig{aoupdate1}{AO Update: exemple 1.}
+	
+	\efig{aoupdate2}{AO Update: exemple 2.}
+	
+	\begin{e2}
+		\item La longueur de l'AO Update doit être adaptée en fonction du temps disponible.
 		
-		\item Exemples d'AO Update:
+		L'objectif de l'AO Update est de donner au pilote une \gls{sa} suffisante pour remplir sa mission.
 		
-		\efig{aoupdate1}{AO Update: exemple 1.}
+		Les AO Update qui sont lues trop vite, sont trop longues, ou donnent des informations inutiles, font perdre du temps et contribuent à réduire la \gls{sa} de tous.
 		
-		\efig{aoupdate2}{AO Update: exemple 2.}
+		Une AO Update particulièrement longue doit être fragmentée en plusieurs transmissions.
 		
-		\begin{e3}
-			\item La longueur de l'AO Update doit être adaptée en fonction du temps disponible.
+		\item Lorsque c'est possible, l'AO Update doit être transmises aux agences de contrôle, pour qu'elles puissent en informer les appareils en transit.
+		
+		Aussi, la transmission de l'AO Update peut être déléguée au \gls{faca}/\gls{taca}, pour permettre au \gls{jtac} de se concentrer sur le \gls{tac}.
+		
+		\itemt{Codage des AO Updates}{
+			Les AO Updates reçoivent un codes alphanumérique, qui est transmis en même temps que l'AO Update.
 			
-			L'objectif de l'AO Update est de donner au pilote une \gls{sa} suffisante pour remplir sa mission.
-			
-			Les AO Update qui sont lues trop vite, sont trop longues, ou donnent des informations inutiles, font perdre du temps et contribuent à réduire la \gls{sa} de tous.
-			
-			Une AO Update particulièrement longue doit être fragmentée en plusieurs transmissions.
-			
-			\item Lorsque c'est possible, l'AO Update doit être transmises aux agences de contrôle, pour qu'elles puissent en informer les appareils en transit.
-			
-			Aussi, la transmission de l'AO Update peut être déléguée au \gls{faca}/\gls{taca}, pour permettre au \gls{jtac} de se concentrer sur le \gls{tac}.
-			
-			\itemt{Codage des AO Updates}{
-				Les AO Updates reçoivent un codes alphanumérique, qui est transmis en même temps que l'AO Update.
-				
-				Cela permet au \ja{} de savoir si un pilote dispose de la dernière AO Update.
-			}
-			
-			\begin{minipage}{\linewidth}
-				\itemt{Format du check-in:}{}
-				\begin{lstlisting}[caption=AO Update: code, label=aoupdatecode]
+			Cela permet au \ja{} de savoir si un pilote dispose de la dernière AO Update.
+		}
+		
+		\begin{minipage}{\linewidth}
+			\itemt{Format du check-in:}{}
+			\begin{lstlisting}[caption=AO Update: code, label=aoupdatecode]
 	REDWOLF ici MAGIC, avec AO Update Charlie, rappellez pr"ê"t "à" copier.
 	...
 	PIRATE ici REDWOLF, pour le check-in.
 	...
 	PIRATE ici REDWOLF, ..., AO Update Bravo "à" bord.
-				\end{lstlisting}
-			\end{minipage}
-			
-		\end{e3}
+			\end{lstlisting}
+		\end{minipage}
 		
 	\end{e2}
 	
 \end{e1}
+	
 
-\subsubsection{Game-plan}
+
+\subsubsection{Game-plan}%(4) Game Plan.  237
 
 Le Game-plan est une méthode concise d'informer les pilotes des intentions du \ja{}.
 
@@ -695,7 +694,7 @@ Le Game-plan est une méthode concise d'informer les pilotes des intentions du \
 		\item Le Game-plan est utilisé pour les attaques simples ou multiples.
 		
 		Si plusieurs appareils sont prévus pour l'attaque, il faut essayer de ne transmettre le Game-plan qu'une seule fois:
-		\begin{lstlisting}[caption=AO Update: code, label=aoupdatecode]
+		\begin{lstlisting}[caption=Game-plan: transmission unique, label=gameplansingletx]
 	REDWOLF et BOURDON, dans l'ordre, rappellez pr"ê"t "à" copier le Game-plan.
 		\end{lstlisting}
 	\end{minipage}
@@ -757,7 +756,7 @@ Le Game-plan est une méthode concise d'informer les pilotes des intentions du \
 	
 \end{e1}
 
-\subsubsection{CAS-brief}
+\subsubsection{CAS-brief}%(5) CAS Brief 241
 
 Le \ja{} utilisera un format standard pour transmettre le CAS-brief, d'application pour les \glspl{fw} comme pour les \glspl{rw}.
 
@@ -844,22 +843,20 @@ Le format est le suivant:
 		Si des précisions sont nécessaire pour identifier une cible spécifique dans un groupe, elles seront données plus tard.
 	}
 	
-	\itemt{Ligne 6 - Position de la cible}{
-		Le \ja{} peut donner la position de la cible de 3 manières:
-	}
+	\itemt{Ligne 6 - Position de la cible}{}
 	\begin{e2}
 		
-		\item Coordonnées sur la grille.
+		\item Le \ja{} peut donner la position de la cible de 3 manières:
 		
-		\item Latitude et longitude.
-		
-		\item Offset à partir d'un point connu.
-		
-	\end{e2}
-	
-	Les remarques suivantes sont d'application pour la ligne 6:
-	
-	\begin{e2}
+		\begin{e3}
+			
+			\item Coordonnées sur la grille.
+			
+			\item Latitude et longitude.
+			
+			\item Offset à partir d'un point connu.			
+			
+		\end{e3}
 		
 		\item Si la cible est une zone plutôt qu'un point, il faudra donner la position du centre de la zone.
 		
@@ -869,7 +866,7 @@ Le format est le suivant:
 		
 		\item Cibles multiples: lors de la transmission de plusieurs Lignes 4 et 6, le \ja{} donnera d'abord un CAS-brief complet, puis ajouter les Lignes 4, 6 et 8 supplémentaires avant les remarques.
 		
-		\item Si les coordonnées sont passées comme latitude et longitude, les mots ``nord'', ``est'', ``sud'' et ``ouest'' seront lus avant les \textbf{chiffres}.
+		\item Si les coordonnées sont passées comme latitude et longitude, les mots ``nord'', ``est'', ``sud'' et ``ouest'' seront lus \textbf{avant} les chiffres.
 		
 		\item Les points suivants sont à prendre en compte si on utilise une méthode autre que les coordonnées géographiques:
 		
@@ -918,86 +915,549 @@ Le format est le suivant:
 		
 		L'altitude d'egress peut être spécifiée; si aucune altitude n'est donnée, l'appareil qui a reçu \ja{} un bloc dans lequel évoluer devra rester dans ce bloc.
 	}
+\end{e1}
 	
-	\itemt{Remarques/Restrictions}{}
+\subsubsection{Remarques/Restrictions}%(6) Remarks/Restrictions 247
+	
+\begin{e1}
+	
+	\itemt{Remarques}{
+		
+		Les points suivants peuvent être cités en remarque:
+		
+	}
 	
 	\begin{e2}
 		
-		\itemt{Remarques}{
-			
-			Les points suivants peuvent être cités en remarque:
-			
-		}
+		\item Type et nombre de munitions souhaitées par le \ja{}.
+		
+		\item Menaces sol-air (tir alliés depuis le sol):
 		
 		\begin{e3}
 			
-			\item Type et nombre de munitions souhaitées par le \ja{}.
-			
-			\item Menaces sol-air (tir alliés depuis le sol):
-			
-			\begin{e4}
-				
-				\item Type.
-				\item Direction et distance à partir de la Ligne 6.
-				\item Type de suppression: continue, interrompue, non-standard.
-				\item Ligne de tir.
-				
-			\end{e4}
-			
-			\item Tirs additionnels: informer le pilote des autres actions sur le champ de bataille (explosions, feus, ...).
-			
-			\item Appels radios supplémentaires: le \ja{} peut demander à ce que le pilote reprenne contact lors de son attaque.
-			
-			\begin{e4}
-				
-				\item \gls{ipinbound}.
-				\item \gls{in}.
-				\item Au moment du tir.
-				
-			\end{e4}
-			
-			\item Remarques supplémentaires:
-			
-			\begin{e4}
-				
-				\item Dangers à la navigation.
-				\item Météo.
-				\item Informations supplémentaires sur la cible (catégorie \gls{tle}).
-				\item Capacités de vision de nuit.
-				\item Remarques quant au timing.
-				\item Marques sur les alliés.
-				\item Cibles mouvantes: vitesse et direction estimées.
-				\item Informations supplémentaires sur les \glspl{roe}.
-				
-			\end{e4}
+			\item Type.
+			\item Direction et distance à partir de la Ligne 6.
+			\item Type de suppression: continue, interrompue, non-standard.
+			\item Ligne de tir.
 			
 		\end{e3}
 		
-		\itemt{Restrictions}{
-			Les points suivants doivent être d'inclus s'ils sont d'implications.
-			
-			Les restrictions devraient toujours être répétées par le pilote lors du read-back.
-		}
+		\item Tirs additionnels: informer le pilote des autres actions sur le champ de bataille (explosions, feus, ...).
+		
+		\item Appels radios supplémentaires: le \ja{} peut demander à ce que le pilote reprenne contact lors de son attaque.
 		
 		\begin{e3}
 			
-			\item \glspl{aca} formel et informel.
-			\item \gls{fah}.
-			\item Séparation latérale et/ou verticale.
-			\item Autorisation de quitter la \gls{bp} pour les \glspl{rw}.
-			\item \gls{tot}/\gls{ttt}:
-			\begin{e4}
-				
-				\item Si le \gls{tot} n'a pas encore été arrêté, on appellera ``standby TOT'', ou ``TOT après corrélation''.
-				
-				\item Donner un \gls{tot} permet de synchroniser les différentes actions sur le champ de batailles.
-				
-				\todo[inline]{Reprendre ligne 249}
-				
-			\end{e4}
+			\item \gls{ipinbound}.
+			\item \gls{in}.
+			\item Au moment du tir.
+			
+		\end{e3}
+		
+		\item Remarques supplémentaires:
+		
+		\begin{e3}
+			
+			\item Dangers à la navigation.
+			\item Météo.
+			\item Informations supplémentaires sur la cible (catégorie \gls{tle}).
+			\item Capacités de vision de nuit.
+			\item Remarques quant au timing.
+			\item Marques sur les alliés.
+			\item Cibles mouvantes: vitesse et direction estimées.
+			\item Informations supplémentaires sur les \glspl{roe}.
 			
 		\end{e3}
 		
 	\end{e2}
+	
+	\itemt{Restrictions}{
+		Les points suivants doivent être d'inclus s'ils sont d'implications.
 		
+		Les restrictions devraient toujours être répétées par le pilote lors du read-back.
+	}
+	
+	\begin{e2}
+		
+		\item \glspl{aca} formel et informel.
+		\item \gls{fah}.
+		\item Séparation latérale et/ou verticale.
+		\item Autorisation de quitter la \gls{bp} pour les \glspl{rw}.
+		\item \gls{tot}/\gls{ttt}:
+		\begin{e3}
+			
+			\item Si le \gls{tot} n'a pas encore été arrêté, on appellera ``standby TOT'', ou ``TOT après corrélation''.
+			
+			\item Donner un \gls{tot} permet de synchroniser les différentes actions sur le champ de batailles.
+			
+			\begin{e4}
+				
+				\item \gls{boc}:le \gls{tot} peut être assigné comme une partie des remarques/restrictions. LE \ja{} doit prévoir dans le\Gls{tot} le temps nécessaire au pilote pour régler ses systèmes.
+				
+				\item \gls{bot}:
+				
+				\begin{e5}
+					
+					\item \gls{tot} assigné après la corrélation: pour une attaque qui demande une longue corrélation, le \ja{} peut attendre après la corrélation pour donner le \gls{tot}. Cela permet d'éviter d'avoir à l'ajuster si la corrélation dure plus longtemps que prévu.
+					
+					\item \gls{tot} assigné avant la corrélation: quand la corrélation se fait à partir d'une marque ou d'un offset, le \gls{tot} peut être établi avant la corrélation, puisque la corrélation nécessite l'établissement de la marque.
+					
+				\end{e5}
+				
+				\item ``Quand prêt'' vs ``Immédiatement'': il y a des circonstances ou l'établissement d'un \gls{tot} est inutile et le pilote peut effectuer son attaque lorsqu'il le souhaite. Le \ja{} appellera alors ``Quand prêt'' (``Push when ready'').
+				
+				``Immédiatement'' (``Immediate'') implique un certain degré d'urgence, et doit être réservé aux cas où l'urgence est réelle.
+				
+			\end{e4}
+			
+			\item Si le pilote ne peut pas respecter le \gls{tot}, il doit en avertir le \ja{} et lui donner un \gls{tot} qu'il peut atteindre.
+			
+		\end{e3}
+		
+		\item Le point \gls{pla}, et la direction/distance pour la \gls{pla}, si d'application.
+		
+	\end{e2}
+	
 \end{e1}
+	
+\subsubsection{Read-back}%(7) Readbacks 250
+	
+\begin{e1}
+	
+	\item Le read-back consiste à répéter certaines informations transmises par le \ja{}.
+	
+	\item Read-back obligatoire: lignes 4, 6, et restrictions.
+	
+	\item S'ils sont donnés, le \gls{fah}, les \gls{aca} et le \gls{tot} sont considérés comme des restrictions et doivent faire partie du read-back.
+	
+	\item Si le read-back est correct, le \ja{} doit répondre ``Read-back correct'' ou ``Bon read-back''.
+	
+	\begin{minipage}{\linewidth}
+		
+		\item Si le read-back n'est pas correct, le \ja{} répète la partie erronée, en usant d'une inflexion de la voix pour insister sur le morceau incorrect.
+		\begin{lstlisting}[caption=Read-back incorrect, label=9lrbwrong]
+REDWOLF, PIRATE, attention, cap d'attaque 1 - 8 - 0.
+		\end{lstlisting}
+	\end{minipage}
+	
+	\item Pour les attaques \gls{boc}, tous les read-back doivent se faire à partir du système.
+	
+	\item Pour les attaques \gls{bot} sans coordonnées données en ligne 6, le pilote, s'il le peut devra inclure les coordonnées qu'il aura dans son read-back, de manière à améliorer la \gls{sa} des autres participants au \gls{cas}.
+	
+\end{e1}
+	
+\subsubsection{Corrélation}%(8) Correlation. 251
+
+Le processus de corrélation est le processus par lequel le \ja{} s'assure que le pilote a bien acquis la ou la marque cible correcte.
+	
+	
+\begin{e1}
+	
+	\item \gls{boc}: la corrélation est complète lorsque le pilote effectue un read-back des coordonnées correct à partir de sons système.
+	
+	\item \gls{bot}: la corrélation est obligatoire.
+	
+	En fonction de la situation tactique, les \glspl{tac} décident si le pilote doit acquérir la cible, ou si un offset à partir d'une marque suffit à atteindre l'objectif.
+	
+	La composition de la cible, son camouflage ou sa position peut rendre l'acquisition par le pilote difficile.
+	
+	Certains profiles d'attaque peuvent également rendre l'acquisition de la cible difficile.
+	
+	Par la corrélation, les \glspl{tac} confirment que le pilote voit la même chose que le \ja{} en posant des questions spécifiques.
+	
+	\item Une fois que le \ja{} est satisfait de la corrélation, le \ja{} appelle ``Le xxx est votre cible''.
+	
+	Le pilote répond ``TALLY'', ``CAPTURED'' ou ``CONTACT'', selon le type d'objet.
+	
+	Le \ja{} doit essayer d'être spécifique, en précisant ``Le troisième véhicule est votre cible'', plutôt que simplement ``C'est votre cible''.
+	
+	\item Procédures de corrélation:
+	
+	\begin{e2}
+		
+		\itemt{Traqueur laser:}{Intentionnellement vide.}
+		
+		\itemt{Match Sparkle:}{}
+		
+		\begin{e3}
+			
+			\item La brevity propre à l'\gls{ir} doit être respectée.
+			
+			\begin{minipage}{\linewidth}
+				
+				\item le \ja{} doit s'assurer que l'appareil est en position de voir le marqueur \gls{ir}.
+				
+				Cela peut impliquer de placer les \glspl{fw} à la verticale (``Overhead''), ou de faire progresser les \glspl{rw} à l'avant de la \gls{ha} ou de la \gls{bp}.
+				\begin{lstlisting}[caption=Corrélation Math Sparkle, label=9lsparkle]
+	REDWOLF, PIRATE, avancez au nord de la BP et rappelez pr"ê"t pour le sparkle.
+				\end{lstlisting}
+			\end{minipage}
+			
+				\item Une fois en position, le pilote demande le Sparkle avec l'appel ``JTAC call-sign, SPARKLE.''.
+				
+				\item Le \ja{} commence le marquage \gls{ir} et transmet ``Call-sign appareil, MATCH SPARKLE.''.
+				
+				\item Le \ja{} doit être prêt à répondre aux appels ``SNAKE'' et ``STEADY''.
+				
+				\item Si le pilote appelle ``NO JOY'':
+				
+				\begin{e4}
+					
+					\item Le \ja{} vérifie que son marqueur est allumé.
+					
+					\item Le \ja{} vérifie que le pilote est équipé de \glspl{nvg}.
+					
+					\item Le \ja{} vérifie que l'appareil est en position d'acquérir la marque, et que le pilote cherche dans la bonne zone.
+					
+				\end{e4}
+			
+		\end{e3}
+		
+		\itemt{Sparkle Walk-On:}{Intentionnellement vide.}
+		
+		\itemt{Désignation laser depuis l'appareil qui attaque:}{Intentionnellement vide.}
+		
+		\itemt{Marque visuelle:}{}
+		
+		\begin{e3}
+			
+			\item L'\gls{idf}, le feu direct ou le tir depuis les airs peuvent être employés comme marque.
+			
+			Les marques d'opportunités, comme les fumées ou les feux sur le champ de bataille, peuvent également servir de marque visuelle.
+			
+			\item Le \ja{} arrangera le début de la marque 30 à 45 secondes avant le \gls{tot}, pour laisser le temps au pilote de trouver la marque.
+				
+			\item Les pilotes doivent appeler ``CONTACT la marque'' pour avertir le \ja{} qu'ils ont le visuel sur la marque.
+				
+			\item Le \ja{} doit prendre en compte la distance à laquelle le pilote pourra visuellement acquérir la marque.
+			
+			Un \gls{fw} dont l'\gls{ip} se trouve à 20 miles nautiques de la zone devra peut-être déplacé en Overhead.
+			
+			\item Si autre chose qu'une marque est utilisé en Ligne 7, on évitera d'utiliser le terme ``Marque'' (ex: la fumée noire, les impacts du leader, \ldots{}).
+			
+		\end{e3}
+		
+		\itemt{Talk-on}{}
+		
+		\begin{e4}
+			
+			\item Le talk-on est une simple discussion entre le \ja{} et le pilote permettant d'assurer la corrélation.
+			
+			Le langage et la brevity utilisés dépend de la situation.
+			
+			Pour le talk-on, le \ja{} doit prendre en compte:
+			
+			\begin{e5}
+				
+				\item Perspective du pilote.
+				\item Perspective du contrôleur.
+				\item Conditions environnementales.
+				\item Relief de la zone cible.
+				\item Résolution des graphiques de référence.
+				\item Capacité à établir une mesure de référence.
+				
+			\end{e5}
+			
+			\begin{minipage}{\linewidth}
+				
+				\item L'image suivante montre les éléments de la zone cible qui peuvent être utilisés pour le talk-on:
+				
+				\efig{talkon}{Perspectives pour le talk-on.}
+				
+			\end{minipage}
+			
+			\item Le \ja{} doit décider s'il veut partir d'un grand point de référence pour travailler vers un plus petit, ou directement commencer par un petit point de référence, en fonction de:
+			
+			\begin{e5}
+				
+				\item Senseurs embarqués par l'appareil.
+				\item Précision des instruments de l'appareil.
+				\item \glspl{grg} disponibles.
+				\item Images de reconnaissances disponibles.
+				\item Perspective du pilote (distance, altitude de l'appareil).
+				
+			\end{e5}
+			
+			\todo[inline]{Exemple de talk-on annexe E, example 4}
+			
+			\itemt{Description améliorée de la cible}{
+				La description améliorée est utilisée lorsque la menace est réelle et que l'appareil évolue à faible altitude.
+				
+				La description améliorée ``dessine'' une image de la zone cible dans la tête du pilote avant que ce dernier n'y arrive, et décrit une façon d'y trouver la cible.
+				
+				Le \ja{} doit prendre en compte le \gls{fah} et la perspective du pilote.
+				
+				Une référence unique ou une marque devra être donnée par le \ja{}.
+				
+				Comme le \ja{} décrit que ce verra le pilote, ce dernier ne doit pas appeler ``CONTACT'' pendant la description.
+			}
+			
+			\begin{minipage}{\linewidth}
+				
+				\item Avant le talk-on, le \ja{} doit spécifier le type de talk-on qu'il va employer (carte, \gls{grg}, visuel, \ldots).
+				
+				Le \ja{} doit également clairement indiquer s'il change de référentiel à un moment donné. Par exemple, le \ja{} peut commencer le talk-on au moyen d'un \gls{grg}, puis passer à un talk-on visuel.
+				
+				Lors de l'utilisation de \gls{grg}, il est impératif de spécifier la version du \gls{grg} utilisée.
+				\begin{lstlisting}[caption=Corrélation: Version GRG, label=9lversiongrg]
+	REDWOLF, avertissez quand pr"ê"t pour un talk-on GRG avec la version 4.8.
+				\end{lstlisting}
+			\end{minipage}
+			
+			\item Le \ja{} doit réfléchir à la meilleure manière de commencer le talk-on.
+			
+			Généralement, un talk-on visuel ira du grand au petit. Inversement, un talk-on aux instruments dans une ville peut commencer sur un point restreint (par ex: carrefour).
+			
+			\item Les descriptions et directions données dans le talk-on doivent être simples et courtes, dirigeant les yeux du pilote d'un point à un autre.
+			
+			\begin{e5}
+				
+				\item \textbf{Depuis} un point (facilement identifiable).
+				\item \textbf{Vers} une direction (cardinale ou sous-cardinale).
+				\item \textbf{Pour} une distance donnée (unité de mesure commune ou en mètres).
+				\item \textbf{Objet} vu (cible ou object que le \ja{} veut que pilote voie).
+				
+			\end{e5}
+			
+			Le \ja{} doit périodiquement confirmer que le pilote regarde l'objet correct en posant des questions à propos des environs de l'objet.
+			
+			\begin{minipage}{\linewidth}
+				\begin{lstlisting}[caption=Corrélation: talk-on progressif, label=9ltalkonprogr]
+	REDWOLF, depuis le bunker, vers le sud le long de la route jusqu'au premier building, rappellez CONTACT.
+	PIRATE, REDWOLF, CONTACT.
+	REDWOLF, ce building sera la banque; depuis la banque, deux buildings vers l'est, rappelez CONTACT sur un b"â"timent avec une court int"é"rieure.
+	PIRATE, REDWOLF, CONTACT sur le b"â"timent avec une court int"é"rieure.
+	REDWOLF, quel c"ô"t"é" de la court int"é"rieure ouvre sur la rue?
+				\end{lstlisting}
+			\end{minipage}
+			
+			Les transmissions sont courtes, et ponctuées d'appels ``CONTACT''.
+			
+			\item Le nombre de directions cardinales doit être limités à deux par transmission, pour éviter la confusion.
+			
+			\item Des points remarquables comme des bâtiments, routes, carrefours, \ldots, doivent être nommés durant la transmission s'ils n'ont pas déjà un nom.
+			
+			Cela permet aux participants de rapidement y faire référence par la suite.
+			
+			\item Établir une unité de mesure commune permet d'estimer plus facilement les distances au sol en diminuant les erreurs de jugements dues aux différentes perspectives.
+			
+			\item Lorsqu'il effectue un talk-on, le \ja{} peut utiliser des particularités linéaires du terrain (route, rivières, \ldots) pour diriger l'attention du pilote dans une certaine direction.
+			
+			\item Un ratio de 2:1 doit être utilisé pour le talk-on. Le \ja{} donne deux directives, puis demande confirmation avant d'en donner une troisième.
+			
+			\begin{minipage}{\linewidth}
+				
+				\item Une fois que le \ja{} a dirigé l'attention du pilote sur la cible, il devra confirmer que le pilote regarde la bonne cible en posant une question du type:
+				\begin{lstlisting}[caption=Corrélation: confirmation de la cible, label=9ltalkonconfirmtgt]
+	REDWOLF, vers quelle direction regarde le v"é"hicule de t"ê"te ?
+	REDWOLF, combien de tangos "à" c"ô"t"é" du v"é"hicule de t"ê"te ?
+	REDWOLF, que voyez-vou au sud du v"é"hicule de t"ê"te ?
+				\end{lstlisting}
+			\end{minipage}
+			
+		\end{e4}
+		
+	\end{e2}
+		
+	\itemt{Considération supplémentaires}{}
+	
+	\begin{e2}
+		
+		\item Une fois la corrélation terminée, et avant l'attaque, toute question restantes doit trouver réponse.
+		
+		Si, durant la corrélation, un participant se rend compte qu'un point du CAS-brief doit être changé, ce point sera discuté.
+		
+		Certaines informations nécessaires pour l'attaque ne seront pas établies avant que la corrélation ne soit complète, et devront être discutées entre le \ja{} et le pilote avant l'attaque.
+		
+		Par exemple:
+		
+		\begin{e3}
+			
+			\item Laser retardé ou continu.
+			\item Attaque en section/patrouille ou individuelle pour les \glspl{rw}.
+			\item Intentions de tir du \gls{gc}.
+			\item Sélection de l'armement, en fonction de l'analyse du pilote.
+			\item Fuzing.
+			
+		\end{e3}
+		
+		\item Le \ja{} doit se souvenir de donner un \gls{tot}, si ce n'est déjà fait, et le confirmer avec l'échelon supérieur.
+		
+	\end{e2}
+	
+\end{e1}
+	
+\subsubsection{Attaque}%(9) Attack 263
+
+\begin{e1}
+	
+	\item Pendant toute la durée de l'attaque \gls{cas}, le \ja{} maintient une \gls{sa} constante de la cible, de l'appareil qui attaque et de la zone.
+	
+	\item Le \ja{} doit prendre en compte le temps de vol entre l'\ipha et la cible pour intégrer ce temps dans le calcul du \gls{tot}.
+	
+	En créant cette ligne temporelle, et en utilisant les appels des appareils pour la mettre à jour, le \ja{} s'assure de l'intégration temporelle correct du \gls{cas} avec le reste du dispositif.
+	
+	Le \ja{} intègre également à cette ligne les changements de situations des forces amies. Si un changement se produit, le \ja{} évalue la possibilité de déplacer ou d'annuler l'attaque.
+	
+	Par exemple, si un vol \gls{sead} est en retard, le \gls{tot} des appareils \gls{cas} devra être adapté.
+	
+	\item Le \ja{} surveille la zone cible pour repérer les changements au plus tôt (cible qui se déplace, entrée de civils/non-combattants).
+	
+	\itemt{Discipline sur le \gls{tad}:}{
+		Le \gls{tad} peut très vite devenir fort encombré.
+		
+		Tous les occupants du réseau doivent effectuer de l'``écoute active'', et appliquer la discipline et le brevity correctes.
+		
+		Au final, c'est le \gls{jtac} qui possède et contrôle le \gls{tad}.
+	}
+	
+	\begin{e2}
+		
+		\item Quand un appareil appelle \gls{in}, tout autre appel doit être mis en standby jusqu'après que le \ja{} aie donné l'autorisation de tir ou l'annulation.
+		
+		Une exception à cette règle: tout participant peut et devrait appeler ``ABORT'' à tout moment qu'il juge opportun.
+		
+		\itemt{Brevity}{
+			
+			Cfr. \citetitle{app7} et \citetitle{fm1021} pour les termes brevity reconnus par l'OTAN et l'USAF.
+			
+		}
+		
+	\end{e2}
+	
+	\itemt{Autorisations de tir}{
+		L'autorisation de tir sera donnée le plus tôt possible par le \ja{}, particulièrement pour les tirs stand-off ou à haute altitude.
+	}
+	
+	\itemt{Procédure Abort}{
+		Le \ja{} annulera l'attaque s'il lui semble que l'appareil n'est pas aligné sur la bonne cible, et \textbf{DOIT} annuler l'attaque si les troupes amies sont en danger de tir fratricide, ou si le pilote est en danger.
+		
+		La procédure d'annulation peut utiliser une authentification de type \hyperref[dryad]{DRYAD} ou RAMROD:
+	}
+	
+	\begin{e2}
+		\item Durant le check-in, le pilote donne le challenge (2 lettres pour le RAMROD, 3 pour le DRYAD) au \ja{}.
+		\item Le \ja{} décode le challenge et note la réponse.
+		\item La réponse sera utilisé comme code ABORT
+		
+		\begin{minipage}{\linewidth}
+			\item Exemple avec le RAMROD ``SOUNTRACK'':
+			\begin{lstlisting}[caption=Attaque: annulation avec RAMROD, label=9latkcancelramrod]
+	PIRATE, REDWOLF, ... ABORT CODE: November Romeo.
+	...
+	("é"mis par le J-TAC qui veut annuler la passe:) ABORT Tango, ABORT Tango, ABORT Tango.
+			\end{lstlisting}
+		\end{minipage}
+	\end{e2}
+	
+	\efig{atkcanceldryad}{Attaque: annulation avec DRYAD}
+	
+	\item Si aucune code d'annulation n'a été donné au check-in, l'appel sera simplement: ``ABORT, ABORT, ABORT''.
+	
+	\item Voir Chapitre 3, \smallref{topla} pour l'annulation de la passe après le tir.
+	
+	\item Une fois que le code Abort a été utilisé, un nouveau sera établir en remplacement.
+	
+\end{e1}
+
+\subsubsection{Evaluation de l'efficacité de l'attaque}%(10) Assess Effectiveness of the Attack. 264
+
+Après l'impact, le \ja{} détermine si l'effet souhaité par le \gls{gc} est accompli ou pas.
+
+\begin{e1}
+	
+	\item En fonction de l'efficacité de l'attaque, une nouvelle attaque peut être nécessaire, auquel cas un nouveau game-plan et un nouveau CAS-brief seront transmis (si nécessaire).
+	
+	\item La fumée ou la poussière soulevée par la première attaque peut empêcher le \ja{} de voir le résultat de l'attaque pendant plusieurs minutes.
+	
+	\item La ré-attaque permet aux appareils de se repositionner et d'attaquer la même cible rapidement, en se pliant aux mêmes restrictions.
+	
+	\item Une ré-attaque en contrôle de \gls{typeone} ou \gls{typetwo} se fera à la requête du \ja{} et une nouvelle autorisation de tir sera nécessaire.
+	
+	En contrôle de \gls{typethree}, les appareils sont libres d'engager à loisir.
+	
+	\begin{minipage}{\linewidth}
+		
+		\item Le \ja{} peut fournir des corrections ou de nouvelles restrictions pour la ré-attaque, par exemple:
+		\begin{lstlisting}[caption=Evaluation: ré-attaque, label=9lbdareattack]
+	PIRATE, REDWOLF, "à" partir des impacts du leader, 100m au nord.
+		\end{lstlisting}
+	\end{minipage}
+	
+	\item Si une ré-attaque est nécessaire, le \ja{} décidera si un nouveau game-plan ou un nouveau CAS-brief sont également nécessaires.
+	
+	\item Si la ré-attaque se fait contre la même cible, le \ja{} pourra appeler: ``Call-sign, CONTINUE pour une ré-attaque, restrictions identiques''.
+	
+	\item Si la ré-attaque se fait contre une cible très proche d'une cible précédente, le \ja{} doit s'assurer que le pilote a acquis la nouvelle cible, mais ne doit pas transmettre un nouveau CAS-brief.
+	
+	\item Le \ja{} doit s'assurer que les restrictions précédentes sont toujours d'application pour la ré-attaque, et les changer si nécessaire.
+	
+\end{e1}
+
+\subsubsection{BDA}%(11) BDA 265
+
+\begin{e1}
+	
+	\item Le \glsfull{bda} est utilisé pour mettre à jour l'\gls{aob} de l'ennemi.
+	
+	Une \gls{bda} précise est importante pour savoir si une cible doit être attaquée à nouveau.
+	
+	Le \ja{} et le pilote collectent tout deux le \gls{bda}.
+	
+	Le rapport \gls{bda} doit inclure:
+	
+	\begin{e2}
+		
+		\item Composition: force et type d'équipement ou de personnel observés.
+		\item Activité: direction/vitesse du mouvement, stationnaire, positions renforcées.
+		\item Position.
+		\item Date/heure.
+		\item Remarques:
+		\begin{e3}
+			\item Munitions tirées.
+			\item Dégâts observés (nombre de cibles détruites, nombre de cibles intactes, recommandations).
+			\item Numéro de mission.
+			\item Résultats de la mission (succès, succès partiel, échec).
+			
+		\end{e3}
+	\end{e2}
+	
+	\item Un \gls{bda} précis et rapide permet une meilleure image de l'\gls{aob} ennemi, qui aide le \gls{cc} à organiser les unités alliées
+	
+	\item Les \glspl{jtac} doivent s'assurer que le \gls{bda} est précis, et ne pas le surestimer, ou rapporter des choses qu'ils n'ont pas eux-même observées.
+	
+	\itemt{Responsabilités du \ja{}:}{}
+		
+		\begin{e2}
+			
+			\item Lorsque c'est possible, le \ja{} fournit au pilote un \gls{bda} de son attaque lors de l'egress.
+			
+			\item Le \ja{} donne un \gls{bda} pour la patrouille, et pas pour chaque appareil.
+			
+			\item Au minimum, le \gls{bda} contiendra ``SUCCÈS'', ``ÉCHEC'' ou ``INCONNU''.
+			
+		\end{e2}
+		
+	\itemt{Responsabilités du pilote:}{}
+	
+	\begin{e2}
+		
+		\begin{minipage}{\linewidth}
+			
+			\item Le pilote utilise le format \gls{infltrep} suivant:
+			\efig{infltrep}{BDA: format INFLTREP.}
+		\end{minipage}
+		
+		\item L'\gls{infltrep} peut être utilisé pour transmettre des informations de grande importance, qui ne peuvent attendre le dé-briefing au sol (présence de \glspl{sam}, \glspl{aaa} ou \glspl{ewr}, cibles restantes ou échec de la mission).
+		
+	\end{e2}
+	
+\end{e1}
+
+\subsubsection{Routing/Sécurité du vol}%(12) Routing/Safety of Flight 267
+
+Les \glspl{jtac} sont responsables de fournir des informations de routing aux pilotes lorsqu'ils quittent la zone.
+
+Cela permet un vol sécurisé et donne au \gls{jtac} une meilleure \gls{sa} de sa zone.
+
+\textbf{Le routing doit inclure un point et un bloc d'altitude pour fournir la déconfliction entre les appareils.}

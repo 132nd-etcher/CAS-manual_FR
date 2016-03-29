@@ -7,31 +7,28 @@
 
 \section{Requête de mission}
 
-\begin{e2}[0em]
-	\item Ligne 1 - Heading
-	\begin{e3}[0em]
+\begin{e2}
+	\itemt{Ligne 1 - Heading}{}
+	\begin{e3}
 		\item Unité appelée - Destinataire de la requête
 		\item Unité appelante - Source de la requête
 		\item Numéro de la requête
-		\begin{e4}[0em]
+		\begin{e4}
 			\item CAS planifié - Numérotation séquentielle par l'unité appelante
 			\item CAS immédiat - Numérotation séquentielle par le centre ops
 		\end{e4}
 		\item Envoyé - Date et heure de l'envoi, personne qui a envoyé la requête
 	\end{e3}
-	\item Ligne 2 - Priorité
-	\begin{e3}[0em]
+	\itemt{Ligne 2 - Priorité}{}
+	\begin{e3}
+		\item Urgente
 		\item Priorité
-		\begin{e4}[0em]
-			\item Urgente
-			\item Priorité
-			\item Routine
-		\end{e4}
+		\item Routine
 	\end{e3}
 	\itemt{Ligne 3 - Cible}{
 	Décrit la composition, la force approximative et les capacités de mouvement de la cible. Il est obligatoire de spécifier, même s'il s'agit d'une grossière estimation, la force de l'ennemi (par ex.: 10 chars) ou la taille de la zone cible (par ex: personnel sur le une ligne de 500 mètres).}
 	\item Ligne 4 - Position de la cible
-	\begin{e3}[0em]
+	\begin{e3}
 		\item Bloc A - Position de la cible ou point de départ
 		\item Bloc B - Quand indiqué, renseigne une ligne de A vers B
 		\item Bloc C - Quand indiqué, renseigne une route qui part de A et qui va vers C en passant par B
@@ -39,28 +36,28 @@
 		\item Bloc E - Élévation de la cible en \gls{ft} \gls{msl}
 	\end{e3}
 	\itemt{Ligne 5 - Heure / date}{Indique l'heure et la date auxquelles le \gls{cas} est requis}
-	\begin{e3}[0em]
+	\begin{e3}
 		\item Bloc A - \acrshort{asap}: le plus vite possible
 		\item Bloc B - \acrshort{nlt}: pas plus tard que \ldots{}
 		\item Bloc C - A: A \ldots{}
 		\item Bloc D - To: Jusque \ldots{}
 	\end{e3}
 	\itemt{Ligne 6 - Armement/Effet désiré}{Indique l'effet souhaité par le demandeur. Cette information est essentielle pour le planificateur.}
-	\begin{e3}[0em]
+	\begin{e3}
 		\item Armement - type d'armement à employer
 		\item Détruire
 		\item Neutraliser
 		\item Harceler/Interdire
 	\end{e3}
 	\itemt{Ligne 7 - Contrôle final}{Identité du \gls{tac} (ex: \gls{jtac}, \gls{faca}) qui effectuera le briefing et contrôlera le tir}
-	\begin{e3}[0em]
+	\begin{e3}
 		\item JTAC - Type de contrôle terminal
 		\item Call-sign
 		\item Fréquence tu contrôleur
 		\item Point de contrôle - Point auquel le pilote doit contacter le contrôleur
 	\end{e3}
 	\itemt{Ligne 8 - Remarques}{Permet d'ajouter des informations qui ne sont reprises dans les points ci-dessus dans une ``Situation Update''.}
-	\begin{e3}[0em]
+	\begin{e3}
 		\item Numéro de l'update
 		\item Situation de la cible et de l'ennemi
 		\item Activités des menaces
@@ -73,11 +70,9 @@
 		\item Effort \gls{sead} localisé
 		\item Dangers (météo, terrain)
 	\end{e3}
-\end{e2}
 
 \section{Coordination}
 
-\begin{re2}
 	\item Ligne 9 - \gls{nsfs} - Coordination avec les unités navales
 	\item Ligne 10 - Artillerie - Coordination avec l'artillerie
 	\item Ligne 11 - Espionnage - Coordination avec les unités de renseignement
@@ -89,11 +84,9 @@
 	\item Ligne 17 - Position - Position de l'\gls{aca}
 	\item Ligne 18 - Largeur - Largeur de l'\gls{aca}
 	\item Ligne 19 - Altitude - Altitude de l'\gls{aca} en \gls{ft} \gls{msl}
-\end{re2}
 	
-\section{Données de la mission}	
-	
-\begin{re2}
+\section{Données de la mission}
+
 	\item Ligne 20 - Numéro de la mission
 	\item Ligne 21 - Call-sign
 	\item Ligne 22 - Nombre et type d'appareils
@@ -107,7 +100,7 @@
 	\item Ligne 30 - Description de la cible
 	\item Ligne 31 - Coordonnées et élévation de la cible
 	\item Ligne 32 - \gls{bda} et \gls{misrep}
-\end{re2}
+\end{e2}
 
 \newpage
 

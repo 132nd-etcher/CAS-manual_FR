@@ -55,6 +55,7 @@ openany,
 \input{preamble/0003stretchers}
 \input{preamble/0003tikz}
 \newcommand{\tfig}[3]{ \begin{figure}[H] \import{./tikz/}{#1} \caption{#2} \label{#3} \end{figure} }
+\newcommand{\tfignolof}[3]{ \begin{figure}[H] \import{./tikz/}{#1} \caption[]{#2} \label{#3} \end{figure} }
 \input{preamble/0003todonotes}
 %\input{preamble/0003soul}
 
@@ -154,20 +155,20 @@ openany,
 
 \sloppy
 
+
+
 \include{chapters/1000titlepage}
 %\import{./}{titlepage.tex}
-
-\addtocontents{toc}{~\hfill\textbf{Page}\par}%
 %
 \pagenumbering{Roman}%
 %
 %\include{chapters/1001disclaimer}%
 %\import{./intro/}{disclaimer.tex}
 %
+\pagestyle{intro}%
+%
 \include{chapters/1002publetter}%
 %\import{./intro/}{pub_letter.tex}
-%
-\pagestyle{intro}%
 
 %
 \include{chapters/1003summary}%
@@ -326,6 +327,8 @@ openany,
 \include{chapters/9005bdarep}%
 %
 \include{chapters/9006dryad}%
+%
+\include{chapters/9007nineline}%
 %
 \end{appendices}%
 %
