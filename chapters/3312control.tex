@@ -17,13 +17,13 @@ Le type de contrôle utilisé est dicté par la situation au sol. Un contrôle p
 	\important{Le contrôle de \gls{typeone} \textbf{ne peut pas} être utilisé avec des armes à guidage inertiel, de par l'impossibilité de prévoir la trajectoire de l'arme à partir de celle de l'avion.}
 	\item Un contrôle de type 1 se déroule comme suit:
 	\begin{e2}
-		\item Acquisition visuelle de la cible par le \ja{}
-		\item Gameplan/CAS brief
-		\item Readback lignes 4, 6 et 8
-		\item Annonce \acrshort{ipinbound}
-		\item Annonce \acrshort{in}
-		\item Le \ja{} acquiert visuellement l'appareil qui attaque
-		\item Le \ja{} annonce \acrshort{clearedhot}, \acrshort{continuedry} ou \acrshort{abort}
+		\item Acquisition visuelle de la cible par le \ja{}.
+		\item Gameplan/CAS brief.
+		\item Readback lignes 4, 6 et 8.
+		\item Annonce \acrshort{ipinbound}.
+		\item Annonce \acrshort{in}.
+		\item Le \ja{} acquiert visuellement l'appareil qui attaque.
+		\item Le \ja{} annonce \acrshort{clearedhot}, \acrshort{continuedry} ou \acrshort{abort}.
 	\end{e2}
 \end{e1}
 
@@ -34,13 +34,13 @@ Le type de contrôle utilisé est dicté par la situation au sol. Un contrôle p
 	\item Le contrôle de \gls{typetwo} est utilisé lorsque le \ja{} lorsque le \ja{} ne peut pas obtenir le visuel, soit sur la cible, soit sur l'appareil au moment du largage de la munition.
 	\item Un contrôle de \gls{typetwo} se déroule comme suit:
 	\begin{e2}
-		\item Acquisition de la cible par le \ja{}, visuellement ou par d'autres moyens
-		\item Gameplan/CAS brief
-		\item Readback lignes 4, 6 et 8
-		\item Annonce \acrshort{ipinbound}
-		\item Annonce \acrshort{in} + cap d'attaque ou cap depuis la cible (ex: ``\acrshort{in} 340'', ou ``\acrshort{in} depuis le sud'')
-		\item Le \ja{} acquiert visuellement l'appareil qui attaque
-		\item Le \ja{} annonce \acrshort{clearedhot}, \acrshort{continuedry} ou \acrshort{abort}
+		\item Acquisition de la cible par le \ja{}, visuellement ou par d'autres moyens.
+		\item Gameplan/CAS brief.
+		\item Readback lignes 4, 6 et 8.
+		\item Annonce \acrshort{ipinbound}.
+		\item Annonce \acrshort{in} + cap d'attaque ou cap depuis la cible (ex: ``\acrshort{in} 340'', ou ``\acrshort{in} depuis le sud'').
+		\item Le \ja{} acquiert visuellement l'appareil qui attaque.
+		\item Le \ja{} annonce \acrshort{clearedhot}, \acrshort{continuedry} ou \acrshort{abort}.
 	\end{e2}
 \end{e1}
 
@@ -51,15 +51,15 @@ Le type de contrôle utilisé est dicté par la situation au sol. Un contrôle p
 	\item Bien que ce ne soit pas obligatoire, le \ja{} doit également tout mettre en oeuvre pour acquérir visuellement l'appareil qui attaque
 	\item Un contrôle de \gls{typethree} se déroule comme suit:
 	\begin{e2}
-		\item Acquisition de la cible par le \ja{}, visuellement ou par d'autres moyens
-		\item Gameplan/CAS brief
-		\item Readback lignes 4, 6 et 8
-		\item Annonce \acrshort{ipinbound}
-		\item Annonce \acrshort{in}
-		\item Le \ja{} acquiert visuellement l'appareil qui attaque
-		\item Le \ja{} annonce \acrshort{clearedeng} ou \acrshort{continuedry}
-		\item Avant le tir de la première munition, l'appareil qui attaque annonce \acrshort{commencing}
-		\item Une fois l'engagement terminé, l'appareil annonce \acrshort{complete}
+		\item Acquisition de la cible par le \ja{}, visuellement ou par d'autres moyens.
+		\item Gameplan/CAS brief.
+		\item Readback lignes 4, 6 et 8.
+		\item Annonce \acrshort{ipinbound}.
+		\item Annonce \acrshort{in}.
+		\item Le \ja{} acquiert visuellement l'appareil qui attaque.
+		\item Le \ja{} annonce \acrshort{clearedeng} ou \acrshort{continuedry}.
+		\item Avant le tir de la première munition, l'appareil qui attaque annonce \acrshort{commencing}.
+		\item Une fois l'engagement terminé, l'appareil annonce \acrshort{complete}.
 	\end{e2}
 \end{e1}
 
@@ -71,11 +71,11 @@ Le type de contrôle utilisé est dicté par la situation au sol. Un contrôle p
 	\remark{
 	\begin{e2}[2em]
 		\glsreset{bot}
-		\itemt{\gls{bot}}{Implique l'acquisition de la cible par l'appareil en attaque, et le largage de munition sur cette dernière}\vskip5mm
-		\important{La méthode \gls{bot} implique que le \ja{} reçoive de l'appareil qui attaque un appel \acrshort{tally}, \acrshort{contact} ou \acrshort{captured}}
-		\efig{bot}{Exemples de ``Bomb on Target''}
-		\itemt{\gls{boc}}{Implique le largage de munitions intelligentes sur des coordonnées, sans pour autant devoir ``voir'' la cible}
-		\efig{boc}{Exemples de ``Bomb on Coordinates''}
+		\itemt{\gls{bot}}{Implique l'acquisition de la cible par l'appareil en attaque, et le largage de munition sur cette dernière.}\vskip5mm
+		\important{La méthode \gls{bot} implique que le \ja{} reçoive de l'appareil qui attaque un appel \acrshort{tally}, \acrshort{contact} ou \acrshort{captured}.}
+		\efig{bot}{Exemples de ``Bomb on Target''.}
+		\itemt{\gls{boc}}{Implique le largage de munitions intelligentes sur des coordonnées, sans pour autant devoir ``voir'' la cible.}
+		\efig{boc}{Exemples de ``Bomb on Coordinates''.}
 	\end{e2}
 	}
 \end{e1}
@@ -122,7 +122,7 @@ Le \ja{} utilisera un briefing standardisé pour transmettre rapidement les info
 		Le \ja{} fournit la position de la cible.
 	}
 	
-	\itemt{Type de Mark/Guidage terminal.}{
+	\itemt{Ligne 7 - Type de Marque/Guidage terminal.}{
 		Le type de marque utilisé (\gls{ir}, fumigène, laser, etc.). Dans le cas du laser, \ja{} passera également le call-sign de l'unité qui fournit le guidage terminal.
 	}
 	
