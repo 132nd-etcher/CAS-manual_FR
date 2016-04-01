@@ -1,0 +1,122 @@
+%\begin{adjustbox}{max width=\textwidth, totalheight={0.9\textheight}}%
+
+\tikzstyle{basenode} = [rectangle, rounded corners, anchor=north west]
+\tikzstyle{label} = [node font=\small, anchor=south, yshift=-2mm, xshift=0mm, inner sep=0pt]
+\tikzstyle{stylemain} = [node font=\Huge\bfseries, text=white]
+\tikzstyle{style1} = [node font=\huge\bfseries, text=white]
+\tikzstyle{style2} = [node font=\Large\bfseries]
+\tikzstyle{style3} = [node font=\large\bfseries]
+\tikzstyle{style4} = [node font=\normalsize\bfseries]
+
+\tikzstyle{main} = [basenode, stylemain]
+\tikzstyle{mainlabel} = [stylemain, label]
+\tikzstyle{mainfit} = [basenode, fill=black]
+
+\tikzstyle{sub1} = [basenode, style1, yshift=-5mm]
+\tikzstyle{sub1label} = [style1, label]
+\tikzstyle{sub1fit} = [basenode, fill=blue!80]
+
+\tikzstyle{sub2} = [basenode, style2, yshift=-5mm]
+\tikzstyle{sub2label} = [style2, label]
+\tikzstyle{sub2fit} = [basenode, fill=blue!60]
+
+\tikzstyle{sub3} = [basenode, style3, yshift=-5mm]
+\tikzstyle{sub3label} = [style3, label]
+\tikzstyle{sub3fit} = [basenode, fill=blue!40]
+
+\tikzstyle{sub4} = [basenode, style4]
+\tikzstyle{sub4label} = [style4, label]
+\tikzstyle{sub4fit} = [basenode, fill=blue!20]
+
+\tikzstyle{expl} = [basenode, node font=\tiny, anchor=north west, yshift=0mm, xshift=0mm, text width=12cm, fill=blue!20, minimum width=4cm]
+
+\begin{tikzpicture}
+
+\node [main] (cao) {CAO};
+\node [mainlabel] at (cao.south) (caolabel) {Counter Air Operation};
+
+\begin{pgfonlayer}{background}
+\node [mainfit, fit={(cao)(caolabel)}] (caofit) {};
+\end{pgfonlayer}
+
+\node [sub1, xshift=3cm] (dca) at (caofit.south west) {DCA};
+\node [sub1label] at (dca.south) (dcalabel) {Defensive Counter Air Operation};
+
+\begin{pgfonlayer}{background}
+\node [sub1fit, fit={(dca)(dcalabel)}] (dcafit) {};
+\end{pgfonlayer}
+
+\node [sub2, xshift=2cm] (cap) at (dcafit.south west) {CAP};
+\node [sub2label] at (cap.south) (caplabel) {Combat Air Patrol};
+
+\begin{pgfonlayer}{background}
+\node [sub2fit, fit={(cap)(caplabel)}] (capfit) {};
+\end{pgfonlayer}
+
+\node [sub3, xshift=1cm, yshift=-5mm] (barcap)  at (capfit.south west)  {BARCAP};
+\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
+
+\begin{pgfonlayer}{background}
+\node [sub2fit, fit={(cap)(cap)}] (dcapfit) {};
+\end{pgfonlayer}
+
+\node [sub3] (forcap) at (barcap.south west)  {FORCAP};
+\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
+
+\node [sub3] (havcap) at (forcap.south west)  {HAVCAP};
+\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
+
+\node [sub3] (tarcap)  at (havcap.south west)  {TARCAP};
+\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
+
+\node [sub3] (ambushcap)  at (tarcap.south west)  {AMBUSHCAP};
+\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
+
+\node [sub3] (ambushcap)  at (ambushcap.south west)  {Strike/CAP};
+\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
+
+\begin{pgfonlayer}{background}
+\node [sub1fit, fit={(dca)(dcalabel)}] {};
+\node [sub2fit, fit={(cap)(caplabel)}] {};
+%\node [fill=orange!30, fit={($(req.west)	 -(0.2cm,0)$)([yshift=0.6cm]req.north)([yshift=-0.2cm]req.south)([xshift=0.2cm]planning.east)}] (preflightbg) {};
+%\node [fill=orange!30, fit={($(aoupdate.west)-(0.2cm,0)$)([yshift=0.6cm]aoupdate.north)([yshift=-0.2cm]aoupdate.south)([xshift=0.2cm]aoupdate.east)}] (aoupdatebg) {};
+%\node [fill=orange!30, fit={($(comms.west)   -(0.2cm,0)$)([yshift=0.6cm]comms.north)([yshift=-0.2cm]comms.south)([xshift=0.2cm]tfcupd.east)}] (checkinbg) {};
+%\node [fill=orange!30, fit={($(ci.west)	  -(0.2cm,0)$)([yshift=0.6cm]ci.north)([yshift=-0.2cm]ci.south)([xshift=0.2cm]corr.east)}] (casbriefbg) {};
+%\node [fill=orange!30, fit={($(fai.west)	 -(0.2cm,0)$)([yshift=0.6cm]fai.north)([yshift=-0.2cm]fai.south)([xshift=0.2cm]reattack.east)}] (attackbg) {};
+\end{pgfonlayer}
+
+%\coordinate (c1) at ($(dca.south)-(0mm,5mm)$);
+%\coordinate (c2) at (cap.north|-c1);
+%\coordinate (c3) at (ambushcap.north|-c1);
+%
+%\draw[-] (dca.south) -- (c1);
+%\draw[-] (c2) -- (c3);
+	
+	
+%	\coordinate (c2) at ($(dca.south west)+(2mm,0)$);
+%	
+%	\draw [-] (c2) -- (c2|-ambushcap.west);
+%	\draw [-open triangle 90] (c2|-barcap.west) -- (barcap.west);
+%	\draw [-open triangle 90] (c2|-forcap.west) -- (forcap.west);
+%	\draw [-open triangle 90] (c2|-havcap.west) -- (havcap.west);
+%	\draw [-open triangle 90] (c2|-tarcap.west) -- (tarcap.west);
+%	\draw [-open triangle 90] (c2|-ambushcap.west) -- (ambushcap.west);
+	
+%	\node [sub1] (oca) at (explambushcap.south west-|dca.south west) {Offensive Counter Air Operation (OCA)};
+%	
+%	\coordinate (c1) at ($(cao.south west)+(2mm,0)$);
+%	
+%	\draw [-] (c1) -- (c1|-oca.west);
+%	\draw [-open triangle 90] (c1|-oca.west) -- (oca.west);
+%	\draw [-open triangle 90] (c1|-dca.west) -- (dca.west);
+%	
+	%\coordinate (c3) at (explambushcap-|dcs.south east) ;
+	
+	% \draw [-] (c1) -- (c1|-dca.west);
+	% \draw [-open triangle 90] (c1|-dca.west) -- (dca.west);
+	
+	%\node [sub1, fill=red!20, below of=coa] (oca) {Offensive Counter Air Operation (OCA)};
+	
+	\end{tikzpicture}
+
+%\end{adjustbox}%
