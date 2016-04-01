@@ -1,122 +1,152 @@
+\tikzstyle{basenode} = [
+rectangle,
+rounded corners,
+%draw=black,
+%anchor=north,
+%text height=1.5ex,
+%text depth=.25ex,
+%execute at begin node={\begin{varwidth}{2cm}},
+%execute at end node={\end{varwidth}}
+text width=4cm,
+align=center,
+]
+
+\tikzstyle{l1color} = []
+\tikzstyle{l2color} = []
+\tikzstyle{l3color} = []
+\tikzstyle{l4lcolor} = [] 
+\tikzstyle{myarrow} = [-open triangle 90]
+
+\tikzstyle{l1} = [basenode, l1color, node font=\Large\bfseries, yshift=-2mm]
+\tikzstyle{l2} = [basenode, l2color, node font=\large\bfseries]
+\tikzstyle{l3} = [basenode, l3color, node font=\footnotesize\bfseries]
+\tikzstyle{l4} = [basenode, l4lcolor, node font=\footnotesize\bfseries]
+\tikzstyle{l4l} = [l4, align=left]
+\tikzstyle{l4r} = [l4, align=right]
+\tikzstyle{l} = [basenode, node font=\scriptsize]
+\tikzstyle{ll} = [l, align=left]
+\tikzstyle{lr} = [l, align=right]
+
+\tikzstyle{table} = [
+matrix of nodes,
+%row sep=-\pgflinewidth,
+%column sep=-\pgflinewidth,
+row sep=0mm,
+column sep=-15mm,
+% nodes={
+%     table nodes
+% },
+execute at empty cell={\node[draw=none]{};}
+]
+
+\newcommand{\caot}{Counter Air Operation}
+\newcommand{\dcat}{Defensive Counter Air}
+\newcommand{\capt}{Combat Air Patrol.}
+\newcommand{\barcapt}{Barrier Combat Air Patrol}
+\newcommand{\tarcapt}{Target Combat Air Patrol}
+\newcommand{\tarcaptt}{Flown over or near a strike target in order to protect specialized attack aircraft such as AC-130 gunships from enemy fighters.}
+\newcommand{\havcapt}{High Asset Value Combat Air Patrol}
+\newcommand{\havcaptt}{Flown to protect a "high-value asset" such as an AWACS aircraft or aerial refueling aircraft during its specific time on station.}
+\newcommand{\forcapt}{Force Combat Air Patrol}
+\newcommand{\forcaptt}{A patrol of fighters maintained over the strike force, essentially an escort.}
+\newcommand{\ambushcapt}{Ambush CAP}
+\newcommand{\ocat}{Offensive Counter Air}
+\newcommand{\sweept}{Sweep}
+\newcommand{\interceptt}{Intercept}
+\newcommand{\seadt}{Suppression of Enemy Air Defenses}
+\newcommand{\ocastriket}{OCA Strike}
+\newcommand{\escortt}{Escort}
+\newcommand{\hvaaatkt}{High Value Airborne Asset Attack}
+\newcommand{\csart}{Combat Search And Rescue}
+\newcommand{\rescapt}{Rescue Combat Air Patrol}
+\newcommand{\rescortt}{Rescue Escort}
+\newcommand{\aart}{Air-to-Air Refueling}
+\newcommand{\ewt}{Electronic Warfare}
+\newcommand{\aewt}{Airborne Early Warning}
+\newcommand{\asfaot}{Anti surface Force Air Operations}
+\newcommand{\dast}{Deep Air Support}
+\newcommand{\ait}{Air Interdiction}
+\newcommand{\bait}{Battlefield Air Interdiction}
+\newcommand{\art}{Air Reconnaissance}
+\newcommand{\scart}{Strike Coordination And Reconnaissance}
+\newcommand{\cast}{Close Air Support}
+\newcommand{\pcast}{Pre-plan CAS}
+\newcommand{\xcast}{On-call CAS (air)}
+\newcommand{\gcast}{On-call CAS (ground)}
+
 %\begin{adjustbox}{max width=\textwidth, totalheight={0.9\textheight}}%
+\begin{figure}[H]
+\centering
+%\resizebox {\linewidth} {\textheight} {
+\begin{tikzpicture}%[remember picture, overlay]
 
-\tikzstyle{basenode} = [rectangle, rounded corners, anchor=north west]
-\tikzstyle{label} = [node font=\small, anchor=south, yshift=-2mm, xshift=0mm, inner sep=0pt]
-\tikzstyle{stylemain} = [node font=\Huge\bfseries, text=white]
-\tikzstyle{style1} = [node font=\huge\bfseries, text=white]
-\tikzstyle{style2} = [node font=\Large\bfseries]
-\tikzstyle{style3} = [node font=\large\bfseries]
-\tikzstyle{style4} = [node font=\normalsize\bfseries]
 
-\tikzstyle{main} = [basenode, stylemain]
-\tikzstyle{mainlabel} = [stylemain, label]
-\tikzstyle{mainfit} = [basenode, fill=black]
+%\node [l1, yshift=-1cm] (ddd)  at (current page.north) {};
 
-\tikzstyle{sub1} = [basenode, style1, yshift=-5mm]
-\tikzstyle{sub1label} = [style1, label]
-\tikzstyle{sub1fit} = [basenode, fill=blue!80]
-
-\tikzstyle{sub2} = [basenode, style2, yshift=-5mm]
-\tikzstyle{sub2label} = [style2, label]
-\tikzstyle{sub2fit} = [basenode, fill=blue!60]
-
-\tikzstyle{sub3} = [basenode, style3, yshift=-5mm]
-\tikzstyle{sub3label} = [style3, label]
-\tikzstyle{sub3fit} = [basenode, fill=blue!40]
-
-\tikzstyle{sub4} = [basenode, style4]
-\tikzstyle{sub4label} = [style4, label]
-\tikzstyle{sub4fit} = [basenode, fill=blue!20]
-
-\tikzstyle{expl} = [basenode, node font=\tiny, anchor=north west, yshift=0mm, xshift=0mm, text width=12cm, fill=blue!20, minimum width=4cm]
-
-\begin{tikzpicture}
-
-\node [main] (cao) {CAO};
-\node [mainlabel] at (cao.south) (caolabel) {Counter Air Operation};
-
-\begin{pgfonlayer}{background}
-\node [mainfit, fit={(cao)(caolabel)}] (caofit) {};
-\end{pgfonlayer}
-
-\node [sub1, xshift=3cm] (dca) at (caofit.south west) {DCA};
-\node [sub1label] at (dca.south) (dcalabel) {Defensive Counter Air Operation};
-
-\begin{pgfonlayer}{background}
-\node [sub1fit, fit={(dca)(dcalabel)}] (dcafit) {};
-\end{pgfonlayer}
-
-\node [sub2, xshift=2cm] (cap) at (dcafit.south west) {CAP};
-\node [sub2label] at (cap.south) (caplabel) {Combat Air Patrol};
-
-\begin{pgfonlayer}{background}
-\node [sub2fit, fit={(cap)(caplabel)}] (capfit) {};
-\end{pgfonlayer}
-
-\node [sub3, xshift=1cm, yshift=-5mm] (barcap)  at (capfit.south west)  {BARCAP};
-\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
-
-\begin{pgfonlayer}{background}
-\node [sub2fit, fit={(cap)(cap)}] (dcapfit) {};
-\end{pgfonlayer}
-
-\node [sub3] (forcap) at (barcap.south west)  {FORCAP};
-\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
-
-\node [sub3] (havcap) at (forcap.south west)  {HAVCAP};
-\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
-
-\node [sub3] (tarcap)  at (havcap.south west)  {TARCAP};
-\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
-
-\node [sub3] (ambushcap)  at (tarcap.south west)  {AMBUSHCAP};
-\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
-
-\node [sub3] (ambushcap)  at (ambushcap.south west)  {Strike/CAP};
-\node [sub3label] at (barcap.south) (barcaplabel) {Barrier CAP};
-
-\begin{pgfonlayer}{background}
-\node [sub1fit, fit={(dca)(dcalabel)}] {};
-\node [sub2fit, fit={(cap)(caplabel)}] {};
-%\node [fill=orange!30, fit={($(req.west)	 -(0.2cm,0)$)([yshift=0.6cm]req.north)([yshift=-0.2cm]req.south)([xshift=0.2cm]planning.east)}] (preflightbg) {};
-%\node [fill=orange!30, fit={($(aoupdate.west)-(0.2cm,0)$)([yshift=0.6cm]aoupdate.north)([yshift=-0.2cm]aoupdate.south)([xshift=0.2cm]aoupdate.east)}] (aoupdatebg) {};
-%\node [fill=orange!30, fit={($(comms.west)   -(0.2cm,0)$)([yshift=0.6cm]comms.north)([yshift=-0.2cm]comms.south)([xshift=0.2cm]tfcupd.east)}] (checkinbg) {};
-%\node [fill=orange!30, fit={($(ci.west)	  -(0.2cm,0)$)([yshift=0.6cm]ci.north)([yshift=-0.2cm]ci.south)([xshift=0.2cm]corr.east)}] (casbriefbg) {};
-%\node [fill=orange!30, fit={($(fai.west)	 -(0.2cm,0)$)([yshift=0.6cm]fai.north)([yshift=-0.2cm]fai.south)([xshift=0.2cm]reattack.east)}] (attackbg) {};
-\end{pgfonlayer}
-
-%\coordinate (c1) at ($(dca.south)-(0mm,5mm)$);
-%\coordinate (c2) at (cap.north|-c1);
-%\coordinate (c3) at (ambushcap.north|-c1);
-%
-%\draw[-] (dca.south) -- (c1);
-%\draw[-] (c2) -- (c3);
+\matrix (m) [table] {
+	\node {}; && \node [l1] [label={[l]below:\caot{}}] (cao) {CAO};       && \node {}; \\
+	&\node [l2] [label={[lr]below:\dcat{}}] (dca) {DCA};                   && \node [l2] [label={[ll]below:\ocat{}}] (oca) {OCA};&\\
+	\node [l4r] [label={[lr]below:\barcapt{}}] (barcap) {BARCAP};          &&&& \node [l4l] [label={[ll]below:\sweept{}}] (sweep) {SWEEP};\\
+	\node [l4r] [label={[lr]below:\tarcapt{}}] (tarcap) {TARCAP};          &&&& \node [l4l] [label={[ll]below:\interceptt{}}] (intercept) {INTERCEPT};\\
+	\node [l4r] [label={[lr]below:\havcapt{}}] (havcap) {HAVCAP};          &&&& \node [l4l] [label={[ll]below:\seadt{}}] (sead) {SEAD};\\
+	\node [l4r] [label={[lr]below:\forcapt{}}] (forcap) {FORCAP};          &&&& \node [l4l] [label={[ll]below:\ocastriket{}}] (ocastrike) {OCA Strike};\\
+	\node [l4r] [label={[lr]below:\ambushcapt{}}] (ambushcap) {AMBUSHCAP}; &&&& \node [l4l] [label={[ll]below:\escortt{}}] (escort) {ESCORT};\\
+	\node {};                                                             &&&& \node [l4l] [label={[ll]below:\hvaaatkt{}}] (hvaaatk) {HVAAAtk};\\
 	
+	&\node {}; & \node [l1] [label={[l]below:\asfaot{}}] (asfao) {ASFAO}; & \node {};&\\
+	&\node [l2] [label={[lr]below:\dast{}}] (das) {DAS};                   && \node [l2] [label={[ll]below:\cast{}}] (cas) {\acrshort{cas}};&\\
+	\node [l4r] [label={[lr]below:\ait{}}] (ai) {AI};                      &&&& \node [l4l] [label={[ll]below:\pcast{}}] (pcas) {CAS};\\
+	\node [l4r] [label={[lr]below:\bait{}}] (bai) {BAI};                   &&&& \node [l4l] [label={[ll]below:\xcast{}}] (xcas) {XCAS};\\
+	\node [l4r] [label={[lr]below:\art{}}] (ar) {AR};                      &&&& \node [l4l] [label={[ll]below:\gcast{}}] (gcas) {GCAS};\\
+	\node [l4r] [label={[lr]below:\scart{}}] (scar) {SCAR};                &&&& \node {}; \\
 	
-%	\coordinate (c2) at ($(dca.south west)+(2mm,0)$);
-%	
-%	\draw [-] (c2) -- (c2|-ambushcap.west);
-%	\draw [-open triangle 90] (c2|-barcap.west) -- (barcap.west);
-%	\draw [-open triangle 90] (c2|-forcap.west) -- (forcap.west);
-%	\draw [-open triangle 90] (c2|-havcap.west) -- (havcap.west);
-%	\draw [-open triangle 90] (c2|-tarcap.west) -- (tarcap.west);
-%	\draw [-open triangle 90] (c2|-ambushcap.west) -- (ambushcap.west);
-	
-%	\node [sub1] (oca) at (explambushcap.south west-|dca.south west) {Offensive Counter Air Operation (OCA)};
-%	
-%	\coordinate (c1) at ($(cao.south west)+(2mm,0)$);
-%	
-%	\draw [-] (c1) -- (c1|-oca.west);
-%	\draw [-open triangle 90] (c1|-oca.west) -- (oca.west);
-%	\draw [-open triangle 90] (c1|-dca.west) -- (dca.west);
-%	
-	%\coordinate (c3) at (explambushcap-|dcs.south east) ;
-	
-	% \draw [-] (c1) -- (c1|-dca.west);
-	% \draw [-open triangle 90] (c1|-dca.west) -- (dca.west);
-	
-	%\node [sub1, fill=red!20, below of=coa] (oca) {Offensive Counter Air Operation (OCA)};
-	
-	\end{tikzpicture}
+	&\node{}; & \node [l1] (support) at (scar-|asfao) {Support};          & \node{};&\\
+	&\node [l2] (s1) {};                                                   && \node [l2] (s2) {};&\\
+	\node [l4r] [label={[lr]below:\csart{}}] (csar) {CSAR};                &&&& \node [l4l] [label={[ll]below:\aart{}}] (aar) {AAR};\\
+	\node [l4r] [label={[lr]below:\rescapt{}}] (rescap) {RESCAP};          &&&& \node [l4l] [label={[ll]below:\ewt{}}] (ew) {EW};\\
+	\node [l4r] [label={[lr]below:\rescortt{}}] (rescort) {RESCORT};       &&&& \node [l4l] [label={[ll]below:\aewt{}}] (aew) {AEW};\\
+};
 
-%\end{adjustbox}%
+\draw[-] ($(cao.west)+(15mm,0mm)$) -| (dca.north);
+\coordinate (c1) at ($(dca.south)-(0,5mm)$);
+\draw[myarrow] (c1|-barcap) -- (barcap);
+\draw[myarrow] (c1|-tarcap) -- (tarcap);
+\draw[myarrow] (c1|-havcap) -- (havcap);
+\draw[myarrow] (c1|-forcap) -- (forcap);
+\draw[myarrow] (c1) |- (ambushcap);
+
+\draw[-] ($(cao.east)-(15mm,0mm)$) -| (oca.north);
+\coordinate (c1) at ($(oca.south)-(0,5mm)$);
+\draw[myarrow] (c1|-sweep) -- (sweep);
+\draw[myarrow] (c1|-intercept) -- (intercept);
+\draw[myarrow] (c1|-sead) -- (sead);
+\draw[myarrow] (c1|-ocastrike) -- (ocastrike);
+\draw[myarrow] (c1|-escort) -- (escort);
+\draw[myarrow] (c1) |- (hvaaatk);
+
+\draw[-] ($(asfao.west)+(11mm,0mm)$) -| (das.north);
+\coordinate (c1) at ($(das.south)-(0,5mm)$);
+\draw[myarrow] (c1|-ai) -- (ai);
+\draw[myarrow] (c1|-bai) -- (bai);
+\draw[myarrow] (c1|-ar) -- (ar);
+\draw[myarrow] (c1) |- (scar);
+
+\draw[-] ($(asfao.east)-(11mm,0mm)$) -| (cas.north);
+\coordinate (c1) at ($(cas.south)-(0,5mm)$);
+\draw[myarrow] (c1|-pcas) -- (pcas);
+\draw[myarrow] (c1|-xcas) -- (xcas);
+\draw[myarrow] (c1) |- (gcas);
+
+\draw [-] (s1.center) -- (s2.center);
+\draw [-] ($(s1.center)!0.5!(s2.center)$) -- (support.south);
+\draw[myarrow] (s1|-csar) -- (csar);
+\draw[myarrow] (s1|-rescap) -- (rescap);
+\draw[myarrow] (s1.center) |- (rescort);
+\draw[myarrow] (s2|-aar) -- (aar);
+\draw[myarrow] (s2|-ew) -- (ew);
+\draw[myarrow] (s2.center) |- (aew);
+
+\end{tikzpicture}
+%}
+\end{figure}
+%\end{adjustbox}

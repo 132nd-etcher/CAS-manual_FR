@@ -65,6 +65,14 @@ header,
 title
 ]{appendix}
 
+\DeclareDocumentCommand{\efig}%
+{ O{\textwidth} O{0.9\textheight} m m }%
+{%
+	\begin{figure}[H] \centering \includegraphics[width=#1, max height=#2, keepaspectratio]{#3.png} \caption{#4} \label{#3} \end{figure}%
+}%
+\newcommand{\tfig}[3]{ \begin{figure}[H] \import{./tikz/}{#1} \caption{#2} \label{#3} \end{figure} }
+\newcommand{\tfignolof}[3]{ \begin{figure}[H] \import{./tikz/}{#1} \caption[]{#2} \label{#3} \end{figure} }
+
 \begin{document}
 	
 	\renewcommand\appendixpagename{Annexes}
@@ -100,19 +108,27 @@ title
 %	
 %	\import{./tikz/}{90069dryad}
 %	
-\import{./tikz/}{90101flighttypes}
+
 %	%
-%	\newpage
-%	\glsaddall%
-%	\glossarystyle{altlist}%
-%	%\glossarystyle{mylong}%
-%	\printglossary[type=\acronymtype]
-%	%
-%	\newpage%
-%	%
-%	\printglossary[type=main]
-%	
-%	\newpage
+%\microtypesetup{protrusion=true}%
+%
+\newpage%
+\pagestyle{intro}%
+%
+\invisibleunnumberedchapter{Glossaire}%
+%
+\glsaddall%
+\glossarystyle{altlist}%
+%\glossarystyle{mylong}%
+\invisibleunnumberedsection{Acronymes}%
+\printglossary[type=\acronymtype]
+%
+\newpage%
+%
+\invisibleunnumberedsection{Explications des termes}%
+\printglossary[type=main]
+%
+\clearpage%
 %	
 %	\glsfull{taca}
 %	
@@ -122,6 +138,8 @@ title
 %	
 %	\glsdesc{scarg}
 
+%\include{chapters/9010flighttypes}%
+
 \pagestyle{annexes}%
 
 \begin{appendices}%
@@ -129,6 +147,8 @@ title
 %\include{chapters/9009ramrods}%
 %
 %\include{chapters/9021cursus}%
+%
+\include{chapters/9010flighttypes}%
 
 \end{appendices}%
 

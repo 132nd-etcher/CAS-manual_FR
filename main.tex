@@ -152,14 +152,11 @@ openany,
 \renewcommand\appendixname{Annexe}
 \makeatletter\@openrightfalse\makeatother% remove empty page after appendix
 
-\addto\captionsfrenchb{%
-	\renewcommand\listfigurename{Liste des images}}
+\addto\captionsfrenchb{\renewcommand\listfigurename{Liste des images}}
 
 %bdabda\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
 
 \sloppy
-
-
 
 \include{chapters/1000titlepage}
 %\import{./}{titlepage.tex}
@@ -337,6 +334,8 @@ openany,
 \include{chapters/9008exemples}%
 %
 \include{chapters/9009ramrods}%
+%
+\include{chapters/9010flighttypes}%
 %
 \include{chapters/9021cursus}%
 %
