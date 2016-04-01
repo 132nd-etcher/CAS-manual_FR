@@ -7,9 +7,19 @@ rounded corners,
 %text depth=.25ex,
 %execute at begin node={\begin{varwidth}{2cm}},
 %execute at end node={\end{varwidth}}
-text width=4cm,
+text width=3.5cm,
 align=center,
 ]
+
+
+%http://www.raf.mod.uk/rafcms/mediafiles/374CB724_1143_EC82_2E767CA5700C4E2D.pdf
+%http://www.dtic.mil/doctrine/new_pubs/jp3_01.pdf
+%https://fas.org/spp/aircraft/part07.htm
+%https://fas.org/spp/aircraft/
+%http://www.rcaf-arc.forces.gc.ca/en/cf-aerospace-warfare-centre/doctrine/ad-b-ga-403-000-fp-001-chapter-2.page
+%http://www.studymode.com/essays/Combat-Support-Air-Operations-751090.html
+%https://prezi.com/6qgns-wemu_c/combat-support-air-operations/
+%http://www.dtic.mil/doctrine/new_pubs/jp3_17.pdf
 
 \tikzstyle{l1color} = []
 \tikzstyle{l2color} = []
@@ -17,7 +27,7 @@ align=center,
 \tikzstyle{l4lcolor} = [] 
 \tikzstyle{myarrow} = [-open triangle 90]
 
-\tikzstyle{l1} = [basenode, l1color, node font=\Large\bfseries, yshift=-2mm]
+\tikzstyle{l1} = [basenode, l1color, node font=\Large\bfseries, yshift=5mm, text width=4cm]
 \tikzstyle{l2} = [basenode, l2color, node font=\large\bfseries]
 \tikzstyle{l3} = [basenode, l3color, node font=\footnotesize\bfseries]
 \tikzstyle{l4} = [basenode, l4lcolor, node font=\footnotesize\bfseries]
@@ -26,13 +36,15 @@ align=center,
 \tikzstyle{l} = [basenode, node font=\scriptsize]
 \tikzstyle{ll} = [l, align=left]
 \tikzstyle{lr} = [l, align=right]
+\tikzstyle{l2l} = [l2, align=left]
+\tikzstyle{l2r} = [l2, align=right]
 
 \tikzstyle{table} = [
 matrix of nodes,
 %row sep=-\pgflinewidth,
 %column sep=-\pgflinewidth,
-row sep=0mm,
-column sep=-15mm,
+row sep=2.5mm,
+column sep=-10mm,
 % nodes={
 %     table nodes
 % },
@@ -74,6 +86,12 @@ execute at empty cell={\node[draw=none]{};}
 \newcommand{\xcast}{On-call CAS (air)}
 \newcommand{\gcast}{On-call CAS (ground)}
 
+\newcommand{\nl} [1]{\node [l4l] [label={[ll]below:\glssymbol{#1g}}] (#1) {\glsname{#1g}}}
+\newcommand{\nr} [1]{\node [l4r] [label={[lr]below:\glssymbol{#1g}}] (#1) {\glsname{#1g}}}
+\newcommand{\nnl}[1]{\node [l2]  [label={[l]below:\glssymbol{#1g}}] (#1) {\glsname{#1g}}}
+\newcommand{\nnr}[1]{\node [l2]  [label={[l]below:\glssymbol{#1g}}] (#1) {\glsname{#1g}}}
+\newcommand{\n}  [1]{\node [l1]  [label={[l] below:\glssymbol{#1g}}] (#1) {\glsname{#1g}}}
+
 %\begin{adjustbox}{max width=\textwidth, totalheight={0.9\textheight}}%
 \begin{figure}[H]
 \centering
@@ -84,64 +102,65 @@ execute at empty cell={\node[draw=none]{};}
 %\node [l1, yshift=-1cm] (ddd)  at (current page.north) {};
 
 \matrix (m) [table] {
-	\node {}; && \node [l1] [label={[l]below:\caot{}}] (cao) {CAO};       && \node {}; \\
-	&\node [l2] [label={[lr]below:\dcat{}}] (dca) {DCA};                   && \node [l2] [label={[ll]below:\ocat{}}] (oca) {OCA};&\\
-	\node [l4r] [label={[lr]below:\barcapt{}}] (barcap) {BARCAP};          &&&& \node [l4l] [label={[ll]below:\sweept{}}] (sweep) {SWEEP};\\
-	\node [l4r] [label={[lr]below:\tarcapt{}}] (tarcap) {TARCAP};          &&&& \node [l4l] [label={[ll]below:\interceptt{}}] (intercept) {INTERCEPT};\\
-	\node [l4r] [label={[lr]below:\havcapt{}}] (havcap) {HAVCAP};          &&&& \node [l4l] [label={[ll]below:\seadt{}}] (sead) {SEAD};\\
-	\node [l4r] [label={[lr]below:\forcapt{}}] (forcap) {FORCAP};          &&&& \node [l4l] [label={[ll]below:\ocastriket{}}] (ocastrike) {OCA Strike};\\
-	\node [l4r] [label={[lr]below:\ambushcapt{}}] (ambushcap) {AMBUSHCAP}; &&&& \node [l4l] [label={[ll]below:\escortt{}}] (escort) {ESCORT};\\
-	\node {};                                                             &&&& \node [l4l] [label={[ll]below:\hvaaatkt{}}] (hvaaatk) {HVAAAtk};\\
+%	\node {};       && \n{cao};       && \node {}; \\
+%	&\nnl{dca};     && \nnr{oca}; &\\
+	\node {};       &\nnl{dca};& \n{cao};       &\nnl{oca};& \node {}; \\
+	\nr{barcap};    && \nl{escort};   && \nl{sweep};\\
+	\nr{tarcap};    && \nl{rescap};  && \nl{intercept};\\
+	\nr{havcap};    && \nr{dead};     && \nl{sead} ;\\
+	\nr{forcap};    && \nl{ambushcap};&& \nl{hvaaatk};\\
+	\nr{rescort};   &&    && \nl{ocastrike};\\
 	
-	&\node {}; & \node [l1] [label={[l]below:\asfaot{}}] (asfao) {ASFAO}; & \node {};&\\
-	&\node [l2] [label={[lr]below:\dast{}}] (das) {DAS};                   && \node [l2] [label={[ll]below:\cast{}}] (cas) {\acrshort{cas}};&\\
-	\node [l4r] [label={[lr]below:\ait{}}] (ai) {AI};                      &&&& \node [l4l] [label={[ll]below:\pcast{}}] (pcas) {CAS};\\
-	\node [l4r] [label={[lr]below:\bait{}}] (bai) {BAI};                   &&&& \node [l4l] [label={[ll]below:\xcast{}}] (xcas) {XCAS};\\
-	\node [l4r] [label={[lr]below:\art{}}] (ar) {AR};                      &&&& \node [l4l] [label={[ll]below:\gcast{}}] (gcas) {GCAS};\\
-	\node [l4r] [label={[lr]below:\scart{}}] (scar) {SCAR};                &&&& \node {}; \\
+	&\nnl{das}; & \n{asfao}; & \node [l2] [label={[lr]below:\glssymbol{casg}}] (pcas) {\glsname{casg}};&\\
+	\nr{ai};   &            &\nl{ar};  && \nl{cas};\\
+	\nr{bai};  &            &\nl{scar};&& \nl{xcas};\\
+	&          &            &          & \nl{gcas};\\
 	
-	&\node{}; & \node [l1] (support) at (scar-|asfao) {Support};          & \node{};&\\
-	&\node [l2] (s1) {};                                                   && \node [l2] (s2) {};&\\
-	\node [l4r] [label={[lr]below:\csart{}}] (csar) {CSAR};                &&&& \node [l4l] [label={[ll]below:\aart{}}] (aar) {AAR};\\
-	\node [l4r] [label={[lr]below:\rescapt{}}] (rescap) {RESCAP};          &&&& \node [l4l] [label={[ll]below:\ewt{}}] (ew) {EW};\\
-	\node [l4r] [label={[lr]below:\rescortt{}}] (rescort) {RESCORT};       &&&& \node [l4l] [label={[ll]below:\aewt{}}] (aew) {AEW};\\
+	&\node (s1) {}; & \n{csao};          & \node (s2) {};&\\
+	\nr{csar};                &&\nl{reconnaissance};     && \nl{aar};\\
+	\nr{airlift};      &&\nl{surveillance};&& \nl{ew};\\
+	&&&& \nl{aew};\\
 };
 
-\draw[-] ($(cao.west)+(15mm,0mm)$) -| (dca.north);
+\draw[-] ($(cao.west)+(15mm,0mm)$) -- ($(dca.east)-(12mm,0mm)$);
+\draw[-] ($(cao.east)-(15mm,0mm)$) -- ($(oca.west)+(12mm,0mm)$);
 \coordinate (c1) at ($(dca.south)-(0,5mm)$);
 \draw[myarrow] (c1|-barcap) -- (barcap);
 \draw[myarrow] (c1|-tarcap) -- (tarcap);
 \draw[myarrow] (c1|-havcap) -- (havcap);
+\draw[myarrow] (c1|-rescap) -- (rescap);
 \draw[myarrow] (c1|-forcap) -- (forcap);
-\draw[myarrow] (c1) |- (ambushcap);
+\draw[myarrow] (c1|-ambushcap) |- (ambushcap);
+\draw[myarrow] (c1) |- (rescort);
+\draw[myarrow] (c1|-barcap) -- (escort);
 
-\draw[-] ($(cao.east)-(15mm,0mm)$) -| (oca.north);
 \coordinate (c1) at ($(oca.south)-(0,5mm)$);
 \draw[myarrow] (c1|-sweep) -- (sweep);
 \draw[myarrow] (c1|-intercept) -- (intercept);
 \draw[myarrow] (c1|-sead) -- (sead);
-\draw[myarrow] (c1|-ocastrike) -- (ocastrike);
-\draw[myarrow] (c1|-escort) -- (escort);
-\draw[myarrow] (c1) |- (hvaaatk);
+\draw[myarrow] (c1|-hvaaatk) -- (hvaaatk);
+\draw[myarrow] (c1|-dead) -- (dead);
+\draw[myarrow] (c1) |- (ocastrike);
 
-\draw[-] ($(asfao.west)+(11mm,0mm)$) -| (das.north);
+\draw[-] ($(asfao.west)+(10mm,0mm)$) -- ($(das.east)-(12mm,0mm)$);
+\draw[-] ($(asfao.east)-(10mm,0mm)$) -- ($(pcas.west)+(12mm,0mm)$);
 \coordinate (c1) at ($(das.south)-(0,5mm)$);
 \draw[myarrow] (c1|-ai) -- (ai);
-\draw[myarrow] (c1|-bai) -- (bai);
+\draw[myarrow] (c1|-scar) -- (scar);
 \draw[myarrow] (c1|-ar) -- (ar);
-\draw[myarrow] (c1) |- (scar);
+\draw[myarrow] (c1) |- (bai);
 
-\draw[-] ($(asfao.east)-(11mm,0mm)$) -| (cas.north);
-\coordinate (c1) at ($(cas.south)-(0,5mm)$);
-\draw[myarrow] (c1|-pcas) -- (pcas);
+\coordinate (c1) at ($(pcas.south)-(0,5mm)$);
+\draw[myarrow] (c1|-cas) -- (cas);
 \draw[myarrow] (c1|-xcas) -- (xcas);
 \draw[myarrow] (c1) |- (gcas);
 
-\draw [-] (s1.center) -- (s2.center);
-\draw [-] ($(s1.center)!0.5!(s2.center)$) -- (support.south);
+\draw [-] (s1.center) -- ($(csao.west)+(10mm,0mm)$);
+\draw [-] (s2.center) -- ($(csao.east)-(10mm,0mm)$);
 \draw[myarrow] (s1|-csar) -- (csar);
-\draw[myarrow] (s1|-rescap) -- (rescap);
-\draw[myarrow] (s1.center) |- (rescort);
+\draw[myarrow] (s1|-reconnaissance) -- (reconnaissance);
+\draw[myarrow] (s1|-airlift) -- (airlift);
+\draw[myarrow] (s1.center) |- (surveillance);
 \draw[myarrow] (s2|-aar) -- (aar);
 \draw[myarrow] (s2|-ew) -- (ew);
 \draw[myarrow] (s2.center) |- (aew);

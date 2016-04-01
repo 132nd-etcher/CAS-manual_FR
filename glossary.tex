@@ -13,7 +13,7 @@
 %}
 
 \newcommand{\newgls}[4]{% 1: abbrev 2: full name 3: ref 4: desc
-	\longnewglossaryentry{#3g}{name={#1}}%
+	\longnewglossaryentry{#3g}{name={#1}, symbol={#2}}%
 	{\begin{minipage}{\linewidth} #4 \end{minipage}\vskip1ex}%}%
 	%{#4}%
 	\newglossaryentry{#3}{%
@@ -181,7 +181,7 @@ Cfr. \cruderef{agops} pour une illustration des différents types d'opérations 
 Le DAS englobe le \gls{ai}, le \gls{ar} et le \gls{scar}, trois types de missions qui, à l'inverse du \gls{cas}, sont dirigées contre les unités ennemies au sol qui ne trouvent pas à proximité des forces au sol alliées.
 }
 
-\newgls{SCAR}{Air Interdiction}{scar}{%
+\newgls{SCAR}{Strike Control And Reconnaissance}{scar}{%
 Le SCAR est une mission dont l'objectif est l'acquisition et le rapportage de cible pour le \gls{das}. Les missions SCAR coordonnent et peuvent marquer les cibles pour les missions \gls{ai}, ou repérer précisément les cibles pour les missions \gls{ar}. Le SCAR ne doit pas être confondu avec le \gls{faca}.\\[1ex]%
 \begin{itemize}
 	\item Le SCAR ne nécessite pas une qualification \gls{faca} pour le \gls{tac} des missions \gls{das}.
@@ -298,16 +298,102 @@ Niveau moyen de la mer.
 Cible de grande importance.
 }
 
-\newgls{CSAR}{Combat Search and Rescue}{csar}{%
-Recherche et sauvetage de combat.
-}
-
 \newgls{OPCON}{Operationnal Control}{opcon}{%
 Entité qui exerce le contrôle opérationnel (stratégique), par opposition au contrôle tactique (\gls{tacon}).
 }
 
 \newgls{SEAD}{Suppression of Ennemy Air Defence}{sead}{%
-Aussi appelé ``Wild Weasel'', ou ``Iron Hand''. Action visant à neutraliser les défenses anti-aériennes ennemies, pas uniquement les \glspl{sam} ou \glspl{aaa}, mais également les \glspl{ewr} et le \gls{ccc}. Cette action peut être effectuée au moyen d'armement, ou de moyens de guerre électronique.
+Aussi appelé ``Wild Weasel'', ou ``Iron Hand''. Action visant à neutraliser les défenses anti-aériennes ennemies, pas uniquement les \glspl{sam} ou \glspl{aaa}, mais également les \glspl{ewr} et le \gls{ccc}.\\[1ex]
+Cette action peut être effectuée au moyen d'armement, ou de moyens de guerre électronique.\\[1ex]
+On distingue deux types de SEAD:\\[1ex]
+\begin{itemize}
+	\item Le SEAD Strike, dont l'objectif est la neutralisation des défenses anti-aériennes ennemies.
+	\item Le SEAD Escort, dont l'objectif est la protection d'un package contre les défenses anti-aériennes ennemies.\\[1ex]%
+\end{itemize}
+Pour le SEAD Strike, on fait encore une distinction entre:\\[1ex]
+\begin{itemize}
+	\item Le ``Area Suppression'', qui consiste à neutraliser les défenses anti-aériennes ennemies dans une zone donnée.
+	\item Le ``Route Suppression'', qui consiste à neutraliser les défenses anti-aériennes ennemies dans un couloir donné, pour préparer la pénétration d'un vol/package allié.%
+\end{itemize}
+}
+
+\newgls{DEAD}{Denial of Ennemy Air Defence}{dead}{%
+Le DEAD consiste à détruire les défenses anti-aériennes ennemies.\\[1ex]
+La nuance avec le \gls{sead} se trouve dans le terme ``détruire'': l'objectif du \gls{sead} est de \textbf{neutraliser} les défenses anti-aériennes ennemies pour permettre aux appareils alliés d'opérer dans une zone; l'objectif du DEAD est de \textbf{détruire} ces défenses.\\[1ex]
+Par exemple, un vol SEAD pourra se contenter de mettre hors service le radar de contrôle de tir d'un site SA-10 et poursuivre sa route, là où le DEAD aura pour objectif la destruction physique de radar de recherche, du radar de conduite de tir, des lanceurs, du véhicule \gls{cc}, et des munitions éventuellement stockées au alentours.
+}
+
+\newgls{CSAR}{Combat Search and Rescue}{csar}{%
+Recherche et sauvetage de combat.
+}
+
+\newgls{CSAO}{Combat Support Air Operation}{csao}{%
+Mission remplie par un aéronef non-combattant dont l'objectif est d'améliorer l'efficacité des forces alliées, ou de les soutenir dans leur effort de guerre.
+}
+
+\newgls{Air Lift}{}{airlift}{%
+L'Airlift est le transport rapide de matériel ou de personnel. Les opérations Airlift incluent:
+\begin{itemize}
+	\item Opération aéroportées spéciales (déploiement ou récupération des Forces Spéciales).
+	\item Déploiement:%
+	\begin{itemize}
+		\item Transport de troupes.
+		\item Parachutages de commandos derrière les lignes ennemies.
+		\item Assaut héliporté.
+	\end{itemize}
+	\item Mission de support logistique.
+	\item Évacuation médicale.
+\end{itemize}
+}
+
+\newgls{Surveillance}{}{surveillance}{%
+Surveillance systématique d'une zone, de personnes ou de choses. Ce processus est continu et n'est pas dirigé sur une cible spécifique.
+}
+
+\newgls{Reconnaissance}{}{reconnaissance}{%
+La reconnaissance est l'obtention d'informations à propos d'une cible spécifique, généralement après le traitement des informations primaires par le staff \gls{isr}.\\
+On distingue la reconnaissance:\\
+\begin{itemize}
+	\item Avant attaque: l'objectif est de rassembler les informations permettant de décider si une attaque est nécessaire, et de préparer au mieux l'attaque le cas échéant.
+	\item Après l'attaque: l'objectif est d'évaluer les dégâts causés à l'objectif (cfr. \gls{bda}).
+\end{itemize}
+}
+
+\newgls{RESCORT}{Rescue Escort}{rescort}{%
+Mission consistant à protéger les appareils chargés d'une mission \gls{csar}.
+}
+
+\newgls{RESCAP}{Rescue Combat Air Patrol}{rescap}{%
+Mission consistant à protéger le package \gls{csar} des menaces aériennes.
+}
+
+\newgls{Escort}{}{escort}{%
+Protection directe d'autres appareils alliés. On fait la distinction entre:\\[1ex]
+\begin{itemize}
+	\item Detached Escort: l'escorte sera placée entre le \gls{sweep} et les appareils de Strike.
+	\item Close Escort: l'escorte sera au contact visuel des appareils à protéger.\\[1ex]%
+\end{itemize}
+}
+
+\newgls{HVAAAtk}{High Value Airborne Asset Attack}{hvaaatk}{%
+L'HVAAAtk est une mission de type \gls{intercept} qui consiste à intercepter et détruire les unités aériennes de grande valeur, comme l'\gls{awacs} ou un ravitailleur.
+}
+
+\newgls{OCA Strike}{Offensive Counter Air Strike}{ocastrike}{%
+L'OCA Strike est une mission de bombardement qui vise à neutraliser une plateforme de lancement ennemie (aéroport, héliport, \ldots) en détruisant les installation nécessaires au lancement des aéronefs (piste, réservoirs de carburant, installations de contrôle, hangars, taxiways, ou les appareils eux-mêmes).
+}
+
+\newgls{Intercept}{}{intercept}{%
+L'Intercept est une mission dont l'objectif est l'interception d'une formation ennemie bien spécifique en approche (par exemple un vol de bombardier qui s'approche d'un terrain allié).\\[1ex]
+L'Intercept est souvent une mission de type ``SCRAMBLE''.
+}
+
+\newgls{Sweep}{}{sweep}{%
+Le SWEEP consiste à déployer une patrouille de chasseurs alliés dans l'espace aérien ennemi avec l'intention d'engager tout appareil présent dans une zone donnée.
+}
+
+\newgls{ASFAO}{Anti Surface Air Operations}{asfao}{%
+Mission dont l'objectif consiste à détruire, neutraliser ou perturber les forces ennemies au sol.
 }
 
 \newgls{CID}{Combat Identification}{cid}{%
@@ -431,7 +517,24 @@ Point de départ de l'attaque avant de se diriger vers la cible.
 }
 
 \newgls{EW}{Electronic Warfare}{ew}{%
-Guerre électronique.
+Guerre électronique. On distingue:
+\begin{itemize}
+	\item Electronic Support (ES), par exemple l'interception des communications ennemies.
+	\item Electronic Attack (EA), par exemple le brouillage des communications ennemies ou les missiles anti-radiations.
+	\item Electronic Protection (EP), par exemple les chaffs/flares ou l'\gls{eccm}.
+\end{itemize}
+}
+
+\newgls{AEW}{Airborne Early Warning}{aew}{%
+Mission de surveillance et de contrôle de la zone d'opération au moyen d'un radar aéroporté.
+}
+
+\newgls{AAR}{Air to Air Refueling}{aar}{%
+Mission impliquant le transfert en vol de carburant d'un appareil à un autre.
+}
+
+\newgls{ECCM}{Electroic Counter Measures}{eccm}{%
+Contre-mesures électroniques (brouilleur radar, bouclier infrarouge, \ldots).
 }
 
 \newgls{EO}{Electro-Optics}{eo}{%
@@ -471,7 +574,45 @@ Centre de contrôle des opérations aériennes de la coalition, l'échelon de co
 }
 
 \newgls{CAS}{Close Air Support}{cas}{%
-Le () est une action aérienne effectuée par les Fixed-Wings (FWs) et des Rotary-Wings (RWs) contre des cibles hostiles qui se trouvent à proximité de forces amies et qui nécessite une intégration minutieuse des missions aériennes avec le feu et le mouvement des forces amies.
+Le CAS est une action aérienne effectuée par les Fixed-Wings (FWs) et des Rotary-Wings (RWs) contre des cibles hostiles qui se trouvent à proximité de forces amies et qui nécessite une intégration minutieuse des missions aériennes avec le feu et le mouvement des forces amies.
+}
+
+\newgls{CAO}{Counter Air Operation}{cao}{%
+	Une CAO est une opération dirigée directement contre les capacités aériennes offensives et défensives de l'ennemi qui a pour objectif de parvenir à et de maintenir un certain degré de supériorité aérienne.
+}
+
+\newgls{DCA}{Defensive Counter Air}{dca}{%
+	Toute mesure défensive visant à détecter, identifier, intercepter et détruire ou neutraliser les forces aériennes ennemies tentant de pénétrer ou d'attaquer l'espace aérien allié.
+}
+
+\newgls{OCA}{Offensive Counter Air}{oca}{%
+	Opération offensive visant à détruire, perturber ou neutraliser les forces aériennes, les lance-missiles, plateformes de lancement (aéroports, héliports, \ldots{}) ou l'infrastructure qui les entoure, de l'ennemi.\\[1ex]%	
+	Les missions OCA sont effectuées en territoire ennemi, est son lancées à l'initiative des forces alliées.
+}
+
+\newgls{CAP}{Combat Air Patrol}{cap}{%
+	Une patrouille aérienne de combat au dessus d'une zone d'objectif, d'une force alliée, d'une zone critique, ou d'une zone de défense, dans le but d'intercepter et de détruire les appareils hostiles avant qu'ils n'atteignent leur objectif.
+}
+
+\newgls{BARCAP}{Barrier Combat Air Patrol}{barcap}{%
+	\gls{captured} composée d'une ou plusieurs divisions ou éléments composés de chasseurs alliés déployés un certain temps entre une force et une zone cible pour fournir un écran dans la direction depuis laquelle va probablement approcher.\\[1ex]
+	La BARCAP est utilisée le plus loin possible de la force principale, pour fournir une protection maximale contre les raids ennemis sur les routes d'attaques les plus probables.
+}
+
+\newgls{TARCAP}{Target Combat Air Patrol}{tarcap}{%
+	\gls{cap} déployée un certain temps sur ou près d'une zone de strike en territoire ennemi pour fournir une protection contre les appareils hostiles au package de strike.
+}
+
+\newgls{HAVCAP}{High Asset Value Combat Air Patrol}{havcap}{%
+	\gls{cap} déployée pour un certain temps en escorte d'un appareil allié de grande valeur (\gls{awacs}, ravitalleur, J-STAR, \ldots{}).
+}
+
+\newgls{FORCAP}{Force Combat Air Patrol}{forcap}{%
+	\gls{cap} déployée pour escorter un package de strike.
+}
+
+\newgls{AMBUSHCAP}{Ambush Combat Air Patrol}{ambushcap}{%
+	\gls{cap} au fonctionnement similaire à la \gls{barcap}, mais déployée à basse altitude dans le but de surprendre les appareils hostiles en approche.
 }
 
 \newacronym{misrep}{MISREP}{Mission Report}

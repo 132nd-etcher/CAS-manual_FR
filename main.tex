@@ -20,6 +20,7 @@ openany,
 \input{preamble/0002misc}
 
 \input{preamble/0003biblio}
+\newcommand{\citeboth}[1]{\citetitle{#1} (\citeauthor{#1})}
 \input{preamble/0003tocloft}
 \input{preamble/0003enum}
 \newenvironment{e1} [1][\llm]       {\gene   { {\alph*}.    } {\ilm} {#1}       } {\end{longenum}}
@@ -83,6 +84,7 @@ openany,
 \newcommand{\glsfull}[1]{\glsreset{#1} \gls{#1}}
 \newcommand{\glsfullpl}[1]{\glsreset{#1} \glspl{#1}}
 \newcommand{\glsd}[1]{\begin{minipage}{\linewidth} \glsdesc*{#1g} \end{minipage}\vspace{-1em}}
+\newcommand{\acrofull}[1]{\gslname{#1} - \acrolong{#1d}}
 
 %\usepackage{pdfpages}
 %\usepackage{setspace}
