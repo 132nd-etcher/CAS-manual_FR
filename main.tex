@@ -15,185 +15,135 @@ openany,
 
 % Start of document ----------------------------------------------------------------
 \begin{document}
-%
-\import{F:/DEV/latex-common/}{docpreamble}%
-%
-\include{chapters/1000titlepage}
-\pagenumbering{Roman}%
-\pagestyle{intro}%
-%
-\include{chapters/1002publetter}%
-%
-\include{chapters/1003summary}%
-%
-\include{chapters/1004changelog}%
-%
-\include{chapters/1005conventions}%
-%
-\pagenumbering{arabic}%
-%
-\include{chapters/1007toc}%
-%
-\pagestyle{default}%
-%
-\include{chapters/3100introduction}%
-\include{chapters/3101fundamentals}%
-\include{chapters/3102overview}%
-\include{chapters/3103use}%
-\include{chapters/3104integration}%
-\include{chapters/3105rw}%
-\include{chapters/3106unmanned}%
-\include{chapters/3107efficiency}%
-\include{chapters/3108duties}%
-\include{chapters/3109blueonblue}%
-\include{chapters/3110collateral}%
-%
-\include{chapters/3200commandandcontrol}%
-\include{chapters/3201intro}%
-\include{chapters/3202joint}%
-\include{chapters/3203af}%
-\include{chapters/3204army}%
-\include{chapters/3205land}%
-\include{chapters/3206naval}%
-\include{chapters/3207marines}%
-\include{chapters/3208amphi}%
-\include{chapters/3209specops}%
-\include{chapters/3210comms}%
-\include{chapters/3211isr}%
-%
-\include{chapters/3300planning}%
-\include{chapters/3301intro}
-\include{chapters/3302deliberate}
-\include{chapters/3303crisis}
-\include{chapters/3304decision}
-\include{chapters/3305staff}
-\include{chapters/3306mission}
-\include{chapters/3307ennemy}
-\include{chapters/3308allies}
-\include{chapters/3309terrain}
-\include{chapters/3310timing}
-\include{chapters/3311concepts}
-\include{chapters/3312control}
-\include{chapters/3313guided}
-\include{chapters/3314integrating}
-\include{chapters/3315rw}
-\include{chapters/3316fiveline}
-\include{chapters/3317bomber}
-\include{chapters/3318drones}
-\include{chapters/3319specops}
-\include{chapters/3320showofforce}
-\include{chapters/3321digital}
-\include{chapters/3322video}
-\include{chapters/3323facaplanning}
-\include{chapters/3324tac}
-\include{chapters/3325jfo}
-\include{chapters/3326multinat}
-\include{chapters/3327casrequest}
-%
-\include{chapters/3400preparation}%
-\include{chapters/3401intro}
-\include{chapters/3402repetition}
-\include{chapters/3403precombat}
-\include{chapters/3404comms}
-\include{chapters/3405digital}
-\include{chapters/3406mov}
-%
-\include{chapters/3500execution}%
-\include{chapters/3501intro}
-\include{chapters/3502engage}
-\include{chapters/3503isr}
-\include{chapters/3504nonjoint}
-\include{chapters/3505faca}
-\include{chapters/3506jfo}
-%
-\newpage%
-%
-\pagestyle{intro}%
-%
-\microtypesetup{protrusion=false}%
-%
-\invisibleunnumberedchapter{Listes}%
-%
-\invisibleunnumberedsection{Liste des images}%
-\makeatletter%
-\@starttoc{lof}%
-\makeatother%
-%
-\newpage%
-%
-\invisibleunnumberedsection{Liste des tableaux}%
-\makeatletter%
-\@starttoc{lot}%
-\makeatother%
-%
-\newpage%
-%
-\invisibleunnumberedsection{Liste des exemples}%
-\makeatletter%
-\@starttoc{lol}%
-\makeatother%
-%
-\newpage%
-%
-\invisibleunnumberedsection{Points à traiter}%
-\makeatletter
-\@starttoc{tdo}
-\makeatother
-%
-\microtypesetup{protrusion=true}%
-%
-\newpage%
-\pagestyle{intro}%
-%
-\invisibleunnumberedchapter{Glossaire}%
-%
-\glsaddall%
-\glossarystyle{altlist}%
-%\glossarystyle{mylong}%
-\invisibleunnumberedsection{Acronymes}%
-\printglossary[type=\acronymtype]
-%
-\newpage%
-%
-\invisibleunnumberedsection{Explications des termes}%
-\printglossary[type=main]
-%
-\clearpage%
-%
-\pagestyle{annexes}%
-
-\begin{appendices}%
-%	
-\include{chapters/9001planning}%
-%
-\include{chapters/9002datacard}%
-%
-\include{chapters/9003casrequest}%
-%
-\include{chapters/9004agops}%
-%
-\include{chapters/9005bdarep}%
-%
-\include{chapters/9006dryad}%
-%
-\include{chapters/9007nineline}%
-%
-\include{chapters/9008exemples}%
-%
-\include{chapters/9009ramrods}%
-%
-\include{chapters/9010flighttypes}%
-%
-\include{chapters/9021cursus}%
-%
-\end{appendices}%
-%
-\pagestyle{intro}%
-%
-\include{chapters/9101biblio}%
-%
-\include{chapters/9102thanks}%
-%
-\pagestyle{empty}%
-%
+	\import{F:/DEV/latex-common/}{docpreamble}%
+	\hypersetup{pageanchor=false}
+	\include{chapters/1000titlepage}
+	\hypersetup{pageanchor=true}
+	\pagenumbering{Roman}%
+	\pagestyle{intro}%
+	\include{chapters/1002publetter}%
+	\include{chapters/1003summary}%
+	\include{chapters/1004changelog}%
+	\include{chapters/1005conventions}%
+	\pagenumbering{arabic}%
+	\include{chapters/1007toc}%
+	\pagestyle{default}%
+	\include{chapters/3100introduction}%
+	\include{chapters/3101fundamentals}%
+	\include{chapters/3102overview}%
+	\include{chapters/3103use}%
+	\include{chapters/3104integration}%
+	\include{chapters/3105rw}%
+	\include{chapters/3106unmanned}%
+	\include{chapters/3107efficiency}%
+	\include{chapters/3108duties}%
+	\include{chapters/3109blueonblue}%
+	\include{chapters/3110collateral}%
+	\include{chapters/3200commandandcontrol}%
+	\include{chapters/3201intro}%
+	\include{chapters/3202joint}%
+	\include{chapters/3203af}%
+	\include{chapters/3204army}%
+	\include{chapters/3205land}%
+	\include{chapters/3206naval}%
+	\include{chapters/3207marines}%
+	\include{chapters/3208amphi}%
+	\include{chapters/3209specops}%
+	\include{chapters/3210comms}%
+	\include{chapters/3211isr}%
+	\include{chapters/3300planning}%
+	\include{chapters/3301intro}
+	\include{chapters/3302deliberate}
+	\include{chapters/3303crisis}
+	\include{chapters/3304decision}
+	\include{chapters/3305staff}
+	\include{chapters/3306mission}
+	\include{chapters/3307ennemy}
+	\include{chapters/3308allies}
+	\include{chapters/3309terrain}
+	\include{chapters/3310timing}
+	\include{chapters/3311concepts}
+	\include{chapters/3312control}
+	\include{chapters/3313guided}
+	\include{chapters/3314integrating}
+	\include{chapters/3315rw}
+	\include{chapters/3316fiveline}
+	\include{chapters/3317bomber}
+	\include{chapters/3318drones}
+	\include{chapters/3319specops}
+	\include{chapters/3320showofforce}
+	\include{chapters/3321digital}
+	\include{chapters/3322video}
+	\include{chapters/3323facaplanning}
+	\include{chapters/3324tac}
+	\include{chapters/3325jfo}
+	\include{chapters/3326multinat}
+	\include{chapters/3327casrequest}
+	\include{chapters/3400preparation}%
+	\include{chapters/3401intro}
+	\include{chapters/3402repetition}
+	\include{chapters/3403precombat}
+	\include{chapters/3404comms}
+	\include{chapters/3405digital}
+	\include{chapters/3406mov}
+	\include{chapters/3500execution}%
+	\include{chapters/3501intro}
+	\include{chapters/3502engage}
+	\include{chapters/3503isr}
+	\include{chapters/3504nonjoint}
+	\include{chapters/3505faca}
+	\include{chapters/3506jfo}
+	\newpage%
+	\pagestyle{intro}%
+	\microtypesetup{protrusion=false}%
+	\invisibleunnumberedchapter{Listes}%
+	\invisibleunnumberedsection{Liste des images}%
+	\makeatletter%
+	\@starttoc{lof}%
+	\makeatother%
+	\newpage%
+	\invisibleunnumberedsection{Liste des tableaux}%
+	\makeatletter%
+	\@starttoc{lot}%
+	\makeatother%
+	\newpage%
+	\invisibleunnumberedsection{Liste des exemples}%
+	\makeatletter%
+	\@starttoc{lol}%
+	\makeatother%
+	\newpage%
+	\invisibleunnumberedsection{Points à traiter}%
+	\makeatletter
+	\@starttoc{tdo}
+	\makeatother
+	\microtypesetup{protrusion=true}%
+	\newpage%
+	\pagestyle{intro}%
+	\invisibleunnumberedchapter{Glossaire}%
+	\glsaddall%
+	\glossarystyle{altlist}%
+	\invisibleunnumberedsection{Acronymes}%
+	\printglossary[type=\acronymtype]
+	\newpage%
+	\invisibleunnumberedsection{Explications des termes}%
+	\printglossary[type=main]
+	\clearpage%
+	\pagestyle{annexes}%
+	\begin{appendices}%
+		\include{F:/DEV/latex-common/annex/planning}%
+		\include{F:/DEV/latex-common/annex/casrequest}%
+		\include{F:/DEV/latex-common/annex/nineline}%
+		\include{F:/DEV/latex-common/annex/exemples}%
+		\include{F:/DEV/latex-common/annex/bdarep}%
+		\include{F:/DEV/latex-common/annex/agops}%
+		\include{F:/DEV/latex-common/annex/dryad}%
+		\include{F:/DEV/latex-common/annex/flighttypes}%
+		\include{F:/DEV/latex-common/annex/datacard}%
+		\include{F:/DEV/latex-common/annex/ramrod}%
+		\include{chapters/4001cursus}%
+	\end{appendices}%
+	\pagestyle{intro}%
+	\include{F:/DEV/latex-common/annex/biblio}%
+	\include{chapters/5001thanks}%
+	\pagestyle{empty}%
 \end{document}%
