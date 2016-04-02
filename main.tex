@@ -7,181 +7,28 @@ oneside,
 openany,
 ]{report}
 
-\RequirePackage[l2tabu, orthodox]{nag}
+\usepackage{import}
 
-%\pdfcompresslevel=9
-%\pdfminorversion=5
-%\pdfobjcompresslevel=2
+\import{F:/DEV/latex-common/}{preamble}
 
-\input{preamble/0001fonts}
-\input{preamble/0001geometry}
-\input{preamble/0001constants}
-
-\input{preamble/0002misc}
-
-\input{preamble/0003biblio}
-\newcommand{\citeboth}[1]{\citetitle{#1} (\citeauthor{#1})}
-\input{preamble/0003tocloft}
-\input{preamble/0003enum}
-\newenvironment{e1} [1][\llm]       {\gene   { {\alph*}.    } {\ilm} {#1}       } {\end{longenum}}
-\newenvironment{e2} [1][\lllm]      {\gene   { {\arabic*}   } {\illm} {#1}      } {\end{longenum}}
-\newenvironment{e3} [1][\llllm]     {\gene   { ({\alph*})   } {\illlm} {#1}     } {\end{longenum}}
-\newenvironment{e4} [1][\lllllm]    {\genee  { ({\arabic*}) } {\illllm} {#1}    } {\end{longenum}}
-\newenvironment{e5} [1][\llllllm]   {\genee  { {\Roman*}    } {\illlllm} {#1}   } {\end{longenum}}
-\newenvironment{e6} [1][\lllllllm]  {\gene   { ({\roman*})  } {\illllllm} {#1}  } {\end{longenum}}
-\newenvironment{e7} [1][\llllllllm] {\gene   { ({\arabic*}) } {\illlllllm} {#1} } {\end{longenum}}
-\newenvironment{re1}[1][\llm]       {\gener  { {\alph*}.    } {\ilm} {#1}       } {\end{longenum}}
-\newenvironment{re2}[1][\lllm]      {\gener  { {\arabic*}   } {\illm} {#1}      } {\end{longenum}}
-\newenvironment{re3}[1][\llllm]     {\gener  { ({\alph*})   } {\illlm} {#1}     } {\end{longenum}}
-\newenvironment{re4}[1][\lllllm]    {\geneer { ({\arabic*}) } {\illllm} {#1}    } {\end{longenum}}
-\newenvironment{re5}[1][\llllllm]   {\geneer { {\Roman*}    } {\illlllm} {#1}   } {\end{longenum}}
-\newenvironment{re6}[1][\lllllllm]  {\gener  { ({\roman*})  } {\illllllm} {#1}  } {\end{longenum}}
-\newenvironment{re7}[1][\llllllllm] {\gener  { ({\arabic*}) } {\illlllllm} {#1} } {\end{longenum}}
-\input{preamble/0003figures}
-%\newcommand{\efig}[2]{ \begin{figure}[H] \centering \includegraphics[width=\textwidth, max height=0.9\textheight, keepaspectratio]{#1.png} \caption{#2} \label{#1} \end{figure} }
-
-\DeclareDocumentCommand{\efig}%
-{ O{\textwidth} O{0.9\textheight} m m }%
-{%
-\begin{figure}[H] \centering \includegraphics[width=#1, max height=#2, keepaspectratio]{#3.png} \caption{#4} \label{#3} \end{figure}%
-}%
-\input{preamble/0003titlesec}
-\input{preamble/0003fancyhdr}
-\input{preamble/0003caption}
-\input{preamble/0003listing}
-\input{preamble/0003table}
-\input{preamble/0003colorbox}
-\newcommand{\note}[1]{\customnotebox{blue}{#1}}
-\newcommand{\important}[1]{\customcoloredbox{red}{#1}}
-\newcommand{\useful}[1]{\customcoloredbox{blue}{#1}}
-\newcommand{\remark}[1]{\customcoloredbox{gray}{#1}}
-\input{preamble/0003emptypage}
-\input{preamble/0003invisible}
-\input{preamble/0003stretchers}
-\input{preamble/0003tikz}
-\newcommand{\tfig}[3]{ \begin{figure}[H] \import{./tikz/}{#1} \caption{#2} \label{#3} \end{figure} }
-\newcommand{\tfignolof}[3]{ \begin{figure}[H] \import{./tikz/}{#1} \caption[]{#2} \label{#3} \end{figure} }
-\input{preamble/0003todonotes}
-%\input{preamble/0003soul}
-
-\usepackage[
-	colorlinks=true,
-	urlcolor=\extlink,
-	filecolor=\extlink,
-	linkcolor=\intlink,
-	citecolor=\intlink,
-	bookmarks=true,
-	breaklinks,
-]{hyperref}
-
-\input{preamble/0004ref}
-%\newcommand{\smallref}[1]{\cref{#1}: \nameref{#1}}
-\newcommand{\smallref}[1]{\hyperref[{#1}]{\cref*{#1} \nameref*{#1}}}
-\newcommand{\cruderef}[1]{\hyperref[{#1}]{\cref*{#1}}}
-\newcommand{\fullref}[1]{Cfr. \smallref{#1}}
-%\renewcommand{\ref}{\fullref}
-\input{preamble/0004glossary}
-\newcommand{\glsfull}[1]{\glsreset{#1} \gls{#1}}
-\newcommand{\glsfullpl}[1]{\glsreset{#1} \glspl{#1}}
-\newcommand{\glsd}[1]{\begin{minipage}{\linewidth} \glsdesc*{#1g} \end{minipage}\vspace{-1em}}
-\newcommand{\acrofull}[1]{\gslname{#1} - \acrolong{#1d}}
-
-%\usepackage{pdfpages}
-%\usepackage{setspace}
-%\usepackage{import}
-
-\usepackage[
-	titletoc,
-	header,
-	title
-]{appendix}
-
-\usepackage[
-	activate={true,nocompatibility},
-	final,
-	tracking=true,
-	kerning=true,
-	spacing=true,
-	factor=1100,
-	stretch=10,
-	shrink=10
-]{microtype}
-
-\usepackage[numbered]{bookmark} % add numbered PDF bookmarks
-
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
-
-\frenchspacing % https://en.wikibooks.org/wiki/LaTeX/Text_Formatting
-
-\newcommand{\newchapter}[3]{
-	%\newpage
-	\fancyhead[L]{}
-	\renewcommand{\headrulewidth}{0pt}% Line at the header visible
-	\chapter{#1}
-	\label{chap\thechapter}
-	%{\noindent \centering \includegraphics[width=\paperwidth]{#2}}
-	\begin{center}
-		\makebox[\textwidth]{\includegraphics[width=\paperwidth]{#2}}
-	\end{center}
-	\vfill
-	\newpage
-	\thispagestyle{default}
-	\null
-	\vfill
-	%{\noindent \centering \includegraphics[width=\paperwidth]{niceties/#3}}
-	\begin{center}
-		\makebox[\textwidth]{\includegraphics[width=0.9\paperwidth]{niceties/#3}}
-	\end{center}
-	\vfill
-	\newpage
-	\pagestyle{default}
-}
+\graphicspath{ {images/} }
 
 % Start of document ----------------------------------------------------------------
 \begin{document}
-
-\hbadness=10000
-\hfuzz=200pt
-
-\renewcommand\appendixpagename{Annexes}
-\renewcommand\appendixtocname{Annexes}
-
-\renewcommand\listfigurename{Liste des images}
-\renewcommand\listtablename{Liste des tableaux}
-\renewcommand\contentsname{Table des matières}
-\renewcommand\figurename{Img.}
-\renewcommand\appendixname{Annexe}
-\makeatletter\@openrightfalse\makeatother% remove empty page after appendix
-
-\addto\captionsfrenchb{\renewcommand\listfigurename{Liste des images}}
-
-%bdabda\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
-
-\sloppy
-
+%
+\import{F:/DEV/latex-common/}{docpreamble}%
+%
 \include{chapters/1000titlepage}
-%\import{./}{titlepage.tex}
-%
 \pagenumbering{Roman}%
-%
-%\include{chapters/1001disclaimer}%
-%\import{./intro/}{disclaimer.tex}
-%
 \pagestyle{intro}%
 %
 \include{chapters/1002publetter}%
-%\import{./intro/}{pub_letter.tex}
-
 %
 \include{chapters/1003summary}%
-%\import{./intro/}{preface.tex}
 %
 \include{chapters/1004changelog}%
-%\import{./intro/}{changelog.tex}
 %
 \include{chapters/1005conventions}%
-%\import{./intro/}{conventions.tex}
 %
 \pagenumbering{arabic}%
 %
@@ -263,29 +110,27 @@ openany,
 %
 \pagestyle{intro}%
 %
-%\pagenumbering{Roman}%
-%
 \microtypesetup{protrusion=false}%
 %
 \invisibleunnumberedchapter{Listes}%
 %
 \invisibleunnumberedsection{Liste des images}%
 \makeatletter%
-\@starttoc{lof}% Print List of Figures
+\@starttoc{lof}%
 \makeatother%
 %
 \newpage%
 %
 \invisibleunnumberedsection{Liste des tableaux}%
 \makeatletter%
-\@starttoc{lot}% Print List of Figures
+\@starttoc{lot}%
 \makeatother%
 %
 \newpage%
 %
 \invisibleunnumberedsection{Liste des exemples}%
 \makeatletter%
-\@starttoc{lol}% Print List of Figures
+\@starttoc{lol}%
 \makeatother%
 %
 \newpage%
