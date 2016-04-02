@@ -6,78 +6,17 @@ notitlepage,
 oneside,
 openany,
 ]{report}
-\input{preamble/0001fonts}
-\input{preamble/0001geometry}
-\input{preamble/0001constants}
-\input{preamble/0002misc}
-\input{preamble/0003tikz}
-\input{preamble/0003figures}
-\input{preamble/0003table}
-\input{preamble/0003fancyhdr}
-\input{preamble/0003stretchers}
-\input{preamble/0003colorbox}
-\newcommand{\note}[1]{\customnotebox{blue}{#1}}
-\newcommand{\important}[1]{\customcoloredbox{red}{#1}}
-\newcommand{\useful}[1]{\customcoloredbox{blue}{#1}}
-\newcommand{\remark}[1]{\customcoloredbox{gray}{#1}}
-\input{preamble/0003invisible}
-\input{preamble/0003enum}
-\newenvironment{e1} [1][\llm]       {\gene   { {\alph*}.    } {\ilm} {#1}       } {\end{longenum}}
-\newenvironment{e2} [1][\lllm]      {\gene   { {\arabic*}   } {\illm} {#1}      } {\end{longenum}}
-\newenvironment{e3} [1][\llllm]     {\gene   { ({\alph*})   } {\illlm} {#1}     } {\end{longenum}}
-\newenvironment{e4} [1][\lllllm]    {\genee  { ({\arabic*}) } {\illllm} {#1}    } {\end{longenum}}
-\newenvironment{e5} [1][\llllllm]   {\genee  { {\Roman*}    } {\illlllm} {#1}   } {\end{longenum}}
-\newenvironment{e6} [1][\lllllllm]  {\gene   { ({\roman*})  } {\illllllm} {#1}  } {\end{longenum}}
-\newenvironment{e7} [1][\llllllllm] {\gene   { ({\arabic*}) } {\illlllllm} {#1} } {\end{longenum}}
-\newenvironment{re1}[1][\llm]       {\gener  { {\alph*}.    } {\ilm} {#1}       } {\end{longenum}}
-\newenvironment{re2}[1][\lllm]      {\gener  { {\arabic*}   } {\illm} {#1}      } {\end{longenum}}
-\newenvironment{re3}[1][\llllm]     {\gener  { ({\alph*})   } {\illlm} {#1}     } {\end{longenum}}
-\newenvironment{re4}[1][\lllllm]    {\geneer { ({\arabic*}) } {\illllm} {#1}    } {\end{longenum}}
-\newenvironment{re5}[1][\llllllm]   {\geneer { {\Roman*}    } {\illlllm} {#1}   } {\end{longenum}}
-\newenvironment{re6}[1][\lllllllm]  {\gener  { ({\roman*})  } {\illllllm} {#1}  } {\end{longenum}}
-\newenvironment{re7}[1][\llllllllm] {\gener  { ({\arabic*}) } {\illlllllm} {#1} } {\end{longenum}}
-\input{preamble/0003todonotes}
 
-\usepackage[
-colorlinks=true,
-urlcolor=\extlink,
-filecolor=\extlink,
-linkcolor=\intlink,
-citecolor=\intlink,
-bookmarks=true,
-breaklinks,
-]{hyperref}
+\usepackage{import}
 
-\input{preamble/0004ref}
-%\newcommand{\smallref}[1]{\cref{#1}: \nameref{#1}}
-\newcommand{\smallref}[1]{\hyperref[{#1}]{\cref*{#1} \nameref*{#1}}}
-\newcommand{\cruderef}[1]{\hyperref[{#1}]{\cref*{#1}}}
-\newcommand{\fullref}[1]{Cfr. \smallref{#1}}
+\import{F:/DEV/latex-common/}{preamble}
 
-\input{preamble/0004glossary}
-\newcommand{\glsfull}[1]{\glsreset{#1} \gls{#1}}
-\newcommand{\glsfullpl}[1]{\glsreset{#1} \glspl{#1}}
-\newcommand{\glsd}[1]{\begin{minipage}{0.9\linewidth} \glsdesc{#1g} \end{minipage}}
-\newcommand{\acrofull}[1]{\glsname{#1g} \\ \glssymbol{#1g}}
+\graphicspath{ {images/} }
 
-\usepackage[
-titletoc,
-header,
-title
-]{appendix}
-
-\DeclareDocumentCommand{\efig}%
-{ O{\textwidth} O{0.9\textheight} m m }%
-{%
-	\begin{figure}[H] \centering \includegraphics[width=#1, max height=#2, keepaspectratio]{#3.png} \caption{#4} \label{#3} \end{figure}%
-}%
-\newcommand{\tfig}[3]{ \begin{figure}[H] \import{./tikz/}{#1} \caption{#2} \label{#3} \end{figure} }
-\newcommand{\tfignolof}[3]{ \begin{figure}[H] \import{./tikz/}{#1} \caption[]{#2} \label{#3} \end{figure} }
 
 \begin{document}
 	
-	\renewcommand\appendixpagename{Annexes}
-	\renewcommand\appendixtocname{Annexes}
+	\import{F:/DEV/latex-common/}{docpreamble}%
 	
 %	\import{./tables/}{90051bdarep}
 %	
@@ -144,12 +83,18 @@ title
 \pagestyle{annexes}%
 
 \begin{appendices}%
-	
-%\include{chapters/9009ramrods}%
-%
-%\include{chapters/9021cursus}%
-%
-\include{chapters/9010flighttypes}%
+
+%\include{F:/DEV/latex-common/annex/planning}%
+%\include{F:/DEV/latex-common/annex/casrequest}%
+%\include{F:/DEV/latex-common/annex/nineline}%
+%\include{F:/DEV/latex-common/annex/exemples}%
+%\include{F:/DEV/latex-common/annex/bdarep}%
+%\include{F:/DEV/latex-common/annex/agops}%
+%\include{F:/DEV/latex-common/annex/dryad}%
+%\include{F:/DEV/latex-common/annex/flighttypes}%
+%\include{F:/DEV/latex-common/annex/datacard}%
+%\include{F:/DEV/latex-common/annex/ramrod}%
+\include{F:/DEV/latex-common/tikz/tikznatoicons}%
 
 \end{appendices}%
 
