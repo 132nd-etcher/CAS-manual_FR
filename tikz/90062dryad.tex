@@ -1,0 +1,24 @@
+%\begin{center}
+	\begin{adjustbox}{max width=\textwidth, max height=\textheight, keepaspectratio}
+	
+		\begin{tikzpicture}
+			\tikzstyle{every node}=[font=\footnotesize]
+			\matrix[column sep=2.8mm, row sep=0mm]
+			{		
+			\node (c) {C};&\node {};&\node (s) {DAFH};&\node {};&\node {CUB};&\node {};&\node {TKM};&\node {};&\node {OR};&\node {};&\node {NE};&\node {};&\node {GXQ};&\node {};&\node {VY};&\node {};&\node {IL};&\node {};&\node {SP};&\node {};&\node (e) {JW};\\
+			};
+			\begin{pgfonlayer}{background}
+				\node [ultra thick, draw=black!100, fit={(c)}] (letter) {};
+				\node [ultra thick, draw=blue!100, fit=(e)(s)] (line) {};
+			\end{pgfonlayer}
+			
+			\node[above of=letter, anchor=south west] (lc) {Lettre Charlie};
+			\node[above of=line, blue, anchor=south] (ll) {Ligne Charlie};
+			\draw[->] (lc.south west) -| (letter.north);
+			\draw[->] (ll) -- (line);
+		
+		\end{tikzpicture}
+
+	\end{adjustbox}
+
+%\end{center}

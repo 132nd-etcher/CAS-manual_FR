@@ -1,0 +1,85 @@
+%\chapter{Carte de mission}\label[annex]{ann2}
+\invisiblechapter{Authentification DRYAD}\label[annex]{dryad}
+
+Les informations officielles à propos de l'authentification DRYAD sont classifiées.
+
+Cfr. \citetitle{wikipediadryad}.
+
+Une table d'authentification DRYAD se trouve en \smallref{dryadauth}.
+
+L'authentification DRYAD fonctionne de la manière suivante:
+
+\begin{lstlisting}[caption=Authentification DRYAD., label=exdryad]
+	MAGIC, ici REDWOLF
+	REDWOLF, MAGIC, authentifiez-vous Charlie, Mike, Echo.
+	MAGIC, ici REDWOLF, je m'authentifie Echo, authentifiez-vous Juliet, Papa, Delta.
+	REDWOLF, MAGIC, je m'authentifie Papa.
+\end{lstlisting}
+
+Fonctionnement par l'exemple:
+\begin{e1}
+	
+	\item \textbf{Remarque: les lignes avec l'alphabet dans l'ordre et les chiffres en dessous sont des en-têtes et doivent être ignorées}
+	
+	\tfignolof{90063dryad}{Lignes à ignorer}{dryadignore}
+
+	\item 
+	
+	MAGIC demande à REDWOLF de s'authentifier Charlie, Mike, Echo (CME).
+	
+	\begin{e2}
+		\itemt{Notions importantes:}{
+			
+			Pour cette explication, on définit les termes suivants:}
+			\begin{e3}
+				\item Première lettre: Charlie.
+				\item Seconde lettre: Mike.
+				\item Troisième lettre: Echo.
+				\item Première ligne: ligne correspondant à la première lettre.
+				\item Seconde ligne: ligne que l'on aura trouvée après avoir effectué le première correspondance (cfr. ci-dessous).
+			\end{e3}
+	\end{e2}
+	
+	REDWOLF consulte sa table DRYAD et chercher la première lettre, Charlie, dans la colonne tout à gauche.
+	
+	Cette lettre correspond à une \textbf{ligne}, que voici:
+	
+	\tfignolof{90062dryad}{Première ligne}{dryadfirstline}
+	
+	\item Une fois la première ligne trouvée, on y cherche la seconde lettre, Mike:
+	
+	\tfignolof{90064dryad}{Seconde lettre trouvée dans la première ligne}{dryadsecondletter}
+	
+	\item Maintenant on regarde la lettre qui se \textbf{en dessous} de Mike:
+	
+	\tfignolof{90065dryad}{Lettre en dessous de la seconde lettre}{dryadletterbelowsecond}
+	
+	Dans cet exemple, la lettre en dessous est Yankee.
+	
+	\item Maintenant, on cherche la ligne correspondant à Yankee:
+	
+	\tfignolof{90066dryad}{Seconde ligne}{dryadsecondline}
+	
+	\item Une fois la seconde ligne trouvée, on y cherche la troisième lettre, Echo:
+	
+	\tfignolof{90067dryad}{Troisième lettre}{dryadthirdletter}
+	
+	\item Enfin, dernière étape, on cherche la lettre qui se trouve en dessous, et ce sera la réponse à la demande d'authentification:
+	
+	\tfignolof{90068dryad}{Réponse}{dryadanswer}
+	
+	\item Résumé de toutes les étapes ci-dessus:
+	
+	\tfignolof{90069dryad}{Résumé authentification DRYAD}{dryadsummary}
+	
+\end{e1}
+
+\newpage
+
+%\thispagestyle{logoonly}
+%\fancyhead[L]{\minipage[b]{.9\linewidth}\large Table d'authentification DRYAD \endminipage}
+
+%\begin{adjustbox}{width=\textwidth, max height=\textheight}
+%\makebox[\linewidth][c]{\fontsize{20}{20}\selectfont \textsc{Table d'authentification DRYAD}}
+\tfig{90061dryad}{Authentification DRYAD}{dryadauth}
+%\end{adjustbox}

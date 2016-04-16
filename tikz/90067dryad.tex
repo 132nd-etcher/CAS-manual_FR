@@ -1,0 +1,21 @@
+%\begin{center}
+	\begin{adjustbox}{max width=\textwidth, max height=\textheight, keepaspectratio}
+	
+	\begin{tikzpicture}
+	\tikzstyle{every node}=[font=\footnotesize]
+	\matrix[column sep=2.8mm, row sep=0mm]
+	{		
+		\node{Y};&\node {};&\node {SOKF};&\node {};&\node {CDT};&\node {};&\node {JRX};&\node {};&\node {YU};&\node {};&\node {NA};&\node {};&\node {QGZ};&\node {};&\node {LB};&\node {};&\node {MH};&\node {};&\node (l) {VE};&\node {};&\node {PW};\\
+	};
+	\begin{pgfonlayer}{background}
+	\node [ultra thick, draw=green, fit={($(l.east)-(2.5mm,0)$)($(l.east)-(2.5mm,-1mm)$)($(l.east)-(2.5mm,1mm)$)}] (letter) {};
+	\end{pgfonlayer}
+	
+	\node[above of=letter, green] (lc) {Troisième lettre trouvée dans la seconde ligne};
+	\draw[->] (lc) -- (letter);
+	
+	\end{tikzpicture}
+	
+\end{adjustbox}
+
+%\end{center}
