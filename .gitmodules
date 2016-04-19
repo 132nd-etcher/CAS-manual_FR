@@ -1,0 +1,3 @@
+[submodule "latex-common"]
+	path = latex-common
+	url = ../latex-common.git
