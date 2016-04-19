@@ -7,15 +7,55 @@ oneside,
 openany,
 ]{report}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define links 
+\newcommand{\jplink}{https://www.google.com/url?q=https://fas.org/irp/doddir/dod/jp3_09_3.pdf\&sa=D\&ust=1457816834668000\&usg=AFQjCNEpTH7xDsiu3EjM3xcSy5AatewYrA}
+\newcommand{\onethreetwolink}{http://www.132virtualwing.org/}
+\newcommand{\thirdwinglink}{http://http://www.3rd-wing.net/}
+\newcommand{\dcslink}{http://www.digitalcombatsimulator.com/en/}
+\newcommand{\latest}{http://users.skynet.be/fd797867/3rd.319th.CAS.pdf}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define constants 
+\newcommand{\version}{(A)}
+\newcommand{\rgt}{319th Rgt}
+\newcommand{\thirdwing}{\href{\thirdwinglink}{3rd Wing}}
+%\newcommand{\jp}{\href{\jplink}{JP3-09.3}}
+\newcommand{\jp}{\citetitle{jp3093}}
+\newcommand{\onethreetwo}{\href{\onethreetwolink}{132nd vWing}}
+\newcommand{\docname}{``319th Rgt - Close Air Support''}
+\newcommand{\dcs}{\href{\dcslink}{Digital Combat Simulator}}
+\newcommand{\inmem}{``In Memoriam Flying Manu''}
+\newcommand{\ttitle}{Close Air Support}
+\newcommand{\footer}{\ttitle{} - \version{}}
+\newcommand{\ja}{\gls{jtac}/\gls{faca}}
+\newcommand{\ipbp}{\gls{ip}/\gls{bp}}
+\newcommand{\ipha}{\gls{ip}/\gls{ha}}
+
+\newcommand{\emargintop}{0.2cm}
+\newcommand{\emarginbottom}{1cm}
+\newcommand{\emarginleft}{1.5cm}
+\newcommand{\emarginright}{1.5cm}
+\newcommand{\eheadheight}{1.5cm}
+\newcommand{\eheadsep}{1.5cm}
+\newcommand{\efootsep}{2cm}
+\newcommand{\eparskip}{1.5em}
+
+\newcommand{\deflhead}{\minipage[b]{.9\linewidth}\small\leftmark{} \\ \rightmark{}\endminipage}
+%\newcommand{\defrhead}{\includegraphics[width=1cm]{images/319th.png}}
+\newcommand{\defrhead}{}
+\newcommand{\deflfoot}{\footnotesize \footer}
+\newcommand{\defrfoot}{\thepage}
+
 \usepackage{import}
 
-\import{F:/DEV/latex-common/}{preamble}
+\import{./latex-common/}{preamble}
+\import{./tikz/}{icodefs}
 
 \graphicspath{ {images/} }
 
 % Start of document ----------------------------------------------------------------
 \begin{document}
-	\import{F:/DEV/latex-common/}{docpreamble}%
+	\import{./latex-common/}{docpreamble}%
 	\hypersetup{pageanchor=false}
 	\include{chapters/1000titlepage}
 	\hypersetup{pageanchor=true}
@@ -130,20 +170,22 @@ openany,
 	\clearpage%
 	\pagestyle{annexes}%
 	\begin{appendices}%
-		\include{F:/DEV/latex-common/annex/planning}%
-		\include{F:/DEV/latex-common/annex/casrequest}%
-		\include{F:/DEV/latex-common/annex/nineline}%
-		\include{F:/DEV/latex-common/annex/exemples}%
-		\include{F:/DEV/latex-common/annex/bdarep}%
-		\include{F:/DEV/latex-common/annex/agops}%
-		\include{F:/DEV/latex-common/annex/dryad}%
-		\include{F:/DEV/latex-common/annex/flighttypes}%
-		\include{F:/DEV/latex-common/annex/datacard}%
-		\include{F:/DEV/latex-common/annex/ramrod}%
+		\include{./annex/planning}%
+		\include{./annex/casrequest}%
+		\include{./annex/nineline}%
+		\include{./annex/exemples}%
+		\include{./annex/bdarep}%
+		\include{./annex/agops}%
+		\include{./annex/dryad}%
+		\include{./annex/flighttypes}%
+		\include{./annex/datacard}%
+		\include{./annex/ramrod}%
 		\include{chapters/4001cursus}%
 	\end{appendices}%
 	\pagestyle{intro}%
-	\include{F:/DEV/latex-common/annex/biblio}%
+	\invisibleunnumberedchapter{Bibliographie}\label[annex]{ann_biblio}
+	\nocite{*}
+	\printbibliography[heading=none, title=Bibliographie]
 	\include{chapters/5001thanks}%
 	\pagestyle{empty}%
 \end{document}%
