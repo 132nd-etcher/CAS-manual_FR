@@ -9,14 +9,53 @@ openany,
 
 \usepackage{import}
 
-\import{F:/DEV/latex-common/}{preamble}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define links 
+\newcommand{\jplink}{https://www.google.com/url?q=https://fas.org/irp/doddir/dod/jp3_09_3.pdf\&sa=D\&ust=1457816834668000\&usg=AFQjCNEpTH7xDsiu3EjM3xcSy5AatewYrA}
+\newcommand{\onethreetwolink}{http://www.132virtualwing.org/}
+\newcommand{\thirdwinglink}{http://http://www.3rd-wing.net/}
+\newcommand{\dcslink}{http://www.digitalcombatsimulator.com/en/}
+\newcommand{\latest}{http://users.skynet.be/fd797867/3rd.319th.CAS.pdf}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define constants 
+\newcommand{\version}{(B)}
+\newcommand{\rgt}{319th Rgt}
+\newcommand{\thirdwing}{\href{\thirdwinglink}{3rd Wing}}
+%\newcommand{\jp}{\href{\jplink}{JP3-09.3}}
+\newcommand{\jp}{\citetitle{jp3093}}
+\newcommand{\onethreetwo}{\href{\onethreetwolink}{132nd vWing}}
+\newcommand{\docname}{``319th Rgt - Close Air Support''}
+\newcommand{\dcs}{\href{\dcslink}{Digital Combat Simulator}}
+\newcommand{\inmem}{``In Memoriam Flying Manu''}
+\newcommand{\ttitle}{Close Air Support}
+\newcommand{\footer}{\ttitle{} - \version{}}
+\newcommand{\ja}{\gls{jtac}/\gls{faca}}
+\newcommand{\ipbp}{\gls{ip}/\gls{bp}}
+\newcommand{\ipha}{\gls{ip}/\gls{ha}}
+
+\newcommand{\emargintop}{0.2cm}
+\newcommand{\emarginbottom}{1cm}
+\newcommand{\emarginleft}{1.5cm}
+\newcommand{\emarginright}{1.5cm}
+\newcommand{\eheadheight}{1.5cm}
+\newcommand{\eheadsep}{1.5cm}
+\newcommand{\efootsep}{2cm}
+\newcommand{\eparskip}{1.5em}
+
+\newcommand{\deflhead}{\minipage[b]{.9\linewidth}\small\leftmark{} \\ \rightmark{}\endminipage}
+%\newcommand{\defrhead}{\includegraphics[width=1cm]{images/319th.png}}
+\newcommand{\defrhead}{}
+\newcommand{\deflfoot}{\footnotesize \footer}
+\newcommand{\defrfoot}{\thepage}
+
+\import{./latex-common/}{preamble}
 
 \graphicspath{ {images/} }
 
 
 \begin{document}
 	
-	\import{F:/DEV/latex-common/}{docpreamble}%
+	\import{./latex-common/}{docpreamble}%
 	
 %	\import{./tables/}{90051bdarep}
 %	
@@ -94,10 +133,19 @@ openany,
 %\include{F:/DEV/latex-common/annex/flighttypes}%
 %\include{F:/DEV/latex-common/annex/datacard}%
 %\include{F:/DEV/latex-common/annex/ramrod}%
-\include{F:/DEV/latex-common/annex/natoicos}%
-\include{F:/DEV/latex-common/tikz/tikzthirdwing}%
-\include{F:/DEV/latex-common/tikz/tikzfiveeightrussian}%
-\include{F:/DEV/latex-common/tikz/tikzncmd}%
+\newpage
+
+\import{./tikz/}{tikzthirdwing}
+\newpage
+\import{./tikz/}{tikzfiveeightrussian}
+\newpage
+\import{./tikz/}{tikzncmd}
+\newpage
+\import{./tikz/}{tikzthirdwing}
+\newpage
+\import{./tikz/}{georgia}
+\newpage
+
 
 
 \end{appendices}%

@@ -9,8 +9,8 @@ column sep=40mm,
 % },
 %execute at empty cell={\node[draw=none]{};}
 ]
-\tikzstyle{label} = [rectangle, align=left, anchor=west, node font=\scriptsize, text width=2.5cm, xshift=-10mm]
-\tikzstyle{biglabel} = [rectangle, align=center, anchor=center, node font=\normalsize\bfseries]
+\tikzstyle{label} = [rectangle, align=left, anchor=west, node font=\scriptsize, text width=2.5cm, xshift=5mm]
+\tikzstyle{biglabel} = [rectangle, align=left, anchor=west, node font=\normalsize\bfseries]
 %\tikzstyle{biglabel} = [rectangle, align=left, text width=5cm, anchor=west, xshift=-1cm, node font=\footnotesize]
 %https://drive.google.com/file/d/0B0YjkM42NmF-SVhVdHNzRVNpc0U/view
 
@@ -67,48 +67,47 @@ column sep=40mm,
 	\node [icobase] (474) {}; \node [label, right=of 474] {474\textsuperscript{th} Bataillon de transport \\ Stavropol};\\
 };
 
-\icowithgun{8};\icobrigade{8};\icoarmored{8};\icomountain{8};\icoinfantry{8};
-\icobrigade{10};\icosf{10};
-\icobrigade{22};\icosf{22};
-\icobrigade{17};\icoarmored{17};\icoinfantry{17};
-\icobrigade{18};\icoarmored{18};\icoinfantry{18};\icowheeled{18};
-\icobrigade{19};\icoarmored{19};\icoinfantry{19};
-\icobrigade{20};\icoarmored{20};\icoinfantry{20};\icowithgun{20}
-\icobrigade{34};\icoarmored{34};\icoinfantry{34};\icomountain{34}
-\icobrigade{136};\icoarmored{136};\icoinfantry{136};\icowithgun{136}
-\icobrigade{205};\icoarmored{205};\icoinfantry{205};
-\icobrigade{4};\icoarmored{4};\icoinfantry{4};
-\icobrigade{7};\icoarmored{7};\icoinfantry{7};
-\icobrigade{34};\icoarmored{34};\icomountain{34};\icorecce{34};
-\icobrigade{56};\icopara{56};\icoinfantry{56};
-\icorecce{100}\icobrigade{100};
-\icobrigade{1};\icomissilesurface{1};
-\icoadmissile{67};\icobrigade{67};
-\icoarty{291};\icobrigade{291};
-\icobrigade{439};\icowheeled{439};\icomlrs{439};
-\icohq{1138};\icobrigade{1138};
-\icoeng{11};\icoregiment{11};
-\icoeng{57};\icoregiment{57};
-\icobataillon{573};\icorecce{573};\icoarty{573};
-\icoregiment{943};\icowheeled{943};\icomlrs{943};
-\icobrigade{33};\icorecce{33};\icoarmored{33};\icomountain{33};
-\icoradar{131};\icobrigade{131};
-\icobrigade{175};\icosignal{175};
-\icobrigade{176};\icosignal{176};
-\icobrigade{234};\icosignal{234};
-\icobataillon{148};\icosignal{148};
-\icobataillon{395};\icosignal{395};
-\icoradar{48};\icobataillon{48};
-\icoew{97};\icobataillon{97};
-\icoew{1270};\icobrigade{1270};
-\icoarty{7016};\icobrigade{7016};
-\icoregiment{32};\icosupply{32};
-\icowheel{474}{1};\icobataillon{474};
+\icowithgun{8};\iconamedbrigade{8};\icoarmored{8};\icomountain{8};\icoinfantry{8};
+\iconamedbrigade{10};\icosf{10};
+\iconamedbrigade{22};\icosf{22};
+\iconamedbrigade{17};\icoarmored{17};\icoinfantry{17};
+\iconamedbrigade{18};\icoarmored{18};\icoinfantry{18};\icowheeled{18};
+\iconamedbrigade{19};\icoarmored{19};\icoinfantry{19};
+\iconamedbrigade{20};\icoarmored{20};\icoinfantry{20};\icowithgun{20};
+\iconamedbrigade{34};\icoarmored{34};\icoinfantry{34};\icomountain{34};
+\iconamedbrigade{136};\icoarmored{136};\icoinfantry{136};\icowithgun{136};
+\iconamedbrigade{205};\icoarmored{205};\icoinfantry{205};
+\iconamedbrigade{4};\icoarmored{4};\icoinfantry{4};
+\iconamedbrigade{7};\icoarmored{7};\icoinfantry{7};
+\iconamedbrigade{56};\icopara{56};\icoinfantry{56};
+\icorecce{100}\iconamedbrigade{100};
+\iconamedbrigade{1};\icomissilesurface{1};
+\icoadmissile{67};\iconamedbrigade{67};
+\icoarty{291};\iconamedbrigade{291};
+\iconamedbrigade{439};\icowheeled{439};\icomlrs{439}; 
+\icohq{1138};\iconamedbrigade{1138};
+\icoeng{11};\iconamedregiment{11};
+\icoeng{57};\iconamedregiment{57};
+\iconamedbataillon{573};\icorecce{573};\icoarty{573};
+\iconamedregiment{943};\icowheeled{943};\icomlrs{943};
+\iconamedbrigade{33};\icorecce{33};\icoarmored{33};\icomountain{33};
+\icoradar{131};\iconamedbrigade{131};
+\iconamedbrigade{175};\icosignal{175};
+\iconamedbrigade{176};\icosignal{176};
+\iconamedbrigade{234};\icosignal{234};
+\iconamedbataillon{148};\icosignal{148};
+\iconamedbataillon{395};\icosignal{395};
+\icoradar{48};\iconamedbataillon{48};
+\icoew{97};\iconamedbataillon{97};
+\icoew{1270};\iconamedbrigade{1270};
+\icoarty{7016};\iconamedbrigade{7016};
+\iconamedregiment{32};\icosupply{32};
+\icowheel{474}{1};\iconamedbataillon{474};
 
 \node [above=of m] (spacer) {};
-\node [biglabel, above=of spacer, xshift=-4cm] (58) {58\textsuperscript{th} Armée \\ Vladikavkaz};
+\node [icobase, above=of spacer, xshift=-8cm, yshift=2cm] (58) {} node [biglabel, right=of 58] {58\textsuperscript{th} Armée \\ Vladikavkaz};
 \node [above=of 58] (spacer) {};
-\node [biglabel, above=of spacer, xshift=4cm] (district) {District militaire du nord-Caucase \\ Rostovondon};
+\node [icobase, above=of spacer, xshift=8cm] (district) {} node [biglabel, right=of district]  {District militaire du nord-Caucase \\ Rostovondon};
 
 \icoarmy{58}; \icoarmygroup{district};
 
@@ -128,8 +127,11 @@ column sep=40mm,
 \draw (c5) -- ($(7016.west)+(-15mm, 0mm)$);
 \draw (c2) -- ($(32.west)+(-15mm, 0mm)$);
 
+\icohq{58}; \icohq{district};
+
 \foreach \x in {8, 10, 17, 18, 19, 20, 22, 33, 34, 131, 234, 7016, 56, 100, 136, 205, 4, 7, 943, 57, 573, 175, 48, 32, 1, 67, 291, 439, 1138, 11, 97, 148, 395, 176, 1270, 474} {
 	\draw ($(\x.west)+(-15mm, 0mm)$) -- (\x.west);
+	\icocountry{\x}{RUS};
 }
 
 
