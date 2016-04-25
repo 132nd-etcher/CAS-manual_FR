@@ -1,98 +1,82 @@
-%\tikzstyle{table} = [
-%matrix of nodes,
-%%row sep=-\pgflinewidth,
-%%column sep=-\pgflinewidth,
-%row sep=2.5mm,
-%column sep=0mm,
-%% nodes={
-%%     table nodes
-%% },
-%execute at empty cell={\node[draw=none]{};}
-%]
-\tikzstyle{label} = [rectangle, align=left, text width=2.5cm, anchor=west, xshift=1.2cm, node font=\scriptsize]
-\tikzstyle{biglabel} = [rectangle, align=left, text width=5cm, anchor=west, xshift=-1cm, node font=\footnotesize]
-%\tikzstyle{first} = [level distance=6ex]
-%\tikzstyle{second} = [level distance=12ex]
-%\tikzstyle{third} = [level distance=18ex]
-%\tikzstyle{child} = [grow=down,xshift=1em,anchor=west, edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-%\tikzstyle{level 1} = [sibling distance=5em]
+\tikzstyle{label} = [rectangle, align=left, text width=2.4cm, anchor=west, xshift=1.8cm, node font=\scriptsize]
+\tikzstyle{biglabel} = [rectangle, align=left, text width=4cm, anchor=west, xshift=-0.3cm, node font=\footnotesize]
 
 \begin{adjustbox}{max width=\textwidth, max height=0.9\textheight, keepaspectratio}
-\begin{tikzpicture}[%
-grow via three points={one child at (0.5,-1.25) and
-	two children at (0.5,-1.25) and (0.5,-2.5)},
-edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-\node [rectangle, draw] (58)  {58\textsuperscript{th} Armée Vladikavkaz}; \icoarmy{58};
-\node [icobase, below=of 58.south west, yshift=-1cm] (19) {}
-child { node [icobase, anchor=west] (429) {} node [label] {429\textsuperscript{th} Régiment motorisé} }
-child { node [icobase, anchor=west] (503) {} node [label] {503\textsuperscript{rd} Régiment motorisé} }
-child { node [icobase, anchor=west] (693) {} node [label] {693\textsuperscript{rd} Régiment motorisé} }
-child { node [icobase, anchor=west] (292) {} node [label] {292\textsuperscript{nd} Régiment d'artillerie SP} }
-child { node [icobase, anchor=west] (481) {} node [label] {481\textsuperscript{st} Régiment de défense anti-aérienne} }
-child { node [icobase, anchor=west] (141) {} node [label] {141\textsuperscript{st} Bataillon blindé} }
-child { node [icobase, anchor=west] (eng) {} node [label] {Bataillon d'ingénieurs} }
-child { node [icobase, anchor=west] (intel) {} node [label] {Bataillon de reseignements} }
-child { node [icobase, anchor=west] (sig) {} node [label] {Bataillon de transmission} }
-child { node [icobase, anchor=west] (log) {} node [label] {Bataillon logistique} }
-child { node [icobase, anchor=west] (maint) {} node [label] {Bataillon de maintenance} }
-child { node [icobase, anchor=west] (medic) {} node [label] {Bataillon médical} };
-\icoinfantry{19}; \icoarmored{19}; \icodivision{19};
-\node[biglabel, right=of 19] {19\textsuperscript{th} Division motorisée\\Vladikavkaz};\icodivision{19};
-\icoinfantry{429}; \icoarmored{429}; \icoregiment{429};
-\icoinfantry{503}; \icoarmored{503}; \icoregiment{503};
-\icoinfantry{693}; \icoarmored{693}; \icoregiment{693};
-\icoarty{292}; \icoarmored{292}; \icoregiment{292};
-\icoadmissile{481};\icoregiment{481};
-\icoarmored{141};\icobataillon{141};
-\icoeng{eng};\icobataillon{eng};
-\icointel{intel};\icobataillon{intel};
-\icosignal{sig};\icobataillon{sig};
-\icosupply{log};\icobataillon{log};
-\icomaintenance{maint};\icobataillon{maint};
-\icomedic{medic};\icobataillon{medic};
-
-\node [icobase, right=of 429, xshift=3.5cm] (136) {} node [right=of 136, xshift=-2cm, label, text width=3cm] {136\textsuperscript{th} brigade de fusiliers \\ Buynaksk};
-\node [icobase, below=of 136] (205) {} node [right=of 205, xshift=-2cm, label, text width=3cm] {205\textsuperscript{th} brigade de fusiliers \\ Budenovsk};
-\node [icobase, below=of 205] (291) {} node [right=of 291, xshift=-2cm, label, text width=3cm] {291\textsuperscript{st} brigade d'artillerie \\ Maykop};
-\node [icobase, below=of 291] (67) {} node [right=of 67, xshift=-2cm, label, text width=3cm] {67\textsuperscript{th} brigade défense anti-aérienne \\ Volgorad};
-\icobrigade{136};\icoinfantry{136};\icoarmored{136};
-\icobrigade{205};\icoinfantry{205};\icoarmored{205};
-\icobrigade{291};\icoarmored{291};\icoarty{291};
-\icobrigade{67};\icoadmissile{67};
-
-\node [icobase, right=of 136, xshift=3.5cm] (135) {} node [right=of 135, xshift=-2cm, label, text width=3cm] {135\textsuperscript{th} régiment de fusiliers \\ Prochladny};
-\node [icobase, below=of 135] (1128) {} node [right=of 1128, xshift=-2cm, label, text width=3cm] {1128\textsuperscript{th} régiment anti-tank \\ Maykop};
-\node [icobase, below=of 1128] (943) {} node [right=of 943, xshift=-2cm, label, text width=3cm] {943\textsuperscript{rd} régiment MLRS \\ Krasnooktabrsky};
-\node [icobase, below=of 943] (487) {} node [right=of 487, xshift=-2cm, label, text width=3cm] {487\textsuperscript{th} régiment d'hélicoptères \\ Budenovsk};
-\node [icobase, below=of 487] (11) {} node [right=of 11, xshift=-2cm, label, text width=3cm] {11\textsuperscript{th} régiment d'ingénieurs \\ Kavkazskay};
-\node [icobase, below=of 11] (234) {} node [right=of 234, xshift=-2cm, label, text width=3cm] {234\textsuperscript{th} régiment de transmissions \\ Vladikavkaz};
-\node [icobase, below=of 234] (22) {} node [right=of 22, xshift=-2cm, label, text width=3cm] {22\textsuperscript{nd} régiment de guerre électronique \\ Vladikavkaz};
-\icoregiment{135};\icoregiment{1128};\icoregiment{943};\icoregiment{487};\icoregiment{11}\icoregiment{234};\icoregiment{22};
-\icoinfantry{135};\icoarmored{135};
-\icoantiarmor{1128};\icorocket{1128};
-\icomlrs{943};
-\icorw{487};
-\icoeng{11};\icosignal{234};\icoew{22};
-
-\draw (58.south) -- ($(58.south)+(0mm, -5mm)$) -| ($(19.north)+(0mm, 3mm)$);
-
-\draw ($(58.south)+(0mm, -5mm)$) -| ($(67.west)+(-5mm, 0mm)$);
-\draw ($(136.west)+(-5mm, 0mm)$) -- (136.west);
-\draw ($(205.west)+(-5mm, 0mm)$) -- (205.west);
-\draw ($(291.west)+(-5mm, 0mm)$) -- (291.west);
-\draw ($(67.west)+(-5mm, 0mm)$) -- (67.west);
-
-\coordinate (c1) at ($(58.south)+(0mm, -5mm)$);
-\coordinate (c2) at ($(136.west)+(-5mm, 0mm)$);
-\draw  (c1 -| c2) -| ($(22.west)+(-5mm, 0mm)$);
-\draw ($(135.west)+(-5mm, 0mm)$) -- (135.west);
-\draw ($(1128.west)+(-5mm, 0mm)$) -- (1128.west);
-\draw ($(943.west)+(-5mm, 0mm)$) -- (943.west);
-\draw ($(487.west)+(-5mm, 0mm)$) -- (487.west);
-\draw ($(11.west)+(-5mm, 0mm)$) -- (11.west);
-\draw ($(234.west)+(-5mm, 0mm)$) -- (234.west);
-\draw ($(22.west)+(-5mm, 0mm)$) -- (22.west);
-
-\end{tikzpicture}
-%\icofwf{n}
+	\begin{tikzpicture}[level distance=10mm,
+	every child node/.style={icobase, anchor=west},
+	level 1/.style={sibling distance=10mm,
+		edge from parent/.style={draw=none}},
+	grow via three points={one child at (0.5,-1.25) and
+		two children at (0.5,-1.25) and (0.5,-2.5)}]
+	\node [icobase] (58) {} node [biglabel, right=of 58] {58\textsuperscript{th} Armée \\ Vladikavkaz}; \icoarmy{58};
+	\node [icobase, below=of 58.south west, yshift=-1cm] (19) {}
+	child { node [icobase, anchor=west] (429) {} node [label] {429\textsuperscript{th} Régiment motorisé} }
+	child { node [icobase, anchor=west] (503) {} node [label] {503\textsuperscript{rd} Régiment motorisé} }
+	child { node [icobase, anchor=west] (693) {} node [label] {693\textsuperscript{rd} Régiment motorisé} }
+	child { node [icobase, anchor=west] (292) {} node [label] {292\textsuperscript{nd} Régiment d'artillerie SP} }
+	child { node [icobase, anchor=west] (481) {} node [label] {481\textsuperscript{st} Régiment de défense anti-aérienne} }
+	child { node [icobase, anchor=west] (141) {} node [label] {141\textsuperscript{st} Bataillon blindé} }
+	child { node [icobase, anchor=west] (eng) {} node [label] {Bataillon d'ingénieurs} }
+	child { node [icobase, anchor=west] (intel) {} node [label] {Bataillon de reseignements} }
+	child { node [icobase, anchor=west] (sig) {} node [label] {Bataillon de transmission} }
+	child { node [icobase, anchor=west] (log) {} node [label] {Bataillon logistique} }
+	child { node [icobase, anchor=west] (maint) {} node [label] {Bataillon de maintenance} }
+	child { node [icobase, anchor=west] (medic) {} node [label] {Bataillon médical} };
+	\icoinfantry{19}; \icoarmored{19}; \icodivision{19};
+	\node[biglabel, right=of 19] {19\textsuperscript{th} Division motorisée\\Vladikavkaz};\icodivision{19};
+	\icoinfantry{429}; \icoarmored{429}; \icoregiment{429}; \iconame{429}{429};
+	\icoinfantry{503}; \icoarmored{503}; \icoregiment{503}; \iconame{503}{503};
+	\icoinfantry{693}; \icoarmored{693}; \icoregiment{693}; \iconame{693}{693};
+	\icoarty{292}; \icoarmored{292}; \icoregiment{292}; \iconame{292}{292};
+	\icoadmissile{481};\icoregiment{481}; \iconame{481}{481};
+	\icoarmored{141};\icobataillon{141}; \iconame{141}{141};
+	\icoeng{eng};\icobataillon{eng}; \iconame{eng}{19};
+	\icointel{intel};\icobataillon{intel}; \iconame{intel}{19};
+	\icosignal{sig};\icobataillon{sig}; \iconame{sig}{19};
+	\icosupply{log};\icobataillon{log}; \iconame{log}{19};
+	\icomaintenance{maint};\icobataillon{maint}; \iconame{maint}{19};
+	\icomedic{medic};\icobataillon{medic}; \iconame{medic}{19};
+	
+	\node [icobase, right=of 429, xshift=3.5cm] (136) {} node [right=of 136, xshift=-2cm, label, text width=3cm] {136\textsuperscript{th} brigade de fusiliers \\ Buynaksk};
+	\node [icobase, right=of 503, xshift=3.5cm] (205) {} node [right=of 205, xshift=-2cm, label, text width=3cm] {205\textsuperscript{th} brigade de fusiliers \\ Budenovsk};
+	\node [icobase, right=of 693, xshift=3.5cm] (291) {} node [right=of 291, xshift=-2cm, label, text width=3cm] {291\textsuperscript{st} brigade d'artillerie \\ Maykop};
+	\node [icobase, right=of 292, xshift=3.5cm] (67) {} node [right=of 67, xshift=-2cm, label, text width=3cm] {67\textsuperscript{th} brigade défense anti-aérienne \\ Volgorad};
+	\icobrigade{136};\icoinfantry{136};\icoarmored{136}; \iconame{136}{136};
+	\icobrigade{205};\icoinfantry{205};\icoarmored{205}; \iconame{205}{205};
+	\icobrigade{291};\icoarmored{291};\icoarty{291}; \iconame{291}{291};
+	\icobrigade{67};\icoadmissile{67};\iconame{67}{67};
+	
+	\node [icobase, right=of 136, xshift=3.5cm] (135) {} node [right=of 135, xshift=-2cm, label, text width=3cm] {135\textsuperscript{th} régiment de fusiliers \\ Prochladny};
+	\node [icobase] (1128) at (135|-205) {} node [right=of 1128, xshift=-2cm, label, text width=3cm] {1128\textsuperscript{th} régiment anti-tank \\ Maykop};
+	\node [icobase] (943) at (135|-693) {} node [right=of 943, xshift=-2cm, label, text width=3cm] {943\textsuperscript{rd} régiment MLRS \\ Krasnooktabrsky};
+	\node [icobase] (487) at (135|-292) {} node [right=of 487, xshift=-2cm, label, text width=3cm] {487\textsuperscript{th} régiment d'hélicoptères \\ Budenovsk};
+	\node [icobase] (11) at (135|-481) {} node [right=of 11, xshift=-2cm, label, text width=3cm] {11\textsuperscript{th} régiment d'ingénieurs \\ Kavkazskay};
+	\node [icobase] (234) at (135|-141) {} node [right=of 234, xshift=-2cm, label, text width=3cm] {234\textsuperscript{th} régiment de transmissions \\ Vladikavkaz};
+	\node [icobase] (22) at (135|-eng) {} node [right=of 22, xshift=-2cm, label, text width=3cm] {22\textsuperscript{nd} régiment de guerre électronique \\ Vladikavkaz};
+	\icoregiment{135};\icoregiment{1128};\icoregiment{943};\icoregiment{487};\icoregiment{11}\icoregiment{234};\icoregiment{22};
+	\icoinfantry{135};\icoarmored{135}; \iconame{135}{135};
+	\icoantiarmor{1128};\icorocket{1128}; \iconame{1128}{1128};
+	\icomlrs{943}; \iconame{943}{943};
+	\icorw{487}; \iconame{487}{487};
+	\icoeng{11};\icosignal{234};\icoew{22}; \iconame{11}{11}; \iconame{234}{234}; \iconame{22}{22};
+	
+	\coordinate (c1) at ($(58.south)+(0mm, -5mm)$);
+	\draw (58.south) -- (c1);
+	\draw (c1) -| ($(19.north west)+(-5mm, 5mm)$) |- (19.west);
+	\connectchildren{19}{medic}{429,503,693,292,481,141,eng, intel,sig,log,maint,medic}
+	\coordinate (c2) at ($(136.west)+(-5mm, 0mm)$);
+	\coordinate (c3) at (c1 -| c2);
+	\draw (c1) -- (c3);
+	\connectchildren{c3}{67}{136,205,291,67}
+	\coordinate (c4) at ($(135.west)+(-5mm, 0mm)$);
+	\coordinate (c5) at (c3 -| c4);
+	\draw (c3) -- (c5.east);
+	\connectchildren{c5}{22}{135,1128,943,487,11,234,22};
+	\seticocountry{135,1128,943,487,11,234,22,136,205,291,67,429,503,693,292,481,141,eng, intel,sig,log,maint,medic,19,58}{RUS};
+	\iconame{58}{58};
+	\iconame{19}{19};
+	\icohq{58};
+	
+	\end{tikzpicture}
+	%\icofwf{n}
 \end{adjustbox}

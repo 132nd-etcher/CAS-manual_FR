@@ -1,46 +1,43 @@
-%\tikzstyle{table} = [
-%matrix of nodes,
-%%row sep=-\pgflinewidth,
-%%column sep=-\pgflinewidth,
-%row sep=2.5mm,
-%column sep=0mm,
-%% nodes={
-%%     table nodes
-%% },
-%execute at empty cell={\node[draw=none]{};}
-%]
-\tikzstyle{label} = [rectangle, align=left, text width=4cm, anchor=west, xshift=1.2cm, node font=\scriptsize]
-%\tikzstyle{first} = [level distance=6ex]
-%\tikzstyle{second} = [level distance=12ex]
-%\tikzstyle{third} = [level distance=18ex]
-%\tikzstyle{child} = [grow=down,xshift=1em,anchor=west, edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-%\tikzstyle{level 1} = [sibling distance=5em]
+
+
+\tikzstyle{label} = [rectangle, align=left, text width=4cm, anchor=west, xshift=2cm, node font=\scriptsize]
 
 \begin{adjustbox}{max width=\textwidth, max height=0.9\textheight, keepaspectratio}
-\begin{tikzpicture}[%
-grow via three points={one child at (0.5,-1.25) and
-	two children at (0.5,-1.25) and (0.5,-2.5)},
-edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-\node [icobase] (3) {}
-child { node [icobase, anchor=west] (12) {} node [label] {12\textsuperscript{th} Fighter Squadron} }
-child { node [icobase, anchor=west] (75) {} node [label] {75\textsuperscript{th} vFighter Squadron} }
-child { node [icobase, anchor=west] (92) {} node [label] {92\textsuperscript{nd} Kodiak Air Force} }
-child { node [icobase, anchor=west] (72) {} node [label] {72\textsuperscript{nd} Bomber Squadron} }
-child { node [icobase, anchor=west] (279) {} node [label] {279\textsuperscript{th} KIAP} }
-child { node [icobase, anchor=west] (120) {} node [label] {120\textsuperscript{th} Fighter Regiment ``Black Kite''} }
-child { node [icobase, anchor=west] (319) {} node [label] {319\textsuperscript{th} Rgt ``Redwolves'' In mem. Flying Manu} }
-child { node [icobase, anchor=west] (962) {} node [label] {962\textsuperscript{nd} Airborne Air Control Squadron} };
-\icocomposite{3};
-\icofwf{12}; \icoregiment{12};
-\icofwa{75}; \icoregiment{75};
-\icofwf{92}; \icoregiment{92};
-\icofwa{72}; \icoregiment{72};
-\icofwf{279}; \icoregiment{279};
-\icofwf{120}; \icoregiment{120};
-\icorwa{319}; \icoregiment{319};
-\icofwawacs{962}; \icoregiment{962};
-\node[label, right=of 3, node font=\normalsize\bfseries] {3\textsuperscript{rd} Wing};\icocorps{3};
-
-\end{tikzpicture}
-%\icofwf{n}
+	\begin{tikzpicture}[%
+	level 1/.style={sibling distance=10mm,
+		edge from parent/.style={draw=none}},
+	grow via three points={one child at (0.5,-1.25) and
+		two children at (0.5,-1.25) and (0.5,-2.5)},
+	% edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}
+	]
+	\node [icobase] (3) {}
+	child { node [icobase, anchor=west] (12) {} node [label] {12\textsuperscript{th} Fighter Squadron} }
+	child { node [icobase, anchor=west] (75) {} node [label] {75\textsuperscript{th} vFighter Squadron} }
+	child { node [icobase, anchor=west] (92) {} node [label] {92\textsuperscript{nd} Kodiak Air Force} }
+	child { node [icobase, anchor=west] (72) {} node [label] {72\textsuperscript{nd} Bomber Squadron} }
+	child { node [icobase, anchor=west] (279) {} node [label] {279\textsuperscript{th} KIAP} }
+	child { node [icobase, anchor=west] (120) {} node [label] {120\textsuperscript{th} Fighter Regiment ``Black Kite''} }
+	child { node [icobase, anchor=west] (319) {} node [label] {319\textsuperscript{th} Rgt ``Redwolves'' In mem. Flying Manu} }
+	child { node [icobase, anchor=west] (962) {} node [label] {962\textsuperscript{nd} Airborne Air Control Squadron} };
+	\icocomposite{3};
+	\icofwf{12}; \icoregiment{12}; \iconame{12}{12};
+	\icofwa{75}; \icoregiment{75};\iconame{75}{75};
+	\icofwf{92}; \icoregiment{92};\iconame{92}{92};
+	\icofwa{72}; \icoregiment{72};\iconame{72}{72};
+	\icofwf{279}; \icoregiment{279};\iconame{279}{279};
+	\icofwf{120}; \icoregiment{120};\iconame{120}{120};
+	\icorwa{319}; \icoregiment{319};\iconame{319}{319};
+	\icofwawacs{962}; \icoregiment{962};\iconame{962}{962};
+	\node[label, right=of 3, node font=\normalsize\bfseries] {3\textsuperscript{rd} vWing};\icocorps{3};
+	
+	% \draw (3.south)  -| ($(962.west)-(5mm, 0mm)$);
+	% \foreach \x in {12, 75, 72, 92, 279, 120, 319, 962}{
+	%     \draw ($(\x.west)+(-5mm, 0mm)$) -- ($(\x.west)+(-2mm, 0mm)$);
+	% }
+	\iconame{3}{3rd vW}
+	\connectchildren{3}{962}{12, 75, 72, 92, 279, 120, 319, 962}
+	\foreach \x in {3,12,75,72,92,279,120,319,962}{\icocountry{\x}{FRA}}
+	
+	\end{tikzpicture}
+	%\icofwf{n}
 \end{adjustbox}
