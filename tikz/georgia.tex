@@ -1,0 +1,153 @@
+\tikzstyle{label} = [rectangle, draw=none, align=left, text width=2.5cm, anchor=west, xshift=2cm, node font=\scriptsize]
+\tikzstyle{biglabel} = [rectangle, draw=none, align=left, text width=5cm, anchor=west, xshift=2cm, node font=\footnotesize]
+
+\todo[inline]{add ref \url{https://en.wikipedia.org/wiki/Georgian_Armed_Forces}}
+
+\newcommand{\lightinfbrig}[1]{
+	\icobrigade{#1};
+	\icoinfantry{#1};
+	\icolight{#1};
+	\iconame{#1}{#1};
+}
+
+\newcommand{\lightinfbat}[1]{
+	\icobataillon{#1};
+	\icoinfantry{#1};
+	\icolight{#1};
+	\iconame{#1}{#1};
+}
+
+\newcommand{\treeshift}{-2.5cm}
+
+\begin{adjustbox}{max width=\textwidth, max height=0.9\textheight, keepaspectratio}
+\begin{tikzpicture}[
+    every child node/.style={icobase, anchor=west},
+    level distance=10mm,
+    level distance=10mm,
+    level 1/.style={sibling distance=10mm,
+      edge from parent/.style={draw=none}},
+    grow via three points={one child at (\treeshift,-1.25) and
+    	two children at (\treeshift,-1.25) and (\treeshift,-2.5)}]
+\node [icobase, anchor=west] (hq) {} node [biglabel] { QG Armée géorgiène \\ (Tbilisi)}; \icohq{hq};
+
+\node [icobase, anchor=west, below=of hq.south west, yshift=-1cm] (w) {} node [right=of w, xshift=-2cm, label, text width=3cm] {Division Ouest}
+child { node (2) {} node [label] {2\textsuperscript{nd} Brigade d'infanterie \\ (Senaki)}
+    child { node (21) {} node [label] {21\textsuperscript{st} Bataillon d'infanterie légère} }
+    child { node (22) {} node [label] {22\textsuperscript{nd} Bataillon d'infanterie légère} }
+    child { node (23) {} node [label] {23\textsuperscript{rd} Bataillon d'infanterie légère} }
+}
+child [missing] {}	
+child [missing] {}
+child [missing] {}
+child { node (3) {} node [label] {3\textsuperscript{rd} Brigade d'infanterie \\ (Kutaisi)}
+    child { node (31) {} node [label] {31\textsuperscript{st} Bataillon d'infanterie légère} }
+    child { node (32) {} node [label] {32\textsuperscript{nd} Bataillon d'infanterie légère} }
+    child { node (33) {} node [label] {33\textsuperscript{rd} Bataillon d'infanterie légère} }
+}
+child [missing] {}	
+child [missing] {}
+child [missing] {}
+child { node (2arty) {} node [label] {2\textsuperscript{nd} Brigade d'artillerie \\ (Khoni)}
+}
+child { node (sep1) {} node [label] {Bataillon d'infanterie légère indépendant \\ (Batumi)} };
+
+\node [icobase, anchor=west, right=of w, xshift=6cm] (e) {} node [right=of e, xshift=-2cm, label, text width=3cm] {Division Est}
+child { node (1) {} node [label] {1\textsuperscript{st} Brigade d'infanterie \\ (Tbilisi)}
+    child { node (11) {} node [label] {11\textsuperscript{st} Bataillon d'infanterie légère} }
+    child { node (12) {} node [label] {12\textsuperscript{nd} Bataillon d'infanterie légère} }
+    child { node (13) {} node [label] {13\textsuperscript{rd} Bataillon d'infanterie légère} }
+}
+child [missing] {}	
+child [missing] {}
+child [missing] {}
+child { node (4) {} node [label] {4\textsuperscript{th} Brigade d'infanterie mécanisée \\ (Vaziani)}
+    child { node (41) {} node [label] {41\textsuperscript{st} Bataillon d'infanterie mécanisée} }
+    child { node (42) {} node [label] {42\textsuperscript{nd} Bataillon d'infanterie mécanisée} }
+    child { node (43) {} node [label] {43\textsuperscript{rd} Bataillon d'infanterie mécanisée} }
+}
+child [missing] {}	
+child [missing] {}
+child [missing] {}
+child { node (5) {} node [label] {5\textsuperscript{th} Brigade d'infanterie \\ (Gori)}
+    child { node (51) {} node [label] {51\textsuperscript{st} Bataillon d'infanterie légère} }
+    child { node (52) {} node [label] {52\textsuperscript{nd} Bataillon d'infanterie légère} }
+    child { node (53) {} node [label] {53\textsuperscript{rd} Bataillon d'infanterie légère} }
+}
+child [missing] {}	
+child [missing] {}
+child [missing] {}
+child { node (1arty) {} node [label] {1\textsuperscript{st} Brigade d'artillerie \\ (Vaziani)}
+};
+
+\connectchildren{1}{13}{11,12,13}
+\connectchildren{2}{23}{21,22,23}
+\connectchildren{3}{33}{31,32,33}
+\connectchildren{4}{43}{41,42,43}
+\connectchildren{5}{53}{51,52,53}
+\connectchildren{w}{sep1}{2,3,2arty,sep1}
+\connectchildren{e}{1arty}{1,4,5,1arty}
+
+\node [icobase, anchor=west, right=of e, xshift=6cm] (avia) {} node [right=of avia, xshift=-2cm, label, text width=3cm] {Brigade aviation};
+\node [icobase, anchor=west] (airdef) at ($(avia.west)-(0, 1.25cm)$) {} node [right=of airdef, xshift=-2cm, label, text width=3cm] {Brigade de défense anti-aérienne \\ (Kutaisi)};
+\node [icobase, anchor=west] (transport) at ($(airdef.west)-(0, 1.25cm)$) {} node [right=of transport, xshift=-2cm, label, text width=3cm] {Brigade de transport};
+\node [icobase, anchor=west] (log) at ($(transport.west)-(0, 1.25cm)$) {} node [right=of log, xshift=-2cm, label, text width=3cm] {Brigade logistique};
+\node [icobase, anchor=west] (inge) at ($(log.west)-(0, 1.25cm)$) {} node [right=of inge, xshift=-2cm, label, text width=3cm] {Brigade du génie};
+\node [icobase, anchor=west] (recce) at ($(inge.west)-(0, 1.25cm)$) {} node [right=of recce, xshift=-2cm, label, text width=3cm] {Bataillon de reconnaissance \\ (Kobuleti)};
+\node [icobase, anchor=west] (medic) at ($(recce.west)-(0, 1.25cm)$) {} node [right=of medic, xshift=-2cm, label, text width=3cm] {Bataillon médical \\ (Saguramo)};
+\node [icobase, anchor=west] (sig) at ($(medic.west)-(0, 1.25cm)$) {} node [right=of sig, xshift=-2cm, label, text width=3cm] {Bataillon de transmission \\ (Saguramo)};
+\node [icobase, anchor=west] (log2) at ($(sig.west)-(0, 1.25cm)$) {} node [right=of log2, xshift=-2cm, label, text width=3cm] {Bataillon logistique \\ (Saguramo)};
+
+\coordinate (c1) at ($(hq.south)-(0,5mm)$);
+\draw (hq.south) -- (c1);
+\draw (c1) -| ($(w.west)-(5mm,0mm)$) -- (w.west);
+\draw (c1) -| ($(e.west)-(5mm,0mm)$) -- (e.west);
+\coordinate (c5) at ($(e.west)-(5mm,0mm)$);
+\coordinate (c2) at (c1 -| c5);
+\coordinate (c3) at (c2-|avia.west);
+\coordinate (c4) at ($(c3)-(5mm,0)$);
+\draw (c2) -- (c4);
+% \draw (c2) -| ($(log2.west)-(5mm,0mm)$);
+\connectchildren{c4}{log2}{avia,airdef,transport,log,inge,recce,medic,sig,log2}
+
+\icoarmy{hq};
+\icodivision{w};
+\icodivision{e};
+\icobrigade{1};
+\lightinfbrig{1};
+\lightinfbrig{2};
+\lightinfbrig{3};
+\lightinfbrig{4}; \icoarmored{4}; \icowithgun{4};
+\lightinfbrig{5};
+\icobrigade{1arty}; \icoarty{1arty}; \icoarmored{1arty};
+\icobrigade{2arty}; \icoarty{2arty}; \icoarmored{2arty};
+\icobrigade{avia}; \icocomposite{avia};
+\icobrigade{airdef}; \icoad{airdef};
+\icobrigade{transport}; \icowheel{transport}{1};
+\icobrigade{log}; \icosupply{log};
+\icobrigade{inge}; \icoeng{inge};
+\lightinfbat{11};
+\lightinfbat{12};
+\lightinfbat{13};
+\lightinfbat{21};
+\lightinfbat{22};
+\lightinfbat{23};
+\lightinfbat{31};
+\lightinfbat{32};
+\lightinfbat{33};
+\lightinfbat{41}; \icoarmored{41}; \icowithgun{41};
+\lightinfbat{42}; \icoarmored{42}; \icowithgun{42};
+\lightinfbat{43}; \icoarmored{43}; \icowithgun{43};
+\lightinfbat{51};
+\lightinfbat{52};
+\lightinfbat{53};
+\lightinfbat{sep1};
+\icobataillon{recce}; \icorecce{recce};
+\icobataillon{medic}; \icomedic{medic};
+\icobataillon{sig}; \icosignal{sig};
+\icobataillon{log2}; \icosupply{log2};
+
+\foreach \x in {1,2,3,4,5,1arty,2arty,avia,airdef,transport,log,inge,11,12,13,21,22,23,31,32,33,41,42,43,51,52,53,sep1,recce,medic,sig, log2}{
+	\icocountry{\x}{GEO};
+}
+\end{tikzpicture}
+\end{adjustbox}
